@@ -20,24 +20,22 @@
 		86AB5B731E04C17800641871 /* DefaultLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86AB5B721E04C17800641871 /* DefaultLayout.storyboard */; };
 		86AB5B751E04C24600641871 /* PanelsCollections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86AB5B741E04C24600641871 /* PanelsCollections.storyboard */; };
 		86AB5B771E04C2DB00641871 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86AB5B761E04C2DB00641871 /* Widgets.storyboard */; };
-		AC861A3D1EA711D5001C9B65 /* DJISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC861A3B1EA711D5001C9B65 /* DJISDK.framework */; };
-		AC861A3E1EA711D5001C9B65 /* DJISDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC861A3B1EA711D5001C9B65 /* DJISDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AC861A3F1EA711D5001C9B65 /* DJIUILibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC861A3C1EA711D5001C9B65 /* DJIUILibrary.framework */; };
-		AC861A401EA711D5001C9B65 /* DJIUILibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC861A3C1EA711D5001C9B65 /* DJIUILibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AC861A5B1EA712BB001C9B65 /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC861A581EA712A7001C9B65 /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8B4E216C0D2EE39F823198AC /* libPods-UILib Sample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4210D826E81C1EA61EDDEC9 /* libPods-UILib Sample.a */; };
+		A40B6D9E1EA75F510069B96C /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40B6D9D1EA75F4B0069B96C /* VideoPreviewer.framework */; };
+		A40B6D9F1EA75F510069B96C /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A40B6D9D1EA75F4B0069B96C /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AC861A571EA712A7001C9B65 /* PBXContainerItemProxy */ = {
+		A40B6D9C1EA75F4B0069B96C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AC861A531EA712A7001C9B65 /* VideoPreviewer.xcodeproj */;
+			containerPortal = A40B6D981EA75F4B0069B96C /* VideoPreviewer.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 02A543FD1C3C51CB0083C11B;
 			remoteInfo = VideoPreviewer;
 		};
-		AC861A591EA712B3001C9B65 /* PBXContainerItemProxy */ = {
+		A40B6DA01EA75F510069B96C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AC861A531EA712A7001C9B65 /* VideoPreviewer.xcodeproj */;
+			containerPortal = A40B6D981EA75F4B0069B96C /* VideoPreviewer.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 02A543FC1C3C51CB0083C11B;
 			remoteInfo = VideoPreviewer;
@@ -45,15 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AC861A411EA711D5001C9B65 /* Embed Frameworks */ = {
+		A40B6DA21EA75F520069B96C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AC861A5B1EA712BB001C9B65 /* VideoPreviewer.framework in Embed Frameworks */,
-				AC861A401EA711D5001C9B65 /* DJIUILibrary.framework in Embed Frameworks */,
-				AC861A3E1EA711D5001C9B65 /* DJISDK.framework in Embed Frameworks */,
+				A40B6D9F1EA75F510069B96C /* VideoPreviewer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +57,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		21620F8087A49188EB2F76DD /* Pods-UILib Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UILib Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UILib Sample/Pods-UILib Sample.release.xcconfig"; sourceTree = "<group>"; };
+		77E7C92BECC341DE5E202250 /* Pods-UILib Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UILib Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UILib Sample/Pods-UILib Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		86374ED61E020B010079E9D1 /* MyBatteryWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBatteryWidget.swift; sourceTree = "<group>"; };
 		868A29A61E0201B600BB3E59 /* ProductCommunicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCommunicationManager.swift; sourceTree = "<group>"; };
 		868A29A81E02021E00BB3E59 /* DefaultLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLayoutViewController.swift; sourceTree = "<group>"; };
@@ -76,9 +74,8 @@
 		86AB5B721E04C17800641871 /* DefaultLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayout.storyboard; sourceTree = "<group>"; };
 		86AB5B741E04C24600641871 /* PanelsCollections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PanelsCollections.storyboard; sourceTree = "<group>"; };
 		86AB5B761E04C2DB00641871 /* Widgets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Widgets.storyboard; sourceTree = "<group>"; };
-		AC861A3B1EA711D5001C9B65 /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = ../../Frameworks/DJISDK.framework; sourceTree = "<group>"; };
-		AC861A3C1EA711D5001C9B65 /* DJIUILibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJIUILibrary.framework; path = ../../Frameworks/DJIUILibrary.framework; sourceTree = "<group>"; };
-		AC861A531EA712A7001C9B65 /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../../Frameworks/VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
+		A40B6D981EA75F4B0069B96C /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
+		A4210D826E81C1EA61EDDEC9 /* libPods-UILib Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UILib Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,14 +83,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC861A3F1EA711D5001C9B65 /* DJIUILibrary.framework in Frameworks */,
-				AC861A3D1EA711D5001C9B65 /* DJISDK.framework in Frameworks */,
+				A40B6D9E1EA75F510069B96C /* VideoPreviewer.framework in Frameworks */,
+				8B4E216C0D2EE39F823198AC /* libPods-UILib Sample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35A66AA107E72EB47DE135E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77E7C92BECC341DE5E202250 /* Pods-UILib Sample.debug.xcconfig */,
+				21620F8087A49188EB2F76DD /* Pods-UILib Sample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		381ED6E71E04B94D00F82F8D /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,11 +149,21 @@
 			name = "Widget Customization";
 			sourceTree = "<group>";
 		};
+		5BED216A47BED8FB4500D1BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4210D826E81C1EA61EDDEC9 /* libPods-UILib Sample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		868A4EC71E01FA53006FEE33 = {
 			isa = PBXGroup;
 			children = (
 				868A4ED21E01FA53006FEE33 /* UILib Sample */,
 				868A4ED11E01FA53006FEE33 /* Products */,
+				35A66AA107E72EB47DE135E0 /* Pods */,
+				5BED216A47BED8FB4500D1BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,22 +188,20 @@
 			path = "UILib Sample";
 			sourceTree = "<group>";
 		};
+		A40B6D991EA75F4B0069B96C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A40B6D9D1EA75F4B0069B96C /* VideoPreviewer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AC861A481EA71200001C9B65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AC861A531EA712A7001C9B65 /* VideoPreviewer.xcodeproj */,
-				AC861A3B1EA711D5001C9B65 /* DJISDK.framework */,
-				AC861A3C1EA711D5001C9B65 /* DJIUILibrary.framework */,
+				A40B6D981EA75F4B0069B96C /* VideoPreviewer.xcodeproj */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AC861A541EA712A7001C9B65 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AC861A581EA712A7001C9B65 /* VideoPreviewer.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,16 +211,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 868A4EE41E01FA53006FEE33 /* Build configuration list for PBXNativeTarget "UILib Sample" */;
 			buildPhases = (
+				568DAA9E9772E969A74FF080 /* [CP] Check Pods Manifest.lock */,
 				868A4ECC1E01FA53006FEE33 /* Sources */,
 				868A4ECD1E01FA53006FEE33 /* Frameworks */,
 				868A4ECE1E01FA53006FEE33 /* Resources */,
-				AC861A411EA711D5001C9B65 /* Embed Frameworks */,
-				38D2C48D1E0B3038009A3831 /* DJI Script */,
+				A40B6DA21EA75F520069B96C /* Embed Frameworks */,
+				13E660B389DD1443FEAA9A6E /* [CP] Embed Pods Frameworks */,
+				A5DE692456FA5871DCBE805C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AC861A5A1EA712B3001C9B65 /* PBXTargetDependency */,
+				A40B6DA11EA75F510069B96C /* PBXTargetDependency */,
 			);
 			name = "UILib Sample";
 			productName = "UILib Sample";
@@ -225,7 +241,6 @@
 				TargetAttributes = {
 					868A4ECF1E01FA53006FEE33 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 7UL3LRJL93;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -244,8 +259,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = AC861A541EA712A7001C9B65 /* Products */;
-					ProjectRef = AC861A531EA712A7001C9B65 /* VideoPreviewer.xcodeproj */;
+					ProductGroup = A40B6D991EA75F4B0069B96C /* Products */;
+					ProjectRef = A40B6D981EA75F4B0069B96C /* VideoPreviewer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -256,11 +271,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		AC861A581EA712A7001C9B65 /* VideoPreviewer.framework */ = {
+		A40B6D9D1EA75F4B0069B96C /* VideoPreviewer.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = VideoPreviewer.framework;
-			remoteRef = AC861A571EA712A7001C9B65 /* PBXContainerItemProxy */;
+			remoteRef = A40B6D9C1EA75F4B0069B96C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -282,19 +297,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		38D2C48D1E0B3038009A3831 /* DJI Script */ = {
+		13E660B389DD1443FEAA9A6E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "DJI Script";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework/strip-frameworks.sh\"\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIUILibrary.framework/strip-frameworks.sh\"";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UILib Sample/Pods-UILib Sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		568DAA9E9772E969A74FF080 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5DE692456FA5871DCBE805C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UILib Sample/Pods-UILib Sample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -316,10 +362,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AC861A5A1EA712B3001C9B65 /* PBXTargetDependency */ = {
+		A40B6DA11EA75F510069B96C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = VideoPreviewer;
-			targetProxy = AC861A591EA712B3001C9B65 /* PBXContainerItemProxy */;
+			targetProxy = A40B6DA01EA75F510069B96C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -438,23 +484,21 @@
 		};
 		868A4EE51E01FA53006FEE33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77E7C92BECC341DE5E202250 /* Pods-UILib Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7UL3LRJL93;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../Frameworks",
 				);
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/include\"/**";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "UILib Sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dji.UILib-Sample";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.DJIUILibrarySample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -463,23 +507,21 @@
 		};
 		868A4EE61E01FA53006FEE33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21620F8087A49188EB2F76DD /* Pods-UILib Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7UL3LRJL93;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../Frameworks",
 				);
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/include\"/**";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "UILib Sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dji-pa.UILibSample";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.DJIUILibrarySample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

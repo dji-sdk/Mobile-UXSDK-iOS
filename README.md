@@ -33,11 +33,12 @@ If you install it successfully, you should get the messages similar to the follo
 ~~~
 Analyzing dependencies
 Downloading dependencies
+Installing DJI-SDK-iOS (4.0.1)
 Installing DJI-UILibrary-iOS (4.0.1.1.0.0)
 Generating Pods project
 Integrating client project
 
-[!] Please close any current Xcode sessions and use `UILib Sample.xcodeproj` for this project from now on.
+[!] Please close any current Xcode sessions and use `UILibOCSample.xcworkspace` for this project from now on.
 Pod installation complete! There is 1 dependency from the Podfile and 1 total pod
 installed.
 ~~~

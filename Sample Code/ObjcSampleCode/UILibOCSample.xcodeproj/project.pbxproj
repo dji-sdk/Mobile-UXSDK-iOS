@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40B6D911EA75B9E0069B96C /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40B6D901EA75B700069B96C /* VideoPreviewer.framework */; };
+		A40B6D921EA75B9E0069B96C /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A40B6D901EA75B700069B96C /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A48847B91EA21CC400CE5843 /* PanelsCollections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48847B81EA21CC400CE5843 /* PanelsCollections.storyboard */; };
 		A4A1890D1EA1291E00D06BF0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A1890C1EA1291E00D06BF0 /* main.m */; };
 		A4A189101EA1291E00D06BF0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A1890F1EA1291E00D06BF0 /* AppDelegate.m */; };
@@ -20,27 +22,29 @@
 		A4A189311EA12A6600D06BF0 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A189301EA12A6600D06BF0 /* Widgets.storyboard */; };
 		A4A189341EA12A7700D06BF0 /* MyBatteryWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A189331EA12A7700D06BF0 /* MyBatteryWidget.m */; };
 		A4A189371EA12A9400D06BF0 /* WidgetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A189361EA12A9400D06BF0 /* WidgetsViewController.m */; };
-		AC861A6D1EA71377001C9B65 /* DJISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC861A5E1EA71341001C9B65 /* DJISDK.framework */; };
-		AC861A6E1EA71377001C9B65 /* DJISDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC861A5E1EA71341001C9B65 /* DJISDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AC861A6F1EA71377001C9B65 /* DJIUILibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC861A5F1EA71341001C9B65 /* DJIUILibrary.framework */; };
-		AC861A701EA71377001C9B65 /* DJIUILibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC861A5F1EA71341001C9B65 /* DJIUILibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AC861A721EA7137A001C9B65 /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC861A671EA71349001C9B65 /* VideoPreviewer.framework */; };
-		AC861A731EA7137A001C9B65 /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC861A671EA71349001C9B65 /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C8934A2F32D6644AA21EDFB6 /* libPods-UILibOCSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E359274873E4ACB60CB3A87D /* libPods-UILibOCSample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A40B6D8F1EA75B700069B96C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A40B6D8B1EA75B700069B96C /* VideoPreviewer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02A543FD1C3C51CB0083C11B;
+			remoteInfo = VideoPreviewer;
+		};
+		A40B6D931EA75B9E0069B96C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A40B6D8B1EA75B700069B96C /* VideoPreviewer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 02A543FC1C3C51CB0083C11B;
+			remoteInfo = VideoPreviewer;
+		};
 		AC861A661EA71349001C9B65 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AC861A621EA71349001C9B65 /* VideoPreviewer.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 02A543FD1C3C51CB0083C11B;
-			remoteInfo = VideoPreviewer;
-		};
-		AC861A741EA7137A001C9B65 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC861A621EA71349001C9B65 /* VideoPreviewer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 02A543FC1C3C51CB0083C11B;
 			remoteInfo = VideoPreviewer;
 		};
 /* End PBXContainerItemProxy section */
@@ -52,9 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AC861A701EA71377001C9B65 /* DJIUILibrary.framework in Embed Frameworks */,
-				AC861A6E1EA71377001C9B65 /* DJISDK.framework in Embed Frameworks */,
-				AC861A731EA7137A001C9B65 /* VideoPreviewer.framework in Embed Frameworks */,
+				A40B6D921EA75B9E0069B96C /* VideoPreviewer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +66,7 @@
 /* Begin PBXFileReference section */
 		2842789EAF1F25099F75BE8C /* Pods-UILibOCSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UILibOCSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UILibOCSample/Pods-UILibOCSample.debug.xcconfig"; sourceTree = "<group>"; };
 		8A2767A8A734D9F079B77485 /* Pods-UILibOCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UILibOCSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UILibOCSample/Pods-UILibOCSample.release.xcconfig"; sourceTree = "<group>"; };
+		A40B6D8B1EA75B700069B96C /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
 		A48847B81EA21CC400CE5843 /* PanelsCollections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PanelsCollections.storyboard; sourceTree = "<group>"; };
 		A4A189081EA1291E00D06BF0 /* UILibOCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UILibOCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A1890C1EA1291E00D06BF0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		AC861A5E1EA71341001C9B65 /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = ../Frameworks/DJISDK.framework; sourceTree = "<group>"; };
 		AC861A5F1EA71341001C9B65 /* DJIUILibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJIUILibrary.framework; path = ../Frameworks/DJIUILibrary.framework; sourceTree = "<group>"; };
 		AC861A621EA71349001C9B65 /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../Frameworks/VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
+		E359274873E4ACB60CB3A87D /* libPods-UILibOCSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UILibOCSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,15 +99,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC861A6F1EA71377001C9B65 /* DJIUILibrary.framework in Frameworks */,
-				AC861A6D1EA71377001C9B65 /* DJISDK.framework in Frameworks */,
-				AC861A721EA7137A001C9B65 /* VideoPreviewer.framework in Frameworks */,
+				A40B6D911EA75B9E0069B96C /* VideoPreviewer.framework in Frameworks */,
+				C8934A2F32D6644AA21EDFB6 /* libPods-UILibOCSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A40B6D8A1EA75B560069B96C /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				A40B6D8B1EA75B700069B96C /* VideoPreviewer.xcodeproj */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		A40B6D8C1EA75B700069B96C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A40B6D901EA75B700069B96C /* VideoPreviewer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A4A188FF1EA1291E00D06BF0 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +154,7 @@
 				A4A189241EA129E900D06BF0 /* WidgetCustomization */,
 				A4A189251EA129F900D06BF0 /* Misc */,
 				A4A1890B1EA1291E00D06BF0 /* Supporting Files */,
+				A40B6D8A1EA75B560069B96C /* Framework */,
 			);
 			path = UILibOCSample;
 			sourceTree = "<group>";
@@ -195,6 +215,7 @@
 				AC861A5E1EA71341001C9B65 /* DJISDK.framework */,
 				AC861A5F1EA71341001C9B65 /* DJIUILibrary.framework */,
 				AC861A621EA71349001C9B65 /* VideoPreviewer.xcodeproj */,
+				E359274873E4ACB60CB3A87D /* libPods-UILibOCSample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,7 +255,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				AC861A751EA7137A001C9B65 /* PBXTargetDependency */,
+				A40B6D941EA75B9E0069B96C /* PBXTargetDependency */,
 			);
 			name = UILibOCSample;
 			productName = UILibOCSample;
@@ -270,6 +291,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = A40B6D8C1EA75B700069B96C /* Products */;
+					ProjectRef = A40B6D8B1EA75B700069B96C /* VideoPreviewer.xcodeproj */;
+				},
+				{
 					ProductGroup = AC861A631EA71349001C9B65 /* Products */;
 					ProjectRef = AC861A621EA71349001C9B65 /* VideoPreviewer.xcodeproj */;
 				},
@@ -282,6 +307,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		A40B6D901EA75B700069B96C /* VideoPreviewer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = VideoPreviewer.framework;
+			remoteRef = A40B6D8F1EA75B700069B96C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AC861A671EA71349001C9B65 /* VideoPreviewer.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -373,10 +405,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AC861A751EA7137A001C9B65 /* PBXTargetDependency */ = {
+		A40B6D941EA75B9E0069B96C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = VideoPreviewer;
-			targetProxy = AC861A741EA7137A001C9B65 /* PBXContainerItemProxy */;
+			targetProxy = A40B6D931EA75B9E0069B96C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
