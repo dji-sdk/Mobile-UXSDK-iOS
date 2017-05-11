@@ -76,6 +76,15 @@ From registering as a developer, to deploying an application, the following will
 - [Testing, Profiling & Debugging](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-testing.html)
 - [Deploy](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-deploy.html)
 
+## Feedback
+
+We’d love to have your feedback as soon as possible. Reach out to us when you hit roadblocks, or want to talk through something. At a minimum please let us know:
+
+- What improvements would you like to see?
+- What is hard to use or inconsistent with your expectations?
+- What is good?
+- Any bugs you come across.
+
 ## Support
 
 You can get support from DJI with the following methods:
