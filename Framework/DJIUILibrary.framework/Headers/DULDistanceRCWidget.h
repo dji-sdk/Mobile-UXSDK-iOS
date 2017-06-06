@@ -21,7 +21,6 @@ IB_DESIGNABLE
 
 
 /**
- *  Usage:
  *  The distance between the aircraft and the RC in meters.
  */
 @property (nonatomic, assign, readonly) CGFloat distance;

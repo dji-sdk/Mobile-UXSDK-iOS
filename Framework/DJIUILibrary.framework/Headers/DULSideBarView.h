@@ -10,11 +10,11 @@
 #import "DULWidgetCollectionView.h"
 
 IB_DESIGNABLE
-
+// TDL
 
 /**
- *  This view type is used to represent both leading and trailing vertical widgets
- *  collections.
+ *  This view type is used to represent both leading and trailing vertical Widget
+ *  Collections.
  */
 @interface DULSideBarView : DULWidgetCollectionView
 

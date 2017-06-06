@@ -8,13 +8,17 @@
 #import "DULWidget.h"
 
 IB_DESIGNABLE
+
 /**
- *  Action widget that is used to start and stop recording a video.
- *  It also shows a timer for how long the recording has been running.
- *
- *  Preferred Aspect Ratio: 49:65
+ *  Display:
+ *  Action widget that is used to start and stop recording a video. It also shows a
+ *  timer for how long the recording has been running.
+ *  
+ *  Usage:
+ *  Preferred Aspect Ratio: 49:65.
  */
 @interface DULRecordVideoWidget : DULWidget
+
 
 /**
  *  `YES` if recording is ongoing.

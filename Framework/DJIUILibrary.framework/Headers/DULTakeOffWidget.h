@@ -9,7 +9,6 @@
 
 
 /**
- *  Usage:
  *  Flying state of the aircraft
  */
 typedef NS_ENUM(NSUInteger, DULAircraftTakeOffLandingState) {
@@ -25,7 +24,6 @@ typedef NS_ENUM(NSUInteger, DULAircraftTakeOffLandingState) {
     DULAircraftTakeOffLandingStateFlying,
 
     /**
-     *  Usage:
      *  Aircraft is currently in the process of landing.
      */
     DULAircraftTakeOffLandingStateLanding

@@ -19,7 +19,6 @@
 
 
 /**
- *  Usage:
  *  The current shutterSpeed value. Defaults to unknown until transformed.
  */
 @property DJICameraShutterSpeed shutterSpeed;

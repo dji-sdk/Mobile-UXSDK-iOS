@@ -45,7 +45,6 @@ typedef NS_ENUM(NSUInteger, DULVideoSignalStrength) {
     DULVideoSignalStrengthLevel5,
 
     /**
-     *  Usage:
      *  0 Bars.
      */
     DULVideoSignalStrengthNone

@@ -23,7 +23,6 @@ IB_DESIGNABLE
 
 
 /**
- *  Usage:
  *  The vertical velocity of the aircraft measured in m/s.
  */
 @property (nonatomic, assign, readonly) CGFloat velocity;

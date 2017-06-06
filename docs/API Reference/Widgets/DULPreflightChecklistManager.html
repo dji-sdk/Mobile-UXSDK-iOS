@@ -1,5 +1,5 @@
 <script>window.pathPrefix="../";</script><!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,56 +10,9 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Developer</a></div>
-      <div id="header-navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle">SDK<span class="caret"></span></a>
-            <ul class="hovedown-menu">
-              <li><a href="/mobile-sdk">Mobile SDK</a></li>
-              <li><a href="/onboard-sdk">Onboard SDK</a></li>
-              <li><a href="/guidance-sdk">Guidance SDK</a></li>
-            </ul>
-          </li>
-          <li><a href="/products">Products</a></li>
-          <li><a href="/showcase">Showcase</a></li>
-          <li><a href="/news">News</a></li>
-          <li><a href="http://forum.dev.dji.com/en" target="_blank">Forum</a></li>
-          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle">GitHub<span class="caret"></span></a>
-            <ul class="hovedown-menu">
-              <li><a href="https://github.com/dji-sdk/Mobile-SDK-iOS" target="_blank">iOS SDK</a></li>
-              <li><a href="https://github.com/dji-sdk/Mobile-SDK-Android" target="_blank">Android SDK</a></li>
-              <li><a href="https://github.com/dji-sdk/Onboard-SDK" target="_blank">Onboard SDK</a></li>
-              <li><a href="https://github.com/dji-sdk/Guidance-SDK" target="_blank">Guidance SDK</a></li>
-            </ul>
-          </li>
-          <li><a href="/challenge2016" target="_blank">Challenge</a></li>
-        </ul>
-        <ul v-cloak="" v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register" class="head-cta">Register</a></li>
-        </ul>
-        <ul v-cloak="" v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
-            <ul class="hovedown-menu hovedown-menu-right">
-              <li><a href="/user">User Center</a></li>
-              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">IOS UI LIBRARY API REFERENCE</a></div>
     </div>
   </nav>
-  <div data-offset-top="60" data-spy="affix" class="sub-nav">
-    <div class="container">
-      <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a href="/mobile-sdk/documentation">Documentation</a><span class="active hovedown menu-item">API Reference<span class="caret"></span>
-          <ul class="hovedown-menu">
-            <li><a href="/api-reference/ios-api/index.html">IOS SDK</a></li>
-            <li><a href="/api-reference/android-api/index.html">Android SDK</a></li>
-          </ul></span><a href="/mobile-sdk/downloads">Downloads</a><a href="/mobile-sdk/support">Support</a>
-      </nav>
-    </div>
-  </div>
   <div id="documentation-page" class="documentation-page">
     <div class="container">
       <div class="site-sidebar">
@@ -162,6 +115,8 @@
                   <dd><a href="DULCameraCapacityConfigWidget.html">DULCameraCapacityConfigWidget</a>
                   </dd>
                   <dd><a href="DULCameraConfigWidget.html">DULCameraConfigWidget</a>
+                  </dd>
+                  <dd><a href="DULRecordVideoWidget.html">DULRecordVideoWidget</a>
                   </dd>
                   <dd><a href="DULMenuWidget.html">DULCameraSettingsMenu</a>
                   </dd>
@@ -269,7 +224,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DULPreflightChecklistManager</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DULPreflightChecklistManager</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The preflight checklist manager class manages the life-cycle of preflight checklist items, triggers their monitoring activity, and collects their states in order to produce a decision on whether or not it is advisable to take off. It is not a UI object, but can be used to produce a preflight checklist UI.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -277,7 +232,7 @@
 <div class="article"><h6><font color="#AAA">class method </font>defaultManager</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">instancetype</span>)defaultManager</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_defaultManager</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Returns the default configured instance. This instance will be prepopulated with a default set of checklist items.</font></p>
 </div>
@@ -285,7 +240,7 @@
 <div class="article"><h6><font color="#AAA">protocol </font>DULPreflightChecklistManagerListener</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DULPreflightChecklistManagerListener</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManagerListener</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Defines the communication between the ChecklistManager and the listeners</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
@@ -293,7 +248,7 @@
 <div class="article"><h6><font color="#AAA">method </font>preflightChecklistManager:noticedChangesForItem</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">required</div><div class="line">- (<span class="keyword">void</span>)preflightChecklistManager:(DULPreflightChecklistManager *)manager noticedChangesForItem:(DULPreflightChecklistItem *)item</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManagerListener_preflightChecklistManager_noticedChangesForItem</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Called when an item changes.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -303,7 +258,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>DULPreflightChecklistState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DULPreflightChecklistState)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_ChecklistState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">State that each item will report.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
@@ -312,7 +267,7 @@
 <div class="article"><h6><font color="#AAA">property </font>isReadyToFly</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> isReadyToFly</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_isReadyToFly</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Preflight checklist is ready to fly.</font></p>
 </div>
@@ -320,7 +275,7 @@
 <div class="article"><h6><font color="#AAA">property </font>overallState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DULPreflightChecklistState overallState</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_overallState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Aggregated state of all the items.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -330,7 +285,7 @@
 <div class="article"><h6><font color="#AAA">method </font>addChecklistItem</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addChecklistItem:(DULPreflightChecklistItem *)item</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_addChecklistItem</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Add a preflight checklist item to the manager.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -339,7 +294,7 @@
 <div class="article"><h6><font color="#AAA">method </font>removeChecklistItem</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)removeChecklistItem:(DULPreflightChecklistItem *)item</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_removeChecklistItem</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Remove a preflight checklist item from the manager.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -348,7 +303,7 @@
 <div class="article"><h6><font color="#AAA">method </font>checkListItemCount</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">NSInteger</span>)checkListItemCount</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_checkListItemCount</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Number of items in the preflight checklist.</font></p>
 <h5 id="return">Return:</h5>
@@ -357,7 +312,7 @@
 <div class="article"><h6><font color="#AAA">method </font>checklistItemAtIndex</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (DULPreflightChecklistItem *)checklistItemAtIndex:(<span class="built_in">NSInteger</span>)index</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_checklistItemAtIndex</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Returns the preflight checklist item at an index.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -368,7 +323,7 @@
 <div class="article"><h6><font color="#AAA">method </font>startCheckingList</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)startCheckingList</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_startCheckingList</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">When you are ready to show the check list, call this method to start activating the logic of each checklist item.</font></p>
 </div>
@@ -376,7 +331,7 @@
 <div class="article"><h6><font color="#AAA">method </font>stopCheckingList</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)stopCheckingList</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_stopCheckingList</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">When you are done with the checklist don't forget to call stopCheckingList.</font></p>
 </div>
@@ -384,7 +339,7 @@
 <div class="article"><h6><font color="#AAA">method </font>item:didChangeState:didChangeDescription</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)item:(DULPreflightChecklistItem *)item didChangeState:(<span class="built_in">BOOL</span>)didChangeState didChangeDescription:(<span class="built_in">BOOL</span>)didChangeDescription</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_itemdidChangeStatedidChangeDescrtiption</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Method that responds to changes in an item.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -393,7 +348,7 @@
 <div class="article"><h6><font color="#AAA">method </font>addListener</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addListener:(<span class="keyword">id</span> &lt;DULPreflightChecklistManagerListener&gt;)listener</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_addListener</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Adds a listener.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
@@ -402,7 +357,7 @@
 <div class="article"><h6><font color="#AAA">method </font>removeListener</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)removeListener:(<span class="keyword">id</span> &lt;DULPreflightChecklistManagerListener&gt;)listener</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager_removeListener</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULPreflightChecklistManager.h</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Removes a listener.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
@@ -438,29 +393,6 @@
       </div>
     </div>
   </div>
-  <footer id="site-footer" class="site-footer">
-    <div class="container">
-      <div class="foot-nav row">
-        <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/guidance-sdk">Guidance SDK</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a><a href="/showcase">Showcase</a><a href="/news">News</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://forum.dev.dji.com/en" target="_blank">Forum</a><a href="https://github.com/dji-sdk" target="_blank">GitHub</a><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
-        <nav class="link-list col-xs-3"><span class="title">Business Cooperation</span><a href="mailto:dev.bd@dji.com"> dev.bd@dji.com</a></nav>
-      </div>
-      <div class="foot-copyright row">
-        <div class="col-xs-3 foot-logo"><img src="../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2016 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy</a><a href="/policies/terms">Terms</a></div>
-        <div class="col-xs-2">
-          <div class="lang-selector">
-            <select dir="rtl" v-model="lang">
-              <option value="en">English</option>
-              <option value="cn">中文</option>
-            </select><i class="fa fa-globe"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
   <script type="text/javascript">
     window.Config = window.config = {
       sdk: "mobile-sdk",

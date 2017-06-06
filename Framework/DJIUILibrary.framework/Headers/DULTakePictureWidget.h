@@ -22,7 +22,6 @@ IB_DESIGNABLE
 
 
 /**
- *  Usage:
  *  The shoot photo mode.
  */
 @property DJICameraShootPhotoMode shootMode;
@@ -35,7 +34,6 @@ IB_DESIGNABLE
 
 
 /**
- *  Usage:
  *  The AEB count value. Only relevant when shootmode is in AEB mode.
  */
 @property DJICameraPhotoAEBCount aebCount;

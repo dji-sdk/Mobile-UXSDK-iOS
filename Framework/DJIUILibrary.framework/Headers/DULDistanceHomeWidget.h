@@ -23,7 +23,6 @@ IB_DESIGNABLE
 
 
 /**
- *  Usage:
  *  The distance the aircraft is from home measured in meters.
  */
 @property (nonatomic, assign, readonly) CLLocationDistance distance;

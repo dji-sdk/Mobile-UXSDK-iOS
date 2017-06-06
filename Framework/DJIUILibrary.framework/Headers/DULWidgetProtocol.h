@@ -55,7 +55,6 @@ typedef NS_ENUM(NSUInteger, DULWidgetInteractionExpectionLevel) {
 
 
 /**
- *  Usage:
  *  The optional widget collection view that contains the widget. This allows some
  *  widgets to let the collection know that they have resizing need.
  */
@@ -63,7 +62,6 @@ typedef NS_ENUM(NSUInteger, DULWidgetInteractionExpectionLevel) {
 
 
 /**
- *  Usage:
  *  Defines the level of interaction that is expected from the Widget. For instance,
  *  a widget with a None level is not expected to provide any touch handling. On the
  *  other hand, a widget with a Full level is expected to provide touch handling and
@@ -73,7 +71,6 @@ typedef NS_ENUM(NSUInteger, DULWidgetInteractionExpectionLevel) {
 
 
 /**
- *  Usage:
  *  An action block that defines wether or not a widget will trigger an action and
  *  what action it will trigger on TouchUp Inside.
  */
@@ -90,7 +87,6 @@ typedef NS_ENUM(NSUInteger, DULWidgetInteractionExpectionLevel) {
 
 
 /**
- *  Usage:
  *  This method is called by the UILibrary CoreModel when a value has been received
  *  from the drone. It is the entry point in the widget for drone data. @param value
  *  A valid DULSDKModelValue object containing the value associated with the DJIKey

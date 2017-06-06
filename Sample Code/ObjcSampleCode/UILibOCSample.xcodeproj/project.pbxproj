@@ -273,7 +273,6 @@
 				TargetAttributes = {
 					A4A189071EA1291E00D06BF0 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 7UL3LRJL93;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -527,7 +526,7 @@
 			baseConfigurationReference = 2842789EAF1F25099F75BE8C /* Pods-UILibOCSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7UL3LRJL93;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -546,7 +545,7 @@
 			baseConfigurationReference = 8A2767A8A734D9F079B77485 /* Pods-UILibOCSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7UL3LRJL93;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -1,5 +1,5 @@
 <script>window.pathPrefix="../";</script><!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,56 +10,9 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Developer</a></div>
-      <div id="header-navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle">SDK<span class="caret"></span></a>
-            <ul class="hovedown-menu">
-              <li><a href="/mobile-sdk">Mobile SDK</a></li>
-              <li><a href="/onboard-sdk">Onboard SDK</a></li>
-              <li><a href="/guidance-sdk">Guidance SDK</a></li>
-            </ul>
-          </li>
-          <li><a href="/products">Products</a></li>
-          <li><a href="/showcase">Showcase</a></li>
-          <li><a href="/news">News</a></li>
-          <li><a href="http://forum.dev.dji.com/en" target="_blank">Forum</a></li>
-          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle">GitHub<span class="caret"></span></a>
-            <ul class="hovedown-menu">
-              <li><a href="https://github.com/dji-sdk/Mobile-SDK-iOS" target="_blank">iOS SDK</a></li>
-              <li><a href="https://github.com/dji-sdk/Mobile-SDK-Android" target="_blank">Android SDK</a></li>
-              <li><a href="https://github.com/dji-sdk/Onboard-SDK" target="_blank">Onboard SDK</a></li>
-              <li><a href="https://github.com/dji-sdk/Guidance-SDK" target="_blank">Guidance SDK</a></li>
-            </ul>
-          </li>
-          <li><a href="/challenge2016" target="_blank">Challenge</a></li>
-        </ul>
-        <ul v-cloak="" v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register" class="head-cta">Register</a></li>
-        </ul>
-        <ul v-cloak="" v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
-            <ul class="hovedown-menu hovedown-menu-right">
-              <li><a href="/user">User Center</a></li>
-              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">IOS UI LIBRARY API REFERENCE</a></div>
     </div>
   </nav>
-  <div data-offset-top="60" data-spy="affix" class="sub-nav">
-    <div class="container">
-      <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a href="/mobile-sdk/documentation">Documentation</a><span class="active hovedown menu-item">API Reference<span class="caret"></span>
-          <ul class="hovedown-menu">
-            <li><a href="/api-reference/ios-api/index.html">IOS SDK</a></li>
-            <li><a href="/api-reference/android-api/index.html">Android SDK</a></li>
-          </ul></span><a href="/mobile-sdk/downloads">Downloads</a><a href="/mobile-sdk/support">Support</a>
-      </nav>
-    </div>
-  </div>
   <div id="documentation-page" class="documentation-page">
     <div class="container">
       <div class="site-sidebar">
@@ -162,6 +115,8 @@
                   <dd><a href="DULCameraCapacityConfigWidget.html">DULCameraCapacityConfigWidget</a>
                   </dd>
                   <dd><a href="DULCameraConfigWidget.html">DULCameraConfigWidget</a>
+                  </dd>
+                  <dd><a href="DULRecordVideoWidget.html">DULRecordVideoWidget</a>
                   </dd>
                   <dd><a href="DULMenuWidget.html">DULCameraSettingsMenu</a>
                   </dd>
@@ -269,7 +224,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DULWidgetCollectionViewController</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DULWidgetCollectionViewController</span> : <span class="title">UIViewController</span> &lt;<span class="title">DULWidgetCollectionViewControllerProtocol</span>&gt;</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>UIViewController <dulwidgetcollectionviewcontrollerprotocol></dulwidgetcollectionviewcontrollerprotocol></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>UIViewController <dulwidgetcollectionviewcontrollerprotocol></dulwidgetcollectionviewcontrollerprotocol></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">A base widget collection view controller to manage a standard widget collection.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -277,7 +232,7 @@
 <div class="article"><h6><font color="#AAA">property </font>widgetCollectionView</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>, <span class="keyword">nullable</span>) <span class="keyword">IBOutlet</span> __kindof <span class="built_in">UICollectionView</span> &lt;DULWidgetCollectionViewProtocol&gt; *widgetCollectionView</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController_widgetCollectionView</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The view acting as the widget collection.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -287,7 +242,7 @@
 <div class="article"><h6><font color="#AAA">method </font>installMainView</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)installMainView:(<span class="keyword">nonnull</span> <span class="built_in">UIView</span> *)view</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController_installMainView</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Places the MainView of the VC as a full size subview of base view..</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -296,7 +251,7 @@
 <div class="article"><h6><font color="#AAA">method </font>widgetItemAtIndex</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">nullable</span> DULWidgetItem *)widgetItemAtIndex:(<span class="built_in">NSInteger</span>)index</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController_widgetItemAtIndex</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">returns the widget item at the passed index.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -307,7 +262,7 @@
 <div class="article"><h6><font color="#AAA">method </font>widgetWithClass</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">UIView</span>&lt;DULWidgetProtocol&gt; *)widgetWithClass:(<span class="keyword">nonnull</span> Class)widgetClass</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController_widgetWithClass</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">returns the first widget with the passed class.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -318,7 +273,7 @@
 <div class="article"><h6><font color="#AAA">method </font>insertWidget:atIndex</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)insertWidget:(<span class="keyword">nonnull</span> <span class="built_in">UIView</span> &lt;DULWidgetProtocol&gt; *)widget atIndex:(<span class="built_in">NSUInteger</span>)destinationIndex</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController_insertWidgetAtIndex</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">inserts the widget at the passed index.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -327,7 +282,7 @@
 <div class="article"><h6><font color="#AAA">method </font>insertWidget:withEdgeInset:atIndex</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)insertWidget:(<span class="keyword">nonnull</span> <span class="built_in">UIView</span> &lt;DULWidgetProtocol&gt; *)widget withEdgeInset:(<span class="built_in">UIEdgeInsets</span>)edgeInset atIndex:(<span class="built_in">NSUInteger</span>)destinationIndex</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController_insertWidgetWithEdgeInsetAtIndex</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">insert the passed widgets at the given index and applies the edge inset.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -336,7 +291,7 @@
 <div class="article"><h6><font color="#AAA">method </font>moveWidget:toIndex</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)moveWidget:(<span class="keyword">nonnull</span> <span class="built_in">UIView</span> &lt;DULWidgetProtocol&gt; *)widget toIndex:(<span class="built_in">NSUInteger</span>)destinationIndex</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController_moveWidgetToIndex</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewController.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">moves the widget to another index.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
@@ -345,7 +300,7 @@
 <div class="article"><h6><font color="#AAA">protocol </font>DULWidgetCollectionViewControllerProtocol</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DULWidgetCollectionViewControllerProtocol</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">This protocol defines the expected behavior for view controller to manage widget collection views.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
@@ -353,7 +308,7 @@
 <div class="article"><h6><font color="#AAA">property </font>widgetCollectionView</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) __kindof <span class="built_in">UIView</span>&lt;DULWidgetCollectionViewProtocol&gt; *widgetCollectionView</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol_widgetCollectionView</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The actual instance of the widget collection.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
@@ -363,7 +318,7 @@
 <div class="article"><h6><font color="#AAA">method </font>addWidget</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@required</span></div><div class="line">- (<span class="keyword">void</span>)addWidget:(<span class="keyword">nonnull</span> <span class="built_in">UIView</span> &lt;DULWidgetProtocol&gt; *)newWidget</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol_addWidget</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Adds the passed widget to the collection.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
@@ -372,7 +327,7 @@
 <div class="article"><h6><font color="#AAA">method </font>addWidget:withEdgeInset</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@required</span></div><div class="line">- (<span class="keyword">void</span>)addWidget:(<span class="keyword">nonnull</span> <span class="built_in">UIView</span> &lt;DULWidgetProtocol&gt; *)newWidget withEdgeInset:(<span class="built_in">UIEdgeInsets</span>)edgeInset</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol_addwidgetWithEdgetInset</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Adds the passed widget to the collection and applies the given edge insets.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
@@ -381,7 +336,7 @@
 <div class="article"><h6><font color="#AAA">method </font>widgetsCount</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@required</span></div><div class="line">- (<span class="built_in">NSUInteger</span>)widgetsCount</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol_widgetsCount</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">The number of widgets currently in the collection.</font></p>
 <h5 id="return-v3">Return:</h5>
@@ -390,7 +345,7 @@
 <div class="article"><h6><font color="#AAA">method </font>indexOfWidget</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@required</span></div><div class="line">- (<span class="built_in">NSInteger</span>)indexOfWidget:(<span class="keyword">nonnull</span> <span class="built_in">UIView</span> &lt;DULWidgetProtocol&gt; *)widget</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol_indexOfWidget</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">The index of the passed widget.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
@@ -401,7 +356,7 @@
 <div class="article"><h6><font color="#AAA">method </font>widgetAtIndex</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@required</span></div><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">UIView</span> &lt;DULWidgetProtocol&gt; *)widgetAtIndex:(<span class="built_in">NSInteger</span>)index</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol_widgetAtIndex</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Returns the widget at the passed index.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
@@ -412,7 +367,7 @@
 <div class="article"><h6><font color="#AAA">method </font>removeWidget</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@required</span></div><div class="line">- (<span class="keyword">void</span>)removeWidget:(<span class="keyword">nonnull</span> <span class="built_in">UIView</span> &lt;DULWidgetProtocol&gt; *)oldWidget</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol_oldWidget</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULWidgetCollectionViewControllerProtocol.h</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Removes the passed widget.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
@@ -448,29 +403,6 @@
       </div>
     </div>
   </div>
-  <footer id="site-footer" class="site-footer">
-    <div class="container">
-      <div class="foot-nav row">
-        <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/guidance-sdk">Guidance SDK</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a><a href="/showcase">Showcase</a><a href="/news">News</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://forum.dev.dji.com/en" target="_blank">Forum</a><a href="https://github.com/dji-sdk" target="_blank">GitHub</a><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
-        <nav class="link-list col-xs-3"><span class="title">Business Cooperation</span><a href="mailto:dev.bd@dji.com"> dev.bd@dji.com</a></nav>
-      </div>
-      <div class="foot-copyright row">
-        <div class="col-xs-3 foot-logo"><img src="../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2016 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy</a><a href="/policies/terms">Terms</a></div>
-        <div class="col-xs-2">
-          <div class="lang-selector">
-            <select dir="rtl" v-model="lang">
-              <option value="en">English</option>
-              <option value="cn">中文</option>
-            </select><i class="fa fa-globe"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
   <script type="text/javascript">
     window.Config = window.config = {
       sdk: "mobile-sdk",

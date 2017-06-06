@@ -34,7 +34,6 @@ IB_DESIGNABLE
 
 
 /**
- *  Usage:
  *  The current state of the preflight checklist system used by this widget
  */
 @property DULPreFlightStatusWidgetState currentState;

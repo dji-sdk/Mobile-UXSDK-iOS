@@ -31,7 +31,6 @@ IB_DESIGNABLE
 
 
 /**
- *  Usage:
  *  The current camera mode. Defaults to shoot photo.
  */
 @property DJICameraMode mode;

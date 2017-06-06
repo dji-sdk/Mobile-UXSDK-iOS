@@ -33,8 +33,8 @@ If you install it successfully, you should get the messages similar to the follo
 ~~~
 Analyzing dependencies
 Downloading dependencies
-Installing DJI-SDK-iOS (4.0.1)
-Installing DJI-UILibrary-iOS (4.0.1.1.0.0)
+Installing DJI-SDK-iOS (4.1.1)
+Installing DJI-UILibrary-iOS (4.1.1)
 Generating Pods project
 Integrating client project
 

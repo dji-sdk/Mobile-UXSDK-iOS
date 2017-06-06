@@ -24,7 +24,6 @@
 
 
 /**
- *  Usage:
  *  Creates a new instance, configured and ready to use of
  *  DULExposureSettingsController.
  */

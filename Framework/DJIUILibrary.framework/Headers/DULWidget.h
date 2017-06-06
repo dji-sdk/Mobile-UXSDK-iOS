@@ -14,15 +14,13 @@
 IB_DESIGNABLE
 
 /**
- *  Usage:
  *  DULWidget is the base class of all widgets in the UILibrary. It is the default
- *  implementation of a UIView that implements the DULWidgetProtocol.
+ *  implementation of a UIView that implements the `DULWidgetProtocol`.
  */
 @interface DULWidget : UIView <DULWidgetProtocol, NSCopying>
 
 
 /**
- *  Usage:
  *  The aspect ratio of the widget in width/height. This value may change. A widget
  *  with a variable aspectRatio inside a widget collection will request the
  *  collection to invalidate its layout. Default is 1.0.
@@ -47,7 +45,6 @@ IB_DESIGNABLE
 
 
 /**
- *  Usage:
  *  An action block that defines wether or not a widget will trigger an action and
  *  what action it will trigger on TouchUp Inside.
  */

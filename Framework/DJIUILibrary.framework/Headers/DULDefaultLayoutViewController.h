@@ -98,6 +98,8 @@
 /**
  *  Presents the given view controller inside the left versatile space. This will
  *  make the given controller a child controller and install its view.
+ *  
+ *  @param leftVersatileViewController A valid view controller.
  */
 - (void)presentLeftVersatileViewController:(nonnull UIViewController *)leftVersatileViewController;
 
