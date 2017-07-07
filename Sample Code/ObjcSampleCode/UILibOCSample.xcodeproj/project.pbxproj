@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A40B6D911EA75B9E0069B96C /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40B6D901EA75B700069B96C /* VideoPreviewer.framework */; };
 		A40B6D921EA75B9E0069B96C /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A40B6D901EA75B700069B96C /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A46ED69F1F0F60E700F2EBD6 /* DefaultLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A46ED69C1F0F5B7A00F2EBD6 /* DefaultLayout.storyboard */; };
 		A48847B91EA21CC400CE5843 /* PanelsCollections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48847B81EA21CC400CE5843 /* PanelsCollections.storyboard */; };
 		A4A1890D1EA1291E00D06BF0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A1890C1EA1291E00D06BF0 /* main.m */; };
 		A4A189101EA1291E00D06BF0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A1890F1EA1291E00D06BF0 /* AppDelegate.m */; };
@@ -17,7 +18,6 @@
 		A4A189181EA1291E00D06BF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4A189171EA1291E00D06BF0 /* Assets.xcassets */; };
 		A4A1891B1EA1291E00D06BF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A189191EA1291E00D06BF0 /* LaunchScreen.storyboard */; };
 		A4A189281EA12A2300D06BF0 /* DefaultLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A189271EA12A2300D06BF0 /* DefaultLayoutViewController.m */; };
-		A4A1892A1EA12A3100D06BF0 /* DefaultLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A189291EA12A3100D06BF0 /* DefaultLayout.storyboard */; };
 		A4A1892F1EA12A5A00D06BF0 /* PanelsCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A1892E1EA12A5A00D06BF0 /* PanelsCollectionsViewController.m */; };
 		A4A189311EA12A6600D06BF0 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A189301EA12A6600D06BF0 /* Widgets.storyboard */; };
 		A4A189341EA12A7700D06BF0 /* MyBatteryWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A189331EA12A7700D06BF0 /* MyBatteryWidget.m */; };
@@ -67,6 +67,7 @@
 		2842789EAF1F25099F75BE8C /* Pods-UILibOCSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UILibOCSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UILibOCSample/Pods-UILibOCSample.debug.xcconfig"; sourceTree = "<group>"; };
 		8A2767A8A734D9F079B77485 /* Pods-UILibOCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UILibOCSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UILibOCSample/Pods-UILibOCSample.release.xcconfig"; sourceTree = "<group>"; };
 		A40B6D8B1EA75B700069B96C /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
+		A46ED69C1F0F5B7A00F2EBD6 /* DefaultLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayout.storyboard; sourceTree = "<group>"; };
 		A48847B81EA21CC400CE5843 /* PanelsCollections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PanelsCollections.storyboard; sourceTree = "<group>"; };
 		A4A189081EA1291E00D06BF0 /* UILibOCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UILibOCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A1890C1EA1291E00D06BF0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		A4A1891C1EA1291E00D06BF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4A189261EA12A2300D06BF0 /* DefaultLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultLayoutViewController.h; sourceTree = "<group>"; };
 		A4A189271EA12A2300D06BF0 /* DefaultLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultLayoutViewController.m; sourceTree = "<group>"; };
-		A4A189291EA12A3100D06BF0 /* DefaultLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayout.storyboard; sourceTree = "<group>"; };
 		A4A1892D1EA12A5A00D06BF0 /* PanelsCollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelsCollectionsViewController.h; sourceTree = "<group>"; };
 		A4A1892E1EA12A5A00D06BF0 /* PanelsCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelsCollectionsViewController.m; sourceTree = "<group>"; };
 		A4A189301EA12A6600D06BF0 /* Widgets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Widgets.storyboard; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		A4A189221EA129D000D06BF0 /* DefaultLayout */ = {
 			isa = PBXGroup;
 			children = (
-				A4A189291EA12A3100D06BF0 /* DefaultLayout.storyboard */,
+				A46ED69C1F0F5B7A00F2EBD6 /* DefaultLayout.storyboard */,
 				A4A189261EA12A2300D06BF0 /* DefaultLayoutViewController.h */,
 				A4A189271EA12A2300D06BF0 /* DefaultLayoutViewController.m */,
 			);
@@ -273,6 +273,7 @@
 				TargetAttributes = {
 					A4A189071EA1291E00D06BF0 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 7UL3LRJL93;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -330,8 +331,8 @@
 				A4A189311EA12A6600D06BF0 /* Widgets.storyboard in Resources */,
 				A4A1891B1EA1291E00D06BF0 /* LaunchScreen.storyboard in Resources */,
 				A4A189181EA1291E00D06BF0 /* Assets.xcassets in Resources */,
-				A4A1892A1EA12A3100D06BF0 /* DefaultLayout.storyboard in Resources */,
 				A4A189161EA1291E00D06BF0 /* Main.storyboard in Resources */,
+				A46ED69F1F0F60E700F2EBD6 /* DefaultLayout.storyboard in Resources */,
 				A48847B91EA21CC400CE5843 /* PanelsCollections.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,7 +527,7 @@
 			baseConfigurationReference = 2842789EAF1F25099F75BE8C /* Pods-UILibOCSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7UL3LRJL93;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -534,7 +535,7 @@
 				);
 				INFOPLIST_FILE = UILibOCSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UILibOCSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UILibOCSample1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -545,7 +546,7 @@
 			baseConfigurationReference = 8A2767A8A734D9F079B77485 /* Pods-UILibOCSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7UL3LRJL93;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,7 +554,7 @@
 				);
 				INFOPLIST_FILE = UILibOCSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UILibOCSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UILibOCSample1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

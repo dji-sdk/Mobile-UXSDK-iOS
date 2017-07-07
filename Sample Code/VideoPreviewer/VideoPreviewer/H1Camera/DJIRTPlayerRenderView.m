@@ -12,7 +12,6 @@
 #import "MovieGLView.h"
 #import <UIKit/UIKit.h>
 #import "DJIStreamCommon.h"
-#import "DJIVTH264DecoderIFrameData.h"
 
 #define weakSelf(__TARGET__) __weak typeof(self) __TARGET__=self
 
@@ -76,14 +75,9 @@
         else{
             //hardware decoder only
             _hwDecoder = [[H264VTDecode alloc] init];
-            _hwDecoder.enabled = YES;
             _hwDecoder.delegate = self;
             _hwDecoder.enableFastUpload = YES;
-
-            if (g_loadPrebuildIframeOverrideFunc == NULL) {
-                g_loadPrebuildIframeOverrideFunc = loadPrebuildIframePrivate;
-            }
-
+            
             DJIVideoStreamBasicInfo info = {0};
             info.encoderType = _encoderType;
             [_hwDecoder streamProcessorInfoChanged:&info];
@@ -163,7 +157,7 @@
         || size == 0) {
         return;
     }
-
+    
     //parser
     weakSelf(target);
     [_frameExtractor parseVideo:data
