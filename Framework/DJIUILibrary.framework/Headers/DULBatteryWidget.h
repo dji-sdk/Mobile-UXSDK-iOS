@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DULWidget.h"
+#import <DJIUILibrary/DULWidget.h>
 
 
 /**
@@ -60,12 +60,26 @@ IB_DESIGNABLE
 /**
  *  Battery percentage with range [0,100].
  */
-@property (nonatomic, assign, readonly) float batteryPercentage;
+@property (nonatomic, assign, readonly) float battery1Percentage;
+
+
+/**
+ *  Battery percentage with range [0,100].
+ */
+@property (nonatomic, assign, readonly) float battery2Percentage;
 
 
 /**
  *  The current state of the battery for the purpose of visual representation.
  */
-@property (nonatomic, assign) DULBatteryIndicatorState batteryIndicatorState;
+@property (nonatomic, assign) DULBatteryIndicatorState battery1IndicatorState;
+
+
+/**
+ *  The current state of the 2nd battery for the purpose of visual representation.
+ */
+@property (nonatomic, assign) DULBatteryIndicatorState battery2IndicatorState;
+
+
 
 @end

@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DULWidgetProtocol.h"
+#import <DJIUILibrary/DULWidgetProtocol.h>
 
 
 /**

@@ -6,21 +6,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DULWidgetCollectionViewController.h"
+#import <DJIUILibrary/DULWidgetCollectionViewController.h>
 
 @class DULDockView;
 
-//TDL 
 
 /**
- *  This view controller manages the collection equivalent to the bottom bar present
- *  in DJI Go.
+ *  DULDockViewController manages the logic for pre-populating the DULDockView  with
+ *  widgets similar to DJI Go.
  */
 @interface DULDockViewController : DULWidgetCollectionViewController
 
 
 /**
- *  The actual instance of `DULDockView`.
+ *  The instance of DULDockView which is actually shown in the
+ *    DULDefaultLayoutView.
  */
 @property (readonly, nullable, nonatomic) __kindof DULDockView *dockView;
 

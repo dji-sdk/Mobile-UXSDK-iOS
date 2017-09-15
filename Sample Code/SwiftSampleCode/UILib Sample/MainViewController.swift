@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DJISDK
 
 class MainViewController: UITableViewController {
 
@@ -45,6 +46,14 @@ class MainViewController: UITableViewController {
     }
     
     func productCommunicationDidChange() {
+        
+        //If this demo is used in China, it's required to login to your DJI account to activate the application. Also you need to use DJI Go app to bind the aircraft to your DJI account. For more details, please check this demo's tutorial.
+        DJISDKManager.userAccountManager().logIntoDJIUserAccount(withAuthorizationRequired: false) { (state, error) in
+            if(error != nil){
+                NSLog("Login failed: %@" + String(describing: error))
+            }
+        }
+        
         if self.appDelegate.productCommManager.registered {
             self.registered.text = "YES"
             self.register.isHidden = true

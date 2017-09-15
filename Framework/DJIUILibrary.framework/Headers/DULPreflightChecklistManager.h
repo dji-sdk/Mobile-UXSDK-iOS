@@ -77,6 +77,13 @@ typedef NS_ENUM(NSInteger, DULPreflightChecklistState) {
 
 
 /**
+ *  Array of the items in the preflight checklist manager
+ */
+@property (nonatomic, readonly) NSArray <DULPreflightChecklistItem *> *preFlightChecklistItems;
+
+
+
+/**
  *  Returns the default configured instance. This instance will be prepopulated with
  *  a default set of checklist items.
  */
@@ -93,6 +100,26 @@ typedef NS_ENUM(NSInteger, DULPreflightChecklistState) {
  *  @param item The item being added to the checklist
  */
 - (void)addChecklistItem:(DULPreflightChecklistItem *)item;
+
+
+/**
+ *  Add a preflight checklist item to the manager after another pre flight checklist
+ *  item already in the list.
+ *  
+ *  @param itemToInsert The item being added to the checklist
+ *  @param itemToInsertAfter The item in the checklist to insert after
+ */
+- (void)insertChecklistItem:(DULPreflightChecklistItem *)itemToInsert afterChecklistItem:(DULPreflightChecklistItem *)itemToInsertAfter;
+
+
+/**
+ *  Add a preflight checklist item to the manager before another pre flight
+ *  checklist item already in the list.
+ *  
+ *  @param itemToInsert The item being added to the checklist
+ *  @param itemToInsertBefore The item in the checklist to insert before
+ */
+- (void)insertCheckListItem:(DULPreflightChecklistItem *)itemToInsert beforeChecklistItem:(DULPreflightChecklistItem *)itemToInsertBefore;
 
 
 /**

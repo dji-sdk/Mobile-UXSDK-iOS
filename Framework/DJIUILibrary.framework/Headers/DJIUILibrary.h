@@ -50,6 +50,11 @@ FOUNDATION_EXPORT const unsigned char DJIUILibraryVersionString[];
 #import <DJIUILibrary/DULRecordVideoWidget.h>
 #import <DJIUILibrary/DULTakePictureWidget.h>
 #import <DJIUILibrary/DULExposureSettingsMenu.h>
+#import <DJIUILibrary/DULFocusModeWidget.h>
+#import <DJIUILibrary/DULManualFocusAdjustmentWidget.h>
+#import <DJIUILibrary/DULFocusTargetWidget.h>
+#import <DJIUILibrary/DULExposureFocusSwitchWidget.h>
+#import <DJIUILibrary/DULAutoExposureSwitchWidget.h>
 
 // Statuses
 #import <DJIUILibrary/DULBatteryWidget.h>
@@ -62,10 +67,14 @@ FOUNDATION_EXPORT const unsigned char DJIUILibraryVersionString[];
 #import <DJIUILibrary/DULVideoSignalWidget.h>
 #import <DJIUILibrary/DULVisionWidget.h>
 #import <DJIUILibrary/DULRemainingFlightTimeWidget.h>
+#import <DJIUILibrary/DULWifiSignalWidget.h>
 
 // Actions
 #import <DJIUILibrary/DULReturnHomeWidget.h>
 #import <DJIUILibrary/DULTakeOffWidget.h>
+
+// Map
+#import <DJIUILibrary/DULMapWidget.h>
 
 /*********************************************************************************/
 #pragma mark - Panels
@@ -117,6 +126,7 @@ FOUNDATION_EXPORT const unsigned char DJIUILibraryVersionString[];
 // Preflight Checklist Manager
 #import <DJIUILibrary/DULPreflightChecklistManager.h>
 #import <DJIUILibrary/DULPreflightChecklistItem.h>
+#import <DJIUILibrary/DULOverallChecklistItem.h>
 #import <DJIUILibrary/DULAircraftConnectionChecklistItem.h>
 #import <DJIUILibrary/DULAircraftLocationChecklistItem.h>
 #import <DJIUILibrary/DULFlightModeChecklistItem.h>
@@ -128,6 +138,9 @@ FOUNDATION_EXPORT const unsigned char DJIUILibraryVersionString[];
 #import <DJIUILibrary/DULAircraftBatteryChecklistItem.h>
 #import <DJIUILibrary/DULGimbalChecklistItem.h>
 #import <DJIUILibrary/DULStorageCapacityChecklistItem.h>
+#import <DJIUILibrary/DULVisionChecklistItem.h>
+#import <DJIUILibrary/DULRemoteControllerBatteryChecklistItem.h>
+#import <DJIUILibrary/DULAircraftBatteryTemperatureChecklistItem.h>
 
 
 /**

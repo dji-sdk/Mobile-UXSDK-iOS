@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIImage+Assets.h"
+#import <DJIUILibrary/UIImage+Assets.h>
 
 @class DULPreflightChecklistManager;
 

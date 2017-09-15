@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "DULSDKModel.h"
+#import <DJIUILibrary/DULSDKModel.h>
 
 @class DULDefaultLayoutView;
 @class DULStatusBarViewController;
@@ -15,7 +15,7 @@
 @class DULTrailingBarViewController;
 @class DULDockViewController;
 
-#import "DULWidgetCollectionViewControllerProtocol.h"
+#import <DJIUILibrary/DULWidgetCollectionViewControllerProtocol.h>
 
 
 /**
@@ -41,14 +41,14 @@
 /**
  *  The statusViewController holds the top of the UI in a bar.
  */
-@property (readonly, nullable, nonatomic) DULStatusBarViewController *statusViewController;
+@property (nullable, nonatomic) DULStatusBarViewController *statusViewController;
 
 
 /**
  *  The leadingViewController holds the leading position in the UI and contains
  *  controls such as take off, land and go home.
  */
-@property (readonly, nullable, nonatomic) DULLeadingBarViewController *leadingViewController;
+@property (nullable, nonatomic) DULLeadingBarViewController *leadingViewController;
 
 
 /**
@@ -56,21 +56,29 @@
  *  controls for the camera such as capture photo and change camera mode. By default
  *  it contains camera controls.
  */
-@property (readonly, nullable, nonatomic) DULTrailingBarViewController *trailingViewController;
+@property (nullable, nonatomic) DULTrailingBarViewController *trailingViewController;
 
 
 /**
  *  The dockViewController holds the bottom part of the screen. By default it
  *  contains the DashboardWidget.
  */
-@property (readonly, nullable, nonatomic) DULDockViewController *dockViewController;
+@property (nullable, nonatomic) DULDockViewController *dockViewController;
 
 
 /**
  *  This is the view controller that occupies the background. By default it's a
  *  DULFPVViewController and contains the live video stream from the aircraft.
  */
-@property (readonly, nullable, nonatomic) UIViewController *contentViewController;
+@property (nullable, nonatomic) UIViewController *contentViewController;
+
+
+/**
+ *  This is the view controller that occupies the bottom right side. By default it's
+ *  a DULMapViewController and contains the small preview of the map widget. When
+ *  tapped, it swaps the with the contentViewController.
+ */
+@property (nullable, nonatomic) UIViewController *previewViewController;
 
 @end
 

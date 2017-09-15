@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "DULWidget.h"
+#import <DJIUILibrary/DULWidget.h>
 
 @class DULWidgetItem;
 @class DULWidget;

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uUf-vW-AGy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uUf-vW-AGy">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -123,9 +124,7 @@ This is to allow for both the container and the content to define the size of th
                                     <constraint firstItem="pP9-qa-5OB" firstAttribute="centerY" secondItem="gX9-le-P4a" secondAttribute="centerY" id="eAR-oQ-MIP"/>
                                     <constraint firstItem="Tay-an-Pjy" firstAttribute="leading" secondItem="9w8-fY-ZOZ" secondAttribute="trailing" constant="8" id="gwi-J6-TT2"/>
                                     <constraint firstItem="9w8-fY-ZOZ" firstAttribute="leading" secondItem="f01-cE-dFq" secondAttribute="trailing" constant="8" id="k6G-XU-HUK"/>
-                                    <constraint firstAttribute="width" constant="1024" id="kfm-6W-dqU"/>
                                     <constraint firstItem="VHp-1X-EVn" firstAttribute="width" secondItem="VHp-1X-EVn" secondAttribute="height" multiplier="1:1" id="osg-aU-A9k"/>
-                                    <constraint firstAttribute="height" constant="768" id="qvD-Iw-BDF"/>
                                     <constraint firstItem="ua5-88-p1O" firstAttribute="leading" secondItem="BSc-o6-p5e" secondAttribute="leading" id="sTI-BR-mw0"/>
                                     <constraint firstItem="pP9-qa-5OB" firstAttribute="leading" secondItem="gX9-le-P4a" secondAttribute="trailing" constant="8" id="sfb-m3-x4I"/>
                                     <constraint firstItem="gX9-le-P4a" firstAttribute="leading" secondItem="BSc-o6-p5e" secondAttribute="leading" id="t3s-Oq-ewD"/>

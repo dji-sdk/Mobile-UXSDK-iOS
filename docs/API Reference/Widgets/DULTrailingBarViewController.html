@@ -10,7 +10,7 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">IOS UI LIBRARY API REFERENCE</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">IOS UI Library API REFERENCE</a></div>
     </div>
   </nav>
   <div id="documentation-page" class="documentation-page">
@@ -46,6 +46,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a href="DULContentView.html">DULContentView</a>
+                  </dd>
+                  <dd><a href="DULFPVView.html">DULFPVView</a>
+                  </dd>
+                  <dd><a href="DULContentViewController.html">DULContentViewController</a>
+                  </dd>
+                  <dd><a href="DULFPVViewController.html">DULFPVViewController</a>
+                  </dd>
           </dl>
           <dl>
             <dt>Widget
@@ -63,8 +71,6 @@
                   <dd><a href="RemoteControllerSignalWidget.html">DULRemoteControlSignalWidget</a>
                   </dd>
                   <dd><a href="GPSSignalWidget.html">DULGPSSignalWidget</a>
-                  </dd>
-                  <dd><a href="DULWiFiSignalWidget.html">DULWifiSignalWidget</a>
                   </dd>
                   <dd><a href="VideoSignalWidget.html">DULVideoSignalWidget</a>
                   </dd>
@@ -96,8 +102,6 @@
                   </dd>
                   <dd><a href="ReturnHomeWidget.html">DULReturnHomeWidget</a>
                   </dd>
-                  <dd><a href="FocusModeWidget.html">DULFocusModeWidget</a>
-                  </dd>
                   <dd><a href="CameraConfigShutterWidget.html">DULCameraConfigShutterWidget</a>
                   </dd>
                   <dd><a href="CameraConfigApertureWidget.html">DULCameraConfigApertureWidget</a>
@@ -126,9 +130,23 @@
                   </dd>
                   <dd><a href="DULRecordVideoTimeWidget.html">DULRecordVideoTimeWidget</a>
                   </dd>
-                  <dd><a href="DULWidget.html">DULWidget</a>
+                  <dd><a data-href="DULWidget.html" class="sub-toggle">DULWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="DULFocusModeWidget.html">DULFocusModeWidget</a>
+                            </dd>
+                            <dd><a href="DULFocusTargetWidget.html">DULFocusTargetWidget</a>
+                            </dd>
+                            <dd><a href="DULManualFocusAdjustmentWidget.html">DULManualFocusAdjustmentWidget</a>
+                            </dd>
+                            <dd><a href="DULExposureFocusSwitchWidget.html">DULExposureFocusSwitchWidget</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a href="DULTakePictureWidget.html">DULTakePictureWidget</a>
+                  </dd>
+                  <dd><a href="DULMapWidget.html">DULMapWidget</a>
+                  </dd>
+                  <dd><a href="DULWiFiSignalWidget.html">DULWifiSignalWidget</a>
                   </dd>
           </dl>
           <dl>
@@ -158,7 +176,7 @@
                                       </dd>
                                       <dd><a href="DULESCChecklistItem.html">DULESCChecklistItem</a>
                                       </dd>
-                                      <dd><a href="DULVisiionChecklistItem.html">DULVisionChecklistItem</a>
+                                      <dd><a href="DULVisionChecklistItem.html">DULVisionChecklistItem</a>
                                       </dd>
                                       <dd><a href="DULRemoteControllerChecklistItem.html">DULRemoteControllerChecklistItem</a>
                                       </dd>
@@ -226,7 +244,9 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DULTrailingBarViewController</span> : <span class="title">DULSideBarViewController</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DULTrailingBarViewController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../Widgets/DULSideBarViewController.html#dulsidebarviewcontroller">DULSideBarViewController</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">This view controller manages the collection equivalent to the one found on the right side of the DJI Go screen.</font></p>
+<p><font color="#666">Subclass of DULSideBarViewController which  manages the logic for
+pre-populating the trailing side bar view with widgets similar
+to DJI Go.</font></p>
 
         </div>
       </div>

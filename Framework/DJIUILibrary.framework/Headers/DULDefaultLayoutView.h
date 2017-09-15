@@ -60,4 +60,12 @@ IB_DESIGNABLE
 @property (readonly, nullable) IBOutlet DULContentView *contentView;
 
 
+/**
+ *  PreviewView is the view which is shown as a small rectangle on the bottom right
+ *  side of the screen. It usually shows either the video feed from the camera or
+ *  the map widget.
+ */
+@property (readonly, nullable) IBOutlet DULContentView *previewView;
+
+
 @end

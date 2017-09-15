@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DULWidgetCollectionViewLayout.h"
+#import <DJIUILibrary/DULWidgetCollectionViewLayout.h>
 
 
 /**

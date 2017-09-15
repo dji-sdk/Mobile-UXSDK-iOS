@@ -6,21 +6,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DULWidgetCollectionViewController.h"
+#import <DJIUILibrary/DULWidgetCollectionViewController.h>
 
 @class DULStatusBarView;
 
-// TDL
 
 /**
- *  This view controller manages the collection equivalent to the top bar present in
- *  DJI Go.
+ *  DULStatusBarViewController manages the logic for pre-populating
+ *    the DULStatusBarView with widgets similar to DJI Go.
  */
 @interface DULStatusBarViewController : DULWidgetCollectionViewController
 
 
 /**
- *  The actual instance of `DULStatusBarView`.
+ *  The instance of DULStatusBarView which is actually shown in the
+ *    DULDefaultLayoutView.
  */
 @property (readonly, nonatomic, nullable) __kindof DULStatusBarView *statusBarView;
 

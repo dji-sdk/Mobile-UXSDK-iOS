@@ -6,15 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#import "DULWidgetCollectionView.h"
+#import <DJIUILibrary/DULWidgetCollectionView.h>
 
 IB_DESIGNABLE
-// TDL
+
 
 /**
- *  This view type is used to represent both leading and trailing vertical Widget
- *  Collections.
+ *  This view is the collection which sits vertically on either side of
+ *    the main UI. It is pre-populated with widgets similar to DJI Go.
  */
 @interface DULSideBarView : DULWidgetCollectionView
 

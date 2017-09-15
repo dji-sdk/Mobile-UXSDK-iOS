@@ -7,9 +7,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "DULWidgetCollectionViewProtocol.h"
-#import "DULWidgetCollectionViewControllerProtocol.h"
-#import "DULWidgetItem.h"
+#import <DJIUILibrary/DULWidgetCollectionViewProtocol.h>
+#import <DJIUILibrary/DULWidgetCollectionViewControllerProtocol.h>
+#import <DJIUILibrary/DULWidgetItem.h>
 
 
 /**

@@ -6,13 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DULWidgetCollectionViewStacks.h"
+#import <DJIUILibrary/DULWidgetCollectionViewStacks.h>
 
 IB_DESIGNABLE
-// TDL
+
 
 /**
- *  This view is used by the `DULStatusBarViewController` to hold its widgets.
+ *  This view is the collection which sits horizontally along the top of the screen
+ *  and is used to pre-populate the top status bar with widgets similar to DJI Go.
  */
 @interface DULStatusBarView : DULWidgetCollectionViewStacks
 

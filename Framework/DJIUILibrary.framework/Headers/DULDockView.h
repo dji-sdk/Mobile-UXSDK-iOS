@@ -6,12 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DULWidgetCollectionViewStacks.h"
+#import <DJIUILibrary/DULWidgetCollectionViewStacks.h>
 
 IB_DESIGNABLE
 
+
 /**
- *  This view is used by the `DULDockViewController` to hold its widgets.
+ *  This view is the collection which sits horizontally along the  bottom of the
+ *  main UI. It is pre-populated with widgets similar  to DJI Go.
  */
 @interface DULDockView : DULWidgetCollectionViewStacks
 

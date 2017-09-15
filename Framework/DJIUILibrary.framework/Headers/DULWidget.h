@@ -8,8 +8,8 @@
 #import <UIKit/UIKit.h>
 #import <DJISDK/DJISDK.h>
 
-#import "DULWidgetProtocol.h"
-#import "UIImage+Assets.h"
+#import <DJIUILibrary/DULWidgetProtocol.h>
+#import <DJIUILibrary/UIImage+Assets.h>
 
 IB_DESIGNABLE
 

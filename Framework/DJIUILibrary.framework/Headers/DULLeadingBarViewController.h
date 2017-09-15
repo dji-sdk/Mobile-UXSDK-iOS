@@ -5,13 +5,12 @@
 //  Copyright © 2016 DJI. All rights reserved.
 //
 
-#import "DULSideBarViewController.h"
+#import <DJIUILibrary/DULSideBarViewController.h>
 
-//TDL
 
 /**
- *  This view controller manages the collection equivalent to the one found on the
- *  left side of the DJI Go screen.
+ *  Subclass of DULSideBarViewController which  manages the logic for pre-populating
+ *  the leading  side bar view with widgets similar to DJI Go.
  */
 @interface DULLeadingBarViewController : DULSideBarViewController
 

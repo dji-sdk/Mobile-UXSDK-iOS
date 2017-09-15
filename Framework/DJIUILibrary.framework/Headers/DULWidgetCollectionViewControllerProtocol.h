@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DULWidgetCollectionViewProtocol.h"
+#import <DJIUILibrary/DULWidgetCollectionViewProtocol.h>
 
 @class DULWidget;
 

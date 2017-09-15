@@ -23,4 +23,9 @@ class DefaultLayoutViewController: DULDefaultLayoutViewController {
         }
     }
     
+    // We are going to add focus adjustment to the default view.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
 }

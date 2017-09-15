@@ -41,13 +41,13 @@ class MyBatteryWidget: DULBatteryWidget {
      */
     
     override func update() {
-        if self.batteryPercentage < 10 {
+        if self.battery1Percentage < 10 {
             self.percentageLabel.textColor = UIColor.red
         } else {
             self.percentageLabel.textColor = UIColor.green
         }
         
-        let uiString = String(format: "%.0f", self.batteryPercentage)
+        let uiString = String(format: "%.0f", self.battery1Percentage)
         self.percentageLabel.text = "\(uiString)%"
     }
     

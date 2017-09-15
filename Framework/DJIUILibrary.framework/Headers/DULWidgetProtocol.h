@@ -8,8 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <DJISDK/DJISDK.h>
 
-#import "DULSDKModel.h"
-#import "DULSDKModelValue.h"
+#import <DJIUILibrary/DULSDKModel.h>
+#import <DJIUILibrary/DULSDKModelValue.h>
 
 
 /**

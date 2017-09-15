@@ -6,8 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DULWidgetCollectionViewProtocol.h"
-#import "DULWidgetProtocol.h"
+#import <DJIUILibrary/DULWidgetCollectionViewProtocol.h>
+#import <DJIUILibrary/DULWidgetProtocol.h>
 
 @class DULWidgetItem;
 

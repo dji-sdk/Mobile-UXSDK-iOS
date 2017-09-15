@@ -2,7 +2,7 @@
 //  MyBatteryWidget.m
 //  UILibOCSample
 //
-//  Created by OliverOu on 15/4/2017.
+//  Created by DJI on 15/4/2017.
 //  Copyright © 2017 DJI. All rights reserved.
 //
 
@@ -42,13 +42,13 @@
 
 - (void)update {
 
-    if(self.batteryPercentage < 10){
+    if(self.battery1Percentage < 10){
         self.percentageLabel.textColor = [UIColor redColor];
     }else{
         self.percentageLabel.textColor = [UIColor greenColor];
     }
     
-    NSString *uiString = [NSString stringWithFormat:@"%.0f%%", self.batteryPercentage];
+    NSString *uiString = [NSString stringWithFormat:@"%.0f%%", self.battery1Percentage];
     [self.percentageLabel setText:uiString];
     
 }

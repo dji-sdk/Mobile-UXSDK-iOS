@@ -6,11 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DULWidgetCollectionViewController.h"
+#import <DJIUILibrary/DULWidgetCollectionViewController.h>
 
 @class DULSideBarView;
 
-// TDL
 
 /**
  *  This base class is used by `DULLeadingBarViewController` and
