@@ -216,7 +216,6 @@
 				868A4ECD1E01FA53006FEE33 /* Frameworks */,
 				868A4ECE1E01FA53006FEE33 /* Resources */,
 				38D2C4751E0B1EF2009A3831 /* Embed Frameworks */,
-				38D2C48D1E0B3038009A3831 /* DJI Script */,
 				88C4707591A1085FAD9B1CB0 /* [CP] Embed Pods Frameworks */,
 				521D14FA3E9A12884D158A9B /* [CP] Copy Pods Resources */,
 			);
@@ -314,20 +313,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
-		};
-		38D2C48D1E0B3038009A3831 /* DJI Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "DJI Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework/strip-frameworks.sh\"\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIUILibrary.framework/strip-frameworks.sh\"";
 		};
 		521D14FA3E9A12884D158A9B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
