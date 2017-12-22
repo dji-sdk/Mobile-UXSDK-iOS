@@ -17,13 +17,12 @@ typedef NS_ENUM(NSUInteger, DULGPSSatelliteStrength) {
     DULGPSSatelliteStrengthNone
 };
 
-IB_DESIGNABLE
 
 /**
  *  Display:
  *  Small number on top of satellite icon shows the number of satellite available. 5
  *  vertical bars represents the current GPS signal strength. Small 'R' letter shown
- *  or hidden indicates weather RTK is enalbed or not.
+ *  or hidden indicates weather RTK is enabled or not.
  *  
  *  Usage:
  *  Preferred Aspect Ratio: 38:15.

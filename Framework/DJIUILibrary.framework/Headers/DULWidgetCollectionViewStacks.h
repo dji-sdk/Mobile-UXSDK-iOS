@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- *  An enum definining each stack of the widgetCollectionStacksView
+ *  An enum defining each stack of the widgetCollectionStacksView
  */
 typedef NS_ENUM(NSUInteger, DULWidgetCollectionViewStack){
 

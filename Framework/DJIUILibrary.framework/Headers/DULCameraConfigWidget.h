@@ -38,8 +38,8 @@ typedef NS_ENUM(NSInteger, DULCameraConfigWidgetStorageType) {
 
 
 /**
- *  This bool defines wether or not the value is to be highlighted. For example, for
- *  exposure state widgets, it is used to highlight which exposure setting is
+ *  This bool defines whether or not the value is to be highlighted. For example,
+ *  for exposure state widgets, it is used to highlight which exposure setting is
  *  prioritized. In shutter priority mode, the shutter speed would be highlighted.
  */
 @property BOOL attributeIsActive;

@@ -17,7 +17,7 @@
  *      - Common Settings
  *  
  *  Interaction:
- *  All the settings are presented in ListView hierachy.
+ *  All the settings are presented in ListView hierarchy.
  */
 @interface DULCameraSettingsController : UIViewController
 

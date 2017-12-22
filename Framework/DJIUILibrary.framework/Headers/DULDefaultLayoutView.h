@@ -12,7 +12,6 @@
 @class DULDockView;
 @class DULContentView;
 
-IB_DESIGNABLE
 
 /**
  *  This is the view used by the DULDefaultLayoutViewController which is the

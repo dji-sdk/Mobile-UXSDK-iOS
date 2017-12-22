@@ -8,8 +8,6 @@
 #import <UIKit/UIKit.h>
 #import <DJIUILibrary/DULWidgetCollectionView.h>
 
-IB_DESIGNABLE
-
 
 /**
  *  This view is the collection which sits vertically on either side of

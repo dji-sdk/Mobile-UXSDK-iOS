@@ -2,7 +2,7 @@
 //  MyBatteryWidget.swift
 //  UILib Sample
 //
-//  Created by Arnaud Thiercelin on 12/14/16.
+//  Created by DJI on 12/14/16.
 //  Copyright © 2016 DJI. All rights reserved.
 //
 

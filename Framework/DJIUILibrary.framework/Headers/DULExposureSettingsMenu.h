@@ -7,7 +7,6 @@
 
 #import <DJIUILibrary/DJIUILibrary.h>
 
-IB_DESIGNABLE
 
 /**
  *  Usage:

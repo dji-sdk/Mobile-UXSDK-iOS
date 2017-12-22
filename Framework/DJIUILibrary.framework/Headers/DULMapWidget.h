@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, DULMapAnnotationType) {
 /**
  *  Display:
  *  Widget that displays the aircraft's state and information on the map this
- *  includes aircraft  location, home location, aircraft trail path, aircraft
+ *  includes aircraft location, home location, aircraft trail path, aircraft
  *  heading, and No Fly Zones.
  *  
  *  Usage:
@@ -45,14 +45,14 @@ typedef NS_ENUM(NSUInteger, DULMapAnnotationType) {
 
 
 /**
- *  A Boolean value indicating whether the map displays a line showing  the
- *  direction to home. The default value of this property is false.
+ *  A Boolean value indicating whether the map displays a line showing the direction
+ *  to home. The default value of this property is false.
  */
 @property BOOL showDirectionToHome;
 
 
 /**
- *  A Boolean value that determines whether the map locks the camera  view on the
+ *  A Boolean value that determines whether the map locks the camera view on the
  *  aircraft. The default value of this property is false.
  */
 @property BOOL isMapCameraLockedOnAircraft;
@@ -66,21 +66,21 @@ typedef NS_ENUM(NSUInteger, DULMapAnnotationType) {
 
 
 /**
- *  A Boolean value indicating whether the map displays a line of  aircraft's flight
+ *  A Boolean value indicating whether the map displays a line of aircraft's flight
  *  path. The default value of this property is false.
  */
 @property BOOL showFlightPath;
 
 
 /**
- *  A Boolean value indicating whether the map displays the home  annotation. The
+ *  A Boolean value indicating whether the map displays the home annotation. The
  *  default value of this property is true.
  */
 @property BOOL showHomeAnnotation;
 
 
 /**
- *  Replaces current annotation type with given image. The default  image for all
+ *  Replaces current annotation type with given image. The default image for all
  *  annotation types are set.
  *  
  *  @param annotationType An enum value of `DULMapAnnotationType`.

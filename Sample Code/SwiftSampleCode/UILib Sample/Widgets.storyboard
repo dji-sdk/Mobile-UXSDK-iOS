@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uUf-vW-AGy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uUf-vW-AGy">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -150,5 +150,201 @@ This is to allow for both the container and the content to define the size of th
             </objects>
             <point key="canvasLocation" x="53.90625" y="1812.5"/>
         </scene>
+        <!--Map Widget View Controller-->
+        <scene sceneID="O9U-FW-bif">
+            <objects>
+                <viewController storyboardIdentifier="MapWidgetViewController" id="SN1-T5-oLk" customClass="MapWidgetViewController" customModule="UILib_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DPu-U1-cV5"/>
+                        <viewControllerLayoutGuide type="bottom" id="erf-mk-kz8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yE7-O2-PdZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GbN-30-fyM">
+                                <rect key="frame" x="406" y="30" width="212" height="29"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeValueChanged:" destination="SN1-T5-oLk" eventType="valueChanged" id="GJS-ab-UOw"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiZ-Cy-V7t">
+                                <rect key="frame" x="443" y="718" width="138" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kAj-Xu-zgO"/>
+                                    <constraint firstAttribute="width" constant="138" id="m1c-MY-22f"/>
+                                </constraints>
+                                <state key="normal" title="Clear Flight Path"/>
+                                <connections>
+                                    <action selector="clearFlightPathButtonPressed:" destination="SN1-T5-oLk" eventType="touchUpInside" id="b89-M6-1lL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOS-0o-ara">
+                                <rect key="frame" x="966" y="28" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nOS-0o-ara" secondAttribute="height" multiplier="1:1" id="ErK-FU-uJ0"/>
+                                </constraints>
+                                <state key="normal" title="❌"/>
+                                <connections>
+                                    <action selector="close:" destination="SN1-T5-oLk" eventType="touchUpInside" id="0PA-dZ-1tq"/>
+                                </connections>
+                            </button>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7o-nr-K9K">
+                                <rect key="frame" x="846" y="560" width="150" height="200"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5Ev-tF-jsf">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="prL-2e-AoA">
+                                            <rect key="frame" x="15" y="8" width="121" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Aircraft"/>
+                                                <segment title="Home"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="replaceIconValueChanged:" destination="SN1-T5-oLk" eventType="valueChanged" id="ykz-58-OqO"/>
+                                            </connections>
+                                        </segmentedControl>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grg-Tm-y12">
+                                            <rect key="frame" x="31" y="170" width="88" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Replace Icon"/>
+                                            <connections>
+                                                <action selector="replaceIconButtonPressed:" destination="SN1-T5-oLk" eventType="touchUpInside" id="fJC-So-mAf"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Aircraft" translatesAutoresizingMaskIntoConstraints="NO" id="zNQ-s2-Dxk">
+                                            <rect key="frame" x="53" y="78" width="45" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="LKV-xB-ubL"/>
+                                    <constraint firstAttribute="width" constant="150" id="Zfh-5O-1po"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ily-xF-A2x">
+                                <rect key="frame" x="28" y="534" width="194" height="226"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6AL-Vv-nb1">
+                                    <rect key="frame" x="0.0" y="0.0" width="194" height="226"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AYI-z9-hiE">
+                                            <rect key="frame" x="10" y="10" width="174" height="206"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Direction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KB8-Ig-nVs">
+                                                    <rect key="frame" x="27.5" y="0.0" width="119" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLm-Fh-jeH">
+                                                    <rect key="frame" x="62.5" y="20.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="directionToHomeValueChanged:" destination="SN1-T5-oLk" eventType="valueChanged" id="LV6-bU-pjW"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lock Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Say-IV-VIT">
+                                                    <rect key="frame" x="37" y="51.5" width="100.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esj-1M-VYe">
+                                                    <rect key="frame" x="62.5" y="72" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="lockAircraftCameraValueChanged:" destination="SN1-T5-oLk" eventType="valueChanged" id="Kdq-lq-BTr"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Fly Zones" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBj-UO-r5J">
+                                                    <rect key="frame" x="26.5" y="103" width="121" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ke-qD-ASc">
+                                                    <rect key="frame" x="62.5" y="123.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="showFlyZonesValueChanged:" destination="SN1-T5-oLk" eventType="valueChanged" id="GCq-P9-fQm"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Home Point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-VC-l33">
+                                                    <rect key="frame" x="19" y="154.5" width="136" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUV-Mx-xiC">
+                                                    <rect key="frame" x="62.5" y="175" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="showHomePointValueChanged:" destination="SN1-T5-oLk" eventType="valueChanged" id="dTD-CF-5dk"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AYI-z9-hiE" firstAttribute="centerY" secondItem="6AL-Vv-nb1" secondAttribute="centerY" id="11M-5e-WOH"/>
+                                        <constraint firstAttribute="width" secondItem="AYI-z9-hiE" secondAttribute="width" constant="20" id="BP8-S2-5dU"/>
+                                        <constraint firstItem="AYI-z9-hiE" firstAttribute="centerX" secondItem="6AL-Vv-nb1" secondAttribute="centerX" id="Uph-MG-LiI"/>
+                                        <constraint firstAttribute="height" secondItem="AYI-z9-hiE" secondAttribute="height" constant="20" id="wlY-CF-vyY"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="226" id="Bo3-g6-OcZ"/>
+                                    <constraint firstAttribute="width" constant="194" id="zxW-H6-2o2"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAc-YC-wwx" customClass="DULMapWidget">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="nOS-0o-ara" secondAttribute="trailing" constant="8" id="1e9-ti-lpz"/>
+                            <constraint firstItem="erf-mk-kz8" firstAttribute="top" secondItem="ily-xF-A2x" secondAttribute="bottom" constant="8" id="32H-0c-XzF"/>
+                            <constraint firstItem="ily-xF-A2x" firstAttribute="leading" secondItem="yE7-O2-PdZ" secondAttribute="leadingMargin" constant="8" id="9dW-qt-19j"/>
+                            <constraint firstItem="uiZ-Cy-V7t" firstAttribute="centerX" secondItem="yE7-O2-PdZ" secondAttribute="centerX" id="F4L-Yf-pKQ"/>
+                            <constraint firstItem="GbN-30-fyM" firstAttribute="top" secondItem="DPu-U1-cV5" secondAttribute="bottom" constant="10" id="Fv5-a3-d6A"/>
+                            <constraint firstAttribute="trailing" secondItem="TAc-YC-wwx" secondAttribute="trailing" id="Ioy-w0-m8M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="N7o-nr-K9K" secondAttribute="trailing" constant="8" id="LLs-td-N8X"/>
+                            <constraint firstItem="GbN-30-fyM" firstAttribute="centerX" secondItem="yE7-O2-PdZ" secondAttribute="centerX" id="OhX-wA-Zch"/>
+                            <constraint firstItem="erf-mk-kz8" firstAttribute="top" secondItem="N7o-nr-K9K" secondAttribute="bottom" constant="8" id="aBL-gK-f7M"/>
+                            <constraint firstItem="TAc-YC-wwx" firstAttribute="leading" secondItem="yE7-O2-PdZ" secondAttribute="leading" id="e6N-We-ChV"/>
+                            <constraint firstItem="erf-mk-kz8" firstAttribute="top" secondItem="TAc-YC-wwx" secondAttribute="bottom" id="ft7-1V-uHj"/>
+                            <constraint firstItem="erf-mk-kz8" firstAttribute="top" secondItem="uiZ-Cy-V7t" secondAttribute="bottom" constant="20" id="idz-b7-GX2"/>
+                            <constraint firstItem="nOS-0o-ara" firstAttribute="top" secondItem="DPu-U1-cV5" secondAttribute="bottom" constant="8" id="lHn-Ka-V3h"/>
+                            <constraint firstItem="TAc-YC-wwx" firstAttribute="top" secondItem="yE7-O2-PdZ" secondAttribute="top" id="yXv-Sb-Kgp"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="1024" height="768"/>
+                    <connections>
+                        <outlet property="clearFlightPathButton" destination="uiZ-Cy-V7t" id="NCZ-cT-zde"/>
+                        <outlet property="closeButton" destination="nOS-0o-ara" id="geh-6F-8zG"/>
+                        <outlet property="mapDisplaySwitch" destination="GbN-30-fyM" id="5BU-fj-4K3"/>
+                        <outlet property="mapWidget" destination="TAc-YC-wwx" id="lgN-lQ-5zd"/>
+                        <outlet property="replaceIconBlurView" destination="N7o-nr-K9K" id="b1j-LT-XBW"/>
+                        <outlet property="replaceIconImageView" destination="zNQ-s2-Dxk" id="8zi-tb-b9h"/>
+                        <outlet property="replaceIconSegmentedView" destination="prL-2e-AoA" id="SYC-FD-4my"/>
+                        <outlet property="testAPIMethodsBlurView" destination="ily-xF-A2x" id="bFo-ZB-sza"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qh9-xI-jh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.90625" y="2469.53125"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Aircraft" width="45" height="45"/>
+    </resources>
 </document>

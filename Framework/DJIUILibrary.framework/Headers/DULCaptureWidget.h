@@ -7,11 +7,10 @@
 
 #import <DJIUILibrary/DJIUILibrary.h>
 
-IB_DESIGNABLE
 
 /**
  *  Display:
- *  In shootting photo, the widget can show the mode of photo will be taken and the
+ *  In shooting photo, the widget can show the mode of photo will be taken and the
  *  related setting of that mode as following:
  *    - Single mode.
  *    - HDR mode.
@@ -25,7 +24,7 @@ IB_DESIGNABLE
  *  
  *  Interaction:
  *  Tapping when in shoot photo mode will take a photo. Tapping when in record video
- *  mode will start/stop recodring.
+ *  mode will start/stop recording.
  */
 @interface DULCaptureWidget : DULWidget
 

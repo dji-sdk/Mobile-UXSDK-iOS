@@ -8,8 +8,6 @@
 #import <DJIUILibrary/DJIUILibrary.h>
 @import CoreLocation;
 
-IB_DESIGNABLE
-
 
 /**
  *  Display:

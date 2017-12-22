@@ -18,6 +18,7 @@ FOUNDATION_EXPORT const unsigned char DJIUILibraryVersionString[];
 /*********************************************************************************/
 #import <DJIUILibrary/DULWidgetProtocol.h>
 #import <DJIUILibrary/DULWidget.h>
+#import <DJIUILibrary/DULObjectProtocol.h>
 
 // Dashboard
 #import <DJIUILibrary/DULDashboardWidget.h>
@@ -75,6 +76,7 @@ FOUNDATION_EXPORT const unsigned char DJIUILibraryVersionString[];
 
 // Map
 #import <DJIUILibrary/DULMapWidget.h>
+#import <DJIUILibrary/DULMapViewController.h>
 
 /*********************************************************************************/
 #pragma mark - Panels
@@ -82,6 +84,7 @@ FOUNDATION_EXPORT const unsigned char DJIUILibraryVersionString[];
 #import <DJIUILibrary/DULCameraSettingsController.h>
 #import <DJIUILibrary/DULExposureSettingsController.h>
 #import <DJIUILibrary/DULPreflightChecklistController.h>
+#import <DJIUILibrary/DULRTKStatusViewController.h>
 
 /*********************************************************************************/
 #pragma mark - View Controllers and Widget Collections - MAY CHANGE IN FUTURE

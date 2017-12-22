@@ -50,7 +50,6 @@ typedef NS_ENUM(NSUInteger, DULVideoSignalStrength) {
     DULVideoSignalStrengthNone
 };
 
-IB_DESIGNABLE
 
 /**
  *  Display:

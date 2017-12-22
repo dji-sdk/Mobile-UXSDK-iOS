@@ -22,6 +22,7 @@
 		86AB5B731E04C17800641871 /* DefaultLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86AB5B721E04C17800641871 /* DefaultLayout.storyboard */; };
 		86AB5B751E04C24600641871 /* PanelsCollections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86AB5B741E04C24600641871 /* PanelsCollections.storyboard */; };
 		86AB5B771E04C2DB00641871 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86AB5B761E04C2DB00641871 /* Widgets.storyboard */; };
+		A4449BEC1FECDF140081D188 /* MapWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4449BEB1FECDF140081D188 /* MapWidgetViewController.swift */; };
 		A4BE86791F6B952D00AFA154 /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BE86781F6B951900AFA154 /* VideoPreviewer.framework */; };
 		A4BE867A1F6B952D00AFA154 /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4BE86781F6B951900AFA154 /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A4BE867D1F6B958600AFA154 /* libPods-UILib Sample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BE867E1F6B958600AFA154 /* libPods-UILib Sample.a */; };
@@ -79,6 +80,7 @@
 		86AB5B721E04C17800641871 /* DefaultLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayout.storyboard; sourceTree = "<group>"; };
 		86AB5B741E04C24600641871 /* PanelsCollections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PanelsCollections.storyboard; sourceTree = "<group>"; };
 		86AB5B761E04C2DB00641871 /* Widgets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Widgets.storyboard; sourceTree = "<group>"; };
+		A4449BEB1FECDF140081D188 /* MapWidgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapWidgetViewController.swift; sourceTree = "<group>"; };
 		A4BE86731F6B951900AFA154 /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
 		A4BE867E1F6B958600AFA154 /* libPods-UILib Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UILib Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 				86AB5B761E04C2DB00641871 /* Widgets.storyboard */,
 				86374ED61E020B010079E9D1 /* MyBatteryWidget.swift */,
 				868A29AB1E02021E00BB3E59 /* WidgetsViewController.swift */,
+				A4449BEB1FECDF140081D188 /* MapWidgetViewController.swift */,
 			);
 			name = "Widget Customization";
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				868A29AE1E02021E00BB3E59 /* PanelsCollectionsViewController.swift in Sources */,
 				868A29A71E0201B600BB3E59 /* ProductCommunicationManager.swift in Sources */,
 				86374ED71E020B010079E9D1 /* MyBatteryWidget.swift in Sources */,
+				A4449BEC1FECDF140081D188 /* MapWidgetViewController.swift in Sources */,
 				24130D7D1F688776005F48BF /* DefaultLayoutCustomizationViewController.swift in Sources */,
 				868A29AC1E02021E00BB3E59 /* DefaultLayoutViewController.swift in Sources */,
 				868A4ED41E01FA53006FEE33 /* AppDelegate.swift in Sources */,

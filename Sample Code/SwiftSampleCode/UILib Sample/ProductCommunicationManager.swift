@@ -1,6 +1,6 @@
 //
 //  ProductCommunicationManager.swift
-//  DJI Template
+//  UILib Sample
 //
 //  Copyright © 2016 DJI. All rights reserved.
 //

@@ -16,7 +16,7 @@
  *  IMU, GPS etc) and their state that roll up into an overall state.
  *  
  *  Interaction:
- *  All the settings are presented in ListView hierachy.
+ *  All the settings are presented in ListView hierarchy.
  */
 @interface DULPreflightChecklistController : UIViewController
 

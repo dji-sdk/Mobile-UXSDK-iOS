@@ -14,7 +14,6 @@ typedef NS_ENUM(NSInteger, DULPreFlightStatusWidgetState) {
     DULPreFlightStatusWidgetStateError,
 };
 
-IB_DESIGNABLE
 
 /**
  *  Display:

@@ -7,7 +7,6 @@
 
 #import <DJIUILibrary/DULWidget.h>
 
-IB_DESIGNABLE
 
 /**
  *  Display:
@@ -24,6 +23,6 @@ IB_DESIGNABLE
 /**
  *  YES if mobile device is connected to aircraft.
  */
-@property IBInspectable BOOL isConnected;
+@property BOOL isConnected;
 
 @end

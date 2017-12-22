@@ -7,8 +7,6 @@
 
 #import <UIKit/UIKit.h>
 
-IB_DESIGNABLE
-
 
 /**
  *  DULContentView is a container view which is used to show content such as the

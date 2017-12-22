@@ -7,19 +7,22 @@
 
 #import <Foundation/Foundation.h>
 #import <DJISDK/DJISDK.h>
+#import "DULObjectProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class DULWidget;
 @class DULSDKModelValue;
 @class DJIKeyManager;
+@protocol DULObjectProtocol;
 
 
 /**
  *  The DULSDKModel is the bridge between the SDK which provides the communication
- *  with the drone and the UILibrary which give a visual rendering on the data
- *  received. It is integrated with the widgets and is used when customizing widgets
- *  to register to different SDK keys or to receive live view video.
+ *  with the aircraft and the UILibrary which give a visual rendering on the data
+ *  received. It is integrated with the any object conforming to DULObjectProtocol
+ *  and is used when customizing objects to register to different SDK keys or to
+ *  receive live view video.
  */
 @interface DULSDKModel : NSObject
 
@@ -46,21 +49,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- *  Allows a widget to register dependent keys and receive data updates as soon as
+ *  Allows an object to register dependent keys and receive data updates as soon as
  *  it is available.
  *  
- *  @param widget The widget for which we register the keys.
+ *  @param object The object for which we register the keys.
  *  @param dependentKeys The dependent keys which we are registering.
  */
-- (void)registerDependentKeys:(nonnull NSArray <__kindof DJIKey *> *)dependentKeys forWidget:(nonnull DULWidget *)widget;
+- (void)registerDependentKeys:(nonnull NSArray <__kindof DJIKey *> *)dependentKeys forObject:(nonnull id <DULObjectProtocol>)object;
 
 
 /**
- *  Removes data watching for all dependentKeys of a given widget.
+ *  Removes data watching for all dependentKeys of a given object.
  *  
- *  @param widget The widget for which we unregister the keys.
+ *  @param object The object for which we unregister the keys.
  */
-- (void)unregisterDependentKeysForWidget:(nonnull DULWidget *)widget;
+- (void)unregisterDependentKeysForObject:(nonnull id <DULObjectProtocol>)object;
+
 
 @end
 

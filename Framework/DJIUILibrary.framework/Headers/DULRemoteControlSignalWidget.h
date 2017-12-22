@@ -44,7 +44,6 @@ typedef NS_ENUM(NSUInteger, DULRemoteSignalBars) {
     DULRemoteSignalBarsLevel5
 };
 
-IB_DESIGNABLE
 
 /**
  *  Display:

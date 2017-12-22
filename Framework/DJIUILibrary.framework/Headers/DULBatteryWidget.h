@@ -40,7 +40,6 @@ typedef NS_ENUM(NSUInteger, DULBatteryIndicatorState) {
     DULBatteryIndicatorStateUnknown
 };
 
-IB_DESIGNABLE
 
 /**
  *  Display:

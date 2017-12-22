@@ -7,8 +7,6 @@
 
 #import <DJIUILibrary/DULWidget.h>
 
-IB_DESIGNABLE
-
 
 /**
  *  Display:

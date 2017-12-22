@@ -7,7 +7,6 @@
 
 #import "DULWidget.h"
 
-IB_DESIGNABLE
 
 /**
  *  Display:

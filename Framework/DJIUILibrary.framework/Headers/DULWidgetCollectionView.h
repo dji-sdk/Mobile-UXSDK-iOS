@@ -11,7 +11,6 @@
 
 @class DULWidgetItem;
 
-IB_DESIGNABLE
 
 /**
  *  This subclass of UICollectionView is used as a base class for all predefined

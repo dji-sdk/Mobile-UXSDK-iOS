@@ -9,7 +9,6 @@
 
 #import <DJIUILibrary/DULContentView.h>
 
-IB_DESIGNABLE
 
 /**
  *  Subclass of DULContentView which shows the FPV video feed.

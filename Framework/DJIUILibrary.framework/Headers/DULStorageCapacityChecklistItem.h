@@ -14,4 +14,7 @@
  */
 @interface DULStorageCapacityChecklistItem : DULPreflightChecklistItem
 
+@property NSInteger sdSpaceLeftInMB;
+@property NSInteger ssdSpaceLeftInMB;
+
 @end

@@ -84,7 +84,7 @@
 
 
 /**
- *  The Versatile Controller interface allows display of mutliple controllers on the
+ *  The Versatile Controller interface allows display of multiple controllers on the
  *  left and right side of the UI. For instance, they are used for the camera
  *  settings, the exposure settings and the preflight checklist view controllers.
  */

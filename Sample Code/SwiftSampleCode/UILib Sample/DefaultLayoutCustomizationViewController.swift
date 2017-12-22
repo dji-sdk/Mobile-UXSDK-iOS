@@ -2,8 +2,7 @@
 //  DefaultLayoutCustomizationViewController.swift
 //  UILib Sample
 //
-//  Created by RussFenenga on 9/12/17.
-//  Copyright © 2017 DJI. All rights reserved.
+//  Copyright © 2016 DJI. All rights reserved.
 //
 
 

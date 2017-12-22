@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DULObjectProtocol.h"
 #import <DJIUILibrary/UIImage+Assets.h>
 
 @class DULPreflightChecklistManager;
@@ -21,7 +22,7 @@ typedef NS_ENUM(NSInteger, DULPreflightChecklistItemState) {
 /**
  *  Base class for all items to be used by the `DULPreflightChecklistManager`
  */
-@interface DULPreflightChecklistItem : NSObject
+@interface DULPreflightChecklistItem : NSObject <DULObjectProtocol>
 
 
 /**
@@ -80,13 +81,13 @@ typedef NS_ENUM(NSInteger, DULPreflightChecklistItemState) {
 
 
 /**
- *  Start checking for the state defining wether this item is ready to fly or not
+ *  Start checking for the state defining whether this item is ready to fly or not
  */
 - (void)startChecking;
 
 
 /**
- *  Stops checking for the state defining wether this item is ready to fly or not
+ *  Stops checking for the state defining whether this item is ready to fly or not
  */
 - (void)stopChecking;
 

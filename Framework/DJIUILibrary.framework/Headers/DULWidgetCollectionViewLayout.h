@@ -22,7 +22,7 @@
 
 
 /**
- *  The minimum space to be kept betwen items.
+ *  The minimum space to be kept between items.
  */
 @property(nonatomic) CGFloat minimumInteritemSpacing;
 
