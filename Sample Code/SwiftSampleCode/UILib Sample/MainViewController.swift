@@ -29,12 +29,9 @@ class MainViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        var version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        if version == nil {
-            version = "N/A"
-        }
-        
-        self.version.text = "Version \(version!)"
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
+
+        self.version.text = "Version \(version)"
     }
 
     @IBAction func registerAction() {
