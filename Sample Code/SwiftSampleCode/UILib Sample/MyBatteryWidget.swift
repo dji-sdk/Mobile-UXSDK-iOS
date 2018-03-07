@@ -46,9 +46,9 @@ class MyBatteryWidget: DULBatteryWidget {
         } else {
             self.percentageLabel.textColor = UIColor.green
         }
-        
-        let uiString = String(format: "%.0f", self.battery1Percentage)
-        self.percentageLabel.text = "\(uiString)%"
+
+        let intBattery1Percentage = Int(self.battery1Percentage)
+        self.percentageLabel.text = "\(intBattery1Percentage)%"
     }
     
 }
