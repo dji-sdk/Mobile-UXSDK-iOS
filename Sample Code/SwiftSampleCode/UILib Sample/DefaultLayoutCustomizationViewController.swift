@@ -21,9 +21,7 @@ class DefaultLayoutCustomizationViewController: DULDefaultLayoutViewController {
     }
     
     @IBAction func close () {
-        self.dismiss(animated: true) {
-            
-        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     // Toggle for the content view for our button.  This will swap between our red view controller and the fpv view controller.

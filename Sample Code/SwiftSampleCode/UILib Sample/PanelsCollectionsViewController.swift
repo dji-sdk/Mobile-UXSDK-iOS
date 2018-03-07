@@ -86,6 +86,6 @@ class PanelsCollectionsViewController: UIViewController {
     }
     
     @IBAction func close () {
-        self.dismiss(animated: true) {}
+        self.dismiss(animated: true, completion: nil)
     }
 }
