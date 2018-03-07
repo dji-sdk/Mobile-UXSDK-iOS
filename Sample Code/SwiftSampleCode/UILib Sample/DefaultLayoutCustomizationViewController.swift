@@ -41,7 +41,4 @@ class DefaultLayoutCustomizationViewController: DULDefaultLayoutViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 }
