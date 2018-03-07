@@ -60,12 +60,15 @@ class MapWidgetViewController: UIViewController {
     }
     
     @IBAction func mapTypeValueChanged(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
+        switch sender.selectedSegmentIndex {
+        case 0:
             self.mapWidget.mapView.mapType = .standard
-        } else if sender.selectedSegmentIndex == 1 {
+        case 1:
             self.mapWidget.mapView.mapType = .satellite
-        } else if sender.selectedSegmentIndex == 2 {
+        case 2:
             self.mapWidget.mapView.mapType = .hybrid
+        default:
+            fatalError("Unexpected state")
         }
     }
 
@@ -78,18 +81,24 @@ class MapWidgetViewController: UIViewController {
     }
     
     @IBAction func replaceIconButtonPressed(_ sender: UIButton) {
-        if self.replaceIconSegmentedView.selectedSegmentIndex == 0 {
+        switch self.replaceIconSegmentedView.selectedSegmentIndex {
+        case 0:
             self.mapWidget.change(.aircraft, with: self.replaceIconImageView.image!)
-        } else if self.replaceIconSegmentedView.selectedSegmentIndex == 1 {
+        case 1:
             self.mapWidget.change(.home, with: self.replaceIconImageView.image!)
+        default:
+            fatalError("Unexpected state")
         }
     }
     
     @IBAction func replaceIconValueChanged(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
+        switch sender.selectedSegmentIndex {
+        case 0:
             self.replaceIconImageView.image = #imageLiteral(resourceName: "Aircraft")
-        } else if sender.selectedSegmentIndex == 1 {
+        case 1:
             self.replaceIconImageView.image = #imageLiteral(resourceName: "HomePoint")
+        default:
+            fatalError("Unexpected state")
         }
     }
 }
