@@ -1,14 +1,14 @@
-# DJI UILibrary for iOS
+# DJI UX SDK for iOS
 
 ## What Is This?
 
-The UILibrary is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the [DJI Mobile SDK](http://developer.dji.com/mobile-sdk/).
+The UX SDK is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the [DJI Mobile SDK](http://developer.dji.com/mobile-sdk/).
 
 ## Get Started Immediately
 
-### UILibrary Installation with CocoaPods
+### UX SDK Installation with CocoaPods
 
-Since this project has been integrated with [DJI iOS UILibrary CocoaPods](https://cocoapods.org/pods/DJI-UILibrary-iOS) now, please check the following steps to install **DJISDK.framework** using CocoaPods after you downloading this project:
+Since this project has been integrated with [DJI iOS UX SDK CocoaPods](https://cocoapods.org/pods/DJI-UXSDK-iOS) now, please check the following steps to install **DJISDK.framework** using CocoaPods after you downloading this project:
 
 **1.** Install CocoaPods
 
@@ -20,7 +20,7 @@ sudo gem install cocoapods
 
 The process may take a long time, please wait. For further installation instructions, please check [this guide](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
-**2.** Install UILibrary with CocoaPods in the Project
+**2.** Install UX SDK with CocoaPods in the Project
 
 Run the following command in the **ObjcSampleCode** and **SwiftSampleCode** paths:
 
@@ -33,12 +33,12 @@ If you install it successfully, you should get the messages similar to the follo
 ~~~
 Analyzing dependencies
 Downloading dependencies
-Installing DJI-SDK-iOS (4.4)
-Installing DJI-UILibrary-iOS (4.4)
+Installing DJI-SDK-iOS (4.5)
+Installing DJI-UXSDK-iOS (4.5)
 Generating Pods project
 Integrating client project
 
-[!] Please close any current Xcode sessions and use `UILibOCSample.xcworkspace` for this project from now on.
+[!] Please close any current Xcode sessions and use `UXSDKOCSample.xcworkspace` for this project from now on.
 Pod installation complete! There is 1 dependency from the Podfile and 1 total pod
 installed.
 ~~~
@@ -61,9 +61,9 @@ In both cases developers will still need to update the [Bundle Identifier](http:
 
 One of DJI's aircraft or handheld cameras will be required to run the sample application.  
 
-## Learn More about DJI UI Library
+## Learn More about DJI UX SDK
 
-Please visit [UI Library Introduction](http://developer.dji.com/mobile-sdk/documentation/introduction/ui_library_introduction.html) for more details.
+Please visit [UX SDK Introduction](http://developer.dji.com/mobile-sdk/documentation/introduction/ux_sdk_introduction.html) for more details.
 
 ## Development Workflow
 
