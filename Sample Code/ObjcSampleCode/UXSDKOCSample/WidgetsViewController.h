@@ -1,6 +1,6 @@
 //
 //  WidgetsViewController.h
-//  UILibOCSample
+//  UXSDKOCSample
 //
 //  Created by DJI on 15/4/2017.
 //  Copyright © 2017 DJI. All rights reserved.

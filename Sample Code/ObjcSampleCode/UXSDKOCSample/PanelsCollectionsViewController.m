@@ -1,13 +1,13 @@
 //
 //  PanelsCollectionsViewController.m
-//  UILibOCSample
+//  UXSDKOCSample
 //
 //  Created by DJI on 15/4/2017.
 //  Copyright © 2017 DJI. All rights reserved.
 //
 
 #import "PanelsCollectionsViewController.h"
-#import <DJIUILibrary/DJIUILibrary.h>
+#import <DJIUXSDK/DJIUXSDK.h>
 
 #define WeakRef(__obj) __weak typeof(self) __obj = self
 #define WeakReturn(__obj) if(__obj ==nil)return;
@@ -15,9 +15,9 @@
 @interface PanelsCollectionsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *statusBarContainingView;
-@property (strong, nonatomic) DULStatusBarViewController *statusBarVC;
+@property (strong, nonatomic) DUXStatusBarViewController *statusBarVC;
 @property (strong, nonatomic) NSTimer *widgetMovingTimer;
-@property (readwrite, nonatomic) DULWidgetCollectionViewStack lastStack;
+@property (readwrite, nonatomic) DUXWidgetCollectionViewStack lastStack;
 
 - (IBAction)onBackButtonClicked:(id)sender;
 
@@ -31,7 +31,7 @@
     
     // You can also change the UI dynamically.
     self.widgetMovingTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(moveWidget) userInfo:nil repeats:YES];
-    self.lastStack = DULWidgetCollectionViewStackFirst;
+    self.lastStack = DUXWidgetCollectionViewStackFirst;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -45,9 +45,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.statusBarVC = [[DULStatusBarViewController alloc] init];
+    self.statusBarVC = [[DUXStatusBarViewController alloc] init];
     
-    // Adding our DULStatusBarViewController to our container in code.
+    // Adding our DUXStatusBarViewController to our container in code.
     // This could be done in the storyboard
     [self addChildViewController:self.statusBarVC];
     [self.statusBarContainingView addSubview:self.statusBarVC.view];
@@ -63,7 +63,7 @@
      */
     
     // Removing a pre-defined widget you don't want.
-    UIView<DULWidgetProtocol> *preflightChecklistWidget = [self.statusBarVC widgetAtIndex:1];
+    UIView<DUXWidgetProtocol> *preflightChecklistWidget = [self.statusBarVC widgetAtIndex:1];
     
     if (preflightChecklistWidget)
     {
@@ -71,15 +71,15 @@
     }
     
     // Changing the edgeInset of a placed widget.
-    DULWidgetItem *widgetItem = [self.statusBarVC widgetItemAtIndex:0];
+    DUXWidgetItem *widgetItem = [self.statusBarVC widgetItemAtIndex:0];
     if (widgetItem) {
         widgetItem.edgeInset = UIEdgeInsetsMake(10, widgetItem.edgeInset.left, 10, widgetItem.edgeInset.right);
     }
     
     // Switch stack for widgets in stack collections
-    UIView<DULWidgetProtocol> *batteryWidget = [self.statusBarVC widgetWithClass:[DULBatteryWidget class]];
+    UIView<DUXWidgetProtocol> *batteryWidget = [self.statusBarVC widgetWithClass:[DUXBatteryWidget class]];
     if (batteryWidget) {
-        [self.statusBarVC.statusBarView moveWidget:batteryWidget to:DULWidgetCollectionViewStackFirst];
+        [self.statusBarVC.statusBarView moveWidget:batteryWidget to:DUXWidgetCollectionViewStackFirst];
     }
     
     // We need to call reloadData to adjust the rendering, but we call it at the end to avoid redundant calls
@@ -92,13 +92,13 @@
     
     // Switch stack for widgets in stack collections
 
-    UIView<DULWidgetProtocol> *batteryWidget = [self.statusBarVC widgetWithClass:[DULBatteryWidget class]];
+    UIView<DUXWidgetProtocol> *batteryWidget = [self.statusBarVC widgetWithClass:[DUXBatteryWidget class]];
     
-    if (self.lastStack == DULWidgetCollectionViewStackFirst) {
-        self.lastStack = DULWidgetCollectionViewStackLast;
+    if (self.lastStack == DUXWidgetCollectionViewStackFirst) {
+        self.lastStack = DUXWidgetCollectionViewStackLast;
     }else
     {
-        self.lastStack = DULWidgetCollectionViewStackFirst;
+        self.lastStack = DUXWidgetCollectionViewStackFirst;
     }
     
     if (batteryWidget) {

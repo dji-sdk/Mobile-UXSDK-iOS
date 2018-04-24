@@ -1,20 +1,20 @@
 //
 //  DefaultLayoutCustomizationViewController.swift
-//  UILib Sample
+//  UXSDK Sample
 //
 //  Copyright © 2016 DJI. All rights reserved.
 //
 
 
 import UIKit
-import DJIUILibrary
+import DJIUXSDK
 
-// We subclass the DULRootViewController to inherit all its behavior.
-class DefaultLayoutCustomizationViewController: DULDefaultLayoutViewController {
+// We subclass the DUXRootViewController to inherit all its behavior.
+class DefaultLayoutCustomizationViewController: DUXDefaultLayoutViewController {
     
     var isContentViewSwitched = false
     
-    var oldContentViewController: DULFPVViewController?
+    var oldContentViewController: DUXFPVViewController?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent;
@@ -35,7 +35,7 @@ class DefaultLayoutCustomizationViewController: DULDefaultLayoutViewController {
             isContentViewSwitched = true
             let newContentViewController = UIViewController()
             newContentViewController.view.backgroundColor = UIColor.red
-            self.oldContentViewController = self.contentViewController as? DULFPVViewController
+            self.oldContentViewController = self.contentViewController as? DUXFPVViewController
             self.contentViewController = newContentViewController
         }
         

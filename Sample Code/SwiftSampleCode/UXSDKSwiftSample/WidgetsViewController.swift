@@ -1,13 +1,12 @@
 //
 //  WidgetsViewController.swift
-//  DJIUILibrary
+//  UXSDK Sample
 //
-//  Created by DJI on 12/12/16.
 //  Copyright © 2016 DJI. All rights reserved.
 //
 
 import UIKit
-import DJIUILibrary
+import DJIUXSDK
 
 class WidgetsViewController: UIViewController {
     

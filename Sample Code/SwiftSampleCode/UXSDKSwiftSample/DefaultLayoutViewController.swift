@@ -1,16 +1,16 @@
 //
 //  DefaultLayoutViewController.swift
-//  UILib Sample
+//  UXSDK Sample
 //
 //  Copyright © 2016 DJI. All rights reserved.
 //
 
 import UIKit
-import DJIUILibrary
+import DJIUXSDK
 
-// We subclass the DULRootViewController to inherit all its behavior and add
+// We subclass the DUXRootViewController to inherit all its behavior and add
 // a couple of widgets in the storyboard.
-class DefaultLayoutViewController: DULDefaultLayoutViewController {
+class DefaultLayoutViewController: DUXDefaultLayoutViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent;

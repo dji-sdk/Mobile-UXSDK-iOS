@@ -7,36 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		723860AB49C1E2F9A675B607 /* libPods-UXSDKOCSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 239C8B51EE1220138CC14C75 /* libPods-UXSDKOCSample.a */; };
-		A452DC062070D32700EFBA30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A452DBF12070D32700EFBA30 /* AppDelegate.m */; };
-		A452DC072070D32700EFBA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A452DBF22070D32700EFBA30 /* Assets.xcassets */; };
-		A452DC082070D32700EFBA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DBF32070D32700EFBA30 /* LaunchScreen.storyboard */; };
-		A452DC092070D32700EFBA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DBF52070D32700EFBA30 /* Main.storyboard */; };
-		A452DC0A2070D32700EFBA30 /* DefaultLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DBF72070D32700EFBA30 /* DefaultLayout.storyboard */; };
-		A452DC0B2070D32700EFBA30 /* DefaultLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A452DBF92070D32700EFBA30 /* DefaultLayoutViewController.m */; };
-		A452DC0C2070D32700EFBA30 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A452DBFA2070D32700EFBA30 /* Info.plist */; };
-		A452DC0D2070D32700EFBA30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A452DBFB2070D32700EFBA30 /* main.m */; };
-		A452DC0E2070D32700EFBA30 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A452DBFD2070D32700EFBA30 /* MainViewController.m */; };
-		A452DC0F2070D32700EFBA30 /* MyBatteryWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = A452DBFF2070D32700EFBA30 /* MyBatteryWidget.m */; };
-		A452DC102070D32700EFBA30 /* PanelsCollections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC002070D32700EFBA30 /* PanelsCollections.storyboard */; };
-		A452DC112070D32700EFBA30 /* PanelsCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A452DC022070D32700EFBA30 /* PanelsCollectionsViewController.m */; };
-		A452DC122070D32700EFBA30 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC032070D32700EFBA30 /* Widgets.storyboard */; };
-		A452DC132070D32700EFBA30 /* WidgetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A452DC052070D32700EFBA30 /* WidgetsViewController.m */; };
-		A452DC1F2070D4E300EFBA30 /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A452DC1D2070D4D800EFBA30 /* VideoPreviewer.framework */; };
-		A452DC202070D4E300EFBA30 /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A452DC1D2070D4D800EFBA30 /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6F6E5993738A16F9553D4DDD /* libPods-UXSDKOCSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46472615B205007AB96C0CBA /* libPods-UXSDKOCSample.a */; };
+		A445A1E1208EE4C1004D8DF2 /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A445A1DA208EE31B004D8DF2 /* VideoPreviewer.framework */; };
+		A445A1E2208EE4C1004D8DF2 /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A445A1DA208EE31B004D8DF2 /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ACFBF812207C24250058A720 /* WidgetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF7FC207C24250058A720 /* WidgetsViewController.m */; };
+		ACFBF813207C24250058A720 /* MyBatteryWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF7FF207C24250058A720 /* MyBatteryWidget.m */; };
+		ACFBF814207C24250058A720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF801207C24250058A720 /* Assets.xcassets */; };
+		ACFBF815207C24250058A720 /* PanelsCollections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF802207C24250058A720 /* PanelsCollections.storyboard */; };
+		ACFBF816207C24250058A720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF803207C24250058A720 /* LaunchScreen.storyboard */; };
+		ACFBF817207C24250058A720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF805207C24250058A720 /* Main.storyboard */; };
+		ACFBF818207C24250058A720 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF807207C24250058A720 /* MainViewController.m */; };
+		ACFBF819207C24250058A720 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF809207C24250058A720 /* main.m */; };
+		ACFBF81A207C24250058A720 /* DefaultLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF80A207C24250058A720 /* DefaultLayout.storyboard */; };
+		ACFBF81B207C24250058A720 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF80B207C24250058A720 /* AppDelegate.m */; };
+		ACFBF81C207C24250058A720 /* DefaultLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF80C207C24250058A720 /* DefaultLayoutViewController.m */; };
+		ACFBF81D207C24250058A720 /* PanelsCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF80D207C24250058A720 /* PanelsCollectionsViewController.m */; };
+		ACFBF81E207C24250058A720 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF810207C24250058A720 /* Info.plist */; };
+		ACFBF81F207C24250058A720 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF811207C24250058A720 /* Widgets.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A452DC1C2070D4D800EFBA30 /* PBXContainerItemProxy */ = {
+		A445A1D9208EE31B004D8DF2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A452DC182070D4D800EFBA30 /* VideoPreviewer.xcodeproj */;
+			containerPortal = A445A1D5208EE31B004D8DF2 /* VideoPreviewer.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 02A543FD1C3C51CB0083C11B;
 			remoteInfo = VideoPreviewer;
 		};
-		A452DC212070D4E300EFBA30 /* PBXContainerItemProxy */ = {
+		A445A1E3208EE4C1004D8DF2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A452DC182070D4D800EFBA30 /* VideoPreviewer.xcodeproj */;
+			containerPortal = A445A1D5208EE31B004D8DF2 /* VideoPreviewer.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 02A543FC1C3C51CB0083C11B;
 			remoteInfo = VideoPreviewer;
@@ -44,13 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AC861A711EA71377001C9B65 /* Embed Frameworks */ = {
+		A4A189451EA12B4700D06BF0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A452DC202070D4E300EFBA30 /* VideoPreviewer.framework in Embed Frameworks */,
+				A445A1E2208EE4C1004D8DF2 /* VideoPreviewer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,36 +58,31 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		239C8B51EE1220138CC14C75 /* libPods-UXSDKOCSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UXSDKOCSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2842789EAF1F25099F75BE8C /* Pods-UILibOCSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UILibOCSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UILibOCSample/Pods-UILibOCSample.debug.xcconfig"; sourceTree = "<group>"; };
-		677897DA5CD60ECB75621A85 /* Pods-UXSDKOCSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKOCSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample.debug.xcconfig"; sourceTree = "<group>"; };
-		8A2767A8A734D9F079B77485 /* Pods-UILibOCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UILibOCSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UILibOCSample/Pods-UILibOCSample.release.xcconfig"; sourceTree = "<group>"; };
-		9DCB98503130E4B2ECC1524E /* Pods-UXSDKOCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKOCSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample.release.xcconfig"; sourceTree = "<group>"; };
-		A452DBF02070D32700EFBA30 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A452DBF12070D32700EFBA30 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A452DBF22070D32700EFBA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A452DBF42070D32700EFBA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A452DBF62070D32700EFBA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A452DBF72070D32700EFBA30 /* DefaultLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayout.storyboard; sourceTree = "<group>"; };
-		A452DBF82070D32700EFBA30 /* DefaultLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultLayoutViewController.h; sourceTree = "<group>"; };
-		A452DBF92070D32700EFBA30 /* DefaultLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultLayoutViewController.m; sourceTree = "<group>"; };
-		A452DBFA2070D32700EFBA30 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A452DBFB2070D32700EFBA30 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A452DBFC2070D32700EFBA30 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		A452DBFD2070D32700EFBA30 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		A452DBFE2070D32700EFBA30 /* MyBatteryWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBatteryWidget.h; sourceTree = "<group>"; };
-		A452DBFF2070D32700EFBA30 /* MyBatteryWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBatteryWidget.m; sourceTree = "<group>"; };
-		A452DC002070D32700EFBA30 /* PanelsCollections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PanelsCollections.storyboard; sourceTree = "<group>"; };
-		A452DC012070D32700EFBA30 /* PanelsCollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelsCollectionsViewController.h; sourceTree = "<group>"; };
-		A452DC022070D32700EFBA30 /* PanelsCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelsCollectionsViewController.m; sourceTree = "<group>"; };
-		A452DC032070D32700EFBA30 /* Widgets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Widgets.storyboard; sourceTree = "<group>"; };
-		A452DC042070D32700EFBA30 /* WidgetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetsViewController.h; sourceTree = "<group>"; };
-		A452DC052070D32700EFBA30 /* WidgetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetsViewController.m; sourceTree = "<group>"; };
-		A452DC182070D4D800EFBA30 /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
+		06EE100A9FE67BED56866C40 /* Pods-UXSDKOCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKOCSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample.release.xcconfig"; sourceTree = "<group>"; };
+		46472615B205007AB96C0CBA /* libPods-UXSDKOCSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UXSDKOCSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A445A1D5208EE31B004D8DF2 /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
 		A4A189081EA1291E00D06BF0 /* UXSDKOCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXSDKOCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC861A5E1EA71341001C9B65 /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = ../Frameworks/DJISDK.framework; sourceTree = "<group>"; };
-		AC861A5F1EA71341001C9B65 /* DJIUILibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJIUILibrary.framework; path = ../Frameworks/DJIUILibrary.framework; sourceTree = "<group>"; };
-		E359274873E4ACB60CB3A87D /* libPods-UILibOCSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UILibOCSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACFBF7FC207C24250058A720 /* WidgetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetsViewController.m; sourceTree = "<group>"; };
+		ACFBF7FD207C24250058A720 /* DefaultLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultLayoutViewController.h; sourceTree = "<group>"; };
+		ACFBF7FE207C24250058A720 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ACFBF7FF207C24250058A720 /* MyBatteryWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBatteryWidget.m; sourceTree = "<group>"; };
+		ACFBF800207C24250058A720 /* PanelsCollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelsCollectionsViewController.h; sourceTree = "<group>"; };
+		ACFBF801207C24250058A720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACFBF802207C24250058A720 /* PanelsCollections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PanelsCollections.storyboard; sourceTree = "<group>"; };
+		ACFBF804207C24250058A720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ACFBF806207C24250058A720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACFBF807207C24250058A720 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		ACFBF808207C24250058A720 /* WidgetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetsViewController.h; sourceTree = "<group>"; };
+		ACFBF809207C24250058A720 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ACFBF80A207C24250058A720 /* DefaultLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayout.storyboard; sourceTree = "<group>"; };
+		ACFBF80B207C24250058A720 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ACFBF80C207C24250058A720 /* DefaultLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultLayoutViewController.m; sourceTree = "<group>"; };
+		ACFBF80D207C24250058A720 /* PanelsCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelsCollectionsViewController.m; sourceTree = "<group>"; };
+		ACFBF80E207C24250058A720 /* MyBatteryWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBatteryWidget.h; sourceTree = "<group>"; };
+		ACFBF80F207C24250058A720 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		ACFBF810207C24250058A720 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACFBF811207C24250058A720 /* Widgets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Widgets.storyboard; sourceTree = "<group>"; };
+		F5B19026C9DEFD6AFBB8F77A /* Pods-UXSDKOCSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKOCSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,45 +90,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				723860AB49C1E2F9A675B607 /* libPods-UXSDKOCSample.a in Frameworks */,
-				A452DC1F2070D4E300EFBA30 /* VideoPreviewer.framework in Frameworks */,
+				A445A1E1208EE4C1004D8DF2 /* VideoPreviewer.framework in Frameworks */,
+				6F6E5993738A16F9553D4DDD /* libPods-UXSDKOCSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A452DBEF2070D32700EFBA30 /* UXSDKOCSample */ = {
+		A445A1D6208EE31B004D8DF2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A452DBF02070D32700EFBA30 /* AppDelegate.h */,
-				A452DBF12070D32700EFBA30 /* AppDelegate.m */,
-				A452DBF22070D32700EFBA30 /* Assets.xcassets */,
-				A452DBF32070D32700EFBA30 /* LaunchScreen.storyboard */,
-				A452DBF52070D32700EFBA30 /* Main.storyboard */,
-				A452DBF72070D32700EFBA30 /* DefaultLayout.storyboard */,
-				A452DBF82070D32700EFBA30 /* DefaultLayoutViewController.h */,
-				A452DBF92070D32700EFBA30 /* DefaultLayoutViewController.m */,
-				A452DBFA2070D32700EFBA30 /* Info.plist */,
-				A452DBFB2070D32700EFBA30 /* main.m */,
-				A452DBFC2070D32700EFBA30 /* MainViewController.h */,
-				A452DBFD2070D32700EFBA30 /* MainViewController.m */,
-				A452DBFE2070D32700EFBA30 /* MyBatteryWidget.h */,
-				A452DBFF2070D32700EFBA30 /* MyBatteryWidget.m */,
-				A452DC002070D32700EFBA30 /* PanelsCollections.storyboard */,
-				A452DC012070D32700EFBA30 /* PanelsCollectionsViewController.h */,
-				A452DC022070D32700EFBA30 /* PanelsCollectionsViewController.m */,
-				A452DC032070D32700EFBA30 /* Widgets.storyboard */,
-				A452DC042070D32700EFBA30 /* WidgetsViewController.h */,
-				A452DC052070D32700EFBA30 /* WidgetsViewController.m */,
-			);
-			path = UXSDKOCSample;
-			sourceTree = "<group>";
-		};
-		A452DC192070D4D800EFBA30 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A452DC1D2070D4D800EFBA30 /* VideoPreviewer.framework */,
+				A445A1DA208EE31B004D8DF2 /* VideoPreviewer.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,10 +109,10 @@
 		A4A188FF1EA1291E00D06BF0 = {
 			isa = PBXGroup;
 			children = (
-				A452DBEF2070D32700EFBA30 /* UXSDKOCSample */,
+				ACFBF7FB207C24250058A720 /* UXSDKOCSample */,
 				A4A189091EA1291E00D06BF0 /* Products */,
-				BC32C62B8CC4BE3434AFF130 /* Pods */,
-				AC861A5D1EA71331001C9B65 /* Frameworks */,
+				A9C1936B19F091ED59B6CA31 /* Frameworks */,
+				D0816967A71F7A5CBD84F863 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,25 +124,47 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC861A5D1EA71331001C9B65 /* Frameworks */ = {
+		A9C1936B19F091ED59B6CA31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A452DC182070D4D800EFBA30 /* VideoPreviewer.xcodeproj */,
-				AC861A5E1EA71341001C9B65 /* DJISDK.framework */,
-				AC861A5F1EA71341001C9B65 /* DJIUILibrary.framework */,
-				E359274873E4ACB60CB3A87D /* libPods-UILibOCSample.a */,
-				239C8B51EE1220138CC14C75 /* libPods-UXSDKOCSample.a */,
+				A445A1D5208EE31B004D8DF2 /* VideoPreviewer.xcodeproj */,
+				46472615B205007AB96C0CBA /* libPods-UXSDKOCSample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BC32C62B8CC4BE3434AFF130 /* Pods */ = {
+		ACFBF7FB207C24250058A720 /* UXSDKOCSample */ = {
 			isa = PBXGroup;
 			children = (
-				2842789EAF1F25099F75BE8C /* Pods-UILibOCSample.debug.xcconfig */,
-				8A2767A8A734D9F079B77485 /* Pods-UILibOCSample.release.xcconfig */,
-				677897DA5CD60ECB75621A85 /* Pods-UXSDKOCSample.debug.xcconfig */,
-				9DCB98503130E4B2ECC1524E /* Pods-UXSDKOCSample.release.xcconfig */,
+				ACFBF801207C24250058A720 /* Assets.xcassets */,
+				ACFBF802207C24250058A720 /* PanelsCollections.storyboard */,
+				ACFBF803207C24250058A720 /* LaunchScreen.storyboard */,
+				ACFBF805207C24250058A720 /* Main.storyboard */,
+				ACFBF80A207C24250058A720 /* DefaultLayout.storyboard */,
+				ACFBF80F207C24250058A720 /* MainViewController.h */,
+				ACFBF807207C24250058A720 /* MainViewController.m */,
+				ACFBF808207C24250058A720 /* WidgetsViewController.h */,
+				ACFBF7FC207C24250058A720 /* WidgetsViewController.m */,
+				ACFBF809207C24250058A720 /* main.m */,
+				ACFBF7FE207C24250058A720 /* AppDelegate.h */,
+				ACFBF80B207C24250058A720 /* AppDelegate.m */,
+				ACFBF7FD207C24250058A720 /* DefaultLayoutViewController.h */,
+				ACFBF80C207C24250058A720 /* DefaultLayoutViewController.m */,
+				ACFBF800207C24250058A720 /* PanelsCollectionsViewController.h */,
+				ACFBF80D207C24250058A720 /* PanelsCollectionsViewController.m */,
+				ACFBF80E207C24250058A720 /* MyBatteryWidget.h */,
+				ACFBF7FF207C24250058A720 /* MyBatteryWidget.m */,
+				ACFBF810207C24250058A720 /* Info.plist */,
+				ACFBF811207C24250058A720 /* Widgets.storyboard */,
+			);
+			path = UXSDKOCSample;
+			sourceTree = "<group>";
+		};
+		D0816967A71F7A5CBD84F863 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5B19026C9DEFD6AFBB8F77A /* Pods-UXSDKOCSample.debug.xcconfig */,
+				06EE100A9FE67BED56866C40 /* Pods-UXSDKOCSample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -186,18 +176,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4A1891F1EA1291E00D06BF0 /* Build configuration list for PBXNativeTarget "UXSDKOCSample" */;
 			buildPhases = (
-				21B1B8C53ED1BED4DE07A7B2 /* [CP] Check Pods Manifest.lock */,
+				EF3F83FA9431056465867772 /* [CP] Check Pods Manifest.lock */,
 				A4A189041EA1291E00D06BF0 /* Sources */,
 				A4A189051EA1291E00D06BF0 /* Frameworks */,
 				A4A189061EA1291E00D06BF0 /* Resources */,
-				42A22B2D131732D505A81C94 /* [CP] Embed Pods Frameworks */,
-				54898508805E5885CFFEEBC0 /* [CP] Copy Pods Resources */,
-				AC861A711EA71377001C9B65 /* Embed Frameworks */,
+				A4A189451EA12B4700D06BF0 /* Embed Frameworks */,
+				43AB897ECF73EE6BAA391FB6 /* [CP] Embed Pods Frameworks */,
+				9F596D1315598078420698FC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A452DC222070D4E300EFBA30 /* PBXTargetDependency */,
+				A445A1E4208EE4C1004D8DF2 /* PBXTargetDependency */,
 			);
 			name = UXSDKOCSample;
 			productName = UILibOCSample;
@@ -233,8 +223,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A452DC192070D4D800EFBA30 /* Products */;
-					ProjectRef = A452DC182070D4D800EFBA30 /* VideoPreviewer.xcodeproj */;
+					ProductGroup = A445A1D6208EE31B004D8DF2 /* Products */;
+					ProjectRef = A445A1D5208EE31B004D8DF2 /* VideoPreviewer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -245,11 +235,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A452DC1D2070D4D800EFBA30 /* VideoPreviewer.framework */ = {
+		A445A1DA208EE31B004D8DF2 /* VideoPreviewer.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = VideoPreviewer.framework;
-			remoteRef = A452DC1C2070D4D800EFBA30 /* PBXContainerItemProxy */;
+			remoteRef = A445A1D9208EE31B004D8DF2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -259,35 +249,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A452DC082070D32700EFBA30 /* LaunchScreen.storyboard in Resources */,
-				A452DC102070D32700EFBA30 /* PanelsCollections.storyboard in Resources */,
-				A452DC072070D32700EFBA30 /* Assets.xcassets in Resources */,
-				A452DC092070D32700EFBA30 /* Main.storyboard in Resources */,
-				A452DC122070D32700EFBA30 /* Widgets.storyboard in Resources */,
-				A452DC0C2070D32700EFBA30 /* Info.plist in Resources */,
-				A452DC0A2070D32700EFBA30 /* DefaultLayout.storyboard in Resources */,
+				ACFBF81A207C24250058A720 /* DefaultLayout.storyboard in Resources */,
+				ACFBF816207C24250058A720 /* LaunchScreen.storyboard in Resources */,
+				ACFBF817207C24250058A720 /* Main.storyboard in Resources */,
+				ACFBF814207C24250058A720 /* Assets.xcassets in Resources */,
+				ACFBF81F207C24250058A720 /* Widgets.storyboard in Resources */,
+				ACFBF81E207C24250058A720 /* Info.plist in Resources */,
+				ACFBF815207C24250058A720 /* PanelsCollections.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21B1B8C53ED1BED4DE07A7B2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		42A22B2D131732D505A81C94 /* [CP] Embed Pods Frameworks */ = {
+		43AB897ECF73EE6BAA391FB6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,7 +277,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		54898508805E5885CFFEEBC0 /* [CP] Copy Pods Resources */ = {
+		9F596D1315598078420698FC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -317,6 +292,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EF3F83FA9431056465867772 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -324,39 +314,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A452DC0E2070D32700EFBA30 /* MainViewController.m in Sources */,
-				A452DC0D2070D32700EFBA30 /* main.m in Sources */,
-				A452DC132070D32700EFBA30 /* WidgetsViewController.m in Sources */,
-				A452DC062070D32700EFBA30 /* AppDelegate.m in Sources */,
-				A452DC0B2070D32700EFBA30 /* DefaultLayoutViewController.m in Sources */,
-				A452DC0F2070D32700EFBA30 /* MyBatteryWidget.m in Sources */,
-				A452DC112070D32700EFBA30 /* PanelsCollectionsViewController.m in Sources */,
+				ACFBF812207C24250058A720 /* WidgetsViewController.m in Sources */,
+				ACFBF818207C24250058A720 /* MainViewController.m in Sources */,
+				ACFBF81C207C24250058A720 /* DefaultLayoutViewController.m in Sources */,
+				ACFBF813207C24250058A720 /* MyBatteryWidget.m in Sources */,
+				ACFBF81B207C24250058A720 /* AppDelegate.m in Sources */,
+				ACFBF819207C24250058A720 /* main.m in Sources */,
+				ACFBF81D207C24250058A720 /* PanelsCollectionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A452DC222070D4E300EFBA30 /* PBXTargetDependency */ = {
+		A445A1E4208EE4C1004D8DF2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = VideoPreviewer;
-			targetProxy = A452DC212070D4E300EFBA30 /* PBXContainerItemProxy */;
+			targetProxy = A445A1E3208EE4C1004D8DF2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A452DBF32070D32700EFBA30 /* LaunchScreen.storyboard */ = {
+		ACFBF803207C24250058A720 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A452DBF42070D32700EFBA30 /* Base */,
+				ACFBF804207C24250058A720 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		A452DBF52070D32700EFBA30 /* Main.storyboard */ = {
+		ACFBF805207C24250058A720 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A452DBF62070D32700EFBA30 /* Base */,
+				ACFBF806207C24250058A720 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -456,14 +446,14 @@
 		};
 		A4A189201EA1291E00D06BF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 677897DA5CD60ECB75621A85 /* Pods-UXSDKOCSample.debug.xcconfig */;
+			baseConfigurationReference = F5B19026C9DEFD6AFBB8F77A /* Pods-UXSDKOCSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7UL3LRJL93;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../Frameworks",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/UXSDKOCSample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -475,14 +465,14 @@
 		};
 		A4A189211EA1291E00D06BF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DCB98503130E4B2ECC1524E /* Pods-UXSDKOCSample.release.xcconfig */;
+			baseConfigurationReference = 06EE100A9FE67BED56866C40 /* Pods-UXSDKOCSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7UL3LRJL93;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../Frameworks",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/UXSDKOCSample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

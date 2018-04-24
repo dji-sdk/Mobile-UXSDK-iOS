@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		602DFB5B01103220C3A15A41 /* libPods-UXSDKSwiftSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9BE8E3D8F25FD2873AD417 /* libPods-UXSDKSwiftSample.a */; };
+		A4266C94208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */; };
+		A4266C95208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */; };
 		A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC252070D8CB00EFBA30 /* AppDelegate.swift */; };
 		A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A452DC262070D8CB00EFBA30 /* Assets.xcassets */; };
 		A452DC3A2070D8CC00EFBA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC272070D8CB00EFBA30 /* LaunchScreen.storyboard */; };
@@ -61,12 +63,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0C749454D3647719CBCD9BD1 /* Pods-UILib Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UILib Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UILib Sample/Pods-UILib Sample.debug.xcconfig"; sourceTree = "<group>"; };
-		334FD0E7AB0018DA73149501 /* Pods-UXSDKSwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKSwiftSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample.release.xcconfig"; sourceTree = "<group>"; };
-		35B83E08AA7F67BDA9673C19 /* Pods-UILib Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UILib Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UILib Sample/Pods-UILib Sample.release.xcconfig"; sourceTree = "<group>"; };
 		38D2C47F1E0B1F20009A3831 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		868A4ED01E01FA53006FEE33 /* UXSDKSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXSDKSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E811D27DC64A645DC7729F2 /* Pods-UXSDKSwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKSwiftSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
+		A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualFocusModeAdjustmentCustomLayoutViewController.swift; sourceTree = "<group>"; };
+		A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ManualFocusModeAdjustmentCustomLayout.storyboard; sourceTree = "<group>"; };
 		A452DC252070D8CB00EFBA30 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A452DC262070D8CB00EFBA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A452DC282070D8CB00EFBA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,7 +86,9 @@
 		A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetsViewController.swift; sourceTree = "<group>"; };
 		A452DC4A2070DA0200EFBA30 /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
 		A4BE867E1F6B958600AFA154 /* libPods-UILib Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UILib Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB957E10C2CFC6BB041A1E75 /* Pods-UXSDKSwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKSwiftSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample.release.xcconfig"; sourceTree = "<group>"; };
 		BB9BE8E3D8F25FD2873AD417 /* libPods-UXSDKSwiftSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UXSDKSwiftSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE38ABD14DBE3FB9BE89F3D7 /* Pods-UXSDKSwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKSwiftSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,8 @@
 				A452DC352070D8CB00EFBA30 /* ProductCommunicationManager.swift */,
 				A452DC362070D8CB00EFBA30 /* Widgets.storyboard */,
 				A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */,
+				A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */,
+				A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */,
 			);
 			path = UXSDKSwiftSample;
 			sourceTree = "<group>";
@@ -166,10 +170,8 @@
 		BA8AFBADC5F52ACEB507541F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0C749454D3647719CBCD9BD1 /* Pods-UILib Sample.debug.xcconfig */,
-				35B83E08AA7F67BDA9673C19 /* Pods-UILib Sample.release.xcconfig */,
-				9E811D27DC64A645DC7729F2 /* Pods-UXSDKSwiftSample.debug.xcconfig */,
-				334FD0E7AB0018DA73149501 /* Pods-UXSDKSwiftSample.release.xcconfig */,
+				DE38ABD14DBE3FB9BE89F3D7 /* Pods-UXSDKSwiftSample.debug.xcconfig */,
+				BB957E10C2CFC6BB041A1E75 /* Pods-UXSDKSwiftSample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -262,6 +264,7 @@
 				A452DC3D2070D8CC00EFBA30 /* DefaultLayoutCustomization.storyboard in Resources */,
 				A452DC442070D8CC00EFBA30 /* PanelsCollections.storyboard in Resources */,
 				A452DC472070D8CC00EFBA30 /* Widgets.storyboard in Resources */,
+				A4266C95208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard in Resources */,
 				A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */,
 				A452DC402070D8CC00EFBA30 /* Info.plist in Resources */,
 			);
@@ -326,6 +329,7 @@
 				A452DC412070D8CC00EFBA30 /* MainViewController.swift in Sources */,
 				A452DC462070D8CC00EFBA30 /* ProductCommunicationManager.swift in Sources */,
 				A452DC422070D8CC00EFBA30 /* MapWidgetViewController.swift in Sources */,
+				A4266C94208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift in Sources */,
 				A452DC3E2070D8CC00EFBA30 /* DefaultLayoutCustomizationViewController.swift in Sources */,
 				A452DC482070D8CC00EFBA30 /* WidgetsViewController.swift in Sources */,
 				A452DC432070D8CC00EFBA30 /* MyBatteryWidget.swift in Sources */,
@@ -459,7 +463,7 @@
 		};
 		868A4EE51E01FA53006FEE33 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E811D27DC64A645DC7729F2 /* Pods-UXSDKSwiftSample.debug.xcconfig */;
+			baseConfigurationReference = DE38ABD14DBE3FB9BE89F3D7 /* Pods-UXSDKSwiftSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7UL3LRJL93;
@@ -486,7 +490,7 @@
 		};
 		868A4EE61E01FA53006FEE33 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 334FD0E7AB0018DA73149501 /* Pods-UXSDKSwiftSample.release.xcconfig */;
+			baseConfigurationReference = BB957E10C2CFC6BB041A1E75 /* Pods-UXSDKSwiftSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7UL3LRJL93;

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/zlinoliver/Documents/DJI-SDK-Github/Mobile-UILibrary-iOS/Sample Code/ObjcSampleCode/UXSDKOCSample.xcodeproj">
+      location = "self:UILibOCSample.xcodeproj">
    </FileRef>
 </Workspace>

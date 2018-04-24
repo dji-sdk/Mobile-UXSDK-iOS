@@ -1,23 +1,23 @@
 //
 //  PanelsCollectionsViewController.swift
-//  DJIUILibrary
+//  UXSDK
 //
 //  Created by Arnaud Thiercelin on 12/12/16.
 //  Copyright © 2016 DJI. All rights reserved.
 //
 
 import UIKit
-import DJIUILibrary
+import DJIUXSDK
 
 class PanelsCollectionsViewController: UIViewController {
 
     @IBOutlet var statusBarContainingView: UIView!
-    var statusBarVC = DULStatusBarViewController()
+    var statusBarVC = DUXStatusBarViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Adding our DULStatusBarViewController to our container in code.
+        // Adding our DUXStatusBarViewController to our container in code.
         // This could be done in the storyboard
         self.addChildViewController(self.statusBarVC)
         self.statusBarContainingView.addSubview(self.statusBarVC.view);
@@ -48,7 +48,7 @@ class PanelsCollectionsViewController: UIViewController {
         
         
         // Switch stack for widgets in stack collections
-        guard let batteryWidget = self.statusBarVC.widget(with: DULBatteryWidget.self) else {
+        guard let batteryWidget = self.statusBarVC.widget(with: DUXBatteryWidget.self) else {
             return;
         }
         self.statusBarVC.statusBarView?.moveWidget(batteryWidget, to: .first)
@@ -59,7 +59,7 @@ class PanelsCollectionsViewController: UIViewController {
     }
     
     var widgetMovingTimer: Timer!
-    var lastStack = DULWidgetCollectionViewStack.first
+    var lastStack = DUXWidgetCollectionViewStack.first
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -70,7 +70,7 @@ class PanelsCollectionsViewController: UIViewController {
     
     func moveWidget() {
         // Switch stack for widgets in stack collections
-        guard let batteryWidget = self.statusBarVC.widget(with: DULBatteryWidget.self) else {
+        guard let batteryWidget = self.statusBarVC.widget(with: DUXBatteryWidget.self) else {
             return;
         }
         self.lastStack = self.lastStack == .first ? .last : .first

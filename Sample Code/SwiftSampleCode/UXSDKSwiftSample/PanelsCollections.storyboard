@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D9X-Nh-D9T">
-    <device id="ipad9_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D9X-Nh-D9T">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,11 +16,11 @@
                         <viewControllerLayoutGuide type="bottom" id="OZC-PN-4mo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1qT-dC-Eq4">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59X-ri-Mq6">
-                                <rect key="frame" x="0.0" y="723" width="1024" height="45"/>
+                                <rect key="frame" x="0.0" y="555" width="600" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="x9r-48-Nbf"/>
                                 </constraints>
@@ -41,7 +38,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbe-Nr-pJ0">
-                                <rect key="frame" x="514" y="79" width="240" height="344"/>
+                                <rect key="frame" x="334" y="119.5" width="240" height="344"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wbe-Nr-pJ0" secondAttribute="height" multiplier="30:43" priority="500" id="arW-DF-1zS"/>
                                     <constraint firstAttribute="width" constant="240" id="mxZ-Mp-vV0"/>
@@ -51,13 +48,13 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRv-oV-7J7">
-                                <rect key="frame" x="764" y="79" width="240" height="344"/>
+                                <rect key="frame" x="584" y="119.5" width="240" height="344"/>
                                 <connections>
                                     <segue destination="yur-Vl-pNI" kind="embed" id="OEI-Ta-b3w"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6j-ZD-EjU">
-                                <rect key="frame" x="20" y="79" width="484" height="571"/>
+                                <rect key="frame" x="20" y="119.5" width="304" height="362.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="PBb-hv-FSW"/>
                                 </constraints>
@@ -65,34 +62,34 @@
                                     <segue destination="335-95-a6u" kind="embed" id="C4c-ME-zjx"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panel • DULCameraSettingsController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fMY-yA-w54">
-                                <rect key="frame" x="514" y="431" width="240" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panel • DUXCameraSettingsController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fMY-yA-w54">
+                                <rect key="frame" x="334" y="471.5" width="240" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panel • DULExposureSettingsController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kNu-9K-gqc">
-                                <rect key="frame" x="764" y="431" width="240" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panel • DUXExposureSettingsController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kNu-9K-gqc">
+                                <rect key="frame" x="584" y="471.5" width="240" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection • DULStatusBarViewController - Note the extra high size and the widgets adapting." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bT8-G9-8VF">
-                                <rect key="frame" x="20" y="694" width="984" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection • DUXStatusBarViewController - Note the extra high size and the widgets adapting." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bT8-G9-8VF">
+                                <rect key="frame" x="20" y="526" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mfw-vb-qAN">
-                                <rect key="frame" x="58" y="30" width="936" height="41"/>
+                                <rect key="frame" x="58" y="30" width="512" height="81.5"/>
                                 <string key="text">Collections and Panels can be placed either in Storyboard/Xib using Scene or Containers and/or in code.
 In this example, the panels were added in the Storyboard,  the StatusBar Collection in code.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panel • DULPreflightChecklistController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Iu8-UK-xEM">
-                                <rect key="frame" x="20" y="658" width="484" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panel • DUXPreflightChecklistController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Iu8-UK-xEM">
+                                <rect key="frame" x="20" y="490" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -145,7 +142,7 @@ In this example, the panels were added in the Storyboard,  the StatusBar Collect
         <!--Camera Settings Controller-->
         <scene sceneID="ojm-l9-QSy">
             <objects>
-                <viewController id="Pc3-Ox-o6A" customClass="DULCameraSettingsController" sceneMemberID="viewController">
+                <viewController id="Pc3-Ox-o6A" customClass="DUXCameraSettingsController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sx9-XE-adq"/>
                         <viewControllerLayoutGuide type="bottom" id="YYj-SD-SqJ"/>
@@ -163,7 +160,7 @@ In this example, the panels were added in the Storyboard,  the StatusBar Collect
         <!--Exposure Settings Controller-->
         <scene sceneID="f40-Ra-CFQ">
             <objects>
-                <viewController id="yur-Vl-pNI" customClass="DULExposureSettingsController" sceneMemberID="viewController">
+                <viewController id="yur-Vl-pNI" customClass="DUXExposureSettingsController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5wW-8t-tfi"/>
                         <viewControllerLayoutGuide type="bottom" id="HvJ-LL-Ken"/>
@@ -181,7 +178,7 @@ In this example, the panels were added in the Storyboard,  the StatusBar Collect
         <!--Preflight Checklist Controller-->
         <scene sceneID="Nm5-nx-lop">
             <objects>
-                <viewController id="335-95-a6u" customClass="DULPreflightChecklistController" sceneMemberID="viewController">
+                <viewController id="335-95-a6u" customClass="DUXPreflightChecklistController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1s4-TN-wW0"/>
                         <viewControllerLayoutGuide type="bottom" id="n89-Kz-v3Y"/>

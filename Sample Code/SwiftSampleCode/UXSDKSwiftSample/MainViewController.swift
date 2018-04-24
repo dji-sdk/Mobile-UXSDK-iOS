@@ -1,6 +1,6 @@
 //
 //  MainViewController.swift
-//  UILib Sample
+//  UXSDK Sample
 //
 //  Copyright © 2016 DJI. All rights reserved.
 //
@@ -29,12 +29,12 @@ class MainViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        var version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        if version == nil {
+        var version = DJISDKManager.sdkVersion()
+        if version == "" {
             version = "N/A"
         }
         
-        self.version.text = "Version \(version!)"
+        self.version.text = "Version \(version)"
     }
 
     @IBAction func registerAction() {
@@ -49,9 +49,9 @@ class MainViewController: UITableViewController {
         
         //If this demo is used in China, it's required to login to your DJI account to activate the application. Also you need to use DJI Go app to bind the aircraft to your DJI account. For more details, please check this demo's tutorial.
         DJISDKManager.userAccountManager().logIntoDJIUserAccount(withAuthorizationRequired: false) { (state, error) in
-            if(error != nil){
-                NSLog("Login failed: %@" + String(describing: error))
-            }
+                if(error != nil){
+                    NSLog("Login failed: %@" + String(describing: error))
+                }
         }
         
         if self.appDelegate.productCommManager.registered {

@@ -1,11 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ROZ-10-UPA">
-    <device id="ipad9_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ROZ-10-UPA">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,11 +16,11 @@
                         <viewControllerLayoutGuide type="bottom" id="8c5-X9-aqt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nNb-qj-q8l">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVq-RM-xp5">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="-168" width="1024" height="768"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqp-UR-m3g">
                                         <rect key="frame" x="8" y="28" width="30" height="30"/>
@@ -59,21 +55,21 @@ This is to allow for both the container and the content to define the size of th
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDw-mw-2vo" customClass="DULBatteryWidget">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDw-mw-2vo" customClass="DUXBatteryWidget">
                                         <rect key="frame" x="56" y="96" width="230" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="m83-3L-XU8"/>
                                             <constraint firstAttribute="width" secondItem="dDw-mw-2vo" secondAttribute="height" multiplier="2.3" id="we6-fD-hxV"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqh-6K-F8a" customClass="DULBatteryWidget">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqh-6K-F8a" customClass="DUXBatteryWidget">
                                         <rect key="frame" x="294" y="121" width="115" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="2Eu-HI-HqU"/>
                                             <constraint firstAttribute="width" secondItem="tqh-6K-F8a" secondAttribute="height" multiplier="2.3" id="Kqi-cL-jBf"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khf-kk-tKF" customClass="DULBatteryWidget">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khf-kk-tKF" customClass="DUXBatteryWidget">
                                         <rect key="frame" x="417" y="136" width="46" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="jVz-6f-f3I"/>

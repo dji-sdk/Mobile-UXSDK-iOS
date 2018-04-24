@@ -1,15 +1,14 @@
 //
 //  MyBatteryWidget.swift
-//  UILib Sample
+//  UXSDK Sample
 //
-//  Created by DJI on 12/14/16.
 //  Copyright © 2016 DJI. All rights reserved.
 //
 
 import UIKit
-import DJIUILibrary
+import DJIUXSDK
 
-class MyBatteryWidget: DULBatteryWidget {
+class MyBatteryWidget: DUXBatteryWidget {
 
     let percentageLabel = UILabel()
     
@@ -35,7 +34,7 @@ class MyBatteryWidget: DULBatteryWidget {
     // Subclass (override) this method if you want to change how the data is processed.
     // in our case, we won't need it.
     /*
-    override func transform(_ value: DULSDKModelValue, for key: DJIKey) {
+    override func transform(_ value: DUXSDKModelValue, for key: DJIKey) {
         
     }
      */

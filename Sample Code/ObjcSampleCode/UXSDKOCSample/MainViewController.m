@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  UILibOCSample
+//  UXSDKOCSample
 //
 //  Created by DJI on 14/4/2017.
 //  Copyright © 2017 DJI. All rights reserved.
@@ -32,13 +32,11 @@
 {
     [super viewWillAppear:animated];
 
-    NSString *version =  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    
-    if (version == nil) {
-        version = @"N/A";
+    NSString *versionString = [DJISDKManager SDKVersion];
+    if (versionString != nil) {
+        self.version.text = [NSString stringWithFormat:@"Version %@", [DJISDKManager SDKVersion]];
     }
-    
-    self.version.text = [NSString stringWithFormat:@"Version %@", version];
+
 }
 
 
@@ -86,15 +84,12 @@
 #pragma mark - DJISDKManager Delegate Methods
 - (void)appRegisteredWithError:(NSError *)error
 {
-    if (error == nil){
-        
+    if (error == nil) {
         NSLog(@"Registration Succeeded");
         [self connectToProduct];
         self.registered.text = @"YES";
         self.registerBtn.hidden = YES;
-        
-    }else
-    {
+    } else {
         NSLog(@"Error Registrating App: %@", error.description);
         self.registered.text = @"NO";
         self.registerBtn.hidden = NO;

@@ -1,15 +1,15 @@
 //
 //  MapWidgetViewController.swift
-//  UILib Sample
+//  UXSDK Sample
 //
 //  Copyright © 2017 DJI. All rights reserved.
 //
 
 import UIKit
-import DJIUILibrary
+import DJIUXSDK
 
 class MapWidgetViewController: UIViewController {
-    @IBOutlet weak var mapWidget: DULMapWidget!
+    @IBOutlet weak var mapWidget: DUXMapWidget!
     @IBOutlet weak var replaceIconSegmentedView: UISegmentedControl!
     @IBOutlet weak var replaceIconBlurView: UIVisualEffectView!
     @IBOutlet weak var testAPIMethodsBlurView: UIVisualEffectView!
