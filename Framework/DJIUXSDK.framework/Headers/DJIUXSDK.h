@@ -42,6 +42,7 @@ FOUNDATION_EXPORT const unsigned char DJIUXSDKVersionString[];
 #import <DJIUXSDK/DUXCameraConfigStorageWidget.h>
 #import <DJIUXSDK/DUXCameraPictureConfigWidget.h>
 #import <DJIUXSDK/DUXCameraCapacityConfigWidget.h>
+#import <DJIUXSDK/DUXCameraConfigSSDWidget.h>
 
 // Camera Controls
 #import <DJIUXSDK/DUXCameraSettingsMenu.h>
@@ -146,6 +147,8 @@ FOUNDATION_EXPORT const unsigned char DJIUXSDKVersionString[];
 #import <DJIUXSDK/DUXRemoteControllerBatteryChecklistItem.h>
 #import <DJIUXSDK/DUXAircraftBatteryTemperatureChecklistItem.h>
 
+// Color Waveform
+#import <DJIUXSDK/DUXColorWaveformWidget.h>
 
 /**
  *  SDKModel

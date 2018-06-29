@@ -26,4 +26,11 @@
  */
 @interface DUXCompassWidget : DUXWidget
 
+
+/**
+ *  The accuracy needed for the CLLocationManager instance in the compass widget.
+ *  By default, the accuracy is best for navigation, but can be reduced if needed.
+ */
+@property(assign, nonatomic) CLLocationAccuracy locationManagerAccuracy;
+
 @end

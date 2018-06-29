@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DUXObjectProtocol.h"
 
 @class DUXPreflightChecklistItem;
 @class DUXPreflightChecklistManager;
@@ -61,7 +62,7 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
  *  in order to produce a decision on whether or not it is advisable to take off. It
  *  is not a UI object, but can be used to produce a preflight checklist UI.
  */
-@interface DUXPreflightChecklistManager : NSObject
+@interface DUXPreflightChecklistManager : NSObject <DUXObjectProtocol>
 
 
 /**

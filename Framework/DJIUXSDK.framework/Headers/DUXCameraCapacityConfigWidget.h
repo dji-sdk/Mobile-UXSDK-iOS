@@ -29,20 +29,20 @@
  *  The amount of remaining photos that can be stored assuming the current camera
  *  photo settings.
  */
-@property (nonatomic) NSInteger remainingPhotoCount;
+@property (nonatomic, readonly) NSInteger remainingPhotoCount;
 
 
 /**
  *  The remaining storage space left in MegaBytes.
  */
-@property (nonatomic) NSInteger remainingSpaceMB;
+@property (nonatomic, readonly) NSInteger remainingSpaceMB;
 
 
 /**
  *  The amount of remaining video in seconds that can be stored assuming the current
  *  video settings
  */
-@property (nonatomic) NSInteger remainingRecordingTime;
+@property (nonatomic, readonly) NSInteger remainingRecordingTime;
 
 @property (nonatomic) NSUInteger preferredCameraIndex;
 

@@ -24,4 +24,13 @@
  */
 @property (nonatomic, assign, readonly) CGFloat distance;
 
+
+/**
+ *  The accuracy needed for the CLLocationManager instance in the distance  RC
+ *  widget. By default, the accuracy is best for navigation, but can be  reduced if
+ *  needed.
+ */
+@property(assign, nonatomic) CLLocationAccuracy locationManagerAccuracy;
+
+
 @end

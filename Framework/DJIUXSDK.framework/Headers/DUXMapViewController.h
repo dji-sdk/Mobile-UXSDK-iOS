@@ -22,4 +22,12 @@
  */
 @property (readonly, nonatomic) DUXMapWidget *mapWidget;
 
+
+/**
+ *  Boolean value controlling whether the fly zone legend is shown inside the map
+ *  view controller. The fly zone legend indicates the color for all zone categories
+ *  and self-unlocked zones.
+ */
+@property (nonatomic, assign) BOOL showFlyZoneLegend;
+
 @end

@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistItemState) {
 /**
  *  The ready to fly state of the item.
  */
-@property (nonatomic) BOOL isReadyToFly;
+@property (nonatomic, readonly) BOOL isReadyToFly;
 
 
 /**

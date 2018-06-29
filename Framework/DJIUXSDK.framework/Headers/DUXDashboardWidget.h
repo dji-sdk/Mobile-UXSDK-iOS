@@ -21,4 +21,12 @@
  */
 @interface DUXDashboardWidget : DUXWidget
 
+
+/**
+ *  The accuracy needed for the CLLocationManager instance in the distance dashboard
+ *  widget. By default, the accuracy is best for navigation, but can be reduced if
+ *  needed.
+ */
+@property(assign, nonatomic) CLLocationAccuracy locationManagerAccuracy;
+
 @end

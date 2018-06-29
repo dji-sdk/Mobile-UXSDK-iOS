@@ -100,6 +100,8 @@
                   </dd>
                   <dd><a href="RemainingFlightTimeWidget.html">DUXRemainingFlightTimeWidget</a>
                   </dd>
+                  <dd><a href="DULColorWaveformWidget.html">DUXColorWaveformWidget</a>
+                  </dd>
                   <dd><a href="TakeOffLandWidget.html">DUXTakeOffWidget</a>
                   </dd>
                   <dd><a href="ReturnHomeWidget.html">DUXReturnHomeWidget</a>
@@ -113,6 +115,8 @@
                   <dd><a href="CameraConfigWBWidget.html">DUXCameraConfigWBWidget</a>
                   </dd>
                   <dd><a href="CameraConfigStorageWidget.html">DUXCameraConfigStorageWidget</a>
+                  </dd>
+                  <dd><a href="CameraConfigSSDWidget.html">DUXCameraConfigSSDWidget</a>
                   </dd>
                   <dd><a href="CameraEVConfigWidget.html">DUXCameraConfigEVWidget</a>
                   </dd>
@@ -258,6 +262,15 @@
 <p><font color="#666">Compound widget that aggregates important physical state information of the aircraft into a dashboard. It includes the circular <code><a href="../Widgets/DUXCompassWidget.html#duxcompasswidget">DUXCompassWidget</a></code>, the <code><a href="../Widgets/DistanceFromHomeWidget.html#distancefromhomewidget">DUXDistanceHomeWidget</a></code>, the <code><a href="../Widgets/HorizontalVelocityWidget.html#horizontalvelocitywidget">DUXHorizontalVelocityWidget</a></code>, the <code><a href="../Widgets/DistanceFromRCWidget.html#distancefromrcwidget">DUXDistanceRCWidget</a></code>, the <code><a href="../Widgets/VerticalVelocityWidget.html#verticalvelocitywidget">DUXVerticalVelocityWidget</a></code>, and the <code><a href="../Widgets/AltitudeWidget.html#altitudewidget">DUXAltitudeWidget</a></code>.</font></p>
 <h5 id="usage">Usage:</h5>
 <p><font color="#666">Preferred Aspect Ratio: 541:91.</font></p>
+<h5 id="class-members">Class Members:</h5>
+<div class="api-row" id="duxdashboardwidget_locationmanageraccuracy"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#duxdashboardwidget_locationmanageraccuracy_inline">locationManagerAccuracy</a></div></div><div class="inline-doc" id="duxdashboardwidget_locationmanageraccuracy_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>locationManagerAccuracy</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">assign</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CLLocationAccuracy</span> locationManagerAccuracy</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DUXDashboardWidget.h</font></td></tr></table></html>
+<h5 id="description">Description:</h5>
+<p><font color="#666">The accuracy needed for the CLLocationManager instance in the distance dashboard  widget. By default, the accuracy is best for navigation, but can be reduced if needed.</font></p>
+</div>
 
         </div>
       </div>

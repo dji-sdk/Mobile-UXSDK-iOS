@@ -100,6 +100,8 @@
                   </dd>
                   <dd><a href="RemainingFlightTimeWidget.html">DUXRemainingFlightTimeWidget</a>
                   </dd>
+                  <dd><a href="DULColorWaveformWidget.html">DUXColorWaveformWidget</a>
+                  </dd>
                   <dd><a href="TakeOffLandWidget.html">DUXTakeOffWidget</a>
                   </dd>
                   <dd><a href="ReturnHomeWidget.html">DUXReturnHomeWidget</a>
@@ -113,6 +115,8 @@
                   <dd><a href="CameraConfigWBWidget.html">DUXCameraConfigWBWidget</a>
                   </dd>
                   <dd><a href="CameraConfigStorageWidget.html">DUXCameraConfigStorageWidget</a>
+                  </dd>
+                  <dd><a href="CameraConfigSSDWidget.html">DUXCameraConfigSSDWidget</a>
                   </dd>
                   <dd><a href="CameraEVConfigWidget.html">DUXCameraConfigEVWidget</a>
                   </dd>
@@ -251,8 +255,8 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DUXPreflightChecklistManager</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DUXPreflightChecklistManager</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DUXPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DUXPreflightChecklistManager</span> : <span class="title">NSObject</span> &lt;<span class="title">DUXObjectProtocol</span>&gt;</span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DUXPreflightChecklistManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject <duxobjectprotocol></duxobjectprotocol></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The preflight checklist manager class manages the life-cycle of preflight checklist items, triggers their monitoring activity, and collects their states in order to produce a decision on whether or not it is advisable to take off. It is not a UI object, but can be used to produce a preflight checklist UI.</font></p>
 <h5 id="class-members">Class Members:</h5>
