@@ -44,7 +44,7 @@ class MapWidgetViewController: UIViewController {
     }
     
     @IBAction func showFlyZonesValueChanged(_ sender: UISwitch) {
-        self.mapWidget.showAllFlyZones = sender.isOn
+        self.mapWidget.visibleFlyZones = sender.isOn ? [.restricted, .authorization, .enhancedWarning, .warning] : []
     }
     
     @IBAction func directionToHomeValueChanged(_ sender: UISwitch) {

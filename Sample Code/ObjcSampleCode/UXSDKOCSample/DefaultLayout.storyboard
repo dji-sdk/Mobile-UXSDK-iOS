@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Sk0-7A-pYA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Sk0-7A-pYA">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,23 +20,25 @@
                         <viewControllerLayoutGuide type="bottom" id="ISl-Sw-CDm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AvT-PO-zau">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="225-X7-0Ec" customClass="DUXCameraConfigInfoWidget">
-                                <rect key="frame" x="441" y="70" width="200" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="225-X7-0Ec" customClass="DUXCameraConfigInfoWidget">
+                                <rect key="frame" x="441" y="50" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6Vs-8y-fgp"/>
+                                    <constraint firstAttribute="width" constant="200" id="MmV-sA-jcv"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HWd-ts-Z40" customClass="DUXCameraConfigStorageWidget">
-                                <rect key="frame" x="651" y="70" width="293" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWd-ts-Z40" customClass="DUXCameraConfigStorageWidget">
+                                <rect key="frame" x="651" y="50" width="293" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="FYS-0Y-2Tb"/>
                                     <constraint firstAttribute="width" constant="293.5" placeholder="YES" id="bUH-Uu-mY4"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsM-c0-gPw">
-                                <rect key="frame" x="20" y="70" width="30" height="30"/>
+                                <rect key="frame" x="20" y="50" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Hux-KG-pdc"/>
                                     <constraint firstAttribute="width" secondItem="wsM-c0-gPw" secondAttribute="height" multiplier="1:1" id="gN5-Ux-S4p"/>
@@ -49,7 +55,6 @@
                             <constraint firstItem="HWd-ts-Z40" firstAttribute="top" secondItem="225-X7-0Ec" secondAttribute="top" id="2dw-5w-rw9"/>
                             <constraint firstAttribute="leadingMargin" secondItem="wsM-c0-gPw" secondAttribute="leading" id="Bao-TK-Cn8"/>
                             <constraint firstItem="wsM-c0-gPw" firstAttribute="top" secondItem="Xdk-bb-Tnp" secondAttribute="bottom" constant="50" id="G2h-6l-NSY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HWd-ts-Z40" secondAttribute="trailing" constant="60" id="IOa-s0-os4"/>
                             <constraint firstItem="225-X7-0Ec" firstAttribute="top" secondItem="Xdk-bb-Tnp" secondAttribute="bottom" constant="50" id="LJf-oC-Guj"/>
                             <constraint firstItem="HWd-ts-Z40" firstAttribute="bottom" secondItem="225-X7-0Ec" secondAttribute="bottom" id="hXG-FR-t7l"/>
                             <constraint firstItem="225-X7-0Ec" firstAttribute="leading" secondItem="AvT-PO-zau" secondAttribute="leading" constant="441" id="kxC-cn-PUx"/>
