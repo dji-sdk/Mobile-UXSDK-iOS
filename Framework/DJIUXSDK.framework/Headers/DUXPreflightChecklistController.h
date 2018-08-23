@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DUXPreflightChecklistManager.h"
 
 
 /**
@@ -26,5 +27,7 @@
  *  DUXPreflightChecklistController.
  */
 + (instancetype)preflightChecklistController;
+
+@property (strong, nonatomic) DUXPreflightChecklistManager *checklistManager;
 
 @end

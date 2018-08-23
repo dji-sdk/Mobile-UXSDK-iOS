@@ -127,6 +127,7 @@ FOUNDATION_EXPORT const unsigned char DJIUXSDKVersionString[];
 // FPV
 #import <DJIUXSDK/DUXFPVViewController.h>
 #import <DJIUXSDK/DUXFPVView.h>
+#import <DJIUXSDK/DUXFPVInteractionController.h>
 
 // Preflight Checklist Manager
 #import <DJIUXSDK/DUXPreflightChecklistManager.h>

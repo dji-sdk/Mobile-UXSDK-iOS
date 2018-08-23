@@ -17,4 +17,6 @@
 @property NSInteger sdSpaceLeftInMB;
 @property NSInteger ssdSpaceLeftInMB;
 
+@property (nonatomic) NSUInteger preferredCameraIndex;
+
 @end

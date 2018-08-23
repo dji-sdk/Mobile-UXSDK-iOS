@@ -25,5 +25,5 @@
  */
 + (BOOL) isSupported;
 
-- (instancetype) initWithFPVViewController:(DUXFPVViewController *) fpvViewController;
+- (instancetype) initWithFPVViewController:(DUXFPVViewController *)fpvViewController;
 @end

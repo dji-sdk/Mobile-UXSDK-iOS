@@ -54,7 +54,11 @@
                   </dd>
                   <dd><a href="DUXContentViewController.html">DUXContentViewController</a>
                   </dd>
-                  <dd><a href="" class="active">DUXFPVViewController</a>
+                  <dd><a data-href="" class="sub-toggle">DUXFPVViewController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="DUXFPVInteractionController.html">DUXFPVInteractionController</a>
+                            </dd>
+                    </ul>
                   </dd>
           </dl>
           <dl>
@@ -278,6 +282,25 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Flag which enables/disables interactivity of the FPVView. Used for enabling/disabling FPV view response to touches for focus and exposure when toggling between full screen and floating window.</font></p>
 </div>
+<div class="api-row" id="duxfpvviewcontroller_interactioncontroller"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#duxfpvviewcontroller_interactioncontroller_inline">interactionController</a></div></div><div class="inline-doc" id="duxfpvviewcontroller_interactioncontroller_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>interactionController</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nonnull</span>) DUXFPVInteractionController *interactionController</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DUXFPVViewController.h</font></td></tr></table></html>
+<h5 id="description-v4">Description:</h5>
+<p><font color="#666">Enables/disables interactivity of the FPV at a greater granularity than <code><a href="../Widgets/DUXFPVViewController.html#duxfpvviewcontroller_ishudinteractionenabled">isHUDInteractionEnabled</a></code>.</font></p>
+<h5 id="see-also-v2">See Also:</h5>
+<p><font color="#666"><code><a href="../Widgets/DUXFPVInteractionController.html#duxfpvinteractioncontroller">DUXFPVInteractionController</a></code></font></p>
+</div>
+<div class="api-row" id="duxfpvviewcontroller_isradarwidgetvisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#duxfpvviewcontroller_isradarwidgetvisible_inline">isRadarWidgetVisible</a></div></div><div class="inline-doc" id="duxfpvviewcontroller_isradarwidgetvisible_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>isRadarWidgetVisible</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> isRadarWidgetVisible</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DUXFPVViewController.h</font></td></tr></table></html>
+<h5 id="description-v5">Description:</h5>
+<p><font color="#666">Enables/disables the radar widget overlayed on top of the FPV. Radar widget will  still only appear on products that support it.</font></p>
+</div>
+<div class="api-row" id="duxfpvinteractioncontroller"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DUXFPVInteractionController.html">DUXFPVInteractionController</a></div></div>
 
         </div>
       </div>

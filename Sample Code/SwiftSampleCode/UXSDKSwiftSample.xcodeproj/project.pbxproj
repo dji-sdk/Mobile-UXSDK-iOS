@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5300B462212BDE970015AF46 /* FFmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5300B461212BDE970015AF46 /* FFmpeg.framework */; };
+		5300B463212BDE9C0015AF46 /* DJIWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5300B460212BDE860015AF46 /* DJIWidget.framework */; };
+		5300B464212BDEA30015AF46 /* DJIWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5300B460212BDE860015AF46 /* DJIWidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5300B465212BDEA80015AF46 /* FFmpeg.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5300B461212BDE970015AF46 /* FFmpeg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		602DFB5B01103220C3A15A41 /* libPods-UXSDKSwiftSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9BE8E3D8F25FD2873AD417 /* libPods-UXSDKSwiftSample.a */; };
 		A4266C94208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */; };
 		A4266C95208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */; };
@@ -27,24 +31,15 @@
 		A452DC462070D8CC00EFBA30 /* ProductCommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC352070D8CB00EFBA30 /* ProductCommunicationManager.swift */; };
 		A452DC472070D8CC00EFBA30 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC362070D8CB00EFBA30 /* Widgets.storyboard */; };
 		A452DC482070D8CC00EFBA30 /* WidgetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */; };
-		A452DC502070DA0C00EFBA30 /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A452DC4F2070DA0200EFBA30 /* VideoPreviewer.framework */; };
-		A452DC512070DA0C00EFBA30 /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A452DC4F2070DA0200EFBA30 /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A452DC4E2070DA0200EFBA30 /* PBXContainerItemProxy */ = {
+		5300B45F212BDE860015AF46 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A452DC4A2070DA0200EFBA30 /* VideoPreviewer.xcodeproj */;
+			containerPortal = 5300B45B212BDE860015AF46 /* DJIWidget.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 02A543FD1C3C51CB0083C11B;
-			remoteInfo = VideoPreviewer;
-		};
-		A452DC522070DA0C00EFBA30 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A452DC4A2070DA0200EFBA30 /* VideoPreviewer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 02A543FC1C3C51CB0083C11B;
-			remoteInfo = VideoPreviewer;
+			remoteGlobalIDString = 2E54A2CD1F4A904000916B4D;
+			remoteInfo = DJIWidget;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -55,7 +50,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A452DC512070DA0C00EFBA30 /* VideoPreviewer.framework in Embed Frameworks */,
+				5300B465212BDEA80015AF46 /* FFmpeg.framework in Embed Frameworks */,
+				5300B464212BDEA30015AF46 /* DJIWidget.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		38D2C47F1E0B1F20009A3831 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		5300B45B212BDE860015AF46 /* DJIWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DJIWidget.xcodeproj; path = ../DJIWidget/DJIWidget.xcodeproj; sourceTree = "<group>"; };
+		5300B461212BDE970015AF46 /* FFmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FFmpeg.framework; path = ../DJIWidget/FFmpeg/FFmpeg.framework; sourceTree = "<group>"; };
 		868A4ED01E01FA53006FEE33 /* UXSDKSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXSDKSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualFocusModeAdjustmentCustomLayoutViewController.swift; sourceTree = "<group>"; };
 		A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ManualFocusModeAdjustmentCustomLayout.storyboard; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 		A452DC352070D8CB00EFBA30 /* ProductCommunicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCommunicationManager.swift; sourceTree = "<group>"; };
 		A452DC362070D8CB00EFBA30 /* Widgets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Widgets.storyboard; sourceTree = "<group>"; };
 		A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetsViewController.swift; sourceTree = "<group>"; };
-		A452DC4A2070DA0200EFBA30 /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
 		A4BE867E1F6B958600AFA154 /* libPods-UILib Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UILib Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB957E10C2CFC6BB041A1E75 /* Pods-UXSDKSwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKSwiftSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample.release.xcconfig"; sourceTree = "<group>"; };
 		BB9BE8E3D8F25FD2873AD417 /* libPods-UXSDKSwiftSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UXSDKSwiftSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,8 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A452DC502070DA0C00EFBA30 /* VideoPreviewer.framework in Frameworks */,
+				5300B463212BDE9C0015AF46 /* DJIWidget.framework in Frameworks */,
 				602DFB5B01103220C3A15A41 /* libPods-UXSDKSwiftSample.a in Frameworks */,
+				5300B462212BDE970015AF46 /* FFmpeg.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,12 +105,21 @@
 		38D2C47E1E0B1F20009A3831 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A452DC4A2070DA0200EFBA30 /* VideoPreviewer.xcodeproj */,
+				5300B461212BDE970015AF46 /* FFmpeg.framework */,
+				5300B45B212BDE860015AF46 /* DJIWidget.xcodeproj */,
 				A4BE867E1F6B958600AFA154 /* libPods-UILib Sample.a */,
 				38D2C47F1E0B1F20009A3831 /* libz.tbd */,
 				BB9BE8E3D8F25FD2873AD417 /* libPods-UXSDKSwiftSample.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5300B45C212BDE860015AF46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5300B460212BDE860015AF46 /* DJIWidget.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		868A4EC71E01FA53006FEE33 = {
@@ -159,14 +166,6 @@
 			path = UXSDKSwiftSample;
 			sourceTree = "<group>";
 		};
-		A452DC4B2070DA0200EFBA30 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A452DC4F2070DA0200EFBA30 /* VideoPreviewer.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		BA8AFBADC5F52ACEB507541F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,12 +188,11 @@
 				868A4ECE1E01FA53006FEE33 /* Resources */,
 				38D2C4751E0B1EF2009A3831 /* Embed Frameworks */,
 				88C4707591A1085FAD9B1CB0 /* [CP] Embed Pods Frameworks */,
-				521D14FA3E9A12884D158A9B /* [CP] Copy Pods Resources */,
+				24BCFDA498331B2736E700FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A452DC532070DA0C00EFBA30 /* PBXTargetDependency */,
 			);
 			name = UXSDKSwiftSample;
 			productName = "UILib Sample";
@@ -232,8 +230,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A452DC4B2070DA0200EFBA30 /* Products */;
-					ProjectRef = A452DC4A2070DA0200EFBA30 /* VideoPreviewer.xcodeproj */;
+					ProductGroup = 5300B45C212BDE860015AF46 /* Products */;
+					ProjectRef = 5300B45B212BDE860015AF46 /* DJIWidget.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -244,11 +242,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A452DC4F2070DA0200EFBA30 /* VideoPreviewer.framework */ = {
+		5300B460212BDE860015AF46 /* DJIWidget.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = VideoPreviewer.framework;
-			remoteRef = A452DC4E2070DA0200EFBA30 /* PBXContainerItemProxy */;
+			path = DJIWidget.framework;
+			remoteRef = 5300B45F212BDE860015AF46 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -279,16 +277,19 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UXSDKSwiftSample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		521D14FA3E9A12884D158A9B /* [CP] Copy Pods Resources */ = {
+		24BCFDA498331B2736E700FB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,9 +310,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample-frameworks.sh",
+				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
+				"${PODS_ROOT}/DJI-UXSDK-iOS/iOS_UXSDK/DJIUXSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIUXSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -339,14 +345,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A452DC532070DA0C00EFBA30 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = VideoPreviewer;
-			targetProxy = A452DC522070DA0C00EFBA30 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A452DC272070D8CB00EFBA30 /* LaunchScreen.storyboard */ = {
@@ -472,6 +470,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/../DJIWidget/**",
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/include\"/**";
 				INFOPLIST_FILE = "$(SRCROOT)/UXSDKSwiftSample/Info.plist";
@@ -499,6 +498,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/../DJIWidget/**",
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/include\"/**";
 				INFOPLIST_FILE = "$(SRCROOT)/UXSDKSwiftSample/Info.plist";

@@ -25,19 +25,19 @@ typedef NS_ENUM(NSUInteger, DUXMapAnnotationType) {
     DUXMapAnnotationTypeHome,
 
     /**
-     *  Annotation of a fly zone that can be self-unlocked, currently on the map. Only
-     *  visible when DUXMapWidget_tapToUnlockEnabled is set to `TRUE`.
+     *  Annotation of a self-unlock fly zone that can be unlocked, currently on the map.
+     *  Only visible when DUXMapWidget_tapToUnlockEnabled is set to `TRUE`.
      */
     DUXMapAnnotationTypeEligibleFlyZones,
 
     /**
-     *  Annotation of a fly zone that is unlocked currently. Only visible when
-     *  DUXMapWidget_tapToUnlockEnabled is set to `TRUE`.
+     *  Annotation of a self-unlock fly zone that is unlocked currently. Only visible
+     *  when DUXMapWidget_tapToUnlockEnabled is set to `TRUE`.
      */
     DUXMapAnnotationTypeUnlockedFlyZones,
 
     /**
-     *  Annotation of a fly zone that is a custom unlock zone. Only visible when
+     *  Annotation of a custom unlock fly zone. Only visible when
      *  DUXMapWidget_tapToUnlockEnabled is set to `TRUE`.
      */
     DUXMapAnnotationTypeCustomUnlockedFlyZones,
@@ -96,15 +96,15 @@ typedef NS_OPTIONS(NSUInteger, DUXMapVisibleFlyZones) {
 
 
 /**
- *  A Boolean value indicating whether the map displays a line showing the direction
- *  to home. The default value of this property is false.
+ *  Defaults to `NO`. A Boolean value indicating whether the map displays a line
+ *  showing the direction to home.
  */
 @property (nonatomic, assign) BOOL showDirectionToHome;
 
 
 /**
- *  A Boolean value that determines whether the map locks the camera view on the
- *  aircraft. The default value of this property is false.
+ *  Defaults to `NO`. A Boolean value that determines whether the map locks the
+ *  camera view on the aircraft.
  */
 @property (nonatomic, assign) BOOL isMapCameraLockedOnAircraft;
 
@@ -124,17 +124,31 @@ typedef NS_OPTIONS(NSUInteger, DUXMapVisibleFlyZones) {
 
 
 /**
- *  A boolean value indicating if tapping to unlock select fly zones is enabled.
- *  Only self-unlocking is supported at this time.  If this option is enabled, you
- *  MUST use `DUXMapViewController` to present the widget via view controller
- *  containment.
+ *  Defaults to `NO`. Shows custom unlock zones if any are available for the
+ *  currently connected aircraft.
+ */
+@property (nonatomic, assign) BOOL showCustomUnlockZones;
+
+
+/**
+ *  A boolean value indicating if tapping to unlock select fly zones is enabled.  If
+ *  this option is enabled, you MUST use `DUXMapViewController` to present the
+ *  widget via view controller containment.
  */
 @property (nonatomic, assign) BOOL tapToUnlockEnabled;
 
 
+
 /**
- *  A Boolean value indicating whether the map displays a line of aircraft's flight
- *  path. The default value of this property is false.
+ *  Defaults to `NO`. Show a small indicator displaying the latest DJI account login
+ *  state.  Useful if using FlySafe features.
+ */
+@property (nonatomic, assign) BOOL showDJIAccountLoginIndicator;
+
+
+/**
+ *  Defaults to `NO`. A Boolean value indicating whether the map displays a line of
+ *  aircraft's flight path.
  */
 @property (nonatomic, assign) BOOL showFlightPath;
 
@@ -170,6 +184,13 @@ typedef NS_OPTIONS(NSUInteger, DUXMapVisibleFlyZones) {
  *  Removes the current flight path generated, regardless of being hidden.
  */
 - (void)clearCurrentFlightPath;
+
+
+/**
+ *  Call this to sync currently shown custom unlock zones to aircraft. They will
+ *  still need to be manually enabled.
+ */
+- (void)syncCustomUnlockZones;
 
 #pragma mark - Customization
 
@@ -217,15 +238,55 @@ typedef NS_OPTIONS(NSUInteger, DUXMapVisibleFlyZones) {
 
 
 /**
- *  Current color of the self-unlocked fly zone overlay.
+ *  Current color of a self-unlock fly zone overlay.
  */
 @property (nonatomic, strong, nonnull) UIColor *unlockedFlyZoneOverlayColor;
 
 
 /**
- *  Current alpha of the self-unlocked fly zone overlay.
+ *  Current alpha of a self-unlock fly zone overlay.
  */
 @property (nonatomic, assign) CGFloat unlockedFlyZoneOverlayAlpha;
+
+
+/**
+ *  Current color of a custom unlock fly zone overlay.
+ */
+@property (nonatomic, strong, nonnull) UIColor *customUnlockFlyZoneOverlayColor;
+
+
+/**
+ *  Current alpha of a custom unlock fly zone overlay.
+ */
+@property (nonatomic, assign) CGFloat customUnlockFlyZoneOverlayAlpha;
+
+
+/**
+ *  Current color of a custom unlock fly zone overlay that has been sent to
+ *  aircraft.
+ */
+@property (nonatomic, strong, nonnull) UIColor *customUnlockFlyZoneSentToAircraftOverlayColor;
+
+
+/**
+ *  Current alpha of a custom unlock fly zone overlay that has been sent to the
+ *  aircraft.
+ */
+@property (nonatomic, assign) CGFloat customUnlockFlyZoneSentToAircraftOverlayAlpha;
+
+
+/**
+ *  Current color of a custom unlock fly zone overlay that has been sent to aircraft
+ *  and enabled.
+ */
+@property (nonatomic, strong, nonnull) UIColor *customUnlockFlyZoneEnabledOverlayColor;
+
+
+/**
+ *  Current alpha of a custom unlock fly zone overlay that has been sent to aircraft
+ *  and enabled.
+ */
+@property (nonatomic, assign) CGFloat customUnlockFlyZoneEnabledOverlayAlpha;
 
 
 /**

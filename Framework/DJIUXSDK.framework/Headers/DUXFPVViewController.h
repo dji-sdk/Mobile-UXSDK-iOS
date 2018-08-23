@@ -13,6 +13,7 @@
 
 @class DUXFPVViewController;
 @class DUXFPVView;
+@class DUXFPVInteractionController;
 
 @protocol DUXFPVViewControllerDelegate <NSObject>
 
@@ -41,7 +42,21 @@
  *  enabling/disabling FPV view response to touches for focus and exposure when
  *  toggling between full screen and floating window.
  */
-@property (nonatomic) BOOL isHUDInteractionEnabled;
+@property (nonatomic) BOOL isHUDInteractionEnabled; // DEPRECATED_ATTRIBUTE This gets deprecated, use interaction controller instead
+
+
+/**
+ *  Enables/disables interactivity of the FPV at a greater granularity than
+ *  `isHUDInteractionEnabled`.
+ */
+@property (nonatomic, readonly, nonnull) DUXFPVInteractionController *interactionController;
+
+
+/**
+ *  Enables/disables the radar widget overlayed on top of the FPV. Radar widget will
+ *  still only appear on products that support it.
+ */
+@property (nonatomic) BOOL isRadarWidgetVisible;
 
 // Delegate to observe camera index changes
 @property (nonatomic, weak, nullable) id <DUXFPVViewControllerDelegate> delegate;

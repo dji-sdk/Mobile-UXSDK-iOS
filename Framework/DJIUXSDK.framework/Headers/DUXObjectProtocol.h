@@ -39,6 +39,7 @@
  */
 - (void)transformValue:(nonnull DUXSDKModelValue *)value forKey:(nonnull __kindof DJIKey *)key;
 
+@optional
 
 /**
  *  Method that is automatically called once the data has been used by transform.
