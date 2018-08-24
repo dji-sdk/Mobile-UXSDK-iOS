@@ -1,0 +1,6 @@
+framework module DJIUXSDK {
+  umbrella header "DJIUXSDK.h"
+
+  export *
+  module * { export * }
+}
