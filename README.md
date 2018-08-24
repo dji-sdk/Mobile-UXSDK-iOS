@@ -14,9 +14,9 @@ Since this project has been integrated with [DJI iOS UX SDK CocoaPods](https://c
 
 Open Terminal and change to the download project's directory, enter the following command to install it:
 
-~~~
+```
 sudo gem install cocoapods
-~~~
+```
 
 The process may take a long time, please wait. For further installation instructions, please check [this guide](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
@@ -26,13 +26,13 @@ The process may take a long time, please wait. For further installation instruct
 
 Run the following command in the **ObjcSampleCode** and **SwiftSampleCode** paths:
 
-~~~
+```
 pod install
-~~~
+```
 
 If you install it successfully, you should get the messages similar to the following:
 
-~~~
+```
 Analyzing dependencies
 Downloading dependencies
 Installing DJI-SDK-iOS (4.7)
@@ -43,25 +43,44 @@ Integrating client project
 [!] Please close any current Xcode sessions and use `UXSDKOCSample.xcworkspace` for this project from now on.
 Pod installation complete! There is 1 dependency from the Podfile and 1 total pod
 installed.
-~~~
+```
 
 > **Note**: If you saw "Unable to satisfy the following requirements" issue during pod install, please run the following commands to update your pod repo and install the pod again:
 >
-> ~~~
+> ```
 > pod repo update
 > pod install
-> ~~~
+> ```
+
+#### Updating from older versions
+
+If you are using the SDK for your own project and you want to update from an older version you should follow these steps:
+
+* Open your project in Xcode and remove the `VideoPreviewer` folder from the `Frameworks` folder
+* Clone the `Mobile-UXSDK-iOS` repo. `git clone https://github.com/dji-sdk/Mobile-UXSDK-iOS`
+* Copy the folder `Mobile-UXSDK-iOS/Sample Code/DJIWidget` to the root folder where your `*.xcworkspace` is. Be sure to include all the content of the folder as shown in the screenshot below:
+  ![](./docs/Readme/assets/DJIWidgetFolderLocation.png)
+
+* Then drag and drop the `DJIWIdget.xcodeproj` and `FFmpeg.framework` to the `Framework` folder located in the tree of your Xcode project, this should look like below:
+  ![](./docs/Readme/assets/FrameworksFolder.png)
+
+* Go to your project settings, under the general tab navigate to `Embedded Binaries` and add both the `DJIWidget` **and** the `FFmpeg` frameworks
+  ![](./docs/Readme/assets/EmbeddedBinaries.png)
+
+* Then wherever you were importing in your code `<VideoPreviewer/VideoPreviewer.h>` you should replace it by `<DJIWidget/DJIWidget.h>`
+
+* Finally in your code wherever you were using the `VideoPreviewer` component, you should replace all the calls to `DJIVideoPreviewer` as it has been renamed. So for example `[[VideoPreviewer instance] start];` now should be [[DJIVideoPreviewer instance] start];
 
 ### Run Sample Code
 
 Developers will need to setup the App Key by editing the sample code's info.plist, [after generating their unique App Key](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html#generate-an-app-key).
 
-For the Objective-C sample app, the key value **DJISDKAppKey** should to be added to "Info.plist" with your unique app key as a string.  
+For the Objective-C sample app, the key value **DJISDKAppKey** should to be added to "Info.plist" with your unique app key as a string.
 
 For the Swift sample app, the **DJISDKAppKey** is present in the "Info.plist" - developers just need to add their unique key.
 In both cases developers will still need to update the [Bundle Identifier](http://developer.dji.com/user/mobile-sdk/ios-configuration/) .
 
-One of DJI's aircraft or handheld cameras will be required to run the sample application.  
+One of DJI's aircraft or handheld cameras will be required to run the sample application.
 
 ## Learn More about DJI UX SDK
 
@@ -71,33 +90,32 @@ Please visit [UX SDK Introduction](http://developer.dji.com/mobile-sdk/documenta
 
 From registering as a developer, to deploying an application, the following will take you through the full Mobile SDK Application development process:
 
-- [Prerequisites](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-prerequisits.html)
-- [Register as DJI Developer & Download SDK](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-register.html)
-- [Integrate SDK into Application](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-integrate.html)
-- [Run Application](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-run.html)
-- [Testing, Profiling & Debugging](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-testing.html)
-- [Deploy](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-deploy.html)
+* [Prerequisites](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-prerequisits.html)
+* [Register as DJI Developer & Download SDK](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-register.html)
+* [Integrate SDK into Application](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-integrate.html)
+* [Run Application](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-run.html)
+* [Testing, Profiling & Debugging](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-testing.html)
+* [Deploy](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-deploy.html)
 
 ## Feedback
 
 We’d love to have your feedback as soon as possible. Reach out to us when you hit roadblocks, or want to talk through something. At a minimum please let us know:
 
-- What improvements would you like to see?
-- What is hard to use or inconsistent with your expectations?
-- What is good?
-- Any bugs you come across.
+* What improvements would you like to see?
+* What is hard to use or inconsistent with your expectations?
+* What is good?
+* Any bugs you come across.
 
 ## Support
 
 You can get support from DJI with the following methods:
 
-- [**DJI Forum**](http://forum.dev.dji.com/en)
-- Post questions in [**Stackoverflow**](http://stackoverflow.com) using [**dji-sdk**](http://stackoverflow.com/questions/tagged/dji-sdk) tag
-- dev@dji.com
+* [**DJI Forum**](http://forum.dev.dji.com/en)
+* Post questions in [**Stackoverflow**](http://stackoverflow.com) using [**dji-sdk**](http://stackoverflow.com/questions/tagged/dji-sdk) tag
+* dev@dji.com
 
 ## Join Us
 
-DJI is looking for all kinds of Software Engineers to continue building the Future of Possible. Available positions in Shenzhen, China and around the world. If you are interested, please send your resume to <software-sz@dji.com>. For more details, and list of all our global offices, please check <https://we.dji.com/jobs_en.html>.
+DJI is looking for all kinds of Software Engineers to continue building the Future of Possible. Available positions in Shenzhen, China and around the world. If you are interested, please send your resume to <mailto:software-sz@dji.com>. For more details, and list of all our global offices, please check <https://we.dji.com/jobs_en.html>.
 
-DJI 招软件工程师啦，based在深圳，如果你想和我们一起把DJI产品做得更好，请发送简历到 <software-sz@dji.com>.  详情请浏览 <https://we.dji.com/zh-CN/recruitment>.
-
+DJI 招软件工程师啦，based 在深圳，如果你想和我们一起把 DJI 产品做得更好，请发送简历到 <mailto:software-sz@dji.com>. 详情请浏览 <https://we.dji.com/zh-CN/recruitment>.
