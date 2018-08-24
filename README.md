@@ -22,6 +22,8 @@ The process may take a long time, please wait. For further installation instruct
 
 **2.** Install UX SDK with CocoaPods in the Project
 
+**Important Note:** Please be sure to integrate the contents of Sample Code/DJIWidget into your project if you are not using our sample code template or are upgrading to 4.7 for the first time. Follow the Build Phases settings of either sample code project in this repo for the best result. You must then remove the ios-videopreviewer project if you were using it previously.
+
 Run the following command in the **ObjcSampleCode** and **SwiftSampleCode** paths:
 
 ~~~
