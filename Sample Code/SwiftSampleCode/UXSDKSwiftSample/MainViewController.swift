@@ -29,11 +29,8 @@ class MainViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        var version = DJISDKManager.sdkVersion()
-        if version == "" {
-            version = "N/A"
-        }
-        
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
+
         self.version.text = "Version \(version)"
     }
 
