@@ -22,7 +22,7 @@ The process may take a long time, please wait. For further installation instruct
 
 **2.** Install UX SDK with CocoaPods in the Project
 
-**Important Note:** Please be sure to integrate the contents of Sample Code/DJIWidget into your project if you are not using our sample code template or are upgrading to 4.7 for the first time. Follow the Build Phases settings of either sample code project in this repo for the best result. You must then remove the ios-videopreviewer project if you were using it previously.
+**Important Note:** Please be sure to integrate the contents of Sample Code/DJIWidget into your project if you are not using our sample code template or are upgrading to 4.7 for the first time. Check the [Updating from older versions](#updating-from-older-versions) section below for more information.
 
 Run the following command in the **ObjcSampleCode** and **SwiftSampleCode** paths:
 
@@ -69,7 +69,7 @@ If you are using the SDK for your own project and you want to update from an old
 
 * Then wherever you were importing in your code `<VideoPreviewer/VideoPreviewer.h>` you should replace it by `<DJIWidget/DJIWidget.h>`
 
-* Finally in your code wherever you were using the `VideoPreviewer` component, you should replace all the calls to `DJIVideoPreviewer` as it has been renamed. So for example `[[VideoPreviewer instance] start];` now should be [[DJIVideoPreviewer instance] start];
+* Finally in your code you have to replace all the calls to the `VideoPreviewer` component with the renamed component `DJIVideoPreviewer`. So for example `[[VideoPreviewer instance] start];` now should be `[[DJIVideoPreviewer instance] start]`;
 
 ### Run Sample Code
 
