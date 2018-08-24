@@ -1,6 +1,0 @@
-framework module DJIUILibrary {
-  umbrella header "DJIUILibrary.h"
-
-  export *
-  module * { export * }
-}
