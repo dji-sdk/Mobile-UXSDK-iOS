@@ -1,0 +1,46 @@
+<html>
+<style>
+  table, th, td {
+     border: 1px solid rgb(200,200,200);
+     border-collapse: collapse;
+     }
+  table {
+     table-layout: fixed;
+     width: 1900px;
+     }
+  td {
+     overflow-x: auto;
+     }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    }
+  .comments {
+    color: #292;
+    }
+  .source-code {
+    color: #22F;
+    }
+  .interface-parent {
+    color: #AAA;
+    }
+  .interface-name {
+    color: #000;
+    }
+  .check-mark {
+    text-align: center;
+    }
+</style>
+<body>
+<br>
+
+<h1>DJI Mobile SDK UX SDK 4.6 to 4.7 Differences</h1>
+
+<br>
+
+<h2>APIs added to 4.7</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">Parent and Name</font></td><td width=15%><font color="#000">Code</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVInteractionController.h: </span><span class="interface-name">DUXFPVInteractionController</span></td><td width=15%><span class="source-code">@interface DUXFPVInteractionController : NSObject</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVInteractionController.h: </span><span class="interface-name">DUXFPVInteractionOptions</span></td><td width=15%><span class="source-code">typedef NS_OPTIONS(NSUInteger, DUXFPVInteractionOptions) </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVInteractionController.h: DUXFPVInteractionOptions.</span><span class="interface-name">DUXFPVInteractionOptionsActivateCameraFocusing</span></td><td width=15%><span class="source-code">    DUXFPVInteractionOptionsActivateCameraFocusing = 1 &lt;&lt; 0</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVInteractionController.h: DUXFPVInteractionOptions.</span><span class="interface-name">DUXFPVInteractionOptionsActivateExposureCenterMetering</span></td><td width=15%><span class="source-code">    DUXFPVInteractionOptionsActivateExposureCenterMetering = 1 &lt;&lt; 1</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVInteractionController.h: DUXFPVInteractionOptions.</span><span class="interface-name">DUXFPVInteractionOptionsActivateExposureSpotMetering</span></td><td width=15%><span class="source-code">    DUXFPVInteractionOptionsActivateExposureSpotMetering  = 1 &lt;&lt; 2</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVInteractionController.h: DUXFPVInteractionOptions.</span><span class="interface-name">DUXFPVInteractionOptionsActivateGimbalControl</span></td><td width=15%><span class="source-code">    DUXFPVInteractionOptionsActivateGimbalControl = 1 &lt;&lt; 3</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVInteractionController.h: DUXFPVInteractionOptions.</span><span class="interface-name">DUXFPVInteractionOptionsNone</span></td><td width=15%><span class="source-code">    DUXFPVInteractionOptionsNone = 0</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVInteractionController.h: DUXFPVInteractionController.</span><span class="interface-name">activeInteractionOptions</span></td><td width=15%><span class="source-code">@property (nonatomic, assign) DUXFPVInteractionOptions activeInteractionOptions</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVInteractionController.h: DUXFPVInteractionController.</span><span class="interface-name">fpvViewController</span></td><td width=15%><span class="source-code">@property (nonatomic, weak, readonly) DUXFPVViewController *fpvViewController</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVInteractionController.h: DUXFPVInteractionController.</span><span class="interface-name">supportedInteractionOptions</span></td><td width=15%><span class="source-code">@property (nonatomic, assign, readonly) DUXFPVInteractionOptions supportedInteractionOptions</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVViewController.h: DUXFPVViewController.</span><span class="interface-name">interactionController</span></td><td width=15%><span class="source-code">@property (nonatomic, readonly, nonnull) DUXFPVInteractionController *interactionController</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXFPVViewController.h: DUXFPVViewController.</span><span class="interface-name">isRadarWidgetVisible</span></td><td width=15%><span class="source-code">@property (nonatomic) BOOL isRadarWidgetVisible</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXMapWidget.h: DUXMapWidget.</span><span class="interface-name">customUnlockFlyZoneEnabledOverlayAlpha</span></td><td width=15%><span class="source-code">@property (nonatomic, assign) CGFloat customUnlockFlyZoneEnabledOverlayAlpha</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXMapWidget.h: DUXMapWidget.</span><span class="interface-name">customUnlockFlyZoneEnabledOverlayColor</span></td><td width=15%><span class="source-code">@property (nonatomic, strong, nonnull) UIColor *customUnlockFlyZoneEnabledOverlayColor</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXMapWidget.h: DUXMapWidget.</span><span class="interface-name">customUnlockFlyZoneOverlayAlpha</span></td><td width=15%><span class="source-code">@property (nonatomic, assign) CGFloat customUnlockFlyZoneOverlayAlpha</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXMapWidget.h: DUXMapWidget.</span><span class="interface-name">customUnlockFlyZoneOverlayColor</span></td><td width=15%><span class="source-code">@property (nonatomic, strong, nonnull) UIColor *customUnlockFlyZoneOverlayColor</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXMapWidget.h: DUXMapWidget.</span><span class="interface-name">customUnlockFlyZoneSentToAircraftOverlayAlpha</span></td><td width=15%><span class="source-code">@property (nonatomic, assign) CGFloat customUnlockFlyZoneSentToAircraftOverlayAlpha</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXMapWidget.h: DUXMapWidget.</span><span class="interface-name">customUnlockFlyZoneSentToAircraftOverlayColor</span></td><td width=15%><span class="source-code">@property (nonatomic, strong, nonnull) UIColor *customUnlockFlyZoneSentToAircraftOverlayColor</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXMapWidget.h: DUXMapWidget.</span><span class="interface-name">showCustomUnlockZones</span></td><td width=15%><span class="source-code">@property (nonatomic, assign) BOOL showCustomUnlockZones</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXMapWidget.h: DUXMapWidget.</span><span class="interface-name">showDJIAccountLoginIndicator</span></td><td width=15%><span class="source-code">@property (nonatomic, assign) BOOL showDJIAccountLoginIndicator</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXMapWidget.h: DUXMapWidget.</span><span class="interface-name">syncCustomUnlockZones</span></td><td width=15%><span class="source-code">- (void)syncCustomUnlockZones</span></td></tr></table><p style="font-size:50%; color:white">1e02317 cc25e28 </p></body>
+</html>
+
