@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53B18024212BAD0E00AAB7FF /* DJIWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B18023212BACFB00AAB7FF /* DJIWidget.framework */; };
-		53B1802C212BB7A800AAB7FF /* FFmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B1802B212BB7A800AAB7FF /* FFmpeg.framework */; };
-		53B1802E212BBB0600AAB7FF /* FFmpeg.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53B1802B212BB7A800AAB7FF /* FFmpeg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		53B1802F212BBB0E00AAB7FF /* DJIWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53B18023212BACFB00AAB7FF /* DJIWidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6F6E5993738A16F9553D4DDD /* libPods-UXSDKOCSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46472615B205007AB96C0CBA /* libPods-UXSDKOCSample.a */; };
 		ACFBF812207C24250058A720 /* WidgetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF7FC207C24250058A720 /* WidgetsViewController.m */; };
 		ACFBF813207C24250058A720 /* MyBatteryWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF7FF207C24250058A720 /* MyBatteryWidget.m */; };
@@ -28,16 +24,6 @@
 		ACFBF81F207C24250058A720 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF811207C24250058A720 /* Widgets.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		53B18022212BACFB00AAB7FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 53B1801E212BACFB00AAB7FF /* DJIWidget.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2E54A2CD1F4A904000916B4D;
-			remoteInfo = DJIWidget;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		A4A189451EA12B4700D06BF0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -45,8 +31,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				53B1802F212BBB0E00AAB7FF /* DJIWidget.framework in Embed Frameworks */,
-				53B1802E212BBB0600AAB7FF /* FFmpeg.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,8 +40,6 @@
 /* Begin PBXFileReference section */
 		06EE100A9FE67BED56866C40 /* Pods-UXSDKOCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKOCSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample.release.xcconfig"; sourceTree = "<group>"; };
 		46472615B205007AB96C0CBA /* libPods-UXSDKOCSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UXSDKOCSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		53B1801E212BACFB00AAB7FF /* DJIWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DJIWidget.xcodeproj; path = ../DJIWidget/DJIWidget.xcodeproj; sourceTree = "<group>"; };
-		53B1802B212BB7A800AAB7FF /* FFmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FFmpeg.framework; path = ../DJIWidget/FFmpeg/FFmpeg.framework; sourceTree = "<group>"; };
 		A4A189081EA1291E00D06BF0 /* UXSDKOCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXSDKOCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFBF7FC207C24250058A720 /* WidgetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetsViewController.m; sourceTree = "<group>"; };
 		ACFBF7FD207C24250058A720 /* DefaultLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultLayoutViewController.h; sourceTree = "<group>"; };
@@ -87,23 +69,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53B18024212BAD0E00AAB7FF /* DJIWidget.framework in Frameworks */,
 				6F6E5993738A16F9553D4DDD /* libPods-UXSDKOCSample.a in Frameworks */,
-				53B1802C212BB7A800AAB7FF /* FFmpeg.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		53B1801F212BACFB00AAB7FF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				53B18023212BACFB00AAB7FF /* DJIWidget.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A4A188FF1EA1291E00D06BF0 = {
 			isa = PBXGroup;
 			children = (
@@ -125,9 +97,7 @@
 		A9C1936B19F091ED59B6CA31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				53B1801E212BACFB00AAB7FF /* DJIWidget.xcodeproj */,
 				46472615B205007AB96C0CBA /* libPods-UXSDKOCSample.a */,
-				53B1802B212BB7A800AAB7FF /* FFmpeg.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,28 +189,12 @@
 			mainGroup = A4A188FF1EA1291E00D06BF0;
 			productRefGroup = A4A189091EA1291E00D06BF0 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 53B1801F212BACFB00AAB7FF /* Products */;
-					ProjectRef = 53B1801E212BACFB00AAB7FF /* DJIWidget.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A4A189071EA1291E00D06BF0 /* UXSDKOCSample */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		53B18023212BACFB00AAB7FF /* DJIWidget.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DJIWidget.framework;
-			remoteRef = 53B18022212BACFB00AAB7FF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A4A189061EA1291E00D06BF0 /* Resources */ = {

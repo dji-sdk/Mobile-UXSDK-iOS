@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5300B462212BDE970015AF46 /* FFmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5300B461212BDE970015AF46 /* FFmpeg.framework */; };
-		5300B463212BDE9C0015AF46 /* DJIWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5300B460212BDE860015AF46 /* DJIWidget.framework */; };
-		5300B464212BDEA30015AF46 /* DJIWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5300B460212BDE860015AF46 /* DJIWidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5300B465212BDEA80015AF46 /* FFmpeg.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5300B461212BDE970015AF46 /* FFmpeg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		602DFB5B01103220C3A15A41 /* libPods-UXSDKSwiftSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9BE8E3D8F25FD2873AD417 /* libPods-UXSDKSwiftSample.a */; };
 		A4266C94208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */; };
 		A4266C95208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */; };
@@ -33,16 +29,6 @@
 		A452DC482070D8CC00EFBA30 /* WidgetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		5300B45F212BDE860015AF46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5300B45B212BDE860015AF46 /* DJIWidget.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2E54A2CD1F4A904000916B4D;
-			remoteInfo = DJIWidget;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		38D2C4751E0B1EF2009A3831 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -50,8 +36,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5300B465212BDEA80015AF46 /* FFmpeg.framework in Embed Frameworks */,
-				5300B464212BDEA30015AF46 /* DJIWidget.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,8 +44,6 @@
 
 /* Begin PBXFileReference section */
 		38D2C47F1E0B1F20009A3831 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		5300B45B212BDE860015AF46 /* DJIWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DJIWidget.xcodeproj; path = ../DJIWidget/DJIWidget.xcodeproj; sourceTree = "<group>"; };
-		5300B461212BDE970015AF46 /* FFmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FFmpeg.framework; path = ../DJIWidget/FFmpeg/FFmpeg.framework; sourceTree = "<group>"; };
 		868A4ED01E01FA53006FEE33 /* UXSDKSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXSDKSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualFocusModeAdjustmentCustomLayoutViewController.swift; sourceTree = "<group>"; };
 		A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ManualFocusModeAdjustmentCustomLayout.storyboard; sourceTree = "<group>"; };
@@ -93,9 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5300B463212BDE9C0015AF46 /* DJIWidget.framework in Frameworks */,
 				602DFB5B01103220C3A15A41 /* libPods-UXSDKSwiftSample.a in Frameworks */,
-				5300B462212BDE970015AF46 /* FFmpeg.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,21 +85,11 @@
 		38D2C47E1E0B1F20009A3831 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5300B461212BDE970015AF46 /* FFmpeg.framework */,
-				5300B45B212BDE860015AF46 /* DJIWidget.xcodeproj */,
 				A4BE867E1F6B958600AFA154 /* libPods-UILib Sample.a */,
 				38D2C47F1E0B1F20009A3831 /* libz.tbd */,
 				BB9BE8E3D8F25FD2873AD417 /* libPods-UXSDKSwiftSample.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5300B45C212BDE860015AF46 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5300B460212BDE860015AF46 /* DJIWidget.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		868A4EC71E01FA53006FEE33 = {
@@ -228,28 +198,12 @@
 			mainGroup = 868A4EC71E01FA53006FEE33;
 			productRefGroup = 868A4ED11E01FA53006FEE33 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 5300B45C212BDE860015AF46 /* Products */;
-					ProjectRef = 5300B45B212BDE860015AF46 /* DJIWidget.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				868A4ECF1E01FA53006FEE33 /* UXSDKSwiftSample */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		5300B460212BDE860015AF46 /* DJIWidget.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DJIWidget.framework;
-			remoteRef = 5300B45F212BDE860015AF46 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		868A4ECE1E01FA53006FEE33 /* Resources */ = {
