@@ -28,7 +28,6 @@ typedef NS_ENUM(NSInteger, DUXExposureFocusSwitchMode)
 
 
 /**
- *  Display:
  *  Action widget that allows switching between between Exposure and Focus controls
  *  when touching. Not supported on Spark.
  *  
@@ -56,5 +55,7 @@ extern NSString * const DUXExposureFocusSwitchModeChangedNotification;
  *  the switch state.
  */
 extern NSString * const DUXExposureFocusSwitchModeKey;
+
+@property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

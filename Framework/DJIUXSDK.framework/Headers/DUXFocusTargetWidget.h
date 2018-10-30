@@ -17,4 +17,6 @@
  */
 @interface DUXFocusTargetWidget : DUXWidget
 
+@property (nonatomic) NSUInteger preferredCameraIndex;
+
 @end

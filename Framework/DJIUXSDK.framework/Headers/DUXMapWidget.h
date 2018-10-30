@@ -26,19 +26,19 @@ typedef NS_ENUM(NSUInteger, DUXMapAnnotationType) {
 
     /**
      *  Annotation of a self-unlock fly zone that can be unlocked, currently on the map.
-     *  Only visible when DUXMapWidget_tapToUnlockEnabled is set to `TRUE`.
+     *  Only visible when DUXMapWidget_tapToUnlockEnabled is set to `YES`.
      */
     DUXMapAnnotationTypeEligibleFlyZones,
 
     /**
      *  Annotation of a self-unlock fly zone that is unlocked currently. Only visible
-     *  when DUXMapWidget_tapToUnlockEnabled is set to `TRUE`.
+     *  when DUXMapWidget_tapToUnlockEnabled is set to `YES`.
      */
     DUXMapAnnotationTypeUnlockedFlyZones,
 
     /**
      *  Annotation of a custom unlock fly zone. Only visible when
-     *  DUXMapWidget_tapToUnlockEnabled is set to `TRUE`.
+     *  DUXMapWidget_tapToUnlockEnabled is set to `YES`.
      */
     DUXMapAnnotationTypeCustomUnlockedFlyZones,
 };
@@ -97,7 +97,10 @@ typedef NS_OPTIONS(NSUInteger, DUXMapVisibleFlyZones) {
 
 /**
  *  Defaults to `NO`. A Boolean value indicating whether the map displays a line
- *  showing the direction to home.
+ *  showing
+ *      the direction to home.
+ *  
+ *  @return `YES` if direction to home is visible.
  */
 @property (nonatomic, assign) BOOL showDirectionToHome;
 
@@ -131,9 +134,9 @@ typedef NS_OPTIONS(NSUInteger, DUXMapVisibleFlyZones) {
 
 
 /**
- *  A boolean value indicating if tapping to unlock select fly zones is enabled.  If
- *  this option is enabled, you MUST use `DUXMapViewController` to present the
- *  widget via view controller containment.
+ *  Gets whether tap to unlock is enabled.
+ *  
+ *  @return `YES` if tapping to unlock select fly zones is enabled. If this option is enabled, you MUST use `DUXMapViewController` to present the widget via view controller containment.
  */
 @property (nonatomic, assign) BOOL tapToUnlockEnabled;
 
@@ -147,15 +150,18 @@ typedef NS_OPTIONS(NSUInteger, DUXMapVisibleFlyZones) {
 
 
 /**
- *  Defaults to `NO`. A Boolean value indicating whether the map displays a line of
- *  aircraft's flight path.
+ *  `YES` if the flight path is visible. The default value is `NO`
+ *  
+ *  @return A boolean value indicating if the flight path is visible.
  */
 @property (nonatomic, assign) BOOL showFlightPath;
 
 
 /**
- *  A Boolean value indicating whether the map displays the home annotation. The
- *  default value of this property is true.
+ *  `YES` if the map displays the home point of the aircraft. The default value of
+ *  this property is `YES`.
+ *  
+ *  @return The icon of the home point marker.
  */
 @property (nonatomic, assign) BOOL showHomeAnnotation;
 
@@ -181,7 +187,8 @@ typedef NS_OPTIONS(NSUInteger, DUXMapVisibleFlyZones) {
 
 
 /**
- *  Removes the current flight path generated, regardless of being hidden.
+ *  Clears the flight path up to the current location. The flight path is removed
+ *  even if it is hidden.
  */
 - (void)clearCurrentFlightPath;
 

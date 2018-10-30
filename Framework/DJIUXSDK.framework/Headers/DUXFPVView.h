@@ -29,6 +29,13 @@
 
 
 /**
+ *  Flag to show/hide the side (starboard / port) for the camera. Only works on
+ *  aircrafts which support multiple cameras.
+ */
+@property (nonatomic, assign) BOOL showCameraSide;
+
+
+/**
  *  Method which tells the fpv to start checking for the availability of the video
  *  feed.
  */

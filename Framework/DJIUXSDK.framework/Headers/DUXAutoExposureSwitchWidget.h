@@ -21,4 +21,6 @@
  */
 @interface DUXAutoExposureSwitchWidget : DUXWidget
 
+@property (nonatomic) NSUInteger preferredCameraIndex;
+
 @end

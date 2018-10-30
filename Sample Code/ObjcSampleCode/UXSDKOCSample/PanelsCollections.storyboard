@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NeN-MC-rXJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NeN-MC-rXJ">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAi-wZ-ZtS">
-                                <rect key="frame" x="0.0" y="723" width="1024" height="45"/>
+                                <rect key="frame" x="0.0" y="713" width="1024" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="B14-ld-7de"/>
                                 </constraints>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panel • DUXCameraSettingsController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="meo-We-yU0">
-                                <rect key="frame" x="401" y="663" width="296.5" height="21"/>
+                                <rect key="frame" x="401" y="653" width="296.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="grD-HC-Fl4"/>
                                 </constraints>
@@ -52,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panel • DUXExposureSettingsController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iPj-wl-Pec">
-                                <rect key="frame" x="707.5" y="663" width="296.5" height="21"/>
+                                <rect key="frame" x="707.5" y="653" width="296.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="V69-kp-CBG"/>
                                 </constraints>
@@ -61,7 +61,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection • DUXStatusBarViewController - Note the extra high size and the widgets adapting." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3sQ-ka-a2h">
-                                <rect key="frame" x="20" y="694" width="984" height="21"/>
+                                <rect key="frame" x="20" y="684" width="984" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -78,7 +78,7 @@ In this example, the panels were added in the Storyboard,  the StatusBar Collect
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panel • DUXPreflightChecklistController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dGM-cS-cpk">
-                                <rect key="frame" x="20" y="663" width="371" height="21"/>
+                                <rect key="frame" x="20" y="653" width="371" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="nYX-8e-EGW"/>
                                 </constraints>
@@ -87,19 +87,19 @@ In this example, the panels were added in the Storyboard,  the StatusBar Collect
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsK-iM-cAZ">
-                                <rect key="frame" x="20" y="79" width="371" height="576"/>
+                                <rect key="frame" x="20" y="79" width="371" height="566"/>
                                 <connections>
                                     <segue destination="uNf-2Q-aKj" kind="embed" id="fE1-zY-175"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJ3-yR-08O">
-                                <rect key="frame" x="401" y="79" width="296.5" height="576"/>
+                                <rect key="frame" x="401" y="79" width="296.5" height="566"/>
                                 <connections>
                                     <segue destination="F2t-lh-rGx" kind="embed" id="e7X-fj-F79"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7b-R4-NT1">
-                                <rect key="frame" x="707.5" y="79" width="296.5" height="576"/>
+                                <rect key="frame" x="707.5" y="79" width="296.5" height="566"/>
                                 <connections>
                                     <segue destination="5Vk-1O-dyh" kind="embed" id="JZu-o8-lSm"/>
                                 </connections>
@@ -130,7 +130,7 @@ In this example, the panels were added in the Storyboard,  the StatusBar Collect
                             <constraint firstItem="j6x-tW-VrC" firstAttribute="leading" secondItem="eXX-fn-74I" secondAttribute="trailing" constant="8" id="jKN-RI-0aH"/>
                             <constraint firstItem="dGM-cS-cpk" firstAttribute="top" secondItem="fsK-iM-cAZ" secondAttribute="bottom" constant="8" id="js3-Xd-6bS"/>
                             <constraint firstItem="3sQ-ka-a2h" firstAttribute="top" secondItem="dGM-cS-cpk" secondAttribute="bottom" constant="10" id="nes-gW-Vio"/>
-                            <constraint firstItem="gpx-BB-yLB" firstAttribute="top" secondItem="SAi-wZ-ZtS" secondAttribute="bottom" id="qpc-fy-9i1"/>
+                            <constraint firstItem="gpx-BB-yLB" firstAttribute="top" secondItem="SAi-wZ-ZtS" secondAttribute="bottom" constant="10" id="qpc-fy-9i1"/>
                             <constraint firstItem="eXX-fn-74I" firstAttribute="top" secondItem="gKd-kK-h85" secondAttribute="bottom" constant="10" id="qv9-vl-ElX"/>
                             <constraint firstItem="SAi-wZ-ZtS" firstAttribute="leading" secondItem="6ll-7v-wWu" secondAttribute="leadingMargin" constant="-20" id="rV6-z0-uj6"/>
                             <constraint firstItem="RJ3-yR-08O" firstAttribute="leading" secondItem="fsK-iM-cAZ" secondAttribute="trailing" constant="10" id="sPs-yi-VPv"/>
@@ -158,7 +158,7 @@ In this example, the panels were added in the Storyboard,  the StatusBar Collect
                         <viewControllerLayoutGuide type="bottom" id="TCL-2x-M5A"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rSv-nx-sQk">
-                        <rect key="frame" x="0.0" y="0.0" width="371" height="576"/>
+                        <rect key="frame" x="0.0" y="0.0" width="371" height="566"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -176,7 +176,7 @@ In this example, the panels were added in the Storyboard,  the StatusBar Collect
                         <viewControllerLayoutGuide type="bottom" id="ts0-jL-Rf3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5sB-8o-Eb2">
-                        <rect key="frame" x="0.0" y="0.0" width="296.5" height="576"/>
+                        <rect key="frame" x="0.0" y="0.0" width="296.5" height="566"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -194,7 +194,7 @@ In this example, the panels were added in the Storyboard,  the StatusBar Collect
                         <viewControllerLayoutGuide type="bottom" id="4Qr-30-M29"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tDJ-S1-S3E">
-                        <rect key="frame" x="0.0" y="0.0" width="296.5" height="576"/>
+                        <rect key="frame" x="0.0" y="0.0" width="296.5" height="566"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		602DFB5B01103220C3A15A41 /* libPods-UXSDKSwiftSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9BE8E3D8F25FD2873AD417 /* libPods-UXSDKSwiftSample.a */; };
+		53C8811021507142003F4561 /* CustomMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8810D21507141003F4561 /* CustomMapViewController.swift */; };
+		53C8811121507142003F4561 /* MapWidget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53C8810F21507142003F4561 /* MapWidget.storyboard */; };
+		A24E31202FD6763FD718B487 /* Pods_UXSDKSwiftSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B0C581AE8D9B9E3DAE486B /* Pods_UXSDKSwiftSample.framework */; };
 		A4266C94208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */; };
 		A4266C95208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */; };
 		A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC252070D8CB00EFBA30 /* AppDelegate.swift */; };
@@ -18,7 +20,6 @@
 		A452DC3D2070D8CC00EFBA30 /* DefaultLayoutCustomization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC2C2070D8CB00EFBA30 /* DefaultLayoutCustomization.storyboard */; };
 		A452DC3E2070D8CC00EFBA30 /* DefaultLayoutCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC2D2070D8CB00EFBA30 /* DefaultLayoutCustomizationViewController.swift */; };
 		A452DC3F2070D8CC00EFBA30 /* DefaultLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC2E2070D8CB00EFBA30 /* DefaultLayoutViewController.swift */; };
-		A452DC402070D8CC00EFBA30 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A452DC2F2070D8CB00EFBA30 /* Info.plist */; };
 		A452DC412070D8CC00EFBA30 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC302070D8CB00EFBA30 /* MainViewController.swift */; };
 		A452DC422070D8CC00EFBA30 /* MapWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC312070D8CB00EFBA30 /* MapWidgetViewController.swift */; };
 		A452DC432070D8CC00EFBA30 /* MyBatteryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC322070D8CB00EFBA30 /* MyBatteryWidget.swift */; };
@@ -44,6 +45,10 @@
 
 /* Begin PBXFileReference section */
 		38D2C47F1E0B1F20009A3831 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		5300B461212BDE970015AF46 /* FFmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FFmpeg.framework; path = ../DJIWidget/FFmpeg/FFmpeg.framework; sourceTree = "<group>"; };
+		53C8810D21507141003F4561 /* CustomMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapViewController.swift; sourceTree = "<group>"; };
+		53C8810F21507142003F4561 /* MapWidget.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapWidget.storyboard; sourceTree = "<group>"; };
+		55B0C581AE8D9B9E3DAE486B /* Pods_UXSDKSwiftSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UXSDKSwiftSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		868A4ED01E01FA53006FEE33 /* UXSDKSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXSDKSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualFocusModeAdjustmentCustomLayoutViewController.swift; sourceTree = "<group>"; };
 		A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ManualFocusModeAdjustmentCustomLayout.storyboard; sourceTree = "<group>"; };
@@ -66,7 +71,6 @@
 		A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetsViewController.swift; sourceTree = "<group>"; };
 		A4BE867E1F6B958600AFA154 /* libPods-UILib Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UILib Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB957E10C2CFC6BB041A1E75 /* Pods-UXSDKSwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKSwiftSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample.release.xcconfig"; sourceTree = "<group>"; };
-		BB9BE8E3D8F25FD2873AD417 /* libPods-UXSDKSwiftSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UXSDKSwiftSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE38ABD14DBE3FB9BE89F3D7 /* Pods-UXSDKSwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKSwiftSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				602DFB5B01103220C3A15A41 /* libPods-UXSDKSwiftSample.a in Frameworks */,
+				A24E31202FD6763FD718B487 /* Pods_UXSDKSwiftSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,9 +89,10 @@
 		38D2C47E1E0B1F20009A3831 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5300B461212BDE970015AF46 /* FFmpeg.framework */,
 				A4BE867E1F6B958600AFA154 /* libPods-UILib Sample.a */,
 				38D2C47F1E0B1F20009A3831 /* libz.tbd */,
-				BB9BE8E3D8F25FD2873AD417 /* libPods-UXSDKSwiftSample.a */,
+				55B0C581AE8D9B9E3DAE486B /* Pods_UXSDKSwiftSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,6 +137,8 @@
 				A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */,
 				A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */,
 				A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */,
+				53C8810D21507141003F4561 /* CustomMapViewController.swift */,
+				53C8810F21507142003F4561 /* MapWidget.storyboard */,
 			);
 			path = UXSDKSwiftSample;
 			sourceTree = "<group>";
@@ -158,7 +165,6 @@
 				868A4ECE1E01FA53006FEE33 /* Resources */,
 				38D2C4751E0B1EF2009A3831 /* Embed Frameworks */,
 				88C4707591A1085FAD9B1CB0 /* [CP] Embed Pods Frameworks */,
-				24BCFDA498331B2736E700FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,8 +223,8 @@
 				A452DC442070D8CC00EFBA30 /* PanelsCollections.storyboard in Resources */,
 				A452DC472070D8CC00EFBA30 /* Widgets.storyboard in Resources */,
 				A4266C95208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard in Resources */,
+				53C8811121507142003F4561 /* MapWidget.storyboard in Resources */,
 				A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */,
-				A452DC402070D8CC00EFBA30 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,22 +246,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		24BCFDA498331B2736E700FB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		88C4707591A1085FAD9B1CB0 /* [CP] Embed Pods Frameworks */ = {
@@ -267,11 +258,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample-frameworks.sh",
 				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
 				"${PODS_ROOT}/DJI-UXSDK-iOS/iOS_UXSDK/DJIUXSDK.framework",
+				"${PODS_ROOT}/DJIWidget/FFmpeg/FFmpeg.framework",
+				"${BUILT_PRODUCTS_DIR}/DJIWidget/DJIWidget.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIUXSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FFmpeg.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIWidget.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -285,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C8811021507142003F4561 /* CustomMapViewController.swift in Sources */,
 				A452DC452070D8CC00EFBA30 /* PanelsCollectionsViewController.swift in Sources */,
 				A452DC412070D8CC00EFBA30 /* MainViewController.swift in Sources */,
 				A452DC462070D8CC00EFBA30 /* ProductCommunicationManager.swift in Sources */,

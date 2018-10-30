@@ -12,6 +12,12 @@ typedef NS_ENUM(NSInteger, DUXPreFlightStatusWidgetState) {
     DUXPreFlightStatusWidgetStateSafe,
     DUXPreFlightStatusWidgetStateWarning,
     DUXPreFlightStatusWidgetStateError,
+    DUXPreFlightStatusWidgetStateNone
+};
+
+typedef NS_ENUM(NSInteger, DUXPreFlightStatusWidgetScrollingType) {
+    DUXPreFlightStatusWidgetScrollingTypeVertical,
+    DUXPreFlightStatusWidgetScrollingTypeHorizontal
 };
 
 
@@ -36,5 +42,17 @@ typedef NS_ENUM(NSInteger, DUXPreFlightStatusWidgetState) {
  *  The current state of the preflight checklist system used by this widget
  */
 @property DUXPreFlightStatusWidgetState currentState;
+
+
+/**
+ *  The current message being displayed
+ */
+@property NSString *currentMessage;
+
+
+/**
+ *  Scrolling type for message which might be longer than the widget
+ */
+@property DUXPreFlightStatusWidgetScrollingType scrollingType;
 
 @end

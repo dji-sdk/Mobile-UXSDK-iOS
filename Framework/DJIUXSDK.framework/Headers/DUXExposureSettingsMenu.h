@@ -26,4 +26,6 @@
  */
 @property DJICameraExposureMode exposureMode;
 
+@property (nonatomic) NSUInteger preferredCameraIndex;
+
 @end

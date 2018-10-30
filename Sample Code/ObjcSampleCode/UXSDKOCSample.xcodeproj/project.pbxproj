@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F6E5993738A16F9553D4DDD /* libPods-UXSDKOCSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46472615B205007AB96C0CBA /* libPods-UXSDKOCSample.a */; };
+		8D8E145B4643BC4AD58FCAB8 /* Pods_UXSDKOCSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E38A8D8017CE1F610008E8 /* Pods_UXSDKOCSample.framework */; };
 		ACFBF812207C24250058A720 /* WidgetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF7FC207C24250058A720 /* WidgetsViewController.m */; };
 		ACFBF813207C24250058A720 /* MyBatteryWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF7FF207C24250058A720 /* MyBatteryWidget.m */; };
 		ACFBF814207C24250058A720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF801207C24250058A720 /* Assets.xcassets */; };
@@ -20,7 +20,6 @@
 		ACFBF81B207C24250058A720 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF80B207C24250058A720 /* AppDelegate.m */; };
 		ACFBF81C207C24250058A720 /* DefaultLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF80C207C24250058A720 /* DefaultLayoutViewController.m */; };
 		ACFBF81D207C24250058A720 /* PanelsCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF80D207C24250058A720 /* PanelsCollectionsViewController.m */; };
-		ACFBF81E207C24250058A720 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF810207C24250058A720 /* Info.plist */; };
 		ACFBF81F207C24250058A720 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF811207C24250058A720 /* Widgets.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		06EE100A9FE67BED56866C40 /* Pods-UXSDKOCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKOCSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample.release.xcconfig"; sourceTree = "<group>"; };
-		46472615B205007AB96C0CBA /* libPods-UXSDKOCSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UXSDKOCSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77E38A8D8017CE1F610008E8 /* Pods_UXSDKOCSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UXSDKOCSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A189081EA1291E00D06BF0 /* UXSDKOCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXSDKOCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFBF7FC207C24250058A720 /* WidgetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetsViewController.m; sourceTree = "<group>"; };
 		ACFBF7FD207C24250058A720 /* DefaultLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultLayoutViewController.h; sourceTree = "<group>"; };
@@ -69,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F6E5993738A16F9553D4DDD /* libPods-UXSDKOCSample.a in Frameworks */,
+				8D8E145B4643BC4AD58FCAB8 /* Pods_UXSDKOCSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +96,7 @@
 		A9C1936B19F091ED59B6CA31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				46472615B205007AB96C0CBA /* libPods-UXSDKOCSample.a */,
+				77E38A8D8017CE1F610008E8 /* Pods_UXSDKOCSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,7 +150,6 @@
 				A4A189061EA1291E00D06BF0 /* Resources */,
 				A4A189451EA12B4700D06BF0 /* Embed Frameworks */,
 				43AB897ECF73EE6BAA391FB6 /* [CP] Embed Pods Frameworks */,
-				6CCDA6245044DC0F5D5F44A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,7 +204,6 @@
 				ACFBF817207C24250058A720 /* Main.storyboard in Resources */,
 				ACFBF814207C24250058A720 /* Assets.xcassets in Resources */,
 				ACFBF81F207C24250058A720 /* Widgets.storyboard in Resources */,
-				ACFBF81E207C24250058A720 /* Info.plist in Resources */,
 				ACFBF815207C24250058A720 /* PanelsCollections.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,30 +220,19 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample-frameworks.sh",
 				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
 				"${PODS_ROOT}/DJI-UXSDK-iOS/iOS_UXSDK/DJIUXSDK.framework",
+				"${PODS_ROOT}/DJIWidget/FFmpeg/FFmpeg.framework",
+				"${BUILT_PRODUCTS_DIR}/DJIWidget/DJIWidget.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIUXSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FFmpeg.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIWidget.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6CCDA6245044DC0F5D5F44A2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EF3F83FA9431056465867772 /* [CP] Check Pods Manifest.lock */ = {
@@ -264,7 +250,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

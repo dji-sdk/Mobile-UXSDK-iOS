@@ -24,5 +24,6 @@
  */
 @property DJICameraFocusMode focusMode;
 
+@property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

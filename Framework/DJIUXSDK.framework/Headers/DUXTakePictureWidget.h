@@ -43,5 +43,6 @@
  */
 @property DJICameraPhotoTimeIntervalSettings intervalSettings;
 
+@property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

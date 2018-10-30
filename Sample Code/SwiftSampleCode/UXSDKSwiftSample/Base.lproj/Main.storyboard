@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NDq-2J-MBz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NDq-2J-MBz">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--Main View Controller-->
         <scene sceneID="Zr5-W9-qMH">
             <objects>
-                <tableViewController id="NDq-2J-MBz" customClass="MainViewController" customModule="UXSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="NDq-2J-MBz" customClass="MainViewController" customModule="UXSDKSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qm3-M7-PZD">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,7 +285,7 @@ They can also be customized in how they look and behave.</string>
                                         <rect key="frame" x="0.0" y="815" width="1024" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IX8-XV-KCT" id="63c-TJ-Qrw">
-                                            <rect key="frame" x="0.0" y="0.0" width="986" height="139.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="998" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Map Widget" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rks-xb-9si">
@@ -320,7 +320,7 @@ They can also be customized in how they look and behave.</string>
                                         <rect key="frame" x="0.0" y="955" width="1024" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SrY-tT-1cc" id="aok-jt-M56">
-                                            <rect key="frame" x="0.0" y="0.0" width="986" height="139.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="998" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Manual Focus Adjustment Widget" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcm-qG-fBC" userLabel="Focus Widget">
@@ -407,7 +407,7 @@ They can also be customized in how they look and behave.</string>
         <!--MapWidgetViewController-->
         <scene sceneID="gXQ-C8-gp0">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MapWidgetViewController" storyboardName="Widgets" referencedIdentifier="MapWidgetViewController" id="gjX-4J-Naj" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="MapWidgetViewController" storyboardName="MapWidget" referencedIdentifier="MapWidgetViewController" id="gjX-4J-Naj" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oM7-tr-jAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-790" y="1471"/>

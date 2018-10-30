@@ -24,4 +24,6 @@
  */
 @property BOOL isRecording;
 
+@property (nonatomic) NSUInteger preferredCameraIndex;
+
 @end

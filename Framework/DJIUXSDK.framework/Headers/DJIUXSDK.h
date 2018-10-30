@@ -80,6 +80,11 @@ FOUNDATION_EXPORT const unsigned char DJIUXSDKVersionString[];
 #import <DJIUXSDK/DUXMapWidget.h>
 #import <DJIUXSDK/DUXMapViewController.h>
 
+// External Accessories
+#import <DJIUXSDK/DUXBeaconWidget.h>
+#import <DJIUXSDK/DUXSpeakerWidget.h>
+#import <DJIUXSDK/DUXSpotlightWidget.h>
+
 /*********************************************************************************/
 #pragma mark - Panels
 /*********************************************************************************/
@@ -148,8 +153,8 @@ FOUNDATION_EXPORT const unsigned char DJIUXSDKVersionString[];
 #import <DJIUXSDK/DUXRemoteControllerBatteryChecklistItem.h>
 #import <DJIUXSDK/DUXAircraftBatteryTemperatureChecklistItem.h>
 
-// Color Waveform
-#import <DJIUXSDK/DUXColorWaveformWidget.h>
+// External Accessories
+#import <DJIUXSDK/DUXSpeakerSettingsViewController.h>
 
 /**
  *  SDKModel

@@ -44,6 +44,10 @@
  */
 @property (nonatomic, readonly) NSInteger remainingRecordingTime;
 
+
+/**
+ *  Selects which camera index widget refers to.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

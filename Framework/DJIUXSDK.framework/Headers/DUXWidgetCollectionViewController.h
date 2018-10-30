@@ -23,6 +23,10 @@
  */
 @property (nonatomic, strong, nullable) IBOutlet __kindof UICollectionView <DUXWidgetCollectionViewProtocol> *widgetCollectionView;
 
+
+/**
+ *  Selects which camera index widget refers to.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 /*********************************************************************************/
@@ -72,7 +76,7 @@
 
 
 /**
- *  insert the passed widgets at the given index and applies the edge inset.
+ *  Insert the passed widgets at the given index and applies the edge inset.
  *  
  *  @param widget The widget item being inserted inside the view.
  *  @param edgeInset The edge inset of the widget item being inserted.
@@ -82,7 +86,7 @@
 
 
 /**
- *  moves the widget to another index.
+ *  Moves the widget to another index.
  *  
  *  @param widget The widget item being moved.
  *  @param destinationIndex The desired new index of the widget item.

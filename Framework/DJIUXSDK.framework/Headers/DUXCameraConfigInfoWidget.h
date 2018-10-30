@@ -19,6 +19,10 @@
  */
 @interface DUXCameraConfigInfoWidget : DUXWidget
 
-@property (nonatomic, assign) NSUInteger preferredCameraIndex;
+
+/**
+ *  Selects which camera index widget refers to.
+ */
+@property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

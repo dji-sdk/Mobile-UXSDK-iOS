@@ -9,24 +9,30 @@
 
 
 /**
- *  Flying state of the aircraft
+ *  Current state of the takeoff widget.
  */
 typedef NS_ENUM(NSUInteger, DUXAircraftTakeOffLandingState) {
 
     /**
-     *  Aircraft is not flying.
+     *  Widget is enabled and tapping it will cause the aircraft to take off.
      */
-    DUXAircraftTakeOffLandingStateLanded,
+    DUXAircraftTakeOffLandingStateTakeOffEnabled,
 
     /**
-     *  Aircraft is currently flying.
+     *  Widget is enabled and tapping it will cause the aircraft to land.
      */
-    DUXAircraftTakeOffLandingStateFlying,
+    DUXAircraftTakeOffLandingStateLandEnabled,
 
     /**
-     *  Aircraft is currently in the process of landing.
+     *  Widget is greyed out because drone can not currently perform  landing action.
      */
-    DUXAircraftTakeOffLandingStateLanding
+    DUXAircraftTakeOffLandingStateDisabled,
+
+    /**
+     *  Take off or landing is currently in progress and tapping the red cancel icon
+     *  will  cause the action in progress to be cancelled.
+     */
+    DUXAircraftTakeOffLandingStateCancel
 };
 
 

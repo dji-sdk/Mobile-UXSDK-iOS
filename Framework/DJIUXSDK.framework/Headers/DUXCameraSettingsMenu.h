@@ -18,4 +18,6 @@
  */
 @interface DUXCameraSettingsMenu : DUXWidget
 
+@property (nonatomic) NSUInteger preferredCameraIndex;
+
 @end

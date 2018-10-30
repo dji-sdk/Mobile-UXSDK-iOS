@@ -77,5 +77,11 @@ typedef NS_ENUM(NSUInteger, DUXWidgetInteractionExpectionLevel) {
  */
 @property (strong, nonatomic, nullable) DUXWidgetActionBlock action;
 
+@optional
+
+/**
+ *  The minimum height and width of the widget.
+ */
+@property CGSize minimumSize;
 
 @end
