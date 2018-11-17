@@ -10,8 +10,9 @@
 
 
 /**
- *  Tapping the widget opens the spotlight settings panel. The widget will be hidden
- *  automatically if the accessory is not present or not supported.
+ *  Preferred Aspect Ratio: 1:1 Tapping the widget opens the spotlight settings
+ *  panel. The widget will be hidden automatically if the accessory is not present
+ *  or not supported.
  */
 @interface DUXSpotlightWidget : DUXWidget
 

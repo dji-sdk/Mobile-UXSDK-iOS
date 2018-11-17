@@ -13,27 +13,27 @@
  *  Enum describing the battery state.
  */
 typedef NS_ENUM(NSUInteger, DUXBatteryIndicatorState) {
-
+    
     /**
      *  Normal
      */
     DUXBatteryIndicatorStateNormal,
-
+    
     /**
      *  Error.
      */
     DUXBatteryIndicatorStateError,
-
+    
     /**
      *  Battery Warning level 1.
      */
     DUXBatteryIndicatorStateWarningLevel1,
-
+    
     /**
      *  Battery Warning level 2.
      */
     DUXBatteryIndicatorStateWarningLevel2,
-
+    
     /**
      *  Battery state unknown.
      */

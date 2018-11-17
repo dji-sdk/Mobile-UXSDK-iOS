@@ -24,9 +24,6 @@
 @property (nonatomic, strong, nullable) IBOutlet __kindof UICollectionView <DUXWidgetCollectionViewProtocol> *widgetCollectionView;
 
 
-/**
- *  Selects which camera index widget refers to.
- */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 /*********************************************************************************/

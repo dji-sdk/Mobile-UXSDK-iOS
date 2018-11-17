@@ -7,43 +7,41 @@
 
 #import <DJIUXSDK/DUXWidget.h>
 
-// ICR: Remove None or 0. (Same as DUXRemoteSignalStrength)
-
 /**
  *  Number of bars to show in widget
  */
 typedef NS_ENUM(NSUInteger, DUXVideoSignalStrength) {
-
+    
     /**
      *  0 Bars.
      */
     DUXVideoSignalStrengthLevel0,
-
+    
     /**
      *  1 Bar.
      */
     DUXVideoSignalStrengthLevel1,
-
+    
     /**
      *  2 Bars.
      */
     DUXVideoSignalStrengthLevel2,
-
+    
     /**
      *  3 Bars.
      */
     DUXVideoSignalStrengthLevel3,
-
+    
     /**
      *  4 Bars.
      */
     DUXVideoSignalStrengthLevel4,
-
+    
     /**
      *  5 Bars.
      */
     DUXVideoSignalStrengthLevel5,
-
+    
     /**
      *  0 Bars.
      */

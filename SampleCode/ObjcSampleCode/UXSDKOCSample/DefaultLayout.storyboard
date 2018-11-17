@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Sk0-7A-pYA">
+    <device id="ipad12_9" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Default Layout View Controller-->
+        <scene sceneID="5Mc-1M-usm">
+            <objects>
+                <viewController id="Sk0-7A-pYA" customClass="DefaultLayoutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xdk-bb-Tnp"/>
+                        <viewControllerLayoutGuide type="bottom" id="ISl-Sw-CDm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AvT-PO-zau">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="225-X7-0Ec" customClass="DUXCameraConfigInfoWidget">
+                                <rect key="frame" x="798" y="68" width="320" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="UCw-y3-E0t"/>
+                                    <constraint firstAttribute="width" priority="999" constant="320" id="rfQ-GH-mcx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="HWd-ts-Z40" customClass="DUXCameraConfigStorageWidget">
+                                <rect key="frame" x="1128" y="68" width="208.5" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="998" constant="210" id="FoL-fl-wfc"/>
+                                    <constraint firstAttribute="height" constant="34" id="H33-Vw-KMU"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsM-c0-gPw">
+                                <rect key="frame" x="20" y="68" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wsM-c0-gPw" secondAttribute="height" multiplier="1:1" id="TBy-Eh-hJw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="❌"/>
+                                <connections>
+                                    <action selector="onBackButtonClicked:" destination="Sk0-7A-pYA" eventType="touchUpInside" id="4an-4D-zaG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.076183750179999996" green="0.077627680690000006" blue="0.077963082899999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HWd-ts-Z40" firstAttribute="leading" secondItem="225-X7-0Ec" secondAttribute="trailing" constant="10" id="8lH-5J-5cK"/>
+                            <constraint firstItem="225-X7-0Ec" firstAttribute="leading" secondItem="wsM-c0-gPw" secondAttribute="trailing" priority="997" constant="744" id="AMs-sz-kDI"/>
+                            <constraint firstAttribute="trailing" secondItem="HWd-ts-Z40" secondAttribute="trailing" constant="29.5" id="QSm-in-xUX"/>
+                            <constraint firstItem="wsM-c0-gPw" firstAttribute="bottom" secondItem="225-X7-0Ec" secondAttribute="bottom" id="S8h-E5-fvk"/>
+                            <constraint firstItem="225-X7-0Ec" firstAttribute="top" secondItem="HWd-ts-Z40" secondAttribute="top" id="eRm-mN-NVx"/>
+                            <constraint firstItem="wsM-c0-gPw" firstAttribute="centerY" secondItem="225-X7-0Ec" secondAttribute="centerY" id="fhh-ue-oFP"/>
+                            <constraint firstItem="wsM-c0-gPw" firstAttribute="top" secondItem="225-X7-0Ec" secondAttribute="top" id="qhk-1l-al5"/>
+                            <constraint firstItem="wsM-c0-gPw" firstAttribute="top" secondItem="Xdk-bb-Tnp" secondAttribute="bottom" constant="48" id="v5S-nH-FVt"/>
+                            <constraint firstItem="225-X7-0Ec" firstAttribute="centerY" secondItem="HWd-ts-Z40" secondAttribute="centerY" id="x6c-Sv-h7G"/>
+                            <constraint firstItem="225-X7-0Ec" firstAttribute="bottom" secondItem="HWd-ts-Z40" secondAttribute="bottom" id="xcY-CW-Iiq"/>
+                            <constraint firstItem="wsM-c0-gPw" firstAttribute="leading" secondItem="AvT-PO-zau" secondAttribute="leading" constant="20" id="yXb-uU-ejX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lma-EJ-oub" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="-144"/>
+        </scene>
+    </scenes>
+</document>

@@ -33,22 +33,22 @@
  *  State that each item will report.
  */
 typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
-
+    
     /**
      *  Safe.
      */
     DUXPreflightChecklistSafeState,
-
+    
     /**
      *  Warning.
      */
     DUXPreflightChecklistWarningState,
-
+    
     /**
      *  Error.
      */
     DUXPreflightChecklistErrorState,
-
+    
     /**
      *  Pending.
      */

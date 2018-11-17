@@ -24,12 +24,12 @@ typedef void (^DUXWidgetActionBlock)();
  *  implementation in a single widget depending on this value.
  */
 typedef NS_ENUM(NSUInteger, DUXWidgetInteractionExpectionLevel) {
-
+    
     /**
      *  No interaction expected.
      */
     DUXWidgetInteractionExpectionLevelNone,
-
+    
     /**
      *  Full interaction expected.
      */

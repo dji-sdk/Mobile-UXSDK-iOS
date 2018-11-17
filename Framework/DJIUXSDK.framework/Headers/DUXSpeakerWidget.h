@@ -9,8 +9,9 @@
 
 
 /**
- *  Tapping the widget opens the speaker settings panel. The widget will be hidden
- *  automatically if the accessory is not present or not supported.
+ *  Preferred Aspect Ratio: 1:1 Tapping the widget opens the speaker settings panel.
+ *  The widget will be hidden automatically if the accessory is not present or not
+ *  supported.
  */
 @interface DUXSpeakerWidget : DUXWidget
 

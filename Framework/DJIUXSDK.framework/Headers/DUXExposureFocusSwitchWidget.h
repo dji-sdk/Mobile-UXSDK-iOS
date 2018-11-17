@@ -14,12 +14,12 @@
  */
 typedef NS_ENUM(NSInteger, DUXExposureFocusSwitchMode)
 {
-
+    
     /**
      *  Exposure mode.
      */
     DUXExposureMode,
-
+    
     /**
      *  Focus mode.
      */

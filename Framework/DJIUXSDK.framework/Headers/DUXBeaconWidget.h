@@ -12,6 +12,9 @@
  *  Widget is used to turn on and turn off the Beacon accessory on Mavic 2
  *  Enterprise.
  *  
+ *  Usage:
+ *  Preferred Aspect Ratio: 1:1
+ *  
  *  Interaction:
  *  Tapping the widget will enable/disable the flashing of the external beacon
  *  accessory.  The widget will be hidden automatically if the accessory is not

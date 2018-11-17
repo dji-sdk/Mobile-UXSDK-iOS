@@ -12,32 +12,32 @@
  *  Number of bars to show in widget
  */
 typedef NS_ENUM(NSUInteger, DUXRemoteSignalBars) {
-
+    
     /**
      *  Show no bars.
      */
     DUXRemoteSignalBarsLevel0,
-
+    
     /**
      *  Show 1 bar.
      */
     DUXRemoteSignalBarsLevel1,
-
+    
     /**
      *  Show 2 bars.
      */
     DUXRemoteSignalBarsLevel2,
-
+    
     /**
      *  Show 3 bars.
      */
     DUXRemoteSignalBarsLevel3,
-
+    
     /**
      *  Show 4 bars.
      */
     DUXRemoteSignalBarsLevel4,
-
+    
     /**
      *  Show 5 bars.
      */

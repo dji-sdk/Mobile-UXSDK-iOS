@@ -13,29 +13,29 @@
  *  An enum about different annotations on the map.
  */
 typedef NS_ENUM(NSUInteger, DUXMapAnnotationType) {
-
+    
     /**
      *  Annotation of the aircraft currently on the map.
      */
     DUXMapAnnotationTypeAircraft,
-
+    
     /**
      *  Annotation of the home location currently on the map.
      */
     DUXMapAnnotationTypeHome,
-
+    
     /**
      *  Annotation of a self-unlock fly zone that can be unlocked, currently on the map.
      *  Only visible when DUXMapWidget_tapToUnlockEnabled is set to `YES`.
      */
     DUXMapAnnotationTypeEligibleFlyZones,
-
+    
     /**
      *  Annotation of a self-unlock fly zone that is unlocked currently. Only visible
      *  when DUXMapWidget_tapToUnlockEnabled is set to `YES`.
      */
     DUXMapAnnotationTypeUnlockedFlyZones,
-
+    
     /**
      *  Annotation of a custom unlock fly zone. Only visible when
      *  DUXMapWidget_tapToUnlockEnabled is set to `YES`.
@@ -49,27 +49,27 @@ typedef NS_ENUM(NSUInteger, DUXMapAnnotationType) {
  *  widget.
  */
 typedef NS_OPTIONS(NSUInteger, DUXMapVisibleFlyZones) {
-
+    
     /**
      *  No fly zones will be visible on the map widget.
      */
     DUXMapVisibleFlyZonesNone = 0,
-
+    
     /**
      *  Restricted fly zones will be visible on the map widget.
      */
     DUXMapVisibleFlyZonesRestricted = 1 << 0,
-
+    
     /**
      *  Authorization fly zones will be visible on the map widget.
      */
     DUXMapVisibleFlyZonesAuthorization = 1 << 1,
-
+    
     /**
      *  Warning fly zones will be visible on the map widget.
      */
     DUXMapVisibleFlyZonesWarning  = 1 << 2,
-
+    
     /**
      *  Enhanced warning fly zones will be visible on the map widget.
      */
