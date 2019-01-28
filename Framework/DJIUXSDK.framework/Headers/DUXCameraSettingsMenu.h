@@ -18,6 +18,11 @@
  */
 @interface DUXCameraSettingsMenu : DUXWidget
 
+
+/**
+ *  The index of the camera whose settings will be controlled by the settings panel.
+ *  Default value is 0.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

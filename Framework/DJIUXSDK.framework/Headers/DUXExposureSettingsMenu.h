@@ -26,6 +26,12 @@
  */
 @property DJICameraExposureMode exposureMode;
 
+
+/**
+ *  Usage:
+ *  The index of the camera whose exposure settings the panel will control. Default
+ *  value is 0.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

@@ -24,9 +24,8 @@
 
 
 /**
- *  Boolean value controlling whether the fly zone legend is shown inside the map
- *  view controller. The fly zone legend indicates the color for all zone categories
- *  and self-unlock zones.>>
+ *  Shows the fly zone legend. The fly zone legend indicates the color for all zone
+ *  categories and self-unlock zones.
  */
 @property (nonatomic, assign) BOOL showFlyZoneLegend;
 

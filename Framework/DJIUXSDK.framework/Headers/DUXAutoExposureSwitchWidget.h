@@ -21,6 +21,10 @@
  */
 @interface DUXAutoExposureSwitchWidget : DUXWidget
 
+
+/**
+ *  The camera index of the camera the widget controls. Default value is 0.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

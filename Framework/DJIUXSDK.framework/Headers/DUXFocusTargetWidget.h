@@ -17,6 +17,10 @@
  */
 @interface DUXFocusTargetWidget : DUXWidget
 
+
+/**
+ *  The index representing the camera that the widget controls. Default value is 0.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end
