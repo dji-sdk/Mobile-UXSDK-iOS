@@ -19,11 +19,22 @@
 
 
 /**
+ *  `YES` if widget is supported, `NO` otherwise. Widget will hide itself if not
+ *  supported. It is not supported on Spark and Mavic Air.
+ */
+@property (readonly) BOOL isSupported;
+
+
+/**
  *  Display:
  *  Current focus mode that the camera is in.
  */
 @property DJICameraFocusMode focusMode;
 
+
+/**
+ *  The index representing the camera that the widget controls. Default value is 0.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

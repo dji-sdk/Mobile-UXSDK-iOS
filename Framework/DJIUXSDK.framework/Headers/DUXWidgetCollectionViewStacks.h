@@ -20,12 +20,12 @@ typedef NS_ENUM(NSUInteger, DUXWidgetCollectionViewStack){
  *  No stack.
  */
     DUXWidgetCollectionViewStackNone,
-    
+
     /**
      *  First Stack. Leading for horizontal, top for vertical
      */
     DUXWidgetCollectionViewStackFirst, // Leading, Top
-    
+
     /**
      *  Last Stack. Trailing for horizontal, bottom for vertical.
      */

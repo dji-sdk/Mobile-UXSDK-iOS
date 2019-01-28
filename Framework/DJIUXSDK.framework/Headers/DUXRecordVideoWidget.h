@@ -24,6 +24,10 @@
  */
 @property BOOL isRecording;
 
+
+/**
+ *  The index of the camera used to record video. Default value is 0.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

@@ -18,8 +18,15 @@
 @interface DUXCameraConfigExposureSensitivityWidget : DUXCameraConfigWidget
 
 
+/**
+ *  Selects which camera index widget refers to. Default value is 0.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
+
+/**
+ *  The current exposure sensitivity mode of the camera.
+ */
 @property DJICameraExposureSensitivityMode exposureSensitivityMode;
 
 
@@ -28,6 +35,11 @@
  */
 @property DJICameraISO iso;
 
+
+/**
+ *  The current EI of the camera. This value is only valid when the exposure
+ *  sensitivity mode of the camera is set to EI.
+ */
 @property NSUInteger ei;
 
 @end

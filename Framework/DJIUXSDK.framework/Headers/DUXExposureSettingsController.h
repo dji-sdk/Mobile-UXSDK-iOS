@@ -30,6 +30,9 @@
 + (instancetype)exposureSettingsController;
 
 
+/**
+ *  Selects which camera index widget refers to. Default value is 0.
+ */
 @property (assign, nonatomic) NSUInteger preferredCameraIndex;
 
 @end

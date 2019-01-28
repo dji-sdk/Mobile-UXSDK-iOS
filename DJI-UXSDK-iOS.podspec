@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DJI-UXSDK-iOS"
-  s.version      = "4.8.1"
+  s.version      = "4.9"
   s.summary      = "DJI UX SDK for iOS"
   s.homepage     = "https://github.com/dji-sdk/Mobile-UXSDK-iOS"
   s.license      = { :type => 'CUSTOM', :text => <<-LICENSE
@@ -38,7 +38,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   s.author       = { "DJI SDK" => "dev@dji.com" }
   s.platform     = :ios, '9.0'
   s.requires_arc = true
-  s.source       = { :http => "https://d25c7cswk6ji38.cloudfront.net/ios_sdk/iOS_UXSDK_4.8.1_181116.zip"}
+  s.source       = { :http => "https://dh7g4ai1w5iq6.cloudfront.net/ios_sdk/iOS_UXSDK_4.9_190128.zip"}
   s.ios.vendored_frameworks = 'iOS_UXSDK/DJIUXSDK.framework'
 
 end

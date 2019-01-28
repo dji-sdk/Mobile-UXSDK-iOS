@@ -33,22 +33,22 @@
  *  State that each item will report.
  */
 typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
-    
+
     /**
      *  Safe.
      */
     DUXPreflightChecklistSafeState,
-    
+
     /**
      *  Warning.
      */
     DUXPreflightChecklistWarningState,
-    
+
     /**
      *  Error.
      */
     DUXPreflightChecklistErrorState,
-    
+
     /**
      *  Pending.
      */
@@ -90,6 +90,12 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
  */
 + (instancetype)defaultManager;
 
+
+/**
+ *  If an item in preflight checklist manager can update it's preferredCameraIndex
+ *  setting this  will update all items to this index. Default value is 0.
+ */
+@property (nonatomic, assign) NSInteger preferredCameraIndex;
 /*********************************************************************************/
 #pragma mark - Items Management
 /*********************************************************************************/

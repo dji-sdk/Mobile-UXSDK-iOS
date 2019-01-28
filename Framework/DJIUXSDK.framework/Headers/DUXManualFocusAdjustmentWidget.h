@@ -17,6 +17,17 @@
  */
 @interface DUXManualFocusAdjustmentWidget : DUXWidget
 
+
+/**
+ *  `YES` if widget is supported, `NO` otherwise. It is not supported when focus
+ *  mode is automatic or AFC.
+ */
+@property (readonly) BOOL isSupported;
+
+
+/**
+ *  The index representing the camera that the widget controls. Default is 0.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

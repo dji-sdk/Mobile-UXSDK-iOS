@@ -13,42 +13,42 @@
  */
 typedef NS_ENUM(NSUInteger, DUXStorageCapacityComprehensiveState) {
     
-    
+
     /**
      *  Enum value that is returned when the storage capacity comprehensive state is
      *  unknown.
      */
     DUXStorageCapacityComprehensiveStateUnknown,
     
-    
+
     /**
      *  Enum value that is returned when the storage capacity comprehensive state is
      *  normal with no warnings or errors.
      */
     DUXStorageCapacityComprehensiveStateNormal,
     
-    
+
     /**
      *  Enum value that is returned when the storage capacity comprehensive state is too
      *  slow.
      */
     DUXStorageCapacityComprehensiveStateSlow,
     
-    
+
     /**
      *  Enum value that is returned when the storage capacity comprehensive state is
      *  busy with either saving, formatting, initializing or recovering files.
      */
     DUXStorageCapacityComprehensiveStateBusy,
     
-    
+
     /**
      *  Enum value that is returned when the storage capacity comprehensive state is a
      *  warning such as format recommended, recovering files, or writing slowly.
      */
     DUXStorageCapacityComprehensiveStateWarning,
     
-    
+
     /**
      *  Enum value that is returned when the storage capacity comprehensive state is an
      *  error such as invalid, read only, invalid file system, or no remaining file
@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, DUXStorageCapacityComprehensiveState) {
      */
     DUXStorageCapacityComprehensiveStateError,
     
-    
+
     /**
      *  Enum value that is returned when the storage capacity comprehensive state should
      *  allow formatting such as when storage is full or needs formatting.
@@ -91,7 +91,7 @@ typedef NS_ENUM(NSUInteger, DUXStorageCapacityComprehensiveState) {
 
 
 /**
- *  The camera index the checklist item refers to.
+ *  The camera index the checklist item refers to. Default value is 0.
  */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 

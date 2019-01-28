@@ -43,6 +43,10 @@
  */
 @property DJICameraPhotoTimeIntervalSettings intervalSettings;
 
+
+/**
+ *  The index of the camera that the widget controls. Default value is 0.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end

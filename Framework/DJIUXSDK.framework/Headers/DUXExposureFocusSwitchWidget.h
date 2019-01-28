@@ -14,12 +14,12 @@
  */
 typedef NS_ENUM(NSInteger, DUXExposureFocusSwitchMode)
 {
-    
+
     /**
      *  Exposure mode.
      */
     DUXExposureMode,
-    
+
     /**
      *  Focus mode.
      */
@@ -35,6 +35,13 @@ typedef NS_ENUM(NSInteger, DUXExposureFocusSwitchMode)
  *  Preferred Aspect Ratio: 35:35
  */
 @interface DUXExposureFocusSwitchWidget : DUXWidget
+
+
+/**
+ *  `YES` if widget is supported, `NO` otherwise.  It is not supported on Spark and
+ *  Mavic Air, it will default to Exposure Mode.
+ */
+@property (readonly) BOOL isSupported;
 
 
 /**
@@ -56,6 +63,10 @@ extern NSString * const DUXExposureFocusSwitchModeChangedNotification;
  */
 extern NSString * const DUXExposureFocusSwitchModeKey;
 
+
+/**
+ *  The index of the camera that the widget controls. Default value to 0.
+ */
 @property (nonatomic) NSUInteger preferredCameraIndex;
 
 @end
