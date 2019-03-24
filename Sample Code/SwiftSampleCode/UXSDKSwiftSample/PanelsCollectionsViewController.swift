@@ -20,7 +20,7 @@ class PanelsCollectionsViewController: UIViewController {
         // Adding our DUXStatusBarViewController to our container in code.
         // This could be done in the storyboard
         self.addChildViewController(self.statusBarVC)
-        self.statusBarContainingView.addSubview(self.statusBarVC.view);
+        self.statusBarContainingView.addSubview(self.statusBarVC.view)
         self.statusBarVC.view.translatesAutoresizingMaskIntoConstraints = false;
         self.statusBarVC.view.topAnchor.constraint(equalTo: self.statusBarContainingView.topAnchor).isActive = true
         self.statusBarVC.view.bottomAnchor.constraint(equalTo: self.statusBarContainingView.bottomAnchor).isActive = true
@@ -34,22 +34,22 @@ class PanelsCollectionsViewController: UIViewController {
         
         // Removing a pre-defined widget you don't want.
         guard let preflightChecklistWidget = self.statusBarVC.widget(at: 1) else {
-            return;
+            return
         }
         self.statusBarVC.removeWidget(preflightChecklistWidget)
         
         
         // Changing the edgeInset of a placed widget.
         guard let djiWidgetItem = self.statusBarVC.widgetItem(at: 0) else {
-            return;
+            return
         }
         djiWidgetItem.edgeInset.top = 10
         djiWidgetItem.edgeInset.bottom = 10
         
         
         // Switch stack for widgets in stack collections
-        guard let batteryWidget = self.statusBarVC.widget(with: DUXBatteryWidget.self) else {
-            return;
+        guard let batteryWidget = self.statusBarVC.widget(with: DULBatteryWidget.self) else {
+            return
         }
         self.statusBarVC.statusBarView?.moveWidget(batteryWidget, to: .first)
         
@@ -70,8 +70,13 @@ class PanelsCollectionsViewController: UIViewController {
     
     func moveWidget() {
         // Switch stack for widgets in stack collections
+<<<<<<< HEAD:Sample Code/SwiftSampleCode/UILib Sample/PanelsCollectionsViewController.swift
+        guard let batteryWidget = self.statusBarVC.widget(with: DULBatteryWidget.self) else {
+            return
+=======
         guard let batteryWidget = self.statusBarVC.widget(with: DUXBatteryWidget.self) else {
             return;
+>>>>>>> master:Sample Code/SwiftSampleCode/UXSDKSwiftSample/PanelsCollectionsViewController.swift
         }
         self.lastStack = self.lastStack == .first ? .last : .first
         self.statusBarVC.statusBarView?.moveWidget(batteryWidget, to: self.lastStack)
