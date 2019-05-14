@@ -10,7 +10,7 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">iOS UX SDK API REFERENCE</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">IOS UX SDK API REFERENCE</a></div>
     </div>
   </nav>
   <div id="documentation-page" class="documentation-page">
@@ -281,7 +281,7 @@
 <div class="api-row" id="duxpreflightchecklistitem_pictogram"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#duxpreflightchecklistitem_pictogram_inline">pictogram</a></div></div><div class="inline-doc" id="duxpreflightchecklistitem_pictogram_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>pictogram</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>) <span class="built_in">UIImage</span> *pictogram</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonnull</span>) <span class="built_in">UIImage</span> *pictogram</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DUXPreflightChecklistItem.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">A small default image to be used with the item in the UI context.</font></p>
@@ -305,7 +305,7 @@
 <div class="api-row" id="duxpreflightchecklistitem_shortstatedetails"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#duxpreflightchecklistitem_shortstatedetails_inline">shortStateDetails</a></div></div><div class="inline-doc" id="duxpreflightchecklistitem_shortstatedetails_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>shortStateDetails</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSString</span> *shortStateDetails</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) <span class="built_in">NSString</span> *shortStateDetails</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DUXPreflightChecklistItem.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">A one or two words describing the current state of the item or its activity.</font></p>
@@ -313,7 +313,7 @@
 <div class="api-row" id="duxpreflightchecklistitem_title"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#duxpreflightchecklistitem_title_inline">title</a></div></div><div class="inline-doc" id="duxpreflightchecklistitem_title_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>title</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSString</span> *title</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) <span class="built_in">NSString</span> *title</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DUXPreflightChecklistItem.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">A short string describing the item. Should not change during the item's life cycle.</font></p>
@@ -321,7 +321,7 @@
 <div class="api-row" id="duxpreflightchecklistitem_manager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#duxpreflightchecklistitem_manager_inline">manager</a></div></div><div class="inline-doc" id="duxpreflightchecklistitem_manager_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>manager</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) DUXPreflightChecklistManager *manager</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) DUXPreflightChecklistManager *manager</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DUXPreflightChecklistItem.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The Preflight checklist manager this item is assigned to. This will be set by the manager when the item is added to it.</font></p>
@@ -331,7 +331,7 @@
 <div class="api-row" id="duxpreflightchecklistitem_readytoflystates"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#duxpreflightchecklistitem_readytoflystates_inline">readyToFlyStates</a></div></div><div class="inline-doc" id="duxpreflightchecklistitem_readytoflystates_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>readyToFlyStates</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSArray</span> *readyToFlyStates</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nonnull</span>) <span class="built_in">NSArray</span> *readyToFlyStates</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DUXPreflightChecklistItem.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">The list of states which the item considers as ok and ready to fly.</font></p>
@@ -339,7 +339,7 @@
 <div class="api-row" id="duxpreflightchecklistitem_statedetails"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#duxpreflightchecklistitem_statedetails_inline">stateDetails</a></div></div><div class="inline-doc" id="duxpreflightchecklistitem_statedetails_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>stateDetails</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSString</span> *stateDetails</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) <span class="built_in">NSString</span> *stateDetails</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DUXPreflightChecklistItem.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">A more elaborate string that describes the current state of the item or its activity.</font></p>

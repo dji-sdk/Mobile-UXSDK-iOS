@@ -99,7 +99,7 @@ FOUNDATION_EXPORT const unsigned char DJIUXSDKVersionString[];
 /**
  *  View Controllers
  */
-#import <DJIUXSDK/DUXDefaultLayoutViewcontroller.h>
+#import <DJIUXSDK/DUXDefaultLayoutViewController.h>
 #import <DJIUXSDK/DUXDefaultLayoutView.h>
 
 // WidgetCollection

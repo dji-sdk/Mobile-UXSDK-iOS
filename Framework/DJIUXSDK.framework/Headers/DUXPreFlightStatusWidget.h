@@ -53,6 +53,6 @@ typedef NS_ENUM(NSInteger, DUXPreFlightStatusWidgetScrollingType) {
 /**
  *  Scrolling type for message which might be longer than the widget
  */
-@property DUXPreFlightStatusWidgetScrollingType scrollingType;
+@property (nonatomic, assign) DUXPreFlightStatusWidgetScrollingType scrollingType;
 
 @end

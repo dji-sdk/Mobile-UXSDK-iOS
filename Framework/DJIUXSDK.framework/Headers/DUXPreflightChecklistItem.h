@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistItemState) {
  *  The Preflight checklist manager this item is assigned to. This will be set by
  *  the manager when the item is added to it.
  */
-@property (weak, nonatomic) DUXPreflightChecklistManager *manager;
+@property (weak, nonatomic, nullable) DUXPreflightChecklistManager *manager;
 
 
 /**
@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistItemState) {
 /**
  *  The list of states which the item considers as ok and ready to fly.
  */
-@property (strong, nonatomic) NSArray *readyToFlyStates;
+@property (strong, nonatomic, nonnull) NSArray *readyToFlyStates;
 
 
 /**
@@ -53,27 +53,27 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistItemState) {
 /**
  *  A small default image to be used with the item in the UI context.
  */
-@property (readonly) UIImage *pictogram;
+@property (readonly, nonnull) UIImage *pictogram;
 
 
 /**
  *  A short string describing the item. Should not change during the item's life
  *  cycle.
  */
-@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic, nullable) NSString *title;
 
 
 /**
  *  A more elaborate string that describes the current state of the item or its
  *  activity.
  */
-@property (strong, nonatomic) NSString *stateDetails;
+@property (strong, nonatomic, nullable) NSString *stateDetails;
 
 
 /**
  *  A one or two words describing the current state of the item or its activity.
  */
-@property (strong, nonatomic) NSString *shortStateDetails;
+@property (strong, nonatomic, nullable) NSString *shortStateDetails;
 
 /*********************************************************************************/
 #pragma mark - Monitoring
