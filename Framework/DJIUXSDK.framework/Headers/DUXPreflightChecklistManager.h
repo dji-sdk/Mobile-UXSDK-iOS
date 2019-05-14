@@ -24,7 +24,7 @@
  *  @param item the preflight checklist item
  *  @param manager the preflicht checklist manager
  */
-- (void)preflightChecklistManager:(DUXPreflightChecklistManager *)manager noticedChangesForItem:(DUXPreflightChecklistItem *)item;
+- (void)preflightChecklistManager:(nonnull DUXPreflightChecklistManager *)manager noticedChangesForItem:(nonnull DUXPreflightChecklistItem *)item;
 
 @end
 
@@ -80,15 +80,16 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
 /**
  *  Array of the items in the preflight checklist manager
  */
-@property (nonatomic, readonly) NSArray <DUXPreflightChecklistItem *> *preFlightChecklistItems;
+@property (nonatomic, readonly, nonnull) NSArray <DUXPreflightChecklistItem *> *preFlightChecklistItems;
 
 
 
 /**
- *  Returns the default configured instance. This instance will be prepopulated with
- *  a default set of checklist items.
+ *  This instance will be prepopulated with a default set of checklist items.
+ *  
+ *  @return The default configured instance.
  */
-+ (instancetype)defaultManager;
++ (nonnull instancetype)defaultManager;
 
 
 /**
@@ -106,7 +107,7 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
  *  
  *  @param item The item being added to the checklist
  */
-- (void)addChecklistItem:(DUXPreflightChecklistItem *)item;
+- (void)addChecklistItem:(nullable DUXPreflightChecklistItem *)item;
 
 
 /**
@@ -116,7 +117,7 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
  *  @param itemToInsert The item being added to the checklist
  *  @param itemToInsertAfter The item in the checklist to insert after
  */
-- (void)insertChecklistItem:(DUXPreflightChecklistItem *)itemToInsert afterChecklistItem:(DUXPreflightChecklistItem *)itemToInsertAfter;
+- (void)insertChecklistItem:(nullable DUXPreflightChecklistItem *)itemToInsert afterChecklistItem:(nullable DUXPreflightChecklistItem *)itemToInsertAfter;
 
 
 /**
@@ -126,7 +127,7 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
  *  @param itemToInsert The item being added to the checklist
  *  @param itemToInsertBefore The item in the checklist to insert before
  */
-- (void)insertCheckListItem:(DUXPreflightChecklistItem *)itemToInsert beforeChecklistItem:(DUXPreflightChecklistItem *)itemToInsertBefore;
+- (void)insertCheckListItem:(nullable DUXPreflightChecklistItem *)itemToInsert beforeChecklistItem:(nullable DUXPreflightChecklistItem *)itemToInsertBefore;
 
 
 /**
@@ -134,7 +135,7 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
  *  
  *  @param item The item being removed from the checklist
  */
-- (void)removeChecklistItem:(DUXPreflightChecklistItem *)item;
+- (void)removeChecklistItem:(nullable DUXPreflightChecklistItem *)item;
 
 
 /**
@@ -152,7 +153,7 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
  *  
  *  @return the preflight checklist item at an index
  */
-- (DUXPreflightChecklistItem *)checklistItemAtIndex:(NSInteger)index;
+- (nullable DUXPreflightChecklistItem *)checklistItemAtIndex:(NSInteger)index;
 
 /*********************************************************************************/
 #pragma mark - Items Monitoring
@@ -183,7 +184,7 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
  *  @param didChangeState Whether the item state changed.
  *  @param didChangeDescription Whether the item description changed.
  */
-- (void)item:(DUXPreflightChecklistItem *)item didChangeState:(BOOL)didChangeState didChangeDescription:(BOOL)didChangeDescription;
+- (void)item:(nonnull DUXPreflightChecklistItem *)item didChangeState:(BOOL)didChangeState didChangeDescription:(BOOL)didChangeDescription;
 
 /*********************************************************************************/
 #pragma mark - Listeners
@@ -195,7 +196,7 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
  *  
  *  @param listener The listener being added.
  */
-- (void)addListener:(id <DUXPreflightChecklistManagerListener>)listener;
+- (void)addListener:(nullable id <DUXPreflightChecklistManagerListener>)listener;
 
 
 /**
@@ -203,6 +204,6 @@ typedef NS_ENUM(NSInteger, DUXPreflightChecklistState) {
  *  
  *  @param listener The listener being removed.
  */
-- (void)removeListener:(id <DUXPreflightChecklistManagerListener>)listener;
+- (void)removeListener:(nullable id <DUXPreflightChecklistManagerListener>)listener;
 
 @end

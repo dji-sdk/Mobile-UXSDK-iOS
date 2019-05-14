@@ -1,0 +1,46 @@
+<html>
+<style>
+  table, th, td {
+     border: 1px solid rgb(200,200,200);
+     border-collapse: collapse;
+     }
+  table {
+     table-layout: fixed;
+     width: 1900px;
+     }
+  td {
+     overflow-x: auto;
+     }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    }
+  .comments {
+    color: #292;
+    }
+  .source-code {
+    color: #22F;
+    }
+  .interface-parent {
+    color: #AAA;
+    }
+  .interface-name {
+    color: #000;
+    }
+  .check-mark {
+    text-align: center;
+    }
+</style>
+<body>
+<br>
+
+<h1>DJI UX SDK 4.9 to 4.10 Differences</h1>
+
+<br>
+
+<h2>API changes</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">4.9 Parent and Name</font></td><td width=15%><font color="#000">4.9 Code</font></td><td width=15%><font color="#000">4.10 Parent and Name</font></td><td width=15%><font color="#000">4.10 Code</font></td><td width=3%><font color="#000">Parent</font></td><td width=3%><font color="#000">Name</font></td><td width=3%><font color="#000">Type</font></td><td width=3%><font color="#000">Param</font></td><td width=3%><font color="#000">Return</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">item:didChangeState:didChangeDescription</span></td><td width=15%><span class="source-code">- (void)item:(DUXPreflightChecklistItem *)item didChangeState:(BOOL)didChangeState didChangeDescription:(BOOL)didChangeDescription</span></td><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">item:didChangeState:didChangeDescription</span></td><td width=15%><span class="source-code">- (void)item:(nonnull DUXPreflightChecklistItem *)item didChangeState:(BOOL)didChangeState didChangeDescription:(BOOL)didChangeDescription</span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">checklistItemAtIndex</span></td><td width=15%><span class="source-code">- (DUXPreflightChecklistItem *)checklistItemAtIndex:(NSInteger)index</span></td><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">checklistItemAtIndex</span></td><td width=15%><span class="source-code">- (nullable DUXPreflightChecklistItem *)checklistItemAtIndex:(NSInteger)index</span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManagerListener.</span><span class="interface-name">preflightChecklistManager:noticedChangesForItem</span></td><td width=15%><span class="source-code">- (void)preflightChecklistManager:(DUXPreflightChecklistManager *)manager noticedChangesForItem:(DUXPreflightChecklistItem *)item</span></td><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManagerListener.</span><span class="interface-name">preflightChecklistManager:noticedChangesForItem</span></td><td width=15%><span class="source-code">- (void)preflightChecklistManager:(nonnull DUXPreflightChecklistManager *)manager noticedChangesForItem:(nonnull DUXPreflightChecklistItem *)item</span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">addChecklistItem</span></td><td width=15%><span class="source-code">- (void)addChecklistItem:(DUXPreflightChecklistItem *)item</span></td><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">addChecklistItem</span></td><td width=15%><span class="source-code">- (void)addChecklistItem:(nullable DUXPreflightChecklistItem *)item</span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">addListener</span></td><td width=15%><span class="source-code">- (void)addListener:(id &lt;DUXPreflightChecklistManagerListener&gt;)listener</span></td><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">addListener</span></td><td width=15%><span class="source-code">- (void)addListener:(nullable id &lt;DUXPreflightChecklistManagerListener&gt;)listener</span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">removeChecklistItem</span></td><td width=15%><span class="source-code">- (void)removeChecklistItem:(DUXPreflightChecklistItem *)item</span></td><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">removeChecklistItem</span></td><td width=15%><span class="source-code">- (void)removeChecklistItem:(nullable DUXPreflightChecklistItem *)item</span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">removeListener</span></td><td width=15%><span class="source-code">- (void)removeListener:(id &lt;DUXPreflightChecklistManagerListener&gt;)listener</span></td><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">removeListener</span></td><td width=15%><span class="source-code">- (void)removeListener:(nullable id &lt;DUXPreflightChecklistManagerListener&gt;)listener</span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">insertChecklistItem:afterChecklistItem</span></td><td width=15%><span class="source-code">- (void)insertChecklistItem:(DUXPreflightChecklistItem *)itemToInsert afterChecklistItem:(DUXPreflightChecklistItem *)itemToInsertAfter</span></td><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">insertChecklistItem:afterChecklistItem</span></td><td width=15%><span class="source-code">- (void)insertChecklistItem:(nullable DUXPreflightChecklistItem *)itemToInsert afterChecklistItem:(nullable DUXPreflightChecklistItem *)itemToInsertAfter</span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">defaultManager</span></td><td width=15%><span class="source-code">+ (instancetype)defaultManager</span></td><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">defaultManager</span></td><td width=15%><span class="source-code">+ (nonnull instancetype)defaultManager</span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">insertCheckListItem:beforeChecklistItem</span></td><td width=15%><span class="source-code">- (void)insertCheckListItem:(DUXPreflightChecklistItem *)itemToInsert beforeChecklistItem:(DUXPreflightChecklistItem *)itemToInsertBefore</span></td><td width=15%><span class="interface-parent">DUXPreflightChecklistManager.h: DUXPreflightChecklistManager.</span><span class="interface-name">insertCheckListItem:beforeChecklistItem</span></td><td width=15%><span class="source-code">- (void)insertCheckListItem:(nullable DUXPreflightChecklistItem *)itemToInsert beforeChecklistItem:(nullable DUXPreflightChecklistItem *)itemToInsertBefore</span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td></tr></table><p style="font-size:50%; color:white">dc12ff7 c8e98e8 </p></body>
+</html>
+
