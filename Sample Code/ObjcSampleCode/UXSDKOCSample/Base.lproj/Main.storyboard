@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yqs-se-Oln">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yqs-se-Oln">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,25 +40,25 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registered:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9m-yD-GML">
-                                                    <rect key="frame" x="45" y="62" width="87" height="21"/>
+                                                    <rect key="frame" x="45" y="62.5" width="87" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFv-15-sB2">
-                                                    <rect key="frame" x="43" y="97" width="89" height="20.5"/>
+                                                    <rect key="frame" x="43" y="97.5" width="89" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plc-QH-pY9">
-                                                    <rect key="frame" x="140" y="62" width="25" height="20.5"/>
+                                                    <rect key="frame" x="140" y="63" width="25" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvW-f7-flM">
-                                                    <rect key="frame" x="140" y="97" width="25" height="20.5"/>
+                                                    <rect key="frame" x="140" y="97.5" width="25" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -75,7 +73,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIs-b4-6a8">
-                                                    <rect key="frame" x="174" y="58" width="57" height="30"/>
+                                                    <rect key="frame" x="173.5" y="58.5" width="57" height="30"/>
                                                     <state key="normal" title="Register">
                                                         <color key="titleColor" red="0.1215686275" green="0.63921568630000003" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -84,7 +82,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ed-81-N99">
-                                                    <rect key="frame" x="838" y="92" width="30" height="30"/>
+                                                    <rect key="frame" x="838" y="92.5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="9ed-81-N99" secondAttribute="height" multiplier="1:1" id="00B-Ng-AVG"/>
                                                         <constraint firstAttribute="width" constant="30" id="fhA-xQ-yhH"/>
@@ -135,14 +133,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="986" height="138.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Default Layout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6I4-OH-bdO">
-                                                    <rect key="frame" x="45" y="18" width="126.5" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Default Layout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6I4-OH-bdO">
+                                                    <rect key="frame" x="45" y="21" width="126.5" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ppy-iJ-TlU">
-                                                    <rect key="frame" x="65" y="50" width="908" height="76"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ppy-iJ-TlU">
+                                                    <rect key="frame" x="65" y="53" width="908" height="71"/>
                                                     <string key="text">The Default Layout is the easiest way to start with the UXSDK.
 It provides a ready-to-use full UI with a very similar look and feel to DJIGo.
 All you need to do is include the DUXRootViewController in your app.</string>
@@ -215,14 +213,14 @@ Panels are ViewControllers that are fully featured and ready to use, though not 
                                             <rect key="frame" x="0.0" y="0.0" width="986" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Widgets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRZ-N5-5bS">
-                                                    <rect key="frame" x="45" y="18" width="73" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Widgets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRZ-N5-5bS">
+                                                    <rect key="frame" x="45" y="21" width="73" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kAg-WW-FHy">
-                                                    <rect key="frame" x="65" y="50" width="903" height="72"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kAg-WW-FHy">
+                                                    <rect key="frame" x="65" y="53" width="903" height="67"/>
                                                     <string key="text">Finally, widgets are the smallest bricks of the UXSDK.
 They can be used like any regular UIView or be placed inside a Widget Collection.
 They can also be customized in how they look and behave.</string>
@@ -244,6 +242,41 @@ They can also be customized in how they look and behave.</string>
                                         <color key="backgroundColor" red="0.076183750179999996" green="0.077627680690000006" blue="0.077963082899999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="5rd-wA-VFC" kind="show" id="QZE-uE-Gra"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="140" id="OLy-aS-s85">
+                                        <rect key="frame" x="0.0" y="675" width="1024" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OLy-aS-s85" id="r0H-lM-hDj">
+                                            <rect key="frame" x="0.0" y="0.0" width="986" height="139.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map Widget" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4y-23-NDf">
+                                                    <rect key="frame" x="45" y="21" width="106" height="24"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="The map widget allows the display of aircraft location, home point, flight path, and fly zones." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-q7-wLj">
+                                                    <rect key="frame" x="65" y="53" width="903" height="67"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.076183750179999996" green="0.077627680690000006" blue="0.077963082899999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="V4y-23-NDf" firstAttribute="top" secondItem="r0H-lM-hDj" secondAttribute="topMargin" constant="10" id="D3J-EA-bvq"/>
+                                                <constraint firstItem="EZG-q7-wLj" firstAttribute="top" secondItem="V4y-23-NDf" secondAttribute="bottom" constant="8" id="Hcg-A1-mvW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="EZG-q7-wLj" secondAttribute="trailing" constant="10" id="Kfx-8f-FUa"/>
+                                                <constraint firstItem="V4y-23-NDf" firstAttribute="leading" secondItem="r0H-lM-hDj" secondAttribute="leadingMargin" constant="25" id="kjX-Dm-E8E"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EZG-q7-wLj" secondAttribute="bottom" constant="9" id="pv0-2O-u8q"/>
+                                                <constraint firstItem="EZG-q7-wLj" firstAttribute="leading" secondItem="r0H-lM-hDj" secondAttribute="leadingMargin" constant="45" id="rM1-8O-4Ux"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.076183750179999996" green="0.077627680690000006" blue="0.077963082899999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="56Q-V0-mVL" kind="show" id="bsO-ss-DJR"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -289,6 +322,14 @@ They can also be customized in how they look and behave.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWe-Oc-lUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="911" y="-263"/>
+        </scene>
+        <!--MapWidget-->
+        <scene sceneID="Ulq-fc-jOP">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="DUXMapViewController" storyboardName="MapWidget" id="56Q-V0-mVL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2be-re-iL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882" y="-66"/>
         </scene>
     </scenes>
 </document>

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yjs-7A-EVo">
-    <device id="retina4_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yjs-7A-EVo">
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +11,7 @@
         <!--Manual Focus Mode Adjustment Custom Layout View Controller-->
         <scene sceneID="WsB-rC-2Kj">
             <objects>
-                <viewController storyboardIdentifier="ManualFocusModeAdjustmentCustomLayoutViewController" id="Yjs-7A-EVo" customClass="ManualFocusModeAdjustmentCustomLayoutViewController" customModule="UXSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManualFocusModeAdjustmentCustomLayoutViewController" modalPresentationStyle="fullScreen" id="Yjs-7A-EVo" customClass="ManualFocusModeAdjustmentCustomLayoutViewController" customModule="UXSDKSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ccU-c0-Rvw">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +50,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdR-3g-8kW" customClass="DUXManualFocusAdjustmentWidget">
-                                <rect key="frame" x="574" y="77" width="30" height="220"/>
+                                <rect key="frame" x="574" y="77.5" width="30" height="220"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="4OO-dW-7rV"/>
