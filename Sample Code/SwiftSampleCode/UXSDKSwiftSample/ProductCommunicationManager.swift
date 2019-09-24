@@ -11,6 +11,10 @@ import DJISDK
 let ProductCommunicationManagerStateDidChange = "ProductCommunicationManagerStateDidChange"
 
 class ProductCommunicationManager: NSObject, DJISDKManagerDelegate {
+    func didUpdateDatabaseDownloadProgress(_ progress: Progress) {
+        
+    }
+    
     open weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
     open var connectedProduct: DJIBaseProduct!
     
