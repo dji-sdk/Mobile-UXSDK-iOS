@@ -73,6 +73,10 @@ class ProductCommunicationManager: NSObject, DJISDKManagerDelegate {
         }
     }
     
+    func didUpdateDatabaseDownloadProgress(_ progress: Progress) {
+        NSLog("Download database : \n%lld/%lld" + progress.completedUnitCount, progress.totalUnitCount)
+    }
+    
     func productConnected(_ product: DJIBaseProduct?) {
         if product != nil {
             self.connected = true
