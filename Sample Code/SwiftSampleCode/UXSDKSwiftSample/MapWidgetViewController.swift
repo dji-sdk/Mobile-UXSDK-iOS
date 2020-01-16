@@ -24,10 +24,10 @@ public class MapWidgetViewController: UIViewController {
         self.mapWidgetController = DUXMapViewController()
         self.mapWidget = self.mapWidgetController?.mapWidget!
         self.mapWidget?.translatesAutoresizingMaskIntoConstraints = false
-        self.mapWidgetController?.willMove(toParentViewController: self)
-        self.addChildViewController(self.mapWidgetController!)
+        self.mapWidgetController?.willMove(toParent: self)
+        self.addChild(self.mapWidgetController!)
         self.view.addSubview(self.mapWidgetController!.mapWidget)
-        self.mapWidgetController?.didMove(toParentViewController: self)
+        self.mapWidgetController?.didMove(toParent: self)
         
         self.mapWidget?.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         self.mapWidget?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
@@ -35,7 +35,7 @@ public class MapWidgetViewController: UIViewController {
         self.mapWidget?.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         
         self.mapWidget?.setNeedsDisplay()
-        self.view.sendSubview(toBack: self.mapWidget!)
+        self.view.sendSubviewToBack(self.mapWidget!)
     }
     
     
@@ -49,9 +49,9 @@ public class MapWidgetViewController: UIViewController {
         let mapCustomizationViewController = storyboard.instantiateViewController(withIdentifier: "CustomMapViewController") as! CustomMapViewController
         mapCustomizationViewController.mapViewController = self.mapWidgetController
         
-        self.addChildViewController(mapCustomizationViewController)
+        self.addChild(mapCustomizationViewController)
         self.view.addSubview(mapCustomizationViewController.view)
-        mapCustomizationViewController.didMove(toParentViewController: self)
+        mapCustomizationViewController.didMove(toParent: self)
         
         mapCustomizationViewController.view.translatesAutoresizingMaskIntoConstraints = false
         mapCustomizationViewController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true

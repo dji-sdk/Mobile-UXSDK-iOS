@@ -36,6 +36,7 @@ Downloading dependencies
 Installing DJI-SDK-iOS (4.11.1)
 Installing DJI-UXSDK-iOS (4.11)
 Installing DJIWidget (1.6.2)
+Installing DJIFlySafeDatabaseResource (01.00.01.17)
 Generating Pods project
 Integrating client project
 

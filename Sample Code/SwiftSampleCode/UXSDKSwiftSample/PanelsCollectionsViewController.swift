@@ -19,14 +19,14 @@ class PanelsCollectionsViewController: UIViewController {
 
         // Adding our DUXStatusBarViewController to our container in code.
         // This could be done in the storyboard
-        self.addChildViewController(self.statusBarVC)
+        self.addChild(self.statusBarVC)
         self.statusBarContainingView.addSubview(self.statusBarVC.view);
         self.statusBarVC.view.translatesAutoresizingMaskIntoConstraints = false;
         self.statusBarVC.view.topAnchor.constraint(equalTo: self.statusBarContainingView.topAnchor).isActive = true
         self.statusBarVC.view.bottomAnchor.constraint(equalTo: self.statusBarContainingView.bottomAnchor).isActive = true
         self.statusBarVC.view.leadingAnchor.constraint(equalTo: self.statusBarContainingView.leadingAnchor).isActive = true
         self.statusBarVC.view.trailingAnchor.constraint(equalTo: self.statusBarContainingView.trailingAnchor).isActive = true
-        self.statusBarVC.didMove(toParentViewController: self)
+        self.statusBarVC.didMove(toParent: self)
         
         /*
          *  Customizing a predefined widget view collection
@@ -68,7 +68,7 @@ class PanelsCollectionsViewController: UIViewController {
         self.widgetMovingTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(moveWidget), userInfo: nil, repeats: true)
     }
     
-    func moveWidget() {
+    @objc func moveWidget() {
         // Switch stack for widgets in stack collections
         guard let batteryWidget = self.statusBarVC.widget(with: DUXBatteryWidget.self) else {
             return;

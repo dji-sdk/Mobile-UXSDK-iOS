@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Sk0-7A-pYA">
-    <device id="ipad12_9" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Sk0-7A-pYA">
+    <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Default Layout View Controller-->
         <scene sceneID="5Mc-1M-usm">
             <objects>
-                <viewController id="Sk0-7A-pYA" customClass="DefaultLayoutViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Sk0-7A-pYA" customClass="DefaultLayoutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xdk-bb-Tnp"/>
                         <viewControllerLayoutGuide type="bottom" id="ISl-Sw-CDm"/>
@@ -22,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="225-X7-0Ec" customClass="DUXCameraConfigInfoWidget">
-                                <rect key="frame" x="798" y="68" width="320" height="34"/>
+                                <rect key="frame" x="798" y="48" width="320" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="UCw-y3-E0t"/>
@@ -30,7 +28,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="HWd-ts-Z40" customClass="DUXCameraConfigStorageWidget">
-                                <rect key="frame" x="1128" y="68" width="208.5" height="34"/>
+                                <rect key="frame" x="1128" y="48" width="208.5" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" priority="998" constant="210" id="FoL-fl-wfc"/>
@@ -38,7 +36,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsM-c0-gPw">
-                                <rect key="frame" x="20" y="68" width="34" height="34"/>
+                                <rect key="frame" x="20" y="48" width="34" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wsM-c0-gPw" secondAttribute="height" multiplier="1:1" id="TBy-Eh-hJw"/>
                                 </constraints>
