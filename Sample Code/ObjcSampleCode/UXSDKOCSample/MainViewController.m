@@ -39,7 +39,6 @@
 
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -66,7 +65,7 @@
 - (void) connectToProduct
 {
     if (ENTER_DEBUG_MODE) {
-        NSString *debugIP = @"Please enter your Debug IP address here.";
+        NSString *debugIP = @"10.128.129.34";
         NSLog(@"Connecting to Product using debug IP address: %@",debugIP);
         [DJISDKManager enableBridgeModeWithBridgeAppIP:debugIP];
     }else

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NDq-2J-MBz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NDq-2J-MBz">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -96,6 +96,27 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Status:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XA-zv-6hF">
+                                                    <rect key="frame" x="768.5" y="25" width="100" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yry-7k-BIB">
+                                                    <rect key="frame" x="876.5" y="25" width="72" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVT-LX-FZY">
+                                                    <rect key="frame" x="957" y="21" width="38" height="30"/>
+                                                    <state key="normal" title="Login">
+                                                        <color key="titleColor" red="0.1215686275" green="0.63921568630000003" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="userAccountAction" destination="NDq-2J-MBz" eventType="touchUpInside" id="ExL-T6-Afy"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.076183750179999996" green="0.077627680690000006" blue="0.077963082899999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -107,7 +128,11 @@
                                                 <constraint firstItem="frd-er-YPm" firstAttribute="baseline" secondItem="XjC-Me-fk1" secondAttribute="baseline" id="DoY-9e-R7I"/>
                                                 <constraint firstItem="frd-er-YPm" firstAttribute="leading" secondItem="XjC-Me-fk1" secondAttribute="trailing" constant="8" symbolic="YES" id="Ee0-4T-cCb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gH9-U0-hed" secondAttribute="trailing" constant="15" id="F2p-0A-Kce"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="TVT-LX-FZY" secondAttribute="trailing" constant="9" id="MJD-Pd-ab1"/>
+                                                <constraint firstItem="yry-7k-BIB" firstAttribute="leading" secondItem="7XA-zv-6hF" secondAttribute="trailing" constant="8" symbolic="YES" id="PgW-rb-xeb"/>
                                                 <constraint firstItem="zzU-M5-m57" firstAttribute="trailing" secondItem="XjC-Me-fk1" secondAttribute="trailing" id="QRf-fc-6s8"/>
+                                                <constraint firstItem="yry-7k-BIB" firstAttribute="baseline" secondItem="7XA-zv-6hF" secondAttribute="baseline" id="R6o-xD-lMy"/>
+                                                <constraint firstItem="TVT-LX-FZY" firstAttribute="leading" secondItem="yry-7k-BIB" secondAttribute="trailing" constant="8.5" id="RnW-P0-XBa"/>
                                                 <constraint firstItem="WYM-I7-tdX" firstAttribute="top" secondItem="jQA-hJ-cx3" secondAttribute="topMargin" constant="10" id="T4O-K5-m5U"/>
                                                 <constraint firstItem="XjC-Me-fk1" firstAttribute="leading" secondItem="WYM-I7-tdX" secondAttribute="leading" constant="10" id="ULh-IB-hA1"/>
                                                 <constraint firstItem="vk6-Pl-QIS" firstAttribute="baseline" secondItem="zzU-M5-m57" secondAttribute="baseline" id="aoR-xU-qih"/>
@@ -115,12 +140,14 @@
                                                 <constraint firstItem="7dJ-3X-52i" firstAttribute="baseline" secondItem="frd-er-YPm" secondAttribute="baseline" id="b1u-jZ-Hns"/>
                                                 <constraint firstItem="pcs-bp-FHV" firstAttribute="leading" secondItem="WYM-I7-tdX" secondAttribute="trailing" constant="8" id="eM8-MN-jIm"/>
                                                 <constraint firstItem="7dJ-3X-52i" firstAttribute="leading" secondItem="frd-er-YPm" secondAttribute="trailing" constant="8.5" id="mdo-DE-yiu"/>
+                                                <constraint firstItem="TVT-LX-FZY" firstAttribute="top" secondItem="jQA-hJ-cx3" secondAttribute="topMargin" constant="10" id="nMN-45-U8V"/>
                                                 <constraint firstItem="fEE-gN-aSE" firstAttribute="width" secondItem="fEE-gN-aSE" secondAttribute="height" multiplier="1:1" id="neg-0w-zSc"/>
                                                 <constraint firstItem="fEE-gN-aSE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1bV-W6-l0c" secondAttribute="trailing" constant="15" id="u9d-RB-gVg"/>
                                                 <constraint firstItem="zzU-M5-m57" firstAttribute="top" secondItem="XjC-Me-fk1" secondAttribute="bottom" constant="14" id="uOo-Hj-YnU"/>
                                                 <constraint firstItem="1bV-W6-l0c" firstAttribute="baseline" secondItem="vk6-Pl-QIS" secondAttribute="baseline" id="umo-cv-yrA"/>
                                                 <constraint firstItem="pcs-bp-FHV" firstAttribute="baseline" secondItem="WYM-I7-tdX" secondAttribute="baseline" id="v0w-7i-dG1"/>
                                                 <constraint firstItem="gH9-U0-hed" firstAttribute="baseline" secondItem="zzU-M5-m57" secondAttribute="baseline" id="y3P-6D-YJJ"/>
+                                                <constraint firstItem="TVT-LX-FZY" firstAttribute="baseline" secondItem="yry-7k-BIB" secondAttribute="baseline" id="yHO-bZ-XE2"/>
                                                 <constraint firstItem="gH9-U0-hed" firstAttribute="centerY" secondItem="fEE-gN-aSE" secondAttribute="centerY" id="yr1-ZB-Xlg"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -361,8 +388,11 @@ They can also be customized in how they look and behave.</string>
                     <connections>
                         <outlet property="connect" destination="1bV-W6-l0c" id="jdR-qg-vcC"/>
                         <outlet property="connected" destination="vk6-Pl-QIS" id="fGr-Ul-h6R"/>
+                        <outlet property="currentUserAccountStatus" destination="yry-7k-BIB" id="ds2-nr-VHt"/>
+                        <outlet property="loginOrLogout" destination="TVT-LX-FZY" id="Vu9-fJ-4N2"/>
                         <outlet property="register" destination="7dJ-3X-52i" id="DlA-vR-AOz"/>
                         <outlet property="registered" destination="frd-er-YPm" id="guQ-Vl-WSK"/>
+                        <outlet property="userAccountStatusHeader" destination="7XA-zv-6hF" id="gT6-dR-9He"/>
                         <outlet property="version" destination="pcs-bp-FHV" id="8Zw-qk-N6M"/>
                     </connections>
                 </tableViewController>

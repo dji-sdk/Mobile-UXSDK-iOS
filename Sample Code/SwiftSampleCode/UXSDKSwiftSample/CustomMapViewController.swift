@@ -8,8 +8,9 @@
 
 import UIKit
 import DJIUXSDK
+import iOS_Color_Picker
 
-class CustomMapViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CustomMapViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, FCColorPickerViewControllerDelegate {
     
     var mapViewController:DUXMapViewController?
     
@@ -193,7 +194,6 @@ class CustomMapViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     func updateMapWith(color:UIColor) {
-        
         if colorPickerCurrentlySelectedRow == 0 {
             self.mapViewController?.mapWidget.setFlyZoneOverlayColor(color, for: .restricted)
         } else if colorPickerCurrentlySelectedRow == 1 {
@@ -220,16 +220,57 @@ class CustomMapViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     @IBAction func close(_ sender: UIButton) {
-        self.willMove(toParentViewController: nil)
+        self.willMove(toParent: nil)
         self.view.removeFromSuperview()
-        self.removeFromParentViewController()
+        self.removeFromParent()
     }
     
     //MARK - FCColorPickerViewControllerDelegate
     
-    @IBAction func toggleColor() {
-        self.updateMapWith(color: UIColor.cyan)
+    func colorPickerViewController(_ colorPicker: FCColorPickerViewController, didSelect color: UIColor) {
+        self.updateMapWith(color: color)
         self.presentedViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func colorPickerViewControllerDidCancel(_ colorPicker: FCColorPickerViewController) {
+        self.presentedViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func currentlySelectedColorFor(row:Int) -> UIColor? {
+        if colorPickerCurrentlySelectedRow == 0 {
+            return self.mapViewController?.mapWidget.flyZoneOverlayColor(for: .restricted)
+        } else if colorPickerCurrentlySelectedRow == 1 {
+            return self.mapViewController?.mapWidget.flyZoneOverlayColor(for: .authorization)
+        } else if colorPickerCurrentlySelectedRow == 2 {
+            return self.mapViewController?.mapWidget.flyZoneOverlayColor(for: .enhancedWarning)
+        } else if colorPickerCurrentlySelectedRow == 3 {
+            return self.mapViewController?.mapWidget.flyZoneOverlayColor(for: .warning)
+        } else if colorPickerCurrentlySelectedRow == 4 {
+            return self.mapViewController?.mapWidget.unlockedFlyZoneOverlayColor
+        } else if colorPickerCurrentlySelectedRow == 5 {
+            return self.mapViewController?.mapWidget.maximumHeightFlyZoneOverlayColor
+        } else if colorPickerCurrentlySelectedRow == 6 {
+            return self.mapViewController?.mapWidget.flightPathStrokeColor
+        } else if colorPickerCurrentlySelectedRow == 7 {
+            return self.mapViewController?.mapWidget.directionToHomeStrokeColor
+        } else if colorPickerCurrentlySelectedRow == 8 {
+            return self.mapViewController?.mapWidget.customUnlockFlyZoneOverlayColor
+        } else if self.colorPickerCurrentlySelectedRow == 9 {
+            return self.mapViewController?.mapWidget.customUnlockFlyZoneSentToAircraftOverlayColor
+        } else if self.colorPickerCurrentlySelectedRow == 10 {
+            return self.mapViewController?.mapWidget.customUnlockFlyZoneEnabledOverlayColor
+        } else {
+            return nil
+        }
+    }
+    
+    @IBAction func toggleColor() {
+        if let currentlySelectedColorForPickerTarget = self.currentlySelectedColorFor(row:self.colorPickerCurrentlySelectedRow) {
+            let colorPicker = FCColorPickerViewController.colorPicker(with: currentlySelectedColorForPickerTarget, delegate: self)
+            self.present(colorPicker, animated: true, completion: nil)
+        } else {
+            self.updateMapWith(color: UIColor.cyan)
+        }
     }
     
     @IBAction func directionToHomeValueChanged(_ sender: UISwitch) {

@@ -11,6 +11,10 @@ import DJISDK
 let ProductCommunicationManagerStateDidChange = "ProductCommunicationManagerStateDidChange"
 
 class ProductCommunicationManager: NSObject, DJISDKManagerDelegate {
+    func didUpdateDatabaseDownloadProgress(_ progress: Progress) {
+        
+    }
+    
     open weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
     open var connectedProduct: DJIBaseProduct!
     
@@ -67,6 +71,10 @@ class ProductCommunicationManager: NSObject, DJISDKManagerDelegate {
                 self.connectToProduct()
             }
         }
+    }
+    
+    func didUpdateDatabaseDownloadProgress(_ progress: Progress) {
+        NSLog("Download database : \n%lld/%lld" + progress.completedUnitCount, progress.totalUnitCount)
     }
     
     func productConnected(_ product: DJIBaseProduct?) {
