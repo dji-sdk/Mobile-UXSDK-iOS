@@ -81,6 +81,7 @@ class PanelsCollectionsViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.widgetMovingTimer.invalidate()
         self.widgetMovingTimer = nil
     }
