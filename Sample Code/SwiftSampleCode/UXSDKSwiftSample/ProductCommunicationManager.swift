@@ -78,12 +78,11 @@ class ProductCommunicationManager: NSObject, DJISDKManagerDelegate {
     }
     
     func productConnected(_ product: DJIBaseProduct?) {
-        if product != nil {
-            self.connected = true
-            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: ProductCommunicationManagerStateDidChange)))
-            NSLog("Connection to new product succeeded!")
-            self.connectedProduct = product
-        }
+        guard product != nil else { return }
+        self.connected = true
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: ProductCommunicationManagerStateDidChange)))
+        NSLog("Connection to new product succeeded!")
+        self.connectedProduct = product
     }
     
     func productDisconnected() {
