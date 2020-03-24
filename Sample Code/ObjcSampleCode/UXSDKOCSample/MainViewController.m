@@ -34,7 +34,7 @@
 
     NSString *versionString = [DJISDKManager SDKVersion];
     if (versionString != nil) {
-        self.version.text = [NSString stringWithFormat:@"Version %@", [DJISDKManager SDKVersion]];
+        self.version.text = [NSString stringWithFormat:@"MSDK Version %@", [DJISDKManager SDKVersion]];
     }
 
 }
