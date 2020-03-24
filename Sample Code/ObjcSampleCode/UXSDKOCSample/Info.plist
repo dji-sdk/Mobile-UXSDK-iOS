@@ -19,7 +19,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>DJISDKAppKey</key>
-	<string>Please enter your App Key here.</string>
+	<string>aa867152c353ffcd6564b950</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -27,6 +27,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Bluetooth is required for communicating with some DJI hardware.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Gets location of the phone to calculate distance to aircraft</string>
 	<key>NSMicrophoneUsageDescription</key>
