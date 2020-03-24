@@ -21,7 +21,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>DJISDKAppKey</key>
-	<string>Please enter your App Key here.</string>
+	<string>765cd9397bbdf73cb8a55387</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -29,12 +29,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Bluetooth is required for communicating with some DJI hardware.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Gets location of the phone to calculate distance to aircraft</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app uses the microphone to record voice messages for broadcasting using the speaker accessory.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Save Photos.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
