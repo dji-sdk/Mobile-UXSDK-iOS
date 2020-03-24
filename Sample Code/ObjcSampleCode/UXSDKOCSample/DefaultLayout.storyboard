@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Sk0-7A-pYA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Sk0-7A-pYA">
     <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,24 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="225-X7-0Ec" customClass="DUXCameraConfigInfoWidget">
-                                <rect key="frame" x="798" y="48" width="320" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="UCw-y3-E0t"/>
-                                    <constraint firstAttribute="width" priority="999" constant="320" id="rfQ-GH-mcx"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="HWd-ts-Z40" customClass="DUXCameraConfigStorageWidget">
-                                <rect key="frame" x="1128" y="48" width="208.5" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="998" constant="210" id="FoL-fl-wfc"/>
-                                    <constraint firstAttribute="height" constant="34" id="H33-Vw-KMU"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsM-c0-gPw">
-                                <rect key="frame" x="20" y="48" width="34" height="34"/>
+                                <rect key="frame" x="20" y="48" width="41" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wsM-c0-gPw" secondAttribute="height" multiplier="1:1" id="TBy-Eh-hJw"/>
                                 </constraints>
@@ -46,19 +30,79 @@
                                     <action selector="onBackButtonClicked:" destination="Sk0-7A-pYA" eventType="touchUpInside" id="4an-4D-zaG"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qG8-bH-q0X">
+                                <rect key="frame" x="907.5" y="50" width="418.5" height="30"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="225-X7-0Ec" customClass="DUXCameraConfigInfoWidget">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="999" constant="60" id="rfQ-GH-mcx"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="HWd-ts-Z40" customClass="DUXCameraConfigStorageWidget">
+                                        <rect key="frame" x="75" y="0.0" width="208.5" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="25" constant="300" id="FoL-fl-wfc"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IR-Y4-qst" customClass="DUXExposureFocusSwitchWidget">
+                                        <rect key="frame" x="298.5" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7IR-Y4-qst" secondAttribute="height" multiplier="1:1" id="yuf-bP-hBW"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8f0-WU-ksu" customClass="DUXFocusModeWidget">
+                                        <rect key="frame" x="343.5" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8f0-WU-ksu" secondAttribute="height" multiplier="1:1" id="6MX-kt-Qs3"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48n-zJ-YHH" customClass="DUXAutoExposureSwitchWidget">
+                                        <rect key="frame" x="388.5" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="48n-zJ-YHH" secondAttribute="height" multiplier="1:1" id="Yb1-vU-bPu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="H3h-Ve-qkk"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FRR-eh-M7t">
+                                <rect key="frame" x="1206" y="95" width="75" height="100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATk-2U-yTh" customClass="DUXManualFocusAdjustmentWidget">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="ROl-CV-oFp"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yp3-qs-os0" customClass="DUXManualZoomWidget">
+                                        <rect key="frame" x="45" y="0.0" width="30" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="nim-ng-5qQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="250" constant="100" id="yZ6-Do-6a1" userLabel="height = 150"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.076183750179999996" green="0.077627680690000006" blue="0.077963082899999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HWd-ts-Z40" firstAttribute="leading" secondItem="225-X7-0Ec" secondAttribute="trailing" constant="10" id="8lH-5J-5cK"/>
-                            <constraint firstItem="225-X7-0Ec" firstAttribute="leading" secondItem="wsM-c0-gPw" secondAttribute="trailing" priority="997" constant="744" id="AMs-sz-kDI"/>
-                            <constraint firstAttribute="trailing" secondItem="HWd-ts-Z40" secondAttribute="trailing" constant="29.5" id="QSm-in-xUX"/>
-                            <constraint firstItem="wsM-c0-gPw" firstAttribute="bottom" secondItem="225-X7-0Ec" secondAttribute="bottom" id="S8h-E5-fvk"/>
-                            <constraint firstItem="225-X7-0Ec" firstAttribute="top" secondItem="HWd-ts-Z40" secondAttribute="top" id="eRm-mN-NVx"/>
-                            <constraint firstItem="wsM-c0-gPw" firstAttribute="centerY" secondItem="225-X7-0Ec" secondAttribute="centerY" id="fhh-ue-oFP"/>
-                            <constraint firstItem="wsM-c0-gPw" firstAttribute="top" secondItem="225-X7-0Ec" secondAttribute="top" id="qhk-1l-al5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FRR-eh-M7t" secondAttribute="trailing" constant="65" id="6XP-wU-LV5"/>
+                            <constraint firstItem="qG8-bH-q0X" firstAttribute="top" secondItem="Xdk-bb-Tnp" secondAttribute="bottom" constant="50" id="L3X-BK-vTj"/>
+                            <constraint firstItem="FRR-eh-M7t" firstAttribute="top" secondItem="qG8-bH-q0X" secondAttribute="bottom" constant="15" id="bGz-Yw-0Gj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qG8-bH-q0X" secondAttribute="trailing" constant="20" id="jLz-Lr-7dj"/>
                             <constraint firstItem="wsM-c0-gPw" firstAttribute="top" secondItem="Xdk-bb-Tnp" secondAttribute="bottom" constant="48" id="v5S-nH-FVt"/>
-                            <constraint firstItem="225-X7-0Ec" firstAttribute="centerY" secondItem="HWd-ts-Z40" secondAttribute="centerY" id="x6c-Sv-h7G"/>
-                            <constraint firstItem="225-X7-0Ec" firstAttribute="bottom" secondItem="HWd-ts-Z40" secondAttribute="bottom" id="xcY-CW-Iiq"/>
                             <constraint firstItem="wsM-c0-gPw" firstAttribute="leading" secondItem="AvT-PO-zau" secondAttribute="leading" constant="20" id="yXb-uU-ejX"/>
                         </constraints>
                     </view>

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		53C8811021507142003F4561 /* CustomMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8810D21507141003F4561 /* CustomMapViewController.swift */; };
 		53C8811121507142003F4561 /* MapWidget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53C8810F21507142003F4561 /* MapWidget.storyboard */; };
+		53ECE275233DB80100E278CD /* SimulationControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECE274233DB80100E278CD /* SimulationControlsViewController.swift */; };
+		53ECE278233DB8B500E278CD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECE277233DB8B500E278CD /* Helpers.swift */; };
 		672113A56976F36C74E46C5F /* Pods_UXSDKSwiftSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F826B16052D7C6EF5A9B8410 /* Pods_UXSDKSwiftSample.framework */; };
 		A4266C94208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */; };
 		A4266C95208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */; };
@@ -25,7 +27,7 @@
 		A452DC432070D8CC00EFBA30 /* MyBatteryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC322070D8CB00EFBA30 /* MyBatteryWidget.swift */; };
 		A452DC442070D8CC00EFBA30 /* PanelsCollections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC332070D8CB00EFBA30 /* PanelsCollections.storyboard */; };
 		A452DC452070D8CC00EFBA30 /* PanelsCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC342070D8CB00EFBA30 /* PanelsCollectionsViewController.swift */; };
-		A452DC462070D8CC00EFBA30 /* ProductCommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC352070D8CB00EFBA30 /* ProductCommunicationManager.swift */; };
+		A452DC462070D8CC00EFBA30 /* ProductCommunicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC352070D8CB00EFBA30 /* ProductCommunicationService.swift */; };
 		A452DC472070D8CC00EFBA30 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC362070D8CB00EFBA30 /* Widgets.storyboard */; };
 		A452DC482070D8CC00EFBA30 /* WidgetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		5300B461212BDE970015AF46 /* FFmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FFmpeg.framework; path = ../DJIWidget/FFmpeg/FFmpeg.framework; sourceTree = "<group>"; };
 		53C8810D21507141003F4561 /* CustomMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapViewController.swift; sourceTree = "<group>"; };
 		53C8810F21507142003F4561 /* MapWidget.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapWidget.storyboard; sourceTree = "<group>"; };
+		53ECE274233DB80100E278CD /* SimulationControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationControlsViewController.swift; sourceTree = "<group>"; };
+		53ECE277233DB8B500E278CD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		868A4ED01E01FA53006FEE33 /* UXSDKSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXSDKSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualFocusModeAdjustmentCustomLayoutViewController.swift; sourceTree = "<group>"; };
 		A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ManualFocusModeAdjustmentCustomLayout.storyboard; sourceTree = "<group>"; };
@@ -65,7 +69,7 @@
 		A452DC322070D8CB00EFBA30 /* MyBatteryWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBatteryWidget.swift; sourceTree = "<group>"; };
 		A452DC332070D8CB00EFBA30 /* PanelsCollections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PanelsCollections.storyboard; sourceTree = "<group>"; };
 		A452DC342070D8CB00EFBA30 /* PanelsCollectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelsCollectionsViewController.swift; sourceTree = "<group>"; };
-		A452DC352070D8CB00EFBA30 /* ProductCommunicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCommunicationManager.swift; sourceTree = "<group>"; };
+		A452DC352070D8CB00EFBA30 /* ProductCommunicationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCommunicationService.swift; sourceTree = "<group>"; };
 		A452DC362070D8CB00EFBA30 /* Widgets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Widgets.storyboard; sourceTree = "<group>"; };
 		A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetsViewController.swift; sourceTree = "<group>"; };
 		A4BE867E1F6B958600AFA154 /* libPods-UILib Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UILib Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +101,81 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		53ECE273233DB7B400E278CD /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A452DC302070D8CB00EFBA30 /* MainViewController.swift */,
+				53ECE274233DB80100E278CD /* SimulationControlsViewController.swift */,
+				A452DC292070D8CB00EFBA30 /* Main.storyboard */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		53ECE276233DB88300E278CD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				53ECE277233DB8B500E278CD /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		53EDD5F12346F384002E28AF /* ProductCommunication */ = {
+			isa = PBXGroup;
+			children = (
+				A452DC352070D8CB00EFBA30 /* ProductCommunicationService.swift */,
+			);
+			path = ProductCommunication;
+			sourceTree = "<group>";
+		};
+		53EDD5F22346F3FC002E28AF /* DefaultLayout */ = {
+			isa = PBXGroup;
+			children = (
+				A452DC2B2070D8CB00EFBA30 /* DefaultLayout.storyboard */,
+				A452DC2C2070D8CB00EFBA30 /* DefaultLayoutCustomization.storyboard */,
+				A452DC2D2070D8CB00EFBA30 /* DefaultLayoutCustomizationViewController.swift */,
+				A452DC2E2070D8CB00EFBA30 /* DefaultLayoutViewController.swift */,
+			);
+			path = DefaultLayout;
+			sourceTree = "<group>";
+		};
+		53EDD5F42346F425002E28AF /* MapWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A452DC312070D8CB00EFBA30 /* MapWidgetViewController.swift */,
+				53C8810D21507141003F4561 /* CustomMapViewController.swift */,
+				53C8810F21507142003F4561 /* MapWidget.storyboard */,
+			);
+			path = MapWidget;
+			sourceTree = "<group>";
+		};
+		53EDD5F52346F43E002E28AF /* CustomWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A452DC322070D8CB00EFBA30 /* MyBatteryWidget.swift */,
+			);
+			path = CustomWidget;
+			sourceTree = "<group>";
+		};
+		53EDD5F62346F456002E28AF /* WidgetsCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				A452DC362070D8CB00EFBA30 /* Widgets.storyboard */,
+				A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */,
+				A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */,
+				A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */,
+			);
+			path = WidgetsCatalog;
+			sourceTree = "<group>";
+		};
+		53EDD5F72346F45D002E28AF /* PanelsCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				A452DC332070D8CB00EFBA30 /* PanelsCollections.storyboard */,
+				A452DC342070D8CB00EFBA30 /* PanelsCollectionsViewController.swift */,
+			);
+			path = PanelsCatalog;
+			sourceTree = "<group>";
+		};
 		868A4EC71E01FA53006FEE33 = {
 			isa = PBXGroup;
 			children = (
@@ -121,24 +200,15 @@
 				A452DC252070D8CB00EFBA30 /* AppDelegate.swift */,
 				A452DC262070D8CB00EFBA30 /* Assets.xcassets */,
 				A452DC272070D8CB00EFBA30 /* LaunchScreen.storyboard */,
-				A452DC292070D8CB00EFBA30 /* Main.storyboard */,
-				A452DC2B2070D8CB00EFBA30 /* DefaultLayout.storyboard */,
-				A452DC2C2070D8CB00EFBA30 /* DefaultLayoutCustomization.storyboard */,
-				A452DC2D2070D8CB00EFBA30 /* DefaultLayoutCustomizationViewController.swift */,
-				A452DC2E2070D8CB00EFBA30 /* DefaultLayoutViewController.swift */,
 				A452DC2F2070D8CB00EFBA30 /* Info.plist */,
-				A452DC302070D8CB00EFBA30 /* MainViewController.swift */,
-				A452DC312070D8CB00EFBA30 /* MapWidgetViewController.swift */,
-				A452DC322070D8CB00EFBA30 /* MyBatteryWidget.swift */,
-				A452DC332070D8CB00EFBA30 /* PanelsCollections.storyboard */,
-				A452DC342070D8CB00EFBA30 /* PanelsCollectionsViewController.swift */,
-				A452DC352070D8CB00EFBA30 /* ProductCommunicationManager.swift */,
-				A452DC362070D8CB00EFBA30 /* Widgets.storyboard */,
-				A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */,
-				A4266C93208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayout.storyboard */,
-				A4266C92208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift */,
-				53C8810D21507141003F4561 /* CustomMapViewController.swift */,
-				53C8810F21507142003F4561 /* MapWidget.storyboard */,
+				53EDD5F12346F384002E28AF /* ProductCommunication */,
+				53ECE276233DB88300E278CD /* Helpers */,
+				53ECE273233DB7B400E278CD /* MainScreen */,
+				53EDD5F22346F3FC002E28AF /* DefaultLayout */,
+				53EDD5F42346F425002E28AF /* MapWidget */,
+				53EDD5F52346F43E002E28AF /* CustomWidget */,
+				53EDD5F72346F45D002E28AF /* PanelsCatalog */,
+				53EDD5F62346F456002E28AF /* WidgetsCatalog */,
 			);
 			path = UXSDKSwiftSample;
 			sourceTree = "<group>";
@@ -165,7 +235,6 @@
 				868A4ECE1E01FA53006FEE33 /* Resources */,
 				38D2C4751E0B1EF2009A3831 /* Embed Frameworks */,
 				88C4707591A1085FAD9B1CB0 /* [CP] Embed Pods Frameworks */,
-				F38C13BA0C416E74ED051FE2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,7 +257,7 @@
 				TargetAttributes = {
 					868A4ECF1E01FA53006FEE33 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = RLZA3FZ55S;
+						DevelopmentTeam = 38D4M22449;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -277,24 +346,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F38C13BA0C416E74ED051FE2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample-resources.sh",
-				"${PODS_ROOT}/DJIFlySafeDatabaseResource/DJIFlySafeDatabaseResource.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DJIFlySafeDatabaseResource.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -305,12 +356,14 @@
 				53C8811021507142003F4561 /* CustomMapViewController.swift in Sources */,
 				A452DC452070D8CC00EFBA30 /* PanelsCollectionsViewController.swift in Sources */,
 				A452DC412070D8CC00EFBA30 /* MainViewController.swift in Sources */,
-				A452DC462070D8CC00EFBA30 /* ProductCommunicationManager.swift in Sources */,
+				A452DC462070D8CC00EFBA30 /* ProductCommunicationService.swift in Sources */,
 				A452DC422070D8CC00EFBA30 /* MapWidgetViewController.swift in Sources */,
 				A4266C94208F004B0016ED75 /* ManualFocusModeAdjustmentCustomLayoutViewController.swift in Sources */,
 				A452DC3E2070D8CC00EFBA30 /* DefaultLayoutCustomizationViewController.swift in Sources */,
 				A452DC482070D8CC00EFBA30 /* WidgetsViewController.swift in Sources */,
 				A452DC432070D8CC00EFBA30 /* MyBatteryWidget.swift in Sources */,
+				53ECE275233DB80100E278CD /* SimulationControlsViewController.swift in Sources */,
+				53ECE278233DB8B500E278CD /* Helpers.swift in Sources */,
 				A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */,
 				A452DC3F2070D8CC00EFBA30 /* DefaultLayoutViewController.swift in Sources */,
 			);
@@ -436,7 +489,7 @@
 			baseConfigurationReference = DE38ABD14DBE3FB9BE89F3D7 /* Pods-UXSDKSwiftSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RLZA3FZ55S;
+				DEVELOPMENT_TEAM = 38D4M22449;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -446,17 +499,17 @@
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/include\"/**";
 				INFOPLIST_FILE = "$(SRCROOT)/UXSDKSwiftSample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 arm64e";
+				VALID_ARCHS = "arm64 arm64e x86_64";
 			};
 			name = Debug;
 		};
@@ -465,7 +518,7 @@
 			baseConfigurationReference = BB957E10C2CFC6BB041A1E75 /* Pods-UXSDKSwiftSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RLZA3FZ55S;
+				DEVELOPMENT_TEAM = 38D4M22449;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -475,17 +528,17 @@
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/include\"/**";
 				INFOPLIST_FILE = "$(SRCROOT)/UXSDKSwiftSample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 arm64e";
+				VALID_ARCHS = "arm64 arm64e x86_64";
 			};
 			name = Release;
 		};
