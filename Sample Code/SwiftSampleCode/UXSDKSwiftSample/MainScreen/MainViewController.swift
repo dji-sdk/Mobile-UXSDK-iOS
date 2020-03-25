@@ -59,7 +59,7 @@ class MainViewController: UITableViewController, UITextFieldDelegate {
             version = "N/A"
         }
         
-        self.version.text = "Version \(version)"
+        self.version.text = "MSDK Version \(version)"
         
         self.bridgeModeSwitch.setOn(ProductCommunicationService.shared.useBridge, animated: true)
         self.bridgeModeIPField.text = ProductCommunicationService.shared.bridgeAppIP
