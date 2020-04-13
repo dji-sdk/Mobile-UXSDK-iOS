@@ -46,11 +46,6 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)registerButton:(id)sender {
     
     [self registerWithProduct];
