@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ProductCommunicationService.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // Start the registration at the launch of the app. This can be retriggered at anytime from the main view.
+    // DJI App key needs to be registered in the Info.plist before calling this method.
+    [ProductCommunicationService.sharedInstance registerWithProduct];
     return YES;
 }
 

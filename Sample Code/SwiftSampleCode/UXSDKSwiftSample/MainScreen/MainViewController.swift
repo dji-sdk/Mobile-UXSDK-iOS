@@ -59,7 +59,7 @@ class MainViewController: UITableViewController, UITextFieldDelegate {
             version = "N/A"
         }
         
-        self.version.text = "MSDK Version \(version)"
+        self.version.text = "Version \(version)"
         
         self.bridgeModeSwitch.setOn(ProductCommunicationService.shared.useBridge, animated: true)
         self.bridgeModeIPField.text = ProductCommunicationService.shared.bridgeAppIP
@@ -111,7 +111,8 @@ class MainViewController: UITableViewController, UITextFieldDelegate {
     
     @objc func productCommunicationDidChange() {
         
-        //If this demo is used in China, it's required to login to your DJI account to activate the application. Also you need to use DJI Go app to bind the aircraft to your DJI account. For more details, please check this demo's tutorial.
+        // If this demo is used in China, it's required to login to your DJI account to activate the application.
+        // Also you need to use DJI Go app to bind the aircraft to your DJI account. For more details, please check this demo's tutorial.
         self.updateUserAccountStatus()
         
         if ProductCommunicationService.shared.registered {
@@ -157,7 +158,6 @@ class MainViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Simulator Controls
 
     @objc func handleFlightControllerSimulatorDidStart() {
-        self.dismiss(self)
         self.updateSimulatorControls(isSimulatorActive: true)
     }
     
@@ -174,7 +174,6 @@ class MainViewController: UITableViewController, UITextFieldDelegate {
         self.startOrStopSimulator.setTitle(simulatorControlTitle, for: .selected)
     }
     
-    
     @IBAction func handleStartOrStopSimulator() {
         if ProductCommunicationService.shared.isSimulatorActive == true {
             let didStartStoppingSimulator = ProductCommunicationService.shared.stopSimulator()
@@ -182,7 +181,6 @@ class MainViewController: UITableViewController, UITextFieldDelegate {
             if !didStartStoppingSimulator {
                 self.presentError("Could Not Begin Stopping Simulator")
             }
-            
         } else {
             let viewController = SimulatorControlsViewController()
             
@@ -201,6 +199,12 @@ class MainViewController: UITableViewController, UITextFieldDelegate {
                          completion: nil)
         }
     }
+    
+    @IBAction func useBridgeAction(_ sender: UISwitch) {
+        ProductCommunicationService.shared.useBridge = self.bridgeModeSwitch.isOn
+        ProductCommunicationService.shared.disconnectProduct()
+    }
+    
     
     @objc public func dismiss(_ sender: Any) {
         self.presentedViewController?.dismiss(animated: true,
