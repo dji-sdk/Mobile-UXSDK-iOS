@@ -155,6 +155,7 @@ FOUNDATION_EXPORT const unsigned char DJIUXSDKVersionString[];
 
 // External Accessories
 #import <DJIUXSDK/DUXSpeakerSettingsViewController.h>
+#import <DJIUXSDK/DUXSpotlightSettingsViewController.h>
 
 /**
  *  SDKModel

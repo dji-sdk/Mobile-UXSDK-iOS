@@ -8,11 +8,11 @@
 
 Pod::Spec.new do |s|
 
-  s.name            = "DJI-UXSDK-iOS"
-  s.version         = "4.11.1"
-  s.summary         = "DJI UX SDK for iOS"
-  s.homepage        = "https://github.com/dji-sdk/Mobile-UXSDK-iOS"
-  s.license         = { :type => 'CUSTOM', :text => <<-LICENSE
+  s.name         = "DJI-UXSDK-iOS"
+  s.version      = "4.12"
+  s.summary      = "DJI UX SDK for iOS"
+  s.homepage     = "https://github.com/dji-sdk/Mobile-UXSDK-iOS"
+  s.license      = { :type => 'CUSTOM', :text => <<-LICENSE
 ****************************************************************************************************************************
 
 DJI UX SDK for iOS is offered under DJI's END USER LICENSE AGREEMENT. You can obtain the license from the below link:
@@ -35,14 +35,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     LICENSE
   }
 
-  s.author          = { "DJI SDK" => "dev@dji.com" }
-  s.platform        = :ios, '10.0'
-  s.requires_arc    = true
-  s.source          = { :http => "https://d16195ku7wo333.cloudfront.net/ios_sdk/iOS_UXSDK_4.11.1_20200323.zip"}
-  s.default_subspec = 'Core'
-
-  s.subspec 'Core' do |t|
-    t.ios.vendored_frameworks = 'iOS_UXSDK/DJIUXSDK.framework'
-  end
+  s.author       = { "DJI SDK" => "dev@dji.com" }
+  s.platform     = :ios, '10.0'
+  s.requires_arc = true
+  s.source       = { :http => "https://d16195ku7wo333.cloudfront.net/ios_sdk/iOS_UXSDK_4.12_20200507.zip"}
+  s.ios.vendored_frameworks = 'iOS_UXSDK/DJIUXSDK.framework'
 
 end
