@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4600A824482E810083A336 /* SimulationControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4600A724482E810083A336 /* SimulationControlsViewController.m */; };
+		3A8D27D0244CE5D10019DD7A /* ProductCommunicationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D27CF244CE5D10019DD7A /* ProductCommunicationService.m */; };
+		3AA34570244A6E2300AA04CB /* DefaultLayoutCustomization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA3456F244A6E2300AA04CB /* DefaultLayoutCustomization.storyboard */; };
+		3AA34573244A769300AA04CB /* DefaultLayoutCustomizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA34572244A769300AA04CB /* DefaultLayoutCustomizationViewController.m */; };
 		53A525F7219B9FDB00B6CCAF /* MapWidget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A525F6219B9FDB00B6CCAF /* MapWidget.storyboard */; };
 		53A525FA219BA7DB00B6CCAF /* MapWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A525F9219BA7DB00B6CCAF /* MapWidgetViewController.m */; };
 		53F070F4219E0F8D00868FED /* CustomMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F070F3219E0F8D00868FED /* CustomMapViewController.m */; };
-		9F72678442AB55A937024AEB /* Pods_UXSDKOCSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37A3FEA170FD6D0953B3589 /* Pods_UXSDKOCSample.framework */; };
 		ACFBF812207C24250058A720 /* WidgetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF7FC207C24250058A720 /* WidgetsViewController.m */; };
 		ACFBF813207C24250058A720 /* MyBatteryWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF7FF207C24250058A720 /* MyBatteryWidget.m */; };
 		ACFBF814207C24250058A720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF801207C24250058A720 /* Assets.xcassets */; };
@@ -40,13 +43,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		06EE100A9FE67BED56866C40 /* Pods-UXSDKOCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKOCSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample.release.xcconfig"; sourceTree = "<group>"; };
+		3A4600A624482E810083A336 /* SimulationControlsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimulationControlsViewController.h; sourceTree = "<group>"; };
+		3A4600A724482E810083A336 /* SimulationControlsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimulationControlsViewController.m; sourceTree = "<group>"; };
+		3A8D27CE244CE5D10019DD7A /* ProductCommunicationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductCommunicationService.h; sourceTree = "<group>"; };
+		3A8D27CF244CE5D10019DD7A /* ProductCommunicationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductCommunicationService.m; sourceTree = "<group>"; };
+		3AA3456F244A6E2300AA04CB /* DefaultLayoutCustomization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DefaultLayoutCustomization.storyboard; sourceTree = "<group>"; };
+		3AA34571244A769300AA04CB /* DefaultLayoutCustomizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultLayoutCustomizationViewController.h; sourceTree = "<group>"; };
+		3AA34572244A769300AA04CB /* DefaultLayoutCustomizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultLayoutCustomizationViewController.m; sourceTree = "<group>"; };
 		53A525F6219B9FDB00B6CCAF /* MapWidget.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapWidget.storyboard; sourceTree = "<group>"; };
 		53A525F8219BA7DB00B6CCAF /* MapWidgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapWidgetViewController.h; sourceTree = "<group>"; };
 		53A525F9219BA7DB00B6CCAF /* MapWidgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapWidgetViewController.m; sourceTree = "<group>"; };
 		53F070F2219E0F8D00868FED /* CustomMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomMapViewController.h; sourceTree = "<group>"; };
 		53F070F3219E0F8D00868FED /* CustomMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomMapViewController.m; sourceTree = "<group>"; };
-		A37A3FEA170FD6D0953B3589 /* Pods_UXSDKOCSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UXSDKOCSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A189081EA1291E00D06BF0 /* UXSDKOCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXSDKOCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFBF7FC207C24250058A720 /* WidgetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetsViewController.m; sourceTree = "<group>"; };
 		ACFBF7FD207C24250058A720 /* DefaultLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultLayoutViewController.h; sourceTree = "<group>"; };
@@ -68,7 +76,6 @@
 		ACFBF80F207C24250058A720 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		ACFBF810207C24250058A720 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACFBF811207C24250058A720 /* Widgets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Widgets.storyboard; sourceTree = "<group>"; };
-		F5B19026C9DEFD6AFBB8F77A /* Pods-UXSDKOCSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKOCSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,20 +83,93 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F72678442AB55A937024AEB /* Pods_UXSDKOCSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A8D27C7244CD3B20019DD7A /* ProductCommunication */ = {
+			isa = PBXGroup;
+			children = (
+				3A8D27CE244CE5D10019DD7A /* ProductCommunicationService.h */,
+				3A8D27CF244CE5D10019DD7A /* ProductCommunicationService.m */,
+			);
+			path = ProductCommunication;
+			sourceTree = "<group>";
+		};
+		3A8D27C8244CD3ED0019DD7A /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF805207C24250058A720 /* Main.storyboard */,
+				ACFBF80F207C24250058A720 /* MainViewController.h */,
+				ACFBF807207C24250058A720 /* MainViewController.m */,
+				3A4600A624482E810083A336 /* SimulationControlsViewController.h */,
+				3A4600A724482E810083A336 /* SimulationControlsViewController.m */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		3A8D27C9244CD3F60019DD7A /* DefaultLayout */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF80A207C24250058A720 /* DefaultLayout.storyboard */,
+				ACFBF7FD207C24250058A720 /* DefaultLayoutViewController.h */,
+				ACFBF80C207C24250058A720 /* DefaultLayoutViewController.m */,
+				3AA3456F244A6E2300AA04CB /* DefaultLayoutCustomization.storyboard */,
+				3AA34571244A769300AA04CB /* DefaultLayoutCustomizationViewController.h */,
+				3AA34572244A769300AA04CB /* DefaultLayoutCustomizationViewController.m */,
+			);
+			path = DefaultLayout;
+			sourceTree = "<group>";
+		};
+		3A8D27CA244CD4000019DD7A /* MapWidget */ = {
+			isa = PBXGroup;
+			children = (
+				53A525F6219B9FDB00B6CCAF /* MapWidget.storyboard */,
+				53A525F8219BA7DB00B6CCAF /* MapWidgetViewController.h */,
+				53A525F9219BA7DB00B6CCAF /* MapWidgetViewController.m */,
+				53F070F2219E0F8D00868FED /* CustomMapViewController.h */,
+				53F070F3219E0F8D00868FED /* CustomMapViewController.m */,
+			);
+			path = MapWidget;
+			sourceTree = "<group>";
+		};
+		3A8D27CB244CD4090019DD7A /* CustomWidget */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF80E207C24250058A720 /* MyBatteryWidget.h */,
+				ACFBF7FF207C24250058A720 /* MyBatteryWidget.m */,
+			);
+			path = CustomWidget;
+			sourceTree = "<group>";
+		};
+		3A8D27CC244CD4E60019DD7A /* PanelsCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF802207C24250058A720 /* PanelsCollections.storyboard */,
+				ACFBF800207C24250058A720 /* PanelsCollectionsViewController.h */,
+				ACFBF80D207C24250058A720 /* PanelsCollectionsViewController.m */,
+			);
+			path = PanelsCatalog;
+			sourceTree = "<group>";
+		};
+		3A8D27CD244CD4F60019DD7A /* WidgetsCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF811207C24250058A720 /* Widgets.storyboard */,
+				ACFBF808207C24250058A720 /* WidgetsViewController.h */,
+				ACFBF7FC207C24250058A720 /* WidgetsViewController.m */,
+			);
+			path = WidgetsCatalog;
+			sourceTree = "<group>";
+		};
 		A4A188FF1EA1291E00D06BF0 = {
 			isa = PBXGroup;
 			children = (
 				ACFBF7FB207C24250058A720 /* UXSDKOCSample */,
 				A4A189091EA1291E00D06BF0 /* Products */,
-				A9C1936B19F091ED59B6CA31 /* Frameworks */,
-				D0816967A71F7A5CBD84F863 /* Pods */,
+				C0CD10EB780EF804EA4CCD81 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,53 +181,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A9C1936B19F091ED59B6CA31 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A37A3FEA170FD6D0953B3589 /* Pods_UXSDKOCSample.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		ACFBF7FB207C24250058A720 /* UXSDKOCSample */ = {
 			isa = PBXGroup;
 			children = (
-				ACFBF801207C24250058A720 /* Assets.xcassets */,
-				ACFBF802207C24250058A720 /* PanelsCollections.storyboard */,
-				ACFBF803207C24250058A720 /* LaunchScreen.storyboard */,
-				ACFBF805207C24250058A720 /* Main.storyboard */,
-				ACFBF80A207C24250058A720 /* DefaultLayout.storyboard */,
-				ACFBF80F207C24250058A720 /* MainViewController.h */,
-				ACFBF807207C24250058A720 /* MainViewController.m */,
-				ACFBF808207C24250058A720 /* WidgetsViewController.h */,
-				ACFBF7FC207C24250058A720 /* WidgetsViewController.m */,
-				ACFBF809207C24250058A720 /* main.m */,
 				ACFBF7FE207C24250058A720 /* AppDelegate.h */,
 				ACFBF80B207C24250058A720 /* AppDelegate.m */,
-				ACFBF7FD207C24250058A720 /* DefaultLayoutViewController.h */,
-				ACFBF80C207C24250058A720 /* DefaultLayoutViewController.m */,
-				ACFBF800207C24250058A720 /* PanelsCollectionsViewController.h */,
-				ACFBF80D207C24250058A720 /* PanelsCollectionsViewController.m */,
-				53A525F8219BA7DB00B6CCAF /* MapWidgetViewController.h */,
-				53A525F9219BA7DB00B6CCAF /* MapWidgetViewController.m */,
-				53F070F2219E0F8D00868FED /* CustomMapViewController.h */,
-				53F070F3219E0F8D00868FED /* CustomMapViewController.m */,
-				ACFBF80E207C24250058A720 /* MyBatteryWidget.h */,
-				ACFBF7FF207C24250058A720 /* MyBatteryWidget.m */,
+				ACFBF801207C24250058A720 /* Assets.xcassets */,
+				ACFBF803207C24250058A720 /* LaunchScreen.storyboard */,
 				ACFBF810207C24250058A720 /* Info.plist */,
-				ACFBF811207C24250058A720 /* Widgets.storyboard */,
-				53A525F6219B9FDB00B6CCAF /* MapWidget.storyboard */,
+				ACFBF809207C24250058A720 /* main.m */,
+				3A8D27C7244CD3B20019DD7A /* ProductCommunication */,
+				3A8D27C8244CD3ED0019DD7A /* MainScreen */,
+				3A8D27C9244CD3F60019DD7A /* DefaultLayout */,
+				3A8D27CA244CD4000019DD7A /* MapWidget */,
+				3A8D27CB244CD4090019DD7A /* CustomWidget */,
+				3A8D27CD244CD4F60019DD7A /* WidgetsCatalog */,
+				3A8D27CC244CD4E60019DD7A /* PanelsCatalog */,
 			);
 			path = UXSDKOCSample;
 			sourceTree = "<group>";
 		};
-		D0816967A71F7A5CBD84F863 /* Pods */ = {
+		C0CD10EB780EF804EA4CCD81 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F5B19026C9DEFD6AFBB8F77A /* Pods-UXSDKOCSample.debug.xcconfig */,
-				06EE100A9FE67BED56866C40 /* Pods-UXSDKOCSample.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,12 +215,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4A1891F1EA1291E00D06BF0 /* Build configuration list for PBXNativeTarget "UXSDKOCSample" */;
 			buildPhases = (
-				EF3F83FA9431056465867772 /* [CP] Check Pods Manifest.lock */,
 				A4A189041EA1291E00D06BF0 /* Sources */,
 				A4A189051EA1291E00D06BF0 /* Frameworks */,
 				A4A189061EA1291E00D06BF0 /* Resources */,
 				A4A189451EA12B4700D06BF0 /* Embed Frameworks */,
-				43AB897ECF73EE6BAA391FB6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA34570244A6E2300AA04CB /* DefaultLayoutCustomization.storyboard in Resources */,
 				53A525F7219B9FDB00B6CCAF /* MapWidget.storyboard in Resources */,
 				ACFBF81A207C24250058A720 /* DefaultLayout.storyboard in Resources */,
 				ACFBF816207C24250058A720 /* LaunchScreen.storyboard in Resources */,
@@ -225,63 +282,21 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		43AB897ECF73EE6BAA391FB6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample-frameworks.sh",
-				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
-				"${PODS_ROOT}/DJI-UXSDK-iOS/iOS_UXSDK/DJIUXSDK.framework",
-				"${PODS_ROOT}/DJIWidget/FFmpeg/FFmpeg.framework",
-				"${BUILT_PRODUCTS_DIR}/DJIWidget/DJIWidget.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIUXSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FFmpeg.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIWidget.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UXSDKOCSample/Pods-UXSDKOCSample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF3F83FA9431056465867772 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UXSDKOCSample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		A4A189041EA1291E00D06BF0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8D27D0244CE5D10019DD7A /* ProductCommunicationService.m in Sources */,
 				ACFBF812207C24250058A720 /* WidgetsViewController.m in Sources */,
 				ACFBF818207C24250058A720 /* MainViewController.m in Sources */,
 				ACFBF81C207C24250058A720 /* DefaultLayoutViewController.m in Sources */,
 				ACFBF813207C24250058A720 /* MyBatteryWidget.m in Sources */,
 				ACFBF81B207C24250058A720 /* AppDelegate.m in Sources */,
 				53A525FA219BA7DB00B6CCAF /* MapWidgetViewController.m in Sources */,
+				3AA34573244A769300AA04CB /* DefaultLayoutCustomizationViewController.m in Sources */,
 				53F070F4219E0F8D00868FED /* CustomMapViewController.m in Sources */,
+				3A4600A824482E810083A336 /* SimulationControlsViewController.m in Sources */,
 				ACFBF819207C24250058A720 /* main.m in Sources */,
 				ACFBF81D207C24250058A720 /* PanelsCollectionsViewController.m in Sources */,
 			);
@@ -401,7 +416,6 @@
 		};
 		A4A189201EA1291E00D06BF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5B19026C9DEFD6AFBB8F77A /* Pods-UXSDKOCSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 38D4M22449;
@@ -422,7 +436,6 @@
 		};
 		A4A189211EA1291E00D06BF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06EE100A9FE67BED56866C40 /* Pods-UXSDKOCSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 38D4M22449;

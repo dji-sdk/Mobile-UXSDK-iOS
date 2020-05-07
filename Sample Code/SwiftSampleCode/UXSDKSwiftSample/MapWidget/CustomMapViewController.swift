@@ -330,9 +330,11 @@ class CustomMapViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBAction func replaceIconValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            self.replaceIconImageView.image = #imageLiteral(resourceName: "Aircraft")
+            self.replaceIconImageView.image = UIImage(named: "Aircraft")
+        } else if sender.selectedSegmentIndex == 2 {
+            self.replaceIconImageView.image = UIImage(named: "Lock")
         } else {
-            self.replaceIconImageView.image = #imageLiteral(resourceName: "HomePoint")
+            self.replaceIconImageView.image = UIImage(named: "HomePoint")
         }
     }
     
