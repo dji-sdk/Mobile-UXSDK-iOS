@@ -32,6 +32,12 @@
     [self.view addSubview:self.mapViewController.mapWidget];
     [self.mapViewController didMoveToParentViewController:self];
     
+    if ([UIImage imageNamed:@"Lock"]) {
+        [self.mapViewController.mapWidget changeAnnotationOfType:DUXMapAnnotationTypeEligibleFlyZones
+                                                   toCustomImage:[UIImage imageNamed:@"Lock"]
+                                                withCenterOffset:CGPointMake(-8, -15)];
+    }
+    
     [self.mapViewController.mapWidget.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
     [self.mapViewController.mapWidget.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
     [self.mapViewController.mapWidget.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;

@@ -39,37 +39,31 @@ public let FligntControllerSimulatorDidStart = "FligntControllerSimulatorDidStar
 public let FligntControllerSimulatorDidStop = "FligntControllerSimulatorDidStop"
 
 class SimulatorControl: NSObject {
-    var isSimulatorActive:Bool = false {
-        didSet {
-            if self.isSimulatorActive {
-                postNotificationNamed(FligntControllerSimulatorDidStart, dispatchOntoMainQueue: true)
-            } else {
-                postNotificationNamed(FligntControllerSimulatorDidStop, dispatchOntoMainQueue: true)
-            }
+    fileprivate var _isSimulatorActive: Bool = false
+    public var isSimulatorActive: Bool {
+        get {
+            return _isSimulatorActive
+        }
+        set {
+            _isSimulatorActive = newValue
+            postNotificationNamed(newValue ? FligntControllerSimulatorDidStart : FligntControllerSimulatorDidStop, dispatchOntoMainQueue: true)
         }
     }
     
-    func startListeningOnProductState() {
-        let isSimulatorActiveKey = DJIFlightControllerKey(param: DJIFlightControllerParamIsSimulatorActive)!
-        
-        if let active = DJISDKManager.keyManager()?.getValueFor(isSimulatorActiveKey)?.boolValue {
-            self.isSimulatorActive = active
+    func startListeningToProductState() {
+        if let isSimulatorActiveKey = DJIFlightControllerKey(param: DJIFlightControllerParamIsSimulatorActive) {
+            DJISDKManager.keyManager()?.startListeningForChanges(on: isSimulatorActiveKey, withListener: self, andUpdate: { (oldValue: DJIKeyedValue?, newValue: DJIKeyedValue?) in
+                if let isSimulatorActive = newValue?.boolValue {
+                    self.isSimulatorActive = isSimulatorActive
+                }
+            })
+            
+            DJISDKManager.keyManager()?.getValueFor(isSimulatorActiveKey, withCompletion: { (value: DJIKeyedValue?, error: Error?) in
+                if let isSimulatorActive = value?.boolValue {
+                    self.isSimulatorActive = isSimulatorActive
+                }
+            })
         }
-        
-        DJISDKManager.keyManager()?.startListeningForChanges(on: isSimulatorActiveKey,
-                                                   withListener: self,
-                                                   andUpdate: { (updatedValue:DJIKeyedValue?, priorValue:DJIKeyedValue?) in
-            if let isSimulatorActive = updatedValue?.boolValue {
-                self.isSimulatorActive = isSimulatorActive
-            }
-        })
-        
-        DJISDKManager.keyManager()?.getValueFor(isSimulatorActiveKey,
-                                                withCompletion: { (updatedValue:DJIKeyedValue?, error:Error?) in
-            if let isSimulatorActive = updatedValue?.boolValue {
-                self.isSimulatorActive = isSimulatorActive
-            }
-        })
     }
     
     func stopListeningOnProductState() {
@@ -200,12 +194,20 @@ class ProductCommunicationService: NSObject, DJISDKManagerDelegate {
         }
     }
     
+    public func disconnectProduct() {
+        DJISDKManager.stopConnectionToProduct()
+        
+        // This is a little cheat because sdkmanager is not properly disconnecting the product.
+        self.connected = false
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "ProductCommunicationManagerStateDidChange")))
+    }
+    
     //MARK: - DJISDKManagerDelegate
     func appRegisteredWithError(_ error: Error?) {
         if error == nil {
             self.registered = true
             postNotificationNamed(ProductCommunicationServiceStateDidChange, dispatchOntoMainQueue: true)
-            self.simulatorControl.startListeningOnProductState()
+            self.simulatorControl.startListeningToProductState()
             self.connectToProduct()
         } else {
             NSLog("Error Registrating App: \(String(describing: error))")
@@ -222,6 +224,7 @@ class ProductCommunicationService: NSObject, DJISDKManagerDelegate {
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: ProductCommunicationServiceStateDidChange)))
             NSLog("Connection to new product succeeded!")
             self.connectedProduct = product
+            self.simulatorControl.startListeningToProductState()
         }
     }
     

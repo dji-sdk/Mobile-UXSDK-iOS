@@ -18,6 +18,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         ProductCommunicationService.shared.registerWithProduct()
         return true
     }
-
 }
 
