@@ -34,7 +34,7 @@ If you install it successfully, you should get the messages similar to the follo
 Analyzing dependencies
 Downloading dependencies
 Installing DJI-SDK-iOS (4.12)
-Installing DJI-UXSDK-iOS (4.11)
+Installing DJI-UXSDK-iOS (4.12)
 Installing DJIWidget (1.6.2)
 Installing DJIFlySafeDatabaseResource (01.00.01.17)
 Generating Pods project
