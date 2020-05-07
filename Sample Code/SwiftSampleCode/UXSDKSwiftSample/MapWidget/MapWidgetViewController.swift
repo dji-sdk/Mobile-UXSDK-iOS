@@ -29,6 +29,10 @@ public class MapWidgetViewController: UIViewController {
         self.view.addSubview(self.mapWidgetController!.mapWidget)
         self.mapWidgetController?.didMove(toParent: self)
         
+        if let image = UIImage(named: "Lock") {
+            self.mapWidget?.changeAnnotation(of: .eligibleFlyZones, toCustomImage: image, withCenterOffset: CGPoint(x: -8, y: -15));
+        }
+        
         self.mapWidget?.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         self.mapWidget?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         self.mapWidget?.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
