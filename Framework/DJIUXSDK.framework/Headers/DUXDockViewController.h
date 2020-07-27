@@ -9,6 +9,7 @@
 #import <DJIUXSDK/DUXWidgetCollectionViewController.h>
 
 @class DUXDockView;
+@class DUXDashboardWidget;
 
 
 /**
@@ -23,5 +24,12 @@
  *    `DUXDefaultLayoutView`.
  */
 @property (readonly, nullable, nonatomic) __kindof DUXDockView *dockView;
+
+
+/**
+ *  The instance of DUXDashboardWidget which is actually shown in the
+ *    `DUXDefaultLayoutView`.
+ */
+@property (readonly, nullable, nonatomic) IBOutlet __kindof DUXDashboardWidget *dashboardWidget;
 
 @end
