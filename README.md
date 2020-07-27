@@ -33,8 +33,8 @@ If you install it successfully, you should get the messages similar to the follo
 ~~~
 Analyzing dependencies
 Downloading dependencies
-Installing DJI-SDK-iOS (4.12)
-Installing DJI-UXSDK-iOS (4.12)
+Installing DJI-SDK-iOS (4.13)
+Installing DJI-UXSDK-iOS (4.13)
 Installing DJIWidget (1.6.2)
 Installing DJIFlySafeDatabaseResource (01.00.01.17)
 Generating Pods project
@@ -101,7 +101,7 @@ We’d love to have your feedback as soon as possible. Reach out to us when you 
 
 You can get support from DJI with the following methods:
 
-- Post questions in [**Stackoverflow**](http://stackoverflow.com) using [**dji-sdk**](http://stackoverflow.com/questions/tagged/dji-sdk) tag
+- Post questions, keep up to date on DJI developer news and contribute to the community by visiting the [DJI's Developer Forum here](https://forum.dji.com/forum-139-1.html?from=developer)
 - dev@dji.com
 
 ## Join Us
@@ -109,4 +109,5 @@ You can get support from DJI with the following methods:
 DJI is looking for all kinds of Software Engineers to continue building the Future of Possible. Available positions in Shenzhen, China and around the world. If you are interested, please send your resume to <software-sz@dji.com>. For more details, and list of all our global offices, please check <https://we.dji.com/jobs_en.html>.
 
 DJI 招软件工程师啦，based在深圳，如果你想和我们一起把DJI产品做得更好，请发送简历到 <software-sz@dji.com>.  详情请浏览 <https://we.dji.com/zh-CN/recruitment>.
+
 
