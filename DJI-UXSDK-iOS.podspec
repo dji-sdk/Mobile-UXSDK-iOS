@@ -8,11 +8,11 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "DJI-UXSDK-iOS"
-  s.version      = "4.12"
-  s.summary      = "DJI UX SDK for iOS"
-  s.homepage     = "https://github.com/dji-sdk/Mobile-UXSDK-iOS"
-  s.license      = { :type => 'CUSTOM', :text => <<-LICENSE
+  s.name            = "DJI-UXSDK-iOS"
+  s.version         = "4.13"
+  s.summary         = "DJI UX SDK for iOS"
+  s.homepage        = "https://github.com/dji-sdk/Mobile-UXSDK-iOS"
+  s.license         = { :type => 'CUSTOM', :text => <<-LICENSE
 ****************************************************************************************************************************
 
 DJI UX SDK for iOS is offered under DJI's END USER LICENSE AGREEMENT. You can obtain the license from the below link:
@@ -24,7 +24,7 @@ http://developer.dji.com/policies/eula/
 Sample code is offered under MIT License (See below).
 
 The MIT License (MIT)
-Copyright (c) 2018 DJI
+Copyright (c) 2018-2020 DJI
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -35,10 +35,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     LICENSE
   }
 
-  s.author       = { "DJI SDK" => "dev@dji.com" }
-  s.platform     = :ios, '10.0'
-  s.requires_arc = true
-  s.source       = { :http => "https://d16195ku7wo333.cloudfront.net/ios_sdk/iOS_UXSDK_4.12_20200507.zip"}
-  s.ios.vendored_frameworks = 'iOS_UXSDK/DJIUXSDK.framework'
+  s.author          = { "DJI SDK" => "dev@dji.com" }
+  s.platform        = :ios, '10.0'
+  s.requires_arc    = true
+  s.source       = { :http => "https://terra-1-g.djicdn.com/71a7d383e71a4fb8887a310eb746b47f/msdk/iOS_UX_SDK_4.13_20200727.zip" }
+
+  s.ios.vendored_frameworks = 'iOS_UX_SDK/DJIUXSDK.framework'
 
 end
