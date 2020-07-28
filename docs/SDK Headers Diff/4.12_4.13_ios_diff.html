@@ -1,0 +1,46 @@
+<html>
+<style>
+  table, th, td {
+     border: 1px solid rgb(200,200,200);
+     border-collapse: collapse;
+     }
+  table {
+     table-layout: fixed;
+     width: 1900px;
+     }
+  td {
+     overflow-x: auto;
+     }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    }
+  .comments {
+    color: #292;
+    }
+  .source-code {
+    color: #22F;
+    }
+  .interface-parent {
+    color: #AAA;
+    }
+  .interface-name {
+    color: #000;
+    }
+  .check-mark {
+    text-align: center;
+    }
+</style>
+<body>
+<br>
+
+<h1>DJI UX SDK 4.12 to 4.13 Differences</h1>
+
+<br>
+
+<h2>APIs added to 4.13</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">Parent and Name</font></td><td width=15%><font color="#000">Code</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXDockViewController.h: DUXDockViewController.</span><span class="interface-name">dashboardWidget</span></td><td width=15%><span class="source-code">@property (readonly, nullable, nonatomic) IBOutlet __kindof DUXDashboardWidget *dashboardWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXLeadingBarViewController.h: DUXLeadingBarViewController.</span><span class="interface-name">goHomeWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXReturnHomeWidget *goHomeWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXLeadingBarViewController.h: DUXLeadingBarViewController.</span><span class="interface-name">speakerSettingsController</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXSpeakerSettingsViewController *speakerSettingsController</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXLeadingBarViewController.h: DUXLeadingBarViewController.</span><span class="interface-name">speakerWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXSpeakerWidget *speakerWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXLeadingBarViewController.h: DUXLeadingBarViewController.</span><span class="interface-name">spotlightSettingsController</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXSpotlightSettingsViewController *spotlightSettingsController</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXLeadingBarViewController.h: DUXLeadingBarViewController.</span><span class="interface-name">spotlightWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXSpotlightWidget *spotlightWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXLeadingBarViewController.h: DUXLeadingBarViewController.</span><span class="interface-name">takeOffWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXTakeOffWidget *takeOffWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">accessLockerWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXAccessLockerWidget *accessLockerWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">batteryWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXBatteryWidget *batteryWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">connectionWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXConnectionWidget *connectionWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">djiLogoWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXDJILogoWidget *djiLogoWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">flightModeWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXFlightModeWidget *flightModeWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">gpsWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXGPSSignalWidget *gpsWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">preflightChecklistController</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXPreflightChecklistController *preflightChecklistController</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">preflightWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXPreFlightStatusWidget *preflightWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">remainingFlightTimeWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXRemainingFlightTimeWidget *remainingFlightTimeWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">rtkSettingsViewController</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXRTKStatusViewController *rtkSettingsViewController</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">videoSignalWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXVideoSignalWidget *videoSignalWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXStatusBarViewController.h: DUXStatusBarViewController.</span><span class="interface-name">visionWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXVisionWidget *visionWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXTrailingBarViewController.h: DUXTrailingBarViewController.</span><span class="interface-name">cameraSettingMenuWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXCameraSettingsMenu *cameraSettingMenuWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXTrailingBarViewController.h: DUXTrailingBarViewController.</span><span class="interface-name">cameraSettingsController</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXCameraSettingsController *cameraSettingsController</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXTrailingBarViewController.h: DUXTrailingBarViewController.</span><span class="interface-name">captureWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXCaptureWidget *captureWidget</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXTrailingBarViewController.h: DUXTrailingBarViewController.</span><span class="interface-name">exposureSettingsController</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXExposureSettingsController *exposureSettingsController</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DUXTrailingBarViewController.h: DUXTrailingBarViewController.</span><span class="interface-name">pictureVideoSwitchWidget</span></td><td width=15%><span class="source-code">@property (readonly, nonatomic, nullable) __kindof DUXPictureVideoSwitchWidget *pictureVideoSwitchWidget</span></td></tr></table><p style="font-size:50%; color:white">89e3c17 152d302 </p></body>
+</html>
+
