@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uUf-vW-AGy">
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Widgets View Controller-->
+        <scene sceneID="i6U-ig-qMQ">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="uUf-vW-AGy" customClass="WidgetsViewController" customModule="UXSDKSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S93-TH-z5r"/>
+                        <viewControllerLayoutGuide type="bottom" id="MmA-kz-ZMw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OD9-oy-PVe">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JF8-io-NVz">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHp-1X-EVn">
+                                        <rect key="frame" x="8" y="28" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="7qD-cd-pW2"/>
+                                            <constraint firstAttribute="width" secondItem="VHp-1X-EVn" secondAttribute="height" multiplier="1:1" id="UQY-3N-XN2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="❌"/>
+                                        <connections>
+                                            <action selector="close" destination="uUf-vW-AGy" eventType="touchUpInside" id="lt5-3K-sGw"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BSc-o6-p5e">
+                                        <rect key="frame" x="56" y="28" width="583" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="g98-iH-NLp"/>
+                                        </constraints>
+                                        <string key="text">Widgets are meant to be scalable and drawn as good as possible. To do so, they use their aspect ratio.
+This is to allow for both the container and the content to define the size of the content.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ua5-88-p1O">
+                                        <rect key="frame" x="56" y="204" width="583" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="hmX-ja-Kre"/>
+                                        </constraints>
+                                        <string key="text">Widgets can also be customized. In the following case, we are changing the way the battery widget renders its data. See the code for more information</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gX9-le-P4a" customClass="DUXBatteryWidget">
+                                        <rect key="frame" x="56" y="96" width="230" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gX9-le-P4a" secondAttribute="height" multiplier="2.3" id="AnX-BS-ef6"/>
+                                            <constraint firstAttribute="height" constant="100" id="HOO-fm-XAM"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pP9-qa-5OB" customClass="DUXBatteryWidget">
+                                        <rect key="frame" x="294" y="121" width="115" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="pP9-qa-5OB" secondAttribute="height" multiplier="2.3" id="RK3-Ax-QJ0"/>
+                                            <constraint firstAttribute="height" constant="50" id="jCh-Gq-yAD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGw-fa-HvU" customClass="DUXBatteryWidget">
+                                        <rect key="frame" x="417" y="136" width="46" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="hXz-vY-r7G"/>
+                                            <constraint firstAttribute="width" secondItem="DGw-fa-HvU" secondAttribute="height" multiplier="2.3" id="lEV-xL-kjx"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f01-cE-dFq" customClass="MyBatteryWidget" customModule="UXSDKSwiftSample" customModuleProvider="target">
+                                        <rect key="frame" x="56" y="272" width="230" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Cdx-9u-STX"/>
+                                            <constraint firstAttribute="width" secondItem="f01-cE-dFq" secondAttribute="height" multiplier="2.3" id="Pq6-RY-IyL"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="aspectRatio">
+                                                <real key="value" value="2.2999999999999998"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9w8-fY-ZOZ" customClass="MyBatteryWidget" customModule="UXSDKSwiftSample" customModuleProvider="target">
+                                        <rect key="frame" x="294" y="297" width="115" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Et3-tb-Ayn"/>
+                                            <constraint firstAttribute="width" secondItem="9w8-fY-ZOZ" secondAttribute="height" multiplier="2.3" id="Qza-2g-Tfw"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tay-an-Pjy" customClass="MyBatteryWidget" customModule="UXSDKSwiftSample" customModuleProvider="target">
+                                        <rect key="frame" x="417" y="312" width="46" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="FhS-7V-e3k"/>
+                                            <constraint firstAttribute="width" secondItem="Tay-an-Pjy" secondAttribute="height" multiplier="2.3" id="Ycz-uV-1O2"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.076183750179999996" green="0.077627680690000006" blue="0.077963082899999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="f01-cE-dFq" firstAttribute="width" secondItem="f01-cE-dFq" secondAttribute="height" multiplier="2.3" id="1YB-e1-Cul"/>
+                                    <constraint firstItem="BSc-o6-p5e" firstAttribute="leading" secondItem="VHp-1X-EVn" secondAttribute="trailing" constant="18" id="5OP-N2-GIK"/>
+                                    <constraint firstAttribute="leadingMargin" secondItem="VHp-1X-EVn" secondAttribute="leading" id="8oA-dK-Sgq"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="BSc-o6-p5e" secondAttribute="trailing" constant="20" id="Dsm-d7-CUo"/>
+                                    <constraint firstItem="f01-cE-dFq" firstAttribute="leading" secondItem="ua5-88-p1O" secondAttribute="leading" id="PjJ-iu-wSb"/>
+                                    <constraint firstItem="Tay-an-Pjy" firstAttribute="width" secondItem="Tay-an-Pjy" secondAttribute="height" multiplier="2.3" id="Ppf-dr-Tbk"/>
+                                    <constraint firstItem="VHp-1X-EVn" firstAttribute="top" secondItem="JF8-io-NVz" secondAttribute="top" constant="28" id="V7W-Rf-d7c"/>
+                                    <constraint firstItem="DGw-fa-HvU" firstAttribute="leading" secondItem="pP9-qa-5OB" secondAttribute="trailing" constant="8" id="YxS-qS-U8U"/>
+                                    <constraint firstItem="gX9-le-P4a" firstAttribute="top" secondItem="BSc-o6-p5e" secondAttribute="bottom" constant="8" id="ZA4-tM-KmV"/>
+                                    <constraint firstItem="9w8-fY-ZOZ" firstAttribute="width" secondItem="9w8-fY-ZOZ" secondAttribute="height" multiplier="2.3" id="acP-9m-hU6"/>
+                                    <constraint firstItem="f01-cE-dFq" firstAttribute="top" secondItem="ua5-88-p1O" secondAttribute="bottom" constant="8" id="bhg-xn-RKK"/>
+                                    <constraint firstItem="ua5-88-p1O" firstAttribute="top" secondItem="gX9-le-P4a" secondAttribute="bottom" constant="8" symbolic="YES" id="c6Z-Ns-smf"/>
+                                    <constraint firstItem="pP9-qa-5OB" firstAttribute="centerY" secondItem="gX9-le-P4a" secondAttribute="centerY" id="eAR-oQ-MIP"/>
+                                    <constraint firstItem="Tay-an-Pjy" firstAttribute="leading" secondItem="9w8-fY-ZOZ" secondAttribute="trailing" constant="8" id="gwi-J6-TT2"/>
+                                    <constraint firstItem="9w8-fY-ZOZ" firstAttribute="leading" secondItem="f01-cE-dFq" secondAttribute="trailing" constant="8" id="k6G-XU-HUK"/>
+                                    <constraint firstItem="VHp-1X-EVn" firstAttribute="width" secondItem="VHp-1X-EVn" secondAttribute="height" multiplier="1:1" id="osg-aU-A9k"/>
+                                    <constraint firstItem="ua5-88-p1O" firstAttribute="leading" secondItem="BSc-o6-p5e" secondAttribute="leading" id="sTI-BR-mw0"/>
+                                    <constraint firstItem="pP9-qa-5OB" firstAttribute="leading" secondItem="gX9-le-P4a" secondAttribute="trailing" constant="8" id="sfb-m3-x4I"/>
+                                    <constraint firstItem="gX9-le-P4a" firstAttribute="leading" secondItem="BSc-o6-p5e" secondAttribute="leading" id="t3s-Oq-ewD"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="f01-cE-dFq" secondAttribute="bottom" constant="10" id="ufD-b0-bP8"/>
+                                    <constraint firstItem="9w8-fY-ZOZ" firstAttribute="centerY" secondItem="f01-cE-dFq" secondAttribute="centerY" id="vAi-ZW-fKW"/>
+                                    <constraint firstItem="DGw-fa-HvU" firstAttribute="centerY" secondItem="pP9-qa-5OB" secondAttribute="centerY" id="viq-gB-V3i"/>
+                                    <constraint firstItem="Tay-an-Pjy" firstAttribute="centerY" secondItem="9w8-fY-ZOZ" secondAttribute="centerY" id="vo3-CI-8sm"/>
+                                    <constraint firstItem="BSc-o6-p5e" firstAttribute="top" secondItem="VHp-1X-EVn" secondAttribute="top" id="xlk-DL-tNd"/>
+                                    <constraint firstItem="ua5-88-p1O" firstAttribute="trailing" secondItem="BSc-o6-p5e" secondAttribute="trailing" id="zcD-qJ-xbr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.076183750179999996" green="0.077627680690000006" blue="0.077963082899999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JF8-io-NVz" firstAttribute="leading" secondItem="OD9-oy-PVe" secondAttribute="leading" id="0bo-1N-mRm"/>
+                            <constraint firstAttribute="trailing" secondItem="JF8-io-NVz" secondAttribute="trailing" id="JN1-3Z-boY"/>
+                            <constraint firstItem="JF8-io-NVz" firstAttribute="top" secondItem="OD9-oy-PVe" secondAttribute="top" id="Y5P-ll-VQN"/>
+                            <constraint firstItem="MmA-kz-ZMw" firstAttribute="top" secondItem="JF8-io-NVz" secondAttribute="bottom" id="Yzw-kI-zlI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j6x-qM-V5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.90625" y="1812.5"/>
+        </scene>
+    </scenes>
+</document>
