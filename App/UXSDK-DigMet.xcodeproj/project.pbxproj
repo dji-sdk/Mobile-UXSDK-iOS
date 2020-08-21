@@ -12,6 +12,8 @@
 		53ECE275233DB80100E278CD /* SimulationControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECE274233DB80100E278CD /* SimulationControlsViewController.swift */; };
 		53ECE278233DB8B500E278CD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECE277233DB8B500E278CD /* Helpers.swift */; };
 		939BB577A9E6EE7C5C2406C1 /* Pods_UXSDK_DigMet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A6398AEE1992AF762BA1AA /* Pods_UXSDK_DigMet.framework */; };
+		979B35DA24F0173100236AEE /* SticksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B35D924F0173100236AEE /* SticksViewController.swift */; };
+		979B35DC24F0176B00236AEE /* Sticks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 979B35DB24F0176B00236AEE /* Sticks.storyboard */; };
 		A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC252070D8CB00EFBA30 /* AppDelegate.swift */; };
 		A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A452DC262070D8CB00EFBA30 /* Assets.xcassets */; };
 		A452DC3A2070D8CC00EFBA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC272070D8CB00EFBA30 /* LaunchScreen.storyboard */; };
@@ -54,6 +56,8 @@
 		53ECE277233DB8B500E278CD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5B61093CE1A207CD8C40C095 /* Pods-UXSDK-DigMet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDK-DigMet.debug.xcconfig"; path = "Target Support Files/Pods-UXSDK-DigMet/Pods-UXSDK-DigMet.debug.xcconfig"; sourceTree = "<group>"; };
 		868A4ED01E01FA53006FEE33 /* UXSDK-DigMet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UXSDK-DigMet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		979B35D924F0173100236AEE /* SticksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SticksViewController.swift; sourceTree = "<group>"; };
+		979B35DB24F0176B00236AEE /* Sticks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sticks.storyboard; sourceTree = "<group>"; };
 		A452DC252070D8CB00EFBA30 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A452DC262070D8CB00EFBA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A452DC282070D8CB00EFBA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -195,9 +199,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		979B35D224F0165800236AEE /* Sticks */ = {
+			isa = PBXGroup;
+			children = (
+				979B35D924F0173100236AEE /* SticksViewController.swift */,
+				979B35DB24F0176B00236AEE /* Sticks.storyboard */,
+			);
+			path = Sticks;
+			sourceTree = "<group>";
+		};
 		A452DC242070D8CB00EFBA30 /* UXSDK-DigMet */ = {
 			isa = PBXGroup;
 			children = (
+				979B35D224F0165800236AEE /* Sticks */,
 				A452DC252070D8CB00EFBA30 /* AppDelegate.swift */,
 				A452DC262070D8CB00EFBA30 /* Assets.xcassets */,
 				A452DC272070D8CB00EFBA30 /* LaunchScreen.storyboard */,
@@ -286,6 +300,7 @@
 				A452DC3D2070D8CC00EFBA30 /* DefaultLayoutCustomization.storyboard in Resources */,
 				A452DC442070D8CC00EFBA30 /* PanelsCollections.storyboard in Resources */,
 				A452DC472070D8CC00EFBA30 /* Widgets.storyboard in Resources */,
+				979B35DC24F0176B00236AEE /* Sticks.storyboard in Resources */,
 				53C8811121507142003F4561 /* MapWidget.storyboard in Resources */,
 				A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */,
 			);
@@ -379,6 +394,7 @@
 				53ECE278233DB8B500E278CD /* Helpers.swift in Sources */,
 				A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */,
 				A452DC3F2070D8CC00EFBA30 /* DefaultLayoutViewController.swift in Sources */,
+				979B35DA24F0173100236AEE /* SticksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +527,7 @@
 					"$(PROJECT_DIR)/../DJIWidget/**",
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/include\"/**";
-				INFOPLIST_FILE = "$(SRCROOT)/UXSDKSwiftSample/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/UXSDK-DigMet/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -540,7 +556,7 @@
 					"$(PROJECT_DIR)/../DJIWidget/**",
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/include\"/**";
-				INFOPLIST_FILE = "$(SRCROOT)/UXSDKSwiftSample/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/UXSDK-DigMet/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
