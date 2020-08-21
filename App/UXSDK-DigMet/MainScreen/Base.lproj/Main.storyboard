@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NDq-2J-MBz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NDq-2J-MBz">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -159,6 +159,14 @@
                                                         <outlet property="delegate" destination="NDq-2J-MBz" id="enU-Nq-2AX"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNk-Z8-rLn" userLabel="SticksLayoutButton">
+                                                    <rect key="frame" x="822" y="163.5" width="162" height="46"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <state key="normal" title="Sticks Layout"/>
+                                                    <connections>
+                                                        <segue destination="gtd-mw-GBH" kind="show" id="nA7-d6-8fs"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.076183750179999996" green="0.077627680690000006" blue="0.077963082899999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -171,6 +179,7 @@
                                                 <constraint firstItem="QAQ-uF-xPP" firstAttribute="height" secondItem="5ej-cH-Sc8" secondAttribute="height" id="44T-uG-XlK"/>
                                                 <constraint firstItem="zzU-M5-m57" firstAttribute="height" secondItem="vk6-Pl-QIS" secondAttribute="height" id="9ei-zo-KUX"/>
                                                 <constraint firstItem="4R3-Fk-mFZ" firstAttribute="trailing" secondItem="zzU-M5-m57" secondAttribute="trailing" id="B1h-am-GeR"/>
+                                                <constraint firstItem="QNk-Z8-rLn" firstAttribute="centerY" secondItem="5ej-cH-Sc8" secondAttribute="centerY" id="ClW-em-vZp"/>
                                                 <constraint firstItem="vk6-Pl-QIS" firstAttribute="height" secondItem="1bV-W6-l0c" secondAttribute="height" id="D9d-aZ-m7c"/>
                                                 <constraint firstItem="frd-er-YPm" firstAttribute="leading" secondItem="XjC-Me-fk1" secondAttribute="trailing" constant="8" symbolic="YES" id="Ee0-4T-cCb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gH9-U0-hed" secondAttribute="trailing" constant="15" id="F2p-0A-Kce"/>
@@ -193,6 +202,7 @@
                                                 <constraint firstItem="XjC-Me-fk1" firstAttribute="leading" secondItem="WYM-I7-tdX" secondAttribute="leading" constant="10" id="ULh-IB-hA1"/>
                                                 <constraint firstItem="7dJ-3X-52i" firstAttribute="leading" secondItem="1bV-W6-l0c" secondAttribute="leading" id="VUk-uv-drN"/>
                                                 <constraint firstItem="4R3-Fk-mFZ" firstAttribute="leading" secondItem="jQA-hJ-cx3" secondAttribute="leading" constant="8" id="Z4F-uQ-RHD"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QNk-Z8-rLn" secondAttribute="trailing" constant="20" id="Zfy-1e-TQw"/>
                                                 <constraint firstItem="XjC-Me-fk1" firstAttribute="top" secondItem="WYM-I7-tdX" secondAttribute="bottom" constant="9.5" id="awI-LU-2Lz"/>
                                                 <constraint firstItem="QAQ-uF-xPP" firstAttribute="leading" secondItem="4R3-Fk-mFZ" secondAttribute="trailing" constant="8" id="e5T-Cb-paa"/>
                                                 <constraint firstItem="pcs-bp-FHV" firstAttribute="leading" secondItem="WYM-I7-tdX" secondAttribute="trailing" constant="8" id="eM8-MN-jIm"/>
@@ -215,8 +225,29 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.076183750179999996" green="0.077627680690000006" blue="0.077963082899999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TSN-iI-YaK">
+                                        <rect key="frame" x="0.0" y="388" width="1024" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TSN-iI-YaK" id="fq9-us-urh">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gising Virtual" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3z8-ov-gK0">
+                                                    <rect key="frame" x="43" y="0.0" width="117" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <connections>
+                                            <segue destination="gtd-mw-GBH" kind="show" id="S5l-cD-dtC"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="139" id="vKw-ul-cpN">
-                                        <rect key="frame" x="0.0" y="388" width="1024" height="139"/>
+                                        <rect key="frame" x="0.0" y="432" width="1024" height="139"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vKw-ul-cpN" id="0kB-Ft-RwH">
                                             <rect key="frame" x="0.0" y="0.0" width="993" height="139"/>
@@ -254,7 +285,7 @@ All you need to do is include the DUXRootViewController in your app.</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="140" id="wMI-TB-owd">
-                                        <rect key="frame" x="0.0" y="527" width="1024" height="140"/>
+                                        <rect key="frame" x="0.0" y="571" width="1024" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wMI-TB-owd" id="TDj-vj-L9J">
                                             <rect key="frame" x="0.0" y="0.0" width="993" height="140"/>
@@ -289,7 +320,7 @@ All you need to do is include the DUXRootViewController in your app.</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="257" id="9ko-dm-0ma">
-                                        <rect key="frame" x="0.0" y="667" width="1024" height="257"/>
+                                        <rect key="frame" x="0.0" y="711" width="1024" height="257"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ko-dm-0ma" id="mez-aJ-3mE">
                                             <rect key="frame" x="0.0" y="0.0" width="993" height="257"/>
@@ -331,7 +362,7 @@ Panels are ViewControllers that are fully featured and ready to use, though not 
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="140" id="o3u-ue-NqS">
-                                        <rect key="frame" x="0.0" y="924" width="1024" height="140"/>
+                                        <rect key="frame" x="0.0" y="968" width="1024" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o3u-ue-NqS" id="rQh-U3-FKc">
                                             <rect key="frame" x="0.0" y="0.0" width="993" height="140"/>
@@ -369,7 +400,7 @@ They can also be customized in how they look and behave.</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="140" id="IX8-XV-KCT">
-                                        <rect key="frame" x="0.0" y="1064" width="1024" height="140"/>
+                                        <rect key="frame" x="0.0" y="1108" width="1024" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IX8-XV-KCT" id="63c-TJ-Qrw">
                                             <rect key="frame" x="0.0" y="0.0" width="993" height="140"/>
@@ -428,7 +459,7 @@ They can also be customized in how they look and behave.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5V-Hj-PTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1297.265625" y="1565.625"/>
+            <point key="canvasLocation" x="-1492" y="1528"/>
         </scene>
         <!--DefaultLayout-->
         <scene sceneID="mev-Qd-wz3">
@@ -470,5 +501,18 @@ They can also be customized in how they look and behave.</string>
             </objects>
             <point key="canvasLocation" x="-790" y="1471"/>
         </scene>
+        <!--Sticks-->
+        <scene sceneID="b1f-zv-UsX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Sticks" id="gtd-mw-GBH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Uum-u3-Sir"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXH-yV-6Cl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-641" y="1872"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="S5l-cD-dtC"/>
+    </inferredMetricsTieBreakers>
 </document>

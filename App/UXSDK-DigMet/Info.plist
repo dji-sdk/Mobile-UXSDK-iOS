@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>UXSDKSwiftSample</string>
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -21,7 +21,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>DJISDKAppKey</key>
-	<string>YOUR APP KEY GOES HERE</string>
+	<string>63dd486031c2b5d344056d16</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -31,8 +31,12 @@
 	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Bluetooth is required for communicating with some DJI hardware.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need location information to be able to follow user</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Gets location of the phone to calculate distance to aircraft</string>
+	<key>NSLocationsAlwaysWhenInUseUsageDescription</key>
+	<string>To be able to navigate properly (uncertain if this key is correct)</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app uses the microphone to record voice messages for broadcasting using the speaker accessory.</string>
 	<key>UILaunchStoryboardName</key>

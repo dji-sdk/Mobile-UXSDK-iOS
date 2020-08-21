@@ -39,6 +39,9 @@ func simulatorLocationNumberFormatter() -> NumberFormatter {
     return nf
 }
 
+
+
+
 class MainViewController: UITableViewController, UITextFieldDelegate {
 
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -48,6 +51,10 @@ class MainViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var register: UIButton!
     @IBOutlet weak var connected: UILabel!
     @IBOutlet weak var connect: UIButton!
+    
+    @IBAction func defaultLayoutButtonPressed(_ sender: UIButton) {
+    }
+    
     
     // Bridge Mode Controls
     @IBOutlet weak var bridgeModeSwitch: UISwitch!
