@@ -3,6 +3,7 @@
 ## What Is This?
 
 The UX SDK is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the [DJI Mobile SDK](http://developer.dji.com/mobile-sdk/).
+Also, check out the new open source version of [UX SDK Beta ](https://github.com/dji-sdk/Mobile-UXSDK-Beta-iOS).
 
 ## Get Started Immediately
 
@@ -33,7 +34,7 @@ If you install it successfully, you should get the messages similar to the follo
 ~~~
 Analyzing dependencies
 Downloading dependencies
-Installing DJI-SDK-iOS (4.13)
+Installing DJI-SDK-iOS (4.13.1)
 Installing DJI-UXSDK-iOS (4.13)
 Installing DJIWidget (1.6.3)
 Installing DJIFlySafeDatabaseResource (01.00.01.17)
