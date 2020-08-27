@@ -11,7 +11,7 @@
         <!--Sticks-->
         <scene sceneID="eZM-uE-AwX">
             <objects>
-                <viewController title="Sticks" id="1m5-5v-g5t" customClass="SticksViewController" customModule="UXSDKSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Sticks" id="1m5-5v-g5t" customClass="SticksViewController" customModule="UXSDK_DigMet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ca7-cF-Tls">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,8 +26,8 @@
                                     <action selector="xclose:" destination="1m5-5v-g5t" eventType="touchUpInside" id="F4c-oZ-ODZ"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="wmX-bV-6D7">
-                                <rect key="frame" x="214" y="30" width="239" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wmX-bV-6D7">
+                                <rect key="frame" x="214" y="30" width="239" height="118"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULH-sd-que" userLabel="ActivateSticksButton">
                                         <rect key="frame" x="0.0" y="0.0" width="239" height="30"/>
@@ -44,8 +44,16 @@
                                             <action selector="ActivateSticksPressed:" destination="1m5-5v-g5t" eventType="touchUpInside" id="g7a-pB-VgY"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnT-Iq-vJj" userLabel="StatusLabel">
+                                        <rect key="frame" x="0.0" y="34" width="239" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXs-kJ-fdV" userLabel="DeactivateSticksButton">
-                                        <rect key="frame" x="0.0" y="70" width="239" height="30"/>
+                                        <rect key="frame" x="0.0" y="88" width="239" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="6" maxX="10" maxY="6"/>
                                         <state key="normal" title="Deactivate Sticks">
@@ -140,10 +148,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aY1-IK-vb4">
+                                <rect key="frame" x="295.5" y="226" width="76" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="captureImageButton:" destination="1m5-5v-g5t" eventType="touchUpInside" id="YqH-w8-20G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="aY1-IK-vb4" firstAttribute="centerX" secondItem="Ca7-cF-Tls" secondAttribute="centerX" id="6xy-bd-M9r"/>
                             <constraint firstItem="wmX-bV-6D7" firstAttribute="leading" secondItem="bOD-EF-bVN" secondAttribute="trailing" constant="60" id="9oa-FL-KRf"/>
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="trailing" secondItem="UNw-VT-nQ1" secondAttribute="trailing" constant="60" id="DEc-ef-PUh"/>
                             <constraint firstItem="UNw-VT-nQ1" firstAttribute="top" secondItem="S6R-gz-0iS" secondAttribute="top" constant="100" id="FaN-hP-kuK"/>
@@ -157,6 +174,7 @@
                             <constraint firstItem="P6B-EK-tZs" firstAttribute="top" secondItem="S6R-gz-0iS" secondAttribute="top" constant="10" id="aEd-3e-7Ov"/>
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="bottom" secondItem="NUQ-U2-Rs4" secondAttribute="bottom" constant="100" id="cRn-xN-Vg5"/>
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="trailing" secondItem="fAl-O7-PRU" secondAttribute="trailing" constant="100" id="dke-HC-xqY"/>
+                            <constraint firstItem="aY1-IK-vb4" firstAttribute="top" secondItem="fAl-O7-PRU" secondAttribute="top" id="lGr-gZ-jdP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S6R-gz-0iS"/>
                     </view>
@@ -169,12 +187,13 @@
                         <outlet property="controlPeriodStepperButton" destination="Igf-k9-fHH" id="Wij-Cg-Xj7"/>
                         <outlet property="horizontalSpeedLabel" destination="ua3-Ab-nWd" id="Bc3-h0-faE"/>
                         <outlet property="horizontalSpeedStepperButton" destination="y2l-zc-F4X" id="GCk-Om-kKk"/>
+                        <outlet property="statusLabel" destination="YnT-Iq-vJj" id="d7P-su-qyu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQs-gj-GHi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="eSh-ji-1AL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-484.40779610194909" y="-290.39999999999998"/>
+            <point key="canvasLocation" x="-555" y="-170"/>
         </scene>
     </scenes>
 </document>

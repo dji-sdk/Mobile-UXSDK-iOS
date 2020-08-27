@@ -264,7 +264,7 @@
 				TargetAttributes = {
 					868A4ECF1E01FA53006FEE33 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 38D4M22449;
+						DevelopmentTeam = NXX4YWHU78;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -518,7 +518,7 @@
 			baseConfigurationReference = 5B61093CE1A207CD8C40C095 /* Pods-UXSDK-DigMet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 38D4M22449;
+				DEVELOPMENT_TEAM = NXX4YWHU78;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -534,7 +534,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test;
+				PRODUCT_BUNDLE_IDENTIFIER = se.rise.digmet.ux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -547,7 +547,7 @@
 			baseConfigurationReference = 17DBF5622DC97C40A90E2419 /* Pods-UXSDK-DigMet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 38D4M22449;
+				DEVELOPMENT_TEAM = NXX4YWHU78;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -563,7 +563,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test;
+				PRODUCT_BUNDLE_IDENTIFIER = se.rise.digmet.ux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
