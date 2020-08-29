@@ -18,12 +18,15 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var flightController: DJIFlightController?
     var camera: DJICamera?
     var gimbal: DJIGimbal?
-    
+    //manager?
+
+
     var pitchRangeExtension_set: Bool = false
     var nextGimbalPitch: Int = 0
     
     var gimbalcapability: [AnyHashable: Any]? = [:]
-    
+    var cameraModeReference: DJICameraMode = DJICameraMode.playback
+    var cameraModeAcitve: DJICameraMode = DJICameraMode.shootPhoto
     
     var x: Float = 0.0
     var y: Float = 0.0
@@ -38,11 +41,15 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var loopTarget: Int = 0
     var horizontalSpeed: Float = 50 // cm/s horizontal speed
     
+    var image: UIImage = UIImage.init()
     var image_index: UInt?
     //*********************
     // IBOutlet declaration: Labels
     @IBOutlet weak var controlPeriodLabel: UILabel!
     @IBOutlet weak var horizontalSpeedLabel: UILabel!
+    
+    // IBOutlet declaration: ImageView
+    @IBOutlet weak var previewImageView: UIImageView!
     
     // Steppers
     @IBOutlet weak var controlPeriodStepperButton: UIStepper!
@@ -170,14 +177,369 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         })
     }
     
-    func setUpDownload(){
-        // Set shootMode to ownload
-        self.camera?.setMode(DJICameraMode.mediaDownload, withCompletion: {(error) in
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
-                print("Is dispatch needed? TODO")
+    // AG building from scratch
+    func getLastImage() {
+        /***** Get Last Picture *****/
+
+        // check if we can download images with the product
+        if !self.camera!.isMediaDownloadModeSupported() {
+            print("Product does not support media download mode")
+            return
+        }
+
+        print("before set mode...")
+        let retry = RetryManager() // Run the same block multiple times if the command has an error
+        // switch camera mode to allow for media downloads
+        retry.runBlock(withRetries: 5) {
+            self.camera?.setMode( .mediaDownload, withCompletion: {(error) in
+
+                print("in set mode...")
+
+                if error != nil {
+
+                    print(("\(error!.localizedDescription)"))
+
+                }
+                else {
+                    retry.stop()
+                    // get the media manager from the drone to gain access to the files
+                    let manager = self.camera?.mediaManager!
+
+                    manager?.refreshFileList(of: DJICameraStorageLocation.sdCard, withCompletion:  { (error) in
+
+                        print("in refresh file list...")
+
+                        if error != nil {
+
+                            ///////TIMES OUT HERE/////////
+
+                            print("Refresh error State: \(manager?.sdCardFileListState.rawValue)")
+                            print("Error refreshing list: \(error!.localizedDescription)")
+
+                        }else {
+                            self.statusLabel.text = "Refreshed file list"
+                            print("Refreshed file list")
+                            print("No error State: \(manager?.sdCardFileListState.rawValue)")
+
+                            // get list of files
+                            guard let files = manager?.sdCardFileListSnapshot() else {
+                                print("No files to download")
+                                return
+                            }
+                            self.statusLabel.text = "There are files to download"
+                            print("There are files to download.. Beginning Download")
+                            print(("files \(files.count)"))
+                        }
+                    }) // end of file-refresh block
+                } // end of if else
+                retry.proceed()
+            })// end of camera setMode block
+        }
+
+    }
+    
+    func my_cameraSetMode(_ newCameraMode: DJICameraMode, completionHandler: @escaping (Bool) -> Void) {
+        // Update the cameraModeReferemce, then set mode and confirm that is is correctly set.
+        self.cameraModeReference = newCameraMode
+        self.camera?.setMode(newCameraMode, withCompletion: {(error) in
+            if error != nil {
+                self.statusLabel.text = "Error setting CameraMode"
+            }
+            else {
+                self.camera?.getModeWithCompletion( {(mode: DJICameraMode, error: Error?) in
+                    if error != nil{
+                        self.statusLabel.text = "Error getting Cameramode"
+                    }
+                    else {
+                        self.cameraModeAcitve = mode
+                        if self.cameraModeAcitve != self.cameraModeReference{
+                            self.statusLabel.text = "Camermode setting failed. Calling my_cameraSetMode again.."
+                            completionHandler(false)
+                        }
+                        else {
+                            self.statusLabel.text = "CameraMode has been changed"
+                            completionHandler(true)
+                        }
+                    }
+                })
+                    
             }
         })
     }
+    
+    func printSL(_ str: String){
+        self.statusLabel.text = str
+    }
+
+
+    func my_getImage(completionHandler: @escaping (Bool) -> Void){
+        let manager = self.camera?.mediaManager
+        manager?.refreshFileList(of: DJICameraStorageLocation.sdCard, withCompletion: {(error: Error?) in
+            self.printSL("Refreshing file list...")
+            if error != nil {
+                completionHandler(false)
+                self.printSL("Refreshing file list failed.")
+            }
+            else{
+                guard let files = manager?.sdCardFileListSnapshot() else {
+                    self.printSL("No images on sdCard")
+                    completionHandler(true)
+                    return
+                }
+                self.printSL("Files on sdCard: " + String(describing: files.count))
+                let index = files.count - 1
+
+                var imageData: Data?
+                
+                files[index].fetchData(withOffset: 0, update: DispatchQueue.main, update: {(_ data: Data?, _ isComplete: Bool, error: Error?) -> Void in
+                    if error != nil{
+                        // THis happens if download is triggered to close to taking a picture.
+                        self.printSL("Er" + String(error!.localizedDescription))
+                    }
+                    else if isComplete {
+                            self.printSL("it isComplete")
+                        if let imageData = imageData{
+                                let image = UIImage(data: imageData)
+                                    self.printSL("Image complete, showing image")
+                                    self.previewImageView.image = image
+                                    //UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+                                }
+                            else{
+                                    self.printSL("If let NOK")
+                            }
+                    }
+                    else {
+                        // If image exists, append the data
+                        if let _ = imageData, let data = data {
+                            imageData?.append(data)
+                            self.printSL("Appending data to image")
+                        }
+                            // initialize the image data
+                        else {
+                            imageData = data
+                            self.printSL("Initiating a new image")
+                        }
+                    }
+                })
+            }
+        })
+    }
+                // Download a preview
+                //files[index].fetchPreview(completion: {(error: Error?) in
+                //    self.previewImageView.image = files[index].preview
+                //    completionHandler(true)
+                //})
+            
+            
+                
+//                files[index].fetchData(withOffset: 0, update: DispatchQueue.main, update: {(_ data: Data?, _ isComplete: Bool, _ error: Error?) -> Void in
+//                        if let error = error {
+//                            print("Error: " + String(describing: error))
+//                            self.printSL("Downloading image failed, timeout?")
+//                        }
+//                        else{
+//                            if let data = data, let downloadedImage = UIImage(data: data) {
+//                                print("Downloaded: " + String(describing: files[index].fileName))
+//
+//                                // Preview the downloaded image
+//                                self.printSL("Trying to preview the image")
+//                                self.previewImageView.image = downloadedImage
+//
+//                                // now that the image is done downloading, move onto the next image
+//                                //downloadNextImage(files: files, fileCount: fileCount, index: (index + 1), downloadedFiles: downloadedFiles + [image], errorCount: 0)
+//                            }// Download was successful..
+//
+//                            completionHandler(true)
+//                    }
+//
+//                })
+     
+    
+    
+    func my_setUpDownload(){
+        // Set mode to download
+
+        if self.cameraModeReference != DJICameraMode.mediaDownload{
+            self.cameraModeReference = DJICameraMode.mediaDownload
+            self.camera?.setMode(DJICameraMode.mediaDownload, withCompletion: {(error) in
+                if error != nil {
+                    self.statusLabel.text = "Error setting CameraMode to mediaDownload"
+                }
+                else {
+                    self.camera?.getModeWithCompletion( {(mode: DJICameraMode, error: Error?) in
+                        if error != nil{
+                            self.statusLabel.text = "Error getting mode"
+                        }
+                        else {
+                            self.cameraModeAcitve = mode
+                            if self.cameraModeAcitve != self.cameraModeReference{
+                                self.statusLabel.text = "Calling my_setUpDownload again.." // + String(describing: self.cameraModeAcitve.rawValue)
+                                self.my_setUpDownload()
+                            }
+                            else {
+                                self.statusLabel.text = "Works like a sharm!"
+                            }
+                        }
+                    })
+                        
+                }
+            })
+        }
+    }
+    
+
+    
+    /**
+     * This function downloads the N latest images from the drone and passes them to the completionhandler once all images have completed downloading
+     */
+    func downloadImages(files: [DJIMediaFile], howMany: Int, maxErrors: Int, completion: @escaping ([UIImage]) -> Void){
+
+        print("Queueing.. ")
+        
+        func downloadNextImage( files: [DJIMediaFile], fileCount: Int, index: Int = 0, downloadedFiles: [UIImage] = [], errorCount: Int = 0) {
+            // stop when we reach the end of the list
+            if index == fileCount {
+                completion(downloadedFiles)
+                statusLabel.text = "Finished downloading images"
+                return
+            }
+            else {
+                var imageData: Data?
+                let file = files[index]
+                
+                file.fetchData(withOffset: 0, update: DispatchQueue.main, update: {(_ data: Data?, _ isComplete: Bool, _ error: Error?) -> Void in
+
+                    if let error = error {
+                        print("Error: " + String(describing: error))
+                        if errorCount < maxErrors {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                print("Attempting to download: ") //\(file.fileName) again")
+                                self.statusLabel.text = "Attemting to download" + String(describing: index) + " but receiving error, trying again"
+                                downloadNextImage(files: files, fileCount: fileCount, index: index, downloadedFiles: downloadedFiles, errorCount: errorCount + 1)
+                            }
+                        }
+                        else {
+                            print("Too many errors downloading the images, try downloading again")
+                            self.statusLabel.text = "Too many errors downloading. Abort"
+                        }
+                    }
+                    else {
+                        // if image is done downloading
+                        if isComplete {
+                            // get full image data
+                            if let imageData = imageData, let image = UIImage(data: imageData) {
+                                print("Downloaded: " + String(describing: file.fileName))
+                                self.statusLabel.text = "Downloaded: " + String(describing: fileCount)
+                                
+                                // Preview the downloaded image
+                                self.previewImageView.image = image
+
+                                // now that the image is done downloading, move onto the next image
+                                downloadNextImage(files: files, fileCount: fileCount, index: (index + 1), downloadedFiles: downloadedFiles + [image], errorCount: 0)
+                            }
+                        }
+                            // else, download the file
+                        else {
+                            // If image exists, append the data
+                            if let _ = imageData, let data = data {
+                                imageData?.append(data)
+                            }
+                                // initialize the image data
+                            else {
+                                imageData = data
+                            }
+                        }
+                    }
+
+
+                }) // end of filedata fetch
+            }   // end of else statement
+        }
+
+        // bounds checking
+        let available = files.count
+        let n = howMany > available ? available : howMany
+
+        // grab the N latest images taken by the drone
+        let filesToDownload : [DJIMediaFile] = Array ( files.suffix(n) )
+
+        // start the recursive function
+        downloadNextImage(files: filesToDownload, fileCount: filesToDownload.count)
+    }
+    
+    func setUpDownload(){
+        // Set shootMode to ownload
+        self.camera?.stopShootPhoto(completion: {(error) in
+            self.statusLabel.text = "Stopping shoot photo"
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
+                print("Stopped shoot photo")
+                self.statusLabel.text = "Shoot photo stopped..?"
+
+                self.camera?.setMode(DJICameraMode.mediaDownload, withCompletion: {(error) in
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4){
+                        if error != nil {
+                            print("Is dispatch needed? TODO")
+                            self.statusLabel.text = "Error setting CameraMode to mediaDownload"
+                        }
+                        else {
+                            self.camera?.getModeWithCompletion( {(mode: DJICameraMode, error: Error?) in
+                                if mode == DJICameraMode.mediaDownload{
+                                    self.statusLabel.text = "Camera mode is mediaDownload"
+                                }
+                                else if mode == DJICameraMode.shootPhoto{
+                                    self.statusLabel.text = "Camera mode is still shootPhoto. Abort download"
+                                    return
+                                }
+                                else {
+                                    self.statusLabel.text = "Camera mode is not mediaDownload. Abort download"
+                                    return
+                                }
+                                })
+                        }
+                    }
+                })
+            }
+            
+        })
+        // TODO update manager to self.camera.mediamanager
+        // get the media manager from the drone to gain access to the files
+        statusLabel.text = "Early finish..?"
+        let manager = self.camera?.mediaManager!
+        manager?.refreshFileList(of: DJICameraStorageLocation.sdCard, withCompletion:  {(error) in
+            if error != nil {
+                print("State: " + (String(describing: manager?.sdCardFileListState.rawValue)))
+                print("Error refreshing list: " + String(describing: error!.localizedDescription))
+            }
+            else {
+                print("Refreshed file list")
+                print("State: " + String(describing: manager?.sdCardFileListState.rawValue))
+
+                // get list of files
+                guard let files = manager?.sdCardFileListSnapshot() else {
+                    print("No files to download")
+                    return
+                }
+
+                print("There are files to download.. Beginning Download")
+                
+                self.camera?.getModeWithCompletion( {(mode: DJICameraMode, error: Error?) in
+                    if mode == DJICameraMode.mediaDownload {
+                        self.downloadImages(files: files, howMany: 3, maxErrors: 4, completion: { images in
+                            print("Finished downloading: " + String(describing:images.count))
+                            // do something with the images here
+                        })
+                    }
+                else{
+                    self.statusLabel.text = "Can't continue due to camera mode, abort"
+                    return
+                    }
+                })
+            }
+            
+        }) // end of file-refresh block
+
+    }
+            
 
     // retreive the gimbal pitch. DOES CRASH THE APP! TODO
     func getGimbalAttitude(){
@@ -231,6 +593,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         })
     }
     
+    
     // **************
     // Button actions
     @IBAction func controlPeriodStepper(_ sender: UIStepper) {
@@ -239,48 +602,60 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     }
        
     @IBAction func horizontalSpeedStepper(_ sender: UIStepper) {
-       horizontalSpeedLabel.text = String(sender.value/100)
-       horizontalSpeed = Float(sender.value)
+        horizontalSpeedLabel.text = String(sender.value/100)
+        horizontalSpeed = Float(sender.value)
     }
        
     // Exit view, but first deactivate Sticks
     @IBAction func xclose(_ sender: UIButton) {
-       deactivateSticks()
-       self.timer?.invalidate()
-       self.dismiss(animated: true, completion: nil)
-       //if let camera = fetchCamera(), let delegate = camera.delegate, delegate.isEqual(self) {
-       //    camera.delegate = nil
+        deactivateSticks()
+        self.timer?.invalidate()
+        self.dismiss(animated: true, completion: nil)
+        //if let camera = fetchCamera(), let delegate = camera.delegate, delegate.isEqual(self) {
+        //    camera.delegate = nil
     }
 
     // DeactivateSticks: Touch down action, deactivate immidiately and reset ActivateSticks button color
     @IBAction func DeactivateSticksPressed(_ sender: UIButton) {
-       deactivateSticks()
-       sendControlData(x: 0, y: 0, z: 0, yaw: 0)
+        deactivateSticks()
+        sendControlData(x: 0, y: 0, z: 0, yaw: 0)
     }
 
     // ActivateSticks: Touch down up inside action, ativate when ready (release of button)
     @IBAction func ActivateSticksPressed(_ sender: UIButton) {
-       activateSticks()
+        activateSticks()
        
     }
 
     @IBAction func DuttRightPressed(_ sender: UIButton) {
-       // Set the control command
-       y = self.horizontalSpeed/100
-       // Schedule the timer at 20Hz while the default specified for DJI is between 5 and 25Hz. Timer will execute control commands for a period of time
-       self.timer?.invalidate()
-       loopCnt = 0
-       timer = Timer.scheduledTimer(timeInterval: sampleTime/1000, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        // Set the control command
+        my_cameraSetMode(DJICameraMode.mediaDownload, completionHandler: {(succsess: Bool) in
+            if succsess {
+                self.my_getImage(completionHandler: {(success: Bool) in
+                    if succsess{
+                        _ = 1
+                    }
+                })
+            }
+        })
+        
+        //getLastImage()
+        y = self.horizontalSpeed/100
+        // Schedule the timer at 20Hz while the default specified for DJI is between 5 and 25Hz. Timer will execute control commands for a period of time
+        self.timer?.invalidate()
+        loopCnt = 0
+        timer = Timer.scheduledTimer(timeInterval: sampleTime/1000, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
 
     @IBAction func DuttLeftPressed(_ sender: UIButton) {
-       // Set the control command
+        // Set the control command
         setUpDownload()
-       y = -self.horizontalSpeed/100
-       // Schedule the timer at 20Hz while the default specified for DJI is between 5 and 25Hz. Timer will execute control commands for a period of time
-       self.timer?.invalidate()
-       loopCnt = 0
-       timer = Timer.scheduledTimer(timeInterval: sampleTime/1000, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        previewImageView.image = nil
+        y = -self.horizontalSpeed/100
+        // Schedule the timer at 20Hz while the default specified for DJI is between 5 and 25Hz. Timer will execute control commands for a period of time
+        self.timer?.invalidate()
+        loopCnt = 0
+        timer = Timer.scheduledTimer(timeInterval: sampleTime/1000, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
 
     @IBAction func captureImageButton(_ sender: UIButton) {
@@ -919,3 +1294,28 @@ public class SticksViewController: DUXDefaultLayoutViewController {
 //            })
 //        }
 
+
+
+//
+//    typealias CompletionHandler = (success:Bool) -> Void
+//
+//    func downloadFileFromURL(url: NSURL,completionHandler: CompletionHandler) {
+//
+//        // download code.
+//
+//        let flag = true // true if download succeed,false otherwise
+//
+//        completionHandler(success: flag)
+//    }
+//
+//    // How to use it.
+//
+//    downloadFileFromURL(NSURL(string: "url_str")!, { (success) -> Void in
+//
+//        // When download completes,control flow goes here.
+//        if success {
+//            // download success
+//        } else {
+//            // download fail
+//        }
+//    })
