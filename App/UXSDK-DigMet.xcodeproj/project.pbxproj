@@ -12,6 +12,7 @@
 		53ECE275233DB80100E278CD /* SimulationControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECE274233DB80100E278CD /* SimulationControlsViewController.swift */; };
 		53ECE278233DB8B500E278CD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECE277233DB8B500E278CD /* Helpers.swift */; };
 		939BB577A9E6EE7C5C2406C1 /* Pods_UXSDK_DigMet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A6398AEE1992AF762BA1AA /* Pods_UXSDK_DigMet.framework */; };
+		9738BB3E24F9197B000275FA /* Retry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9738BB3D24F9197B000275FA /* Retry.swift */; };
 		979B35DA24F0173100236AEE /* SticksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B35D924F0173100236AEE /* SticksViewController.swift */; };
 		979B35DC24F0176B00236AEE /* Sticks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 979B35DB24F0176B00236AEE /* Sticks.storyboard */; };
 		A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC252070D8CB00EFBA30 /* AppDelegate.swift */; };
@@ -56,6 +57,7 @@
 		53ECE277233DB8B500E278CD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5B61093CE1A207CD8C40C095 /* Pods-UXSDK-DigMet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDK-DigMet.debug.xcconfig"; path = "Target Support Files/Pods-UXSDK-DigMet/Pods-UXSDK-DigMet.debug.xcconfig"; sourceTree = "<group>"; };
 		868A4ED01E01FA53006FEE33 /* UXSDK-DigMet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UXSDK-DigMet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9738BB3D24F9197B000275FA /* Retry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retry.swift; sourceTree = "<group>"; };
 		979B35D924F0173100236AEE /* SticksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SticksViewController.swift; sourceTree = "<group>"; };
 		979B35DB24F0176B00236AEE /* Sticks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sticks.storyboard; sourceTree = "<group>"; };
 		A452DC252070D8CB00EFBA30 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				979B35D924F0173100236AEE /* SticksViewController.swift */,
+				9738BB3D24F9197B000275FA /* Retry.swift */,
 				979B35DB24F0176B00236AEE /* Sticks.storyboard */,
 			);
 			path = Sticks;
@@ -386,6 +389,7 @@
 				A452DC452070D8CC00EFBA30 /* PanelsCollectionsViewController.swift in Sources */,
 				A452DC412070D8CC00EFBA30 /* MainViewController.swift in Sources */,
 				A452DC462070D8CC00EFBA30 /* ProductCommunicationService.swift in Sources */,
+				9738BB3E24F9197B000275FA /* Retry.swift in Sources */,
 				A452DC422070D8CC00EFBA30 /* MapWidgetViewController.swift in Sources */,
 				A452DC3E2070D8CC00EFBA30 /* DefaultLayoutCustomizationViewController.swift in Sources */,
 				A452DC482070D8CC00EFBA30 /* WidgetsViewController.swift in Sources */,

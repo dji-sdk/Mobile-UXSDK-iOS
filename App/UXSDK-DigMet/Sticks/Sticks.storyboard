@@ -156,11 +156,19 @@
                                     <action selector="captureImageButton:" destination="1m5-5v-g5t" eventType="touchUpInside" id="YqH-w8-20G"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kaq-fT-XXy" userLabel="PreviewImageView">
+                                <rect key="frame" x="513" y="2" width="149" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="ojs-D8-iND"/>
+                                    <constraint firstAttribute="height" constant="90" id="rOW-uf-Hwn"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aY1-IK-vb4" firstAttribute="centerX" secondItem="Ca7-cF-Tls" secondAttribute="centerX" id="6xy-bd-M9r"/>
+                            <constraint firstItem="S6R-gz-0iS" firstAttribute="trailing" secondItem="Kaq-fT-XXy" secondAttribute="trailing" constant="5" id="8Nu-kp-6HP"/>
                             <constraint firstItem="wmX-bV-6D7" firstAttribute="leading" secondItem="bOD-EF-bVN" secondAttribute="trailing" constant="60" id="9oa-FL-KRf"/>
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="trailing" secondItem="UNw-VT-nQ1" secondAttribute="trailing" constant="60" id="DEc-ef-PUh"/>
                             <constraint firstItem="UNw-VT-nQ1" firstAttribute="top" secondItem="S6R-gz-0iS" secondAttribute="top" constant="100" id="FaN-hP-kuK"/>
@@ -175,6 +183,7 @@
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="bottom" secondItem="NUQ-U2-Rs4" secondAttribute="bottom" constant="100" id="cRn-xN-Vg5"/>
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="trailing" secondItem="fAl-O7-PRU" secondAttribute="trailing" constant="100" id="dke-HC-xqY"/>
                             <constraint firstItem="aY1-IK-vb4" firstAttribute="top" secondItem="fAl-O7-PRU" secondAttribute="top" id="lGr-gZ-jdP"/>
+                            <constraint firstItem="Kaq-fT-XXy" firstAttribute="top" secondItem="Ca7-cF-Tls" secondAttribute="top" constant="2" id="qmN-p5-nY9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S6R-gz-0iS"/>
                     </view>
@@ -187,13 +196,14 @@
                         <outlet property="controlPeriodStepperButton" destination="Igf-k9-fHH" id="Wij-Cg-Xj7"/>
                         <outlet property="horizontalSpeedLabel" destination="ua3-Ab-nWd" id="Bc3-h0-faE"/>
                         <outlet property="horizontalSpeedStepperButton" destination="y2l-zc-F4X" id="GCk-Om-kKk"/>
+                        <outlet property="previewImageView" destination="Kaq-fT-XXy" id="CNB-Ss-eWT"/>
                         <outlet property="statusLabel" destination="YnT-Iq-vJj" id="d7P-su-qyu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQs-gj-GHi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="eSh-ji-1AL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-555" y="-170"/>
+            <point key="canvasLocation" x="-555.47226386806597" y="-170.40000000000001"/>
         </scene>
     </scenes>
 </document>
