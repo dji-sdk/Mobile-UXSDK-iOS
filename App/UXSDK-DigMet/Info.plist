@@ -39,6 +39,8 @@
 	<string>To be able to navigate properly (uncertain if this key is correct)</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app uses the microphone to record voice messages for broadcasting using the speaker accessory.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Need permission to save photos to photo library</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
