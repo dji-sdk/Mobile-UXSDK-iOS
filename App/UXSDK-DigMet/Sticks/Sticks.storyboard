@@ -156,20 +156,34 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bi2-jk-BBv" userLabel="Photo Stack View">
-                                <rect key="frame" x="294.5" y="260" width="78" height="65"/>
+                                <rect key="frame" x="294.5" y="249" width="78" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aY1-IK-vb4">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="30"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Take Photo"/>
                                         <connections>
-                                            <action selector="captureImageButton:" destination="1m5-5v-g5t" eventType="touchUpInside" id="YqH-w8-20G"/>
                                             <action selector="takePhotoButton:" destination="1m5-5v-g5t" eventType="touchUpInside" id="Tnm-bK-VCC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feq-2q-bhI" userLabel="Save Photo">
-                                        <rect key="frame" x="0.0" y="35" width="78" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF4-5Q-Pww" userLabel="Preview Photo">
+                                        <rect key="frame" x="0.0" y="35" width="78" height="14"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="4Jh-L8-L2h"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <state key="normal" title="Preview"/>
+                                        <connections>
+                                            <action selector="previewPhotoButton:" destination="1m5-5v-g5t" eventType="touchUpInside" id="Jic-an-GvF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feq-2q-bhI" userLabel="Save Photo">
+                                        <rect key="frame" x="0.0" y="54" width="78" height="22"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="ckP-qa-R5Z"/>
+                                        </constraints>
                                         <state key="normal" title="Save Photo"/>
                                         <connections>
                                             <action selector="savePhotoButton:" destination="1m5-5v-g5t" eventType="touchUpInside" id="8VY-My-0Ef"/>
