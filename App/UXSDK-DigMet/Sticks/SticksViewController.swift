@@ -10,7 +10,6 @@ import UIKit
 import DJIUXSDK
 import DJIWidget
 
-
 public class SticksViewController: DUXDefaultLayoutViewController {
     //**********************
     // Variable declarations
@@ -61,6 +60,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var DuttLeftButton: UIButton!
     @IBOutlet weak var DuttRightButton: UIButton!
+    
+    @IBOutlet weak var savePhotoButton: UIButton!
     
     // Just to test an init function
     required init?(coder aDecoder: NSCoder) {
@@ -290,6 +291,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 let index = files.count - 1
 
                 var imageData: Data?
+                //var imageSaver: NSObject
                 
                 files[index].fetchData(withOffset: 0, update: DispatchQueue.main, update: {(_ data: Data?, _ isComplete: Bool, error: Error?) -> Void in
                     if error != nil{
@@ -302,7 +304,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                                 let image = UIImage(data: imageData)
                                     self.printSL("Image complete, showing image")
                                     self.previewImageView.image = image
-                                    //UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+                                    let imageSaverHelper = imageSaver()
+                                    imageSaverHelper.writeToPhotoAlbum(image: image!)
+                                    //UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil) https://www.hackingwithswift.com/books/ios-swiftui/how-to-save-images-to-the-users-photo-library
                                 }
                             else{
                                     self.printSL("If let NOK")
@@ -629,17 +633,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
 
     @IBAction func DuttRightPressed(_ sender: UIButton) {
         // Set the control command
-        my_cameraSetMode(DJICameraMode.mediaDownload, completionHandler: {(succsess: Bool) in
-            if succsess {
-                self.my_getImage(completionHandler: {(success: Bool) in
-                    if succsess{
-                        _ = 1
-                    }
-                })
-            }
-        })
-        
-        //getLastImage()
+
         y = self.horizontalSpeed/100
         // Schedule the timer at 20Hz while the default specified for DJI is between 5 and 25Hz. Timer will execute control commands for a period of time
         self.timer?.invalidate()
@@ -649,7 +643,6 @@ public class SticksViewController: DUXDefaultLayoutViewController {
 
     @IBAction func DuttLeftPressed(_ sender: UIButton) {
         // Set the control command
-        setUpDownload()
         previewImageView.image = nil
         y = -self.horizontalSpeed/100
         // Schedule the timer at 20Hz while the default specified for DJI is between 5 and 25Hz. Timer will execute control commands for a period of time
@@ -658,7 +651,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         timer = Timer.scheduledTimer(timeInterval: sampleTime/1000, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
 
-    @IBAction func captureImageButton(_ sender: UIButton) {
+
+    
+    @IBAction func takePhotoButton(_ sender: Any) {
        statusLabel.text = "Capture image button pressed"
        
        setGimbalPitch(pitch: self.nextGimbalPitch)
@@ -669,6 +664,19 @@ public class SticksViewController: DUXDefaultLayoutViewController {
            self.captureImage()
        })
     }
+    
+    @IBAction func savePhotoButton(_ sender: Any) {
+        my_cameraSetMode(DJICameraMode.mediaDownload, completionHandler: {(succsess: Bool) in
+            if succsess {
+                self.my_getImage(completionHandler: {(success: Bool) in
+                    if succsess{
+                        _ = 1
+                    }
+                })
+            }
+        })
+    }
+    
 
     @objc func fireTimer() {
         
