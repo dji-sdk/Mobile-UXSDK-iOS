@@ -144,6 +144,22 @@ extension PHAsset {
     }
 }
 
+// Extension to write data objects to a temp directory
+extension Data {
+
+    func myWrite(withName name: String) -> URL {
+
+        let url = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(name)
+
+        try! write(to: url, options: .atomicWrite)
+
+        return url
+    }
+}
+
+
+
+
 
 
 
