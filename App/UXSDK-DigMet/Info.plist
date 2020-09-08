@@ -31,6 +31,8 @@
 	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Bluetooth is required for communicating with some DJI hardware.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Needs location services</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Need location information to be able to follow user</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -41,6 +43,8 @@
 	<string>This app uses the microphone to record voice messages for broadcasting using the speaker accessory.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Need permission to save photos to photo library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To load photos from library and preview them</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
