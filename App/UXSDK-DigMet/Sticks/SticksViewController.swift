@@ -50,7 +50,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var lastImageFilename = ""
     var lastImageURL = ""
     var lastImageData: Data = Data.init()
-    var lastImageDataURL = ""
+    var lastImageDataURL: URL?
 
     //*********************
     // IBOutlet declaration: Labels
@@ -272,38 +272,25 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         imageSaverHelper.writeToPhotoAlbum(image: image)
     }
     
-    // Store an UIImage to filename (.png will be added). Full path is returned (and written to self.lastImageURL
-    func saveUIImageToApp(image: UIImage, filename: String) -> String {
-        //// Code gives an ur to the unsaved image.
-        // https://stackoverflow.com/questions/29009621/url-of-image-after-uiimagewritetosavedphotosalbum-in-swift
-        let png = NSData(data: image.pngData()!)
-        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        let docs: String = paths[0]
-        let fullPath = docs + filename + ".png"
-        self.lastImageURL = fullPath
-        self.printSL(fullPath)
-        png.write(toFile: fullPath, atomically: true)
-        return fullPath
+    func saveImageDataToApp(filename: String){
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        if let documentsURL = documentsURL {
+            let fileURL = documentsURL.appendingPathComponent(filename)
+            self.lastImageDataURL = fileURL
+            do {
+                try self.lastImageData.write(to: fileURL, options: .atomicWrite)
+                self.printSL("ImageD wto URL" + fileURL.absoluteString)
+            } catch {
+                self.printSL(String(describing: error))
+            }
+        }
     }
     
-    // Store an UIImage to filename (.png will be added). Full path is returned (and written to self.lastImageURL
-    func saveDataToApp(data: Data, filename: String) -> String {
-        //// Code gives an ur to the unsaved image.
-        // https://stackoverflow.com/questions/29009621/url-of-image-after-uiimagewritetosavedphotosalbum-in-swift
-        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        let docs: String = paths[0]
-        let fullPath = docs + filename// + ".pic"
-        self.lastImageDataURL = fullPath
-        self.printSL(fullPath)
-        do{
-            try data.write(to: URL(string: fullPath)!)
-            self.printSL("Printing Data to: " + fullPath)
-        }
-        catch{
-            print("nothing")
-        }
-        return fullPath
-    }
+//    // Store an Data-object to filename. Full path is returned (and written to self.lastImageURL
+//    func saveDataToApp(data: Data, filename: String) -> URL {
+//
+//        return data.myWrite(withName: filename)
+//    }
     
     
     func loadUIImageFromPhotoLibrary() -> UIImage? {
@@ -360,7 +347,6 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                         if let imageData = imageData{
                             // trying to save the whole dataobject
                             self.lastImageData = imageData
-                            
                             let image = UIImage(data: imageData)
                             // Image downloaded from sdCard
                             // Add custom EXIF info, NOT TESTED
@@ -528,7 +514,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
 
     @IBAction func DuttLeftPressed(_ sender: UIButton) {
         self.lastImage = loadUIImageFromPhotoLibrary()!  // TODO, unsafe code
-        self.lastImageURL = saveUIImageToApp(image: self.lastImage, filename: "/1")
+        //self.lastImageURL = saveUIImageToAppJPG(image: self.lastImage, filename: "/1")
         
         // Set the control command
         //previewImageView.image = nil
@@ -572,8 +558,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
             if succsess {
                 self.getImage(completionHandler: {(success: Bool) in
                     if succsess{
-                        self.lastImageURL = self.saveUIImageToApp(image: self.lastImage, filename: "/1")
-                        //self.lastImageDataURL = self.saveDataToApp(data: self.lastImageData, filename: "/2")
+                        self.saveImageDataToApp(filename: "tadaa.jpg")
                     }
                 })
             }
@@ -615,20 +600,12 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 session.authenticateBy(inMemoryPublicKey: "", privateKey: privatekeystring, andPassword: nil)
                 if session.isAuthorized == true {
                     self.printSL("Uploading image to server...")
-                    session.channel.uploadFile(self.lastImageURL, to: "/Users/gising/temp/") // Use absolute path!
+                    // Upload Data object
+                    self.printSL("path: " + self.lastImageDataURL!.path)
+                    session.channel.uploadFile(self.lastImageDataURL!.path, to: "/Users/gising/temp/")
                     self.printSL("File is uploaded")
                 }
-              //  printSL("Evaluate if dispatch is needed?")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
-                    self.printSL("Disconnecting from server")
-                    session.disconnect()
-                })
-//                var error: NSError?
-//                   let response: String = session.channel.execute("pwd", error: &error)
-//                   // remove the newline and speces
-//                   let lines = response.components(separatedBy: "\n")
-//                   print(lines[1])
-//                   printSL(lines[1])
+                session.disconnect()
             }
             else{
                 self.printSL("Could not connect to: " + String(describing: ip) + " Check ip refernce.")
@@ -762,6 +739,56 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         }
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    //************************************
+//    // Tested ok, but not in use anymore..
+//    // ***********************************
+//
+//    // Store an UIImage to filename (.png will be added). Full path is returned (and written to self.lastImageURL
+//    func saveUIImageToAppPNG(image: UIImage, filename: String) -> String {
+//        //// Code gives an ur to the unsaved image.
+//        // https://stackoverflow.com/questions/29009621/url-of-image-after-uiimagewritetosavedphotosalbum-in-swift
+//        let png = NSData(data: image.pngData()!)
+//        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+//        let docs: String = paths[0]
+//        let fullPath = docs + filename + ".png"
+//        self.lastImageURL = fullPath
+//        self.printSL(fullPath)
+//        png.write(toFile: fullPath, atomically: true)
+//        return fullPath
+//    }
+//
+//    // Store an UIImage to filename (.png will be added). Full path is returned (and written to self.lastImageURL
+//    func saveUIImageToAppJPG(image: UIImage, filename: String) -> String {
+//        //// Code gives an ur to the unsaved image.
+//        // https://stackoverflow.com/questions/29009621/url-of-image-after-uiimagewritetosavedphotosalbum-in-swift
+//        let png = NSData(data: image.jpegData(compressionQuality: 0.3)!)
+//
+//        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+//        let docs: String = paths[0]
+//        let fullPath = docs + filename + ".JPG"
+//        self.lastImageURL = fullPath
+//        self.printSL(fullPath)
+//        png.write(toFile: fullPath, atomically: true)
+//        return fullPath
+//    }
+//
+//  //Called in savePhotoButton
+//    self.lastImageURL = self.saveUIImageToAppPNG(image: self.lastImage, filename: "/1")
+//    self.lastImageURL = self.saveUIImageToAppJPG(image: self.lastImage, filename: "/3")
+//    //**************************************
+    
+    
+    
+    
     
     
     
