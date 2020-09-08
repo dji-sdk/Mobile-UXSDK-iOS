@@ -122,6 +122,8 @@ class MainViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    
+    
     func updateUserAccountStatus() {
         if DJISDKManager.userAccountManager().userAccountState == .notLoggedIn {
             self.currentUserAccountStatus?.text = "Not Logged In"

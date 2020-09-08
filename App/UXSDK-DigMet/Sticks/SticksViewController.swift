@@ -9,6 +9,7 @@
 import UIKit
 import DJIUXSDK
 import DJIWidget
+import NMSSH
 
 public class SticksViewController: DUXDefaultLayoutViewController {
     //**********************
@@ -17,8 +18,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var flightController: DJIFlightController?
     var camera: DJICamera?
     var gimbal: DJIGimbal?
-    //manager?
-
+    
+    var server = serverClass()
 
     var pitchRangeExtension_set: Bool = false
     var nextGimbalPitch: Int = 0
@@ -26,6 +27,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var gimbalcapability: [AnyHashable: Any]? = [:]
     var cameraModeReference: DJICameraMode = DJICameraMode.playback
     var cameraModeAcitve: DJICameraMode = DJICameraMode.shootPhoto
+    
+    var testar = ""
     
     var x: Float = 0.0
     var y: Float = 0.0
@@ -40,8 +43,15 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var loopTarget: Int = 0
     var horizontalSpeed: Float = 50 // cm/s horizontal speed
     
-    var image: UIImage = UIImage.init()
+    var image: UIImage = UIImage.init() // Is this used?
     var image_index: UInt?
+    
+    var lastImage: UIImage = UIImage.init()
+    var lastImageFilename = ""
+    var lastImageURL = ""
+    var lastImageData: Data = Data.init()
+    var lastImageDataURL = ""
+
     //*********************
     // IBOutlet declaration: Labels
     @IBOutlet weak var controlPeriodLabel: UILabel!
@@ -69,8 +79,45 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         super.init(coder: aDecoder)
     }
     
+    
+    
+    
+    
+    
+    
     //**********************
     // Fucntion declarations
+//    var testar = "" {
+//        didSet { //called when item changes
+//            self.printSL(testar)
+//        }
+//        willSet {
+//            print("about to change")
+//        }
+//    }
+   
+
+// Load file helper
+//@BundleFile(name: "avatar", type: "jpg", decoder: { UIImage(data: $0)! } )
+//  var avatar: UIImage
+
+//// https://stackoverflow.com/questions/37580015/how-to-access-file-included-in-app-bundle-in-swift
+//    @propertyWrapper struct BundleFile<DataType> {
+//        let name: String
+//        let type: String
+//        let fileManager: FileManager = .default
+//        let bundle: Bundle = .main
+//        let decoder: (Data) -> DataType
+//
+//        var wrappedValue: DataType {
+//            guard let path = bundle.path(forResource: name, ofType: type) else { fatalError("Resource not found: \(name).\(type)") }
+//            guard let data = fileManager.contents(atPath: path) else { fatalError("Can not load file at: \(path)") }
+//            return decoder(data)
+//        }
+//    }
+
+    
+    
     
     // Disable button and change colormode
     func disableButton(_ button: UIButton!){
@@ -216,9 +263,72 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     
     func printSL(_ str: String){
         self.statusLabel.text = str
+        print(str)
     }
 
-
+    // Save an UIImage to Photos album
+    func saveUIImageToPhotosAlbum(image: UIImage){
+        let imageSaverHelper = imageSaver()
+        imageSaverHelper.writeToPhotoAlbum(image: image)
+    }
+    
+    // Store an UIImage to filename (.png will be added). Full path is returned (and written to self.lastImageURL
+    func saveUIImageToApp(image: UIImage, filename: String) -> String {
+        //// Code gives an ur to the unsaved image.
+        // https://stackoverflow.com/questions/29009621/url-of-image-after-uiimagewritetosavedphotosalbum-in-swift
+        let png = NSData(data: image.pngData()!)
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let docs: String = paths[0]
+        let fullPath = docs + filename + ".png"
+        self.lastImageURL = fullPath
+        self.printSL(fullPath)
+        png.write(toFile: fullPath, atomically: true)
+        return fullPath
+    }
+    
+    // Store an UIImage to filename (.png will be added). Full path is returned (and written to self.lastImageURL
+    func saveDataToApp(data: Data, filename: String) -> String {
+        //// Code gives an ur to the unsaved image.
+        // https://stackoverflow.com/questions/29009621/url-of-image-after-uiimagewritetosavedphotosalbum-in-swift
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let docs: String = paths[0]
+        let fullPath = docs + filename// + ".pic"
+        self.lastImageDataURL = fullPath
+        self.printSL(fullPath)
+        do{
+            try data.write(to: URL(string: fullPath)!)
+            self.printSL("Printing Data to: " + fullPath)
+        }
+        catch{
+            print("nothing")
+        }
+        return fullPath
+    }
+    
+    
+    func loadUIImageFromPhotoLibrary() -> UIImage? {
+        // https://stackoverflow.com/questions/29009621/url-of-image-after-uiimagewritetosavedphotosalbum-in-swift
+        let fetchOptions: PHFetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        let fetchResult = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: fetchOptions)
+        if (fetchResult.firstObject != nil) {
+            let lastAsset: PHAsset = fetchResult.lastObject!
+            self.previewImageView.image = lastAsset.image
+            self.printSL("Previewing image from path")
+            return lastAsset.image
+        }
+        else{
+            return nil
+        }
+    }
+    
+    func loadUIImageFromMemory(path: String){
+        let image = UIImage(contentsOfFile: path)
+        self.previewImageView.image = image
+        self.printSL("Previewing image from path")
+    }
+    
+    // Move func to image helper class
     func getImage(completionHandler: @escaping (Bool) -> Void){
         let manager = self.camera?.mediaManager
         manager?.refreshFileList(of: DJICameraStorageLocation.sdCard, withCompletion: {(error: Error?) in
@@ -230,7 +340,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
             else{
                 guard let files = manager?.sdCardFileListSnapshot() else {
                     self.printSL("No images on sdCard")
-                    completionHandler(true)
+                    completionHandler(false)
                     return
                 }
                 self.printSL("Files on sdCard: " + String(describing: files.count))
@@ -243,19 +353,30 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                     if error != nil{
                         // THis happens if download is triggered to close to taking a picture.
                         self.printSL("Er" + String(error!.localizedDescription))
+                        completionHandler(false)
                     }
                     else if isComplete {
-                            self.printSL("it isComplete")
+                        self.printSL("it isComplete")
                         if let imageData = imageData{
-                                let image = UIImage(data: imageData)
-                                    self.printSL("Image complete, showing image")
-                                    self.previewImageView.image = image
-                                    let imageSaverHelper = imageSaver()
-                                    imageSaverHelper.writeToPhotoAlbum(image: image!)
-                                }
-                            else{
-                                    self.printSL("If let NOK")
+                            // trying to save the whole dataobject
+                            self.lastImageData = imageData
+                            
+                            let image = UIImage(data: imageData)
+                            // Image downloaded from sdCard
+                            // Add custom EXIF info, NOT TESTED
+//                            self.camera?.setMediaFileCustomInformation("AG info", withCompletion: {(error: Error?) in
+//                                self.printSL("Added some dummy info to downloaded image")
+//                            })
+                            self.lastImage = image!
+                            self.lastImageFilename = files[index].fileName
+                            self.printSL("Image saved to self, showing image preview. Filename:" + self.lastImageFilename)
+                            self.previewImageView.image = image
+                            completionHandler(true)
                             }
+                        else{
+                            self.printSL("If let NOK")
+                            completionHandler(false)
+                        }
                     }
                     else {
                         // If image has been initialized, append the updated data to it
@@ -360,6 +481,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     }
     
     
+
+    
     // **************
     // Button actions
     @IBAction func controlPeriodStepper(_ sender: UIStepper) {
@@ -404,6 +527,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     }
 
     @IBAction func DuttLeftPressed(_ sender: UIButton) {
+        self.lastImage = loadUIImageFromPhotoLibrary()!  // TODO, unsafe code
+        self.lastImageURL = saveUIImageToApp(image: self.lastImage, filename: "/1")
+        
         // Set the control command
         //previewImageView.image = nil
         y = -self.horizontalSpeed/100
@@ -413,9 +539,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         timer = Timer.scheduledTimer(timeInterval: sampleTime/1000, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
 
-
-    
     @IBAction func takePhotoButton(_ sender: Any) {
+        // Command the drone to take a picture and save it to the onboard sdCard. Change gimbal pitch accorsding to pattern.
         previewImageView.image = nil
         statusLabel.text = "Capture image button pressed, preview cleared"
 
@@ -429,6 +554,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     }
     
     @IBAction func previewPhotoButton(_ sender: Any) {
+        // download a preview of last photo, dipsply preview
         cameraSetMode(DJICameraMode.mediaDownload, 3, completionHandler: {(succsess: Bool) in
             if succsess {
                 self.getPreview(completionHandler: {(success: Bool) in
@@ -440,20 +566,114 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         })
     }
     
-    
     @IBAction func savePhotoButton(_ sender: Any) {
+        // Download last image taken by drone. From on board sdCard to app memory to
         cameraSetMode(DJICameraMode.mediaDownload, 3, completionHandler: {(succsess: Bool) in
             if succsess {
                 self.getImage(completionHandler: {(success: Bool) in
                     if succsess{
-                        _ = 1
+                        self.lastImageURL = self.saveUIImageToApp(image: self.lastImage, filename: "/1")
+                        //self.lastImageDataURL = self.saveDataToApp(data: self.lastImageData, filename: "/2")
                     }
                 })
             }
         })
     }
     
+    @IBAction func getDataButton(_ sender: UIButton) {
+        pwdAtServer()
+    }
+    
+    
 
+    
+//    I have sign in using RSA authentication
+//      Here is some code for generating keys.
+    @IBAction func putDatabutton(_ sender: UIButton) {
+        // Upload the last image that is saved to app memory to server using scp.
+        self.scpToServer()
+    }
+    
+    
+    // OSX acitvate sftp server by enablign file sharing in system prefs
+    // sftp session muyst be silent.. add this to bashrc on server [[ $- == *i* ]] || return, found at https://unix.stackexchange.com/questions/61580/sftp-gives-an-error-received-message-too-long-and-what-is-the-reason
+    // //printSL(urlPath?.absoluteString ?? "no url found")
+
+    func scpToServer(){
+        // Pick up private key from file.
+        let urlPath = Bundle.main.url(forResource: "digmet_id_rsa2", withExtension: "")
+
+        // Try privatekeysting
+        do{
+            let privatekeystring = try String(contentsOf: urlPath!, encoding: .utf8)
+            let ip = "25.22.96.189"
+            let username = "gising"
+            let session = NMSSHSession(host: ip, andUsername: username)
+            
+            session.connect()
+            if session.isConnected == true{
+                session.authenticateBy(inMemoryPublicKey: "", privateKey: privatekeystring, andPassword: nil)
+                if session.isAuthorized == true {
+                    self.printSL("Uploading image to server...")
+                    session.channel.uploadFile(self.lastImageURL, to: "/Users/gising/temp/") // Use absolute path!
+                    self.printSL("File is uploaded")
+                }
+              //  printSL("Evaluate if dispatch is needed?")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
+                    self.printSL("Disconnecting from server")
+                    session.disconnect()
+                })
+//                var error: NSError?
+//                   let response: String = session.channel.execute("pwd", error: &error)
+//                   // remove the newline and speces
+//                   let lines = response.components(separatedBy: "\n")
+//                   print(lines[1])
+//                   printSL(lines[1])
+            }
+            else{
+                self.printSL("Could not connect to: " + String(describing: ip) + " Check ip refernce.")
+            }
+        }
+        catch {
+            print("Private keystring could not be loaded from file")
+        }
+    }
+
+    // Follow up hamachi, https://community.logmein.com/t5/LogMeIn-Hamachi-Discussions/Hamachi-stopped-working-OSX/m-p/224734
+    func pwdAtServer(){
+        let urlPath = Bundle.main.url(forResource: "digmet_id_rsa2", withExtension: "")
+
+           // Try privatekeysting
+           do{
+                let privatekeystring = try String(contentsOf: urlPath!, encoding: .utf8)
+                let ip = "25.22.96.189"
+                let username = "gising"
+                let session = NMSSHSession(host: ip, andUsername: username)
+                   
+                session.connect()
+                if session.isConnected == true{
+                    session.authenticateBy(inMemoryPublicKey: "", privateKey: privatekeystring, andPassword: nil)
+                    if session.isAuthorized == true {
+                        var error: NSError?
+                        let response: String = session.channel.execute("pwd", error: &error)
+                        // remove the newline and speces
+                        let lines = response.components(separatedBy: "\n")
+                        print(lines[1])
+                        printSL(lines[1])
+                    }
+                    session.disconnect()
+                }
+                else{
+                    self.printSL("Could not connect to: " + String(describing: ip) + " Check ip refernce.")
+                }
+            }
+           catch{
+                printSL("Could not read rsa keyfile")
+        }
+    }
+
+    
+    
     @objc func fireTimer() {
         
         loopCnt += 1
@@ -542,6 +762,18 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         }
     }
 
+    
+    
+    
+    // API calls in hhindi.. https://www.youtube.com/watch?v=-7EyKipJltc&list=PLb5R4QC2DtFuXr4177KQ2lIXOkqwq97a4
+    // https://www.youtube.com/watch?v=-7EyKipJltc
+    // Upload image https://www.youtube.com/watch?v=qhoL1lp4kiY
+    
+    // https://github.com/http-party/http-server
+    
+    
+    
+    
     
     
     
@@ -1405,3 +1637,86 @@ public class SticksViewController: DUXDefaultLayoutViewController {
 ////        }) // end of file-refresh block
 ////
 ////    }
+
+
+
+// remove the newline and speces
+//               let lines = response.components(separatedBy: "\n")
+
+
+
+//    let response: String = session.channel.execute(commandString, error: &error)
+//    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//        let lines = response.components(separatedBy: "\n")
+//        print(lines[0])
+//        self.printSL(lines[0])
+//        self.printSL(error.debugDescription)
+//    })
+
+
+//      Counter did not work as intended.
+//    if true { // NMSSH: Could not open file at path apa.png (Error 0: )
+//        session.sftp.writeFile(atPath: self.lastImageURL, toFileAtPath: "app.png", progress: {(progress: UInt) -> Bool in
+//            self.printSL(String(describing: progress))
+//            if progress == 100 {
+//                self.printSL("Pregress seem to be 100%")
+//                return true
+//            }
+//            else {
+//                return false
+//            }
+//        })
+//    }
+
+
+// SFTP working code
+//    if true { // Works but image from duttLeft is very low resolution.. Serrver must be silent!
+//                          session.sftp.connect()
+//                          let filelist = session.sftp.contentsOfDirectory(atPath: "/")
+//                          printSL(String(describing: (filelist?[0])!))
+//                          session.sftp.writeFile(atPath: self.lastImageURL, toFileAtPath: "/Users/gising/apa.png")
+//                      }
+
+
+    // This works using "inMemory..
+//    let keystring = """
+//-----BEGIN RSA PRIVATE KEY-----\n\
+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\n\
+//-----END RSA PRIVATE KEY-----
+//"""
