@@ -10,6 +10,14 @@ import UIKit
 import DJIUXSDK
 import DJIWidget
 import NMSSH
+import SwiftyZeroMQ // https://github.com/azawawi/SwiftyZeroMQ  good examples
+// Concider SwiftyJSON
+
+// ZeroMQ https://stackoverflow.com/questions/49204713/zeromq-swift-code-with-swiftyzeromq-recv-still-blocks-gui-text-update-even-a
+// Build ZeroMQ https://www.ics.com/blog/lets-build-zeromq-library
+
+// Background process https://stackoverflow.com/questions/24056205/how-to-use-background-thread-in-swift
+// Related issue https://stackoverflow.com/questions/49204713/zeromq-swift-code-with-swiftyzeromq-recv-still-blocks-gui-text-update-even-a
 
 public class SticksViewController: DUXDefaultLayoutViewController {
     //**********************
@@ -19,8 +27,11 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var camera: DJICamera?
     var gimbal: DJIGimbal?
     
-    var server = serverClass()
-
+    var server = serverClass() // For test. Could get a JSON from http server.
+    let hostIp = "25.22.96.189" // Use dict or something to store several ip adresses
+    let hostUsername = "gising"
+    let hostPath = "/Users/gising/temp/"
+    
     var pitchRangeExtension_set: Bool = false
     var nextGimbalPitch: Int = 0
     
@@ -87,38 +98,10 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     
     //**********************
     // Fucntion declarations
-//    var testar = "" {
-//        didSet { //called when item changes
-//            self.printSL(testar)
-//        }
-//        willSet {
-//            print("about to change")
-//        }
-//    }
-   
-
-// Load file helper
-//@BundleFile(name: "avatar", type: "jpg", decoder: { UIImage(data: $0)! } )
-//  var avatar: UIImage
-
-//// https://stackoverflow.com/questions/37580015/how-to-access-file-included-in-app-bundle-in-swift
-//    @propertyWrapper struct BundleFile<DataType> {
-//        let name: String
-//        let type: String
-//        let fileManager: FileManager = .default
-//        let bundle: Bundle = .main
-//        let decoder: (Data) -> DataType
-//
-//        var wrappedValue: DataType {
-//            guard let path = bundle.path(forResource: name, ofType: type) else { fatalError("Resource not found: \(name).\(type)") }
-//            guard let data = fileManager.contents(atPath: path) else { fatalError("Can not load file at: \(path)") }
-//            return decoder(data)
-//        }
-//    }
-
+    //**********************
     
     
-    
+    //************************************
     // Disable button and change colormode
     func disableButton(_ button: UIButton!){
         button.isEnabled = false
@@ -130,6 +113,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         button.backgroundColor = UIColor.systemBlue
     }
 
+    //***********************************************
     // Deactivate the sticks and disable dutt buttons
     func deactivateSticks(){
         DeactivateSticksButton.backgroundColor = UIColor.lightGray
@@ -146,7 +130,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 print("Virtual stick mode change did not go through")
         })
     }
-      
+    
+    //****************************************************************
     // Activate sticks and dutt buttons, reset any velocity references
     func activateSticks(){
         ActivateSticksButton.backgroundColor = UIColor.lightGray
@@ -167,7 +152,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 print("Virtual stick mode change did not go through")
        })
     }
-
+    
+    //*****************************************************
     // Support function to step through gimbal pitch values
     func updateGnextGimbalPitch(){
         self.nextGimbalPitch -= 20
@@ -176,6 +162,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         }
     }
     
+    //***************************
     // Set the gimbal pitch value
     func setGimbalPitch(pitch: Int){
         // Check if rangeExtension for gimbal has been set sucessfully
@@ -194,8 +181,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         
     
     //*************************************************************
-    // captureImage sets ut the camera if needed and takes a photo.
-    
+    // captureImage sets up the camera if needed and takes a photo.
     func captureImage() {
         // Make sure camer is in the correct mode
         self.cameraSetMode(DJICameraMode.shootPhoto, 3, completionHandler: {(succsess: Bool) in
@@ -219,15 +205,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         })
     }
     
-    // ********************************************************************************************************************
-    // cameraSetMode checks if the newCamera mode is the active mode, and if not it tries to set the mode 'attempts' times.
-    
+    // ***********************************************************************************************************************************************
+    // cameraSetMode checks if the newCamera mode is the active mode, and if not it tries to set the mode 'attempts' times. TODO - is attemtps needed?
     func cameraSetMode(_ newCameraMode: DJICameraMode,_ attempts: Int, completionHandler: @escaping (Bool) -> Void) {
-        // Recurive function.
-        // Check if number of attempts are reached.
-        // Check if the correct mode is already set - return or continue
-        //
-        
         if attempts <= 0{
             self.printSL("Too many attempts changing camera mode.")
             completionHandler(false)
@@ -237,6 +217,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         self.camera?.getModeWithCompletion( {(mode: DJICameraMode, error: Error?) in
             if error != nil{
                 self.statusLabel.text = "Error getting Cameramode"
+                completionHandler(false)
             }
             else{
                 self.cameraModeAcitve = mode
@@ -259,42 +240,40 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     }
     
     
-
-    
+    //****************************************************
+    // Print to terminal and update status label on screen
     func printSL(_ str: String){
         self.statusLabel.text = str
         print(str)
     }
-
+    
+    //********************************
     // Save an UIImage to Photos album
     func saveUIImageToPhotosAlbum(image: UIImage){
         let imageSaverHelper = imageSaver()
         imageSaverHelper.writeToPhotoAlbum(image: image)
     }
     
-    func saveImageDataToApp(filename: String){
+    //********************************************
+    // Save ImageData to app, set URL to the objet
+    func saveImageDataToApp(imageData: Data, filename: String){
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         if let documentsURL = documentsURL {
             let fileURL = documentsURL.appendingPathComponent(filename)
             self.lastImageDataURL = fileURL
             do {
-                try self.lastImageData.write(to: fileURL, options: .atomicWrite)
-                self.printSL("ImageD wto URL" + fileURL.absoluteString)
+                try imageData.write(to: fileURL, options: .atomicWrite)
             } catch {
-                self.printSL(String(describing: error))
+                self.printSL("Could not write imageData to App: " + String(describing: error))
             }
         }
     }
     
-//    // Store an Data-object to filename. Full path is returned (and written to self.lastImageURL
-//    func saveDataToApp(data: Data, filename: String) -> URL {
-//
-//        return data.myWrite(withName: filename)
-//    }
-    
-    
+    //*****************************************************************************
+    // Load an image from the photo library. Seem to be loaded with poor resolution
     func loadUIImageFromPhotoLibrary() -> UIImage? {
         // https://stackoverflow.com/questions/29009621/url-of-image-after-uiimagewritetosavedphotosalbum-in-swift
+        // https://www.hackingwithswift.com/forums/swiftui/accessing-image-exif-data-creation-date-location-of-an-image/1429
         let fetchOptions: PHFetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
         let fetchResult = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: fetchOptions)
@@ -309,13 +288,16 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         }
     }
     
+    //*********************************************************
+    // NOT USED Load an UIImage from memory using a path string
     func loadUIImageFromMemory(path: String){
         let image = UIImage(contentsOfFile: path)
         self.previewImageView.image = image
         self.printSL("Previewing image from path")
     }
     
-    // Move func to image helper class
+    //*************************************************************************************
+    // Downloads an imageData from sdCard. Saves imageData to app. Previews image on screen
     func getImage(completionHandler: @escaping (Bool) -> Void){
         let manager = self.camera?.mediaManager
         manager?.refreshFileList(of: DJICameraStorageLocation.sdCard, withCompletion: {(error: Error?) in
@@ -324,7 +306,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 completionHandler(false)
                 self.printSL("Refreshing file list failed.")
             }
-            else{
+            else{ // Get file references
                 guard let files = manager?.sdCardFileListSnapshot() else {
                     self.printSL("No images on sdCard")
                     completionHandler(false)
@@ -332,35 +314,30 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 }
                 self.printSL("Files on sdCard: " + String(describing: files.count))
                 let index = files.count - 1
-                // Create a image container for this scope only
+                // Create a image container for this scope
                 var imageData: Data?
                 var i: Int?
-                // Download bachthwise, append data
+                // Download bachthwise, append data. Closure is called each time data is updated.
                 files[index].fetchData(withOffset: 0, update: DispatchQueue.main, update: {(_ data: Data?, _ isComplete: Bool, error: Error?) -> Void in
                     if error != nil{
                         // THis happens if download is triggered to close to taking a picture.
-                        self.printSL("Er" + String(error!.localizedDescription))
+                        self.printSL("Error, not ready for download: " + String(error!.localizedDescription))
                         completionHandler(false)
                     }
-                    else if isComplete {
+                    else if isComplete { // No more data blocks to collect
                         self.printSL("it isComplete")
                         if let imageData = imageData{
-                            // trying to save the whole dataobject
-                            self.lastImageData = imageData
+                            self.saveImageDataToApp(imageData: imageData, filename: files[index].fileName)
                             let image = UIImage(data: imageData)
-                            // Image downloaded from sdCard
-                            // Add custom EXIF info, NOT TESTED
-//                            self.camera?.setMediaFileCustomInformation("AG info", withCompletion: {(error: Error?) in
-//                                self.printSL("Added some dummy info to downloaded image")
-//                            })
                             self.lastImage = image!
                             self.lastImageFilename = files[index].fileName
                             self.printSL("Image saved to self, showing image preview. Filename:" + self.lastImageFilename)
-                            self.previewImageView.image = image
+                            self.previewImageView.image = files[index].preview //image TODO, does this work?
+                            // Modifying EXIF, a clue: https://stackoverflow.com/questions/43920643/modifying-image-metadata
                             completionHandler(true)
                             }
                         else{
-                            self.printSL("If let NOK")
+                            self.printSL("Could not fetch image from sdCard properly")
                             completionHandler(false)
                         }
                     }
@@ -383,6 +360,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         })
     }
     
+    // ******************************************************************
+    // Download the preview of the last image taken. Preview it on screen
     func getPreview(completionHandler: @escaping (Bool) -> Void){
         let manager = self.camera?.mediaManager
         manager?.refreshFileList(of: DJICameraStorageLocation.sdCard, withCompletion: {(error: Error?) in
@@ -413,7 +392,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         })
     }
 
-
+    //*****************************************************
     // retreive the gimbal pitch. DOES CRASH THE APP! TODO
     func getGimbalAttitude(){
         // Get the key
@@ -439,7 +418,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         self.statusLabel.text = temp_str
     }
     
-    
+    //***************************************************************************************************************
+    // Send controller data (joystick). Called from fireTimer that send commands every x ms. Stop timer to stop commands.
     private func sendControlData(x: Float, y: Float, z: Float, yaw: Float) {
         print("Sending x: \(x), y: \(y), z: \(z), yaw: \(yaw)")
         
@@ -467,41 +447,47 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     }
     
     
-
+//***************
+// Button actions
+//***************
     
-    // **************
-    // Button actions
+    // ****************************************************************************
+    // Control period stepper. Experiments with execution time for joystick command
     @IBAction func controlPeriodStepper(_ sender: UIStepper) {
         controlPeriodLabel.text = String(sender.value/1000)
+        // Uses stepper input and sampleTime to calculate how many loops fireTimer should loop
         loopTarget = Int(sender.value / sampleTime)
     }
        
+    //***********************************************************************************
+    // Horizontal speed stepper. Experiments with velocity reference for joystick command
     @IBAction func horizontalSpeedStepper(_ sender: UIStepper) {
         horizontalSpeedLabel.text = String(sender.value/100)
         horizontalSpeed = Float(sender.value)
     }
        
-    // Exit view, but first deactivate Sticks
+    //*******************************************************************************************************
+    // Exit view, but first deactivate Sticks (which invalidates fireTimer-timer to stop any joystick command
     @IBAction func xclose(_ sender: UIButton) {
         deactivateSticks()
-        self.timer?.invalidate()
         self.dismiss(animated: true, completion: nil)
-        //if let camera = fetchCamera(), let delegate = camera.delegate, delegate.isEqual(self) {
-        //    camera.delegate = nil
     }
-
+    
+    //**************************************************************************************************
     // DeactivateSticks: Touch down action, deactivate immidiately and reset ActivateSticks button color
     @IBAction func DeactivateSticksPressed(_ sender: UIButton) {
         deactivateSticks()
         sendControlData(x: 0, y: 0, z: 0, yaw: 0)
     }
 
+    //************************************************************************************
     // ActivateSticks: Touch down up inside action, ativate when ready (release of button)
     @IBAction func ActivateSticksPressed(_ sender: UIButton) {
         activateSticks()
-       
     }
 
+    //***************************************************************************************************************
+    // Sends a command to go body right for some time at some speed per settings. Cancel any current joystick command
     @IBAction func DuttRightPressed(_ sender: UIButton) {
         // Set the control command
         //previewImageView.image = nil
@@ -512,9 +498,12 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         timer = Timer.scheduledTimer(timeInterval: sampleTime/1000, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
 
+    //***************************************************************************************************************
+    // Sends a command to go body left for some time at some speed per settings. Cancel any current joystick command
     @IBAction func DuttLeftPressed(_ sender: UIButton) {
-        self.lastImage = loadUIImageFromPhotoLibrary()!  // TODO, unsafe code
-        //self.lastImageURL = saveUIImageToAppJPG(image: self.lastImage, filename: "/1")
+        // Load image from library to be able to test scp without drone conencted. Could add dummy pic to App assets instead.
+        self.lastImage = loadUIImageFromPhotoLibrary()! // TODO, unsafe code
+        saveImageDataToApp(imageData: self.lastImage.jpegData(compressionQuality: 1)!, filename: "From_album.jpg")
         
         // Set the control command
         //previewImageView.image = nil
@@ -524,7 +513,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         loopCnt = 0
         timer = Timer.scheduledTimer(timeInterval: sampleTime/1000, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
-
+    
+    //********************************************************
+    // Set gimbal pitch according to scheeme and take a photo.
     @IBAction func takePhotoButton(_ sender: Any) {
         // Command the drone to take a picture and save it to the onboard sdCard. Change gimbal pitch accorsding to pattern.
         previewImageView.image = nil
@@ -533,66 +524,92 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         setGimbalPitch(pitch: self.nextGimbalPitch)
         updateGnextGimbalPitch()
        
-        // Dispatch to wait in the pitch movement, then capture an image
+        // Dispatch to wait in the pitch movement, then capture an image. TODO - use closure instead of stupid timer.
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
             self.captureImage()
         })
+    
     }
     
+    
+    //**********************************************
+    // Download and preview the last image on sdCard
     @IBAction func previewPhotoButton(_ sender: Any) {
         // download a preview of last photo, dipsply preview
         cameraSetMode(DJICameraMode.mediaDownload, 3, completionHandler: {(succsess: Bool) in
             if succsess {
                 self.getPreview(completionHandler: {(success: Bool) in
-                    if succsess{
-                        _ = 1
+                    if success{
+                        self.printSL("Preview downloaded and displayed.")
                     }
-                })
+                    else{
+                        self.printSL("Preview not downloaded")
+                        }
+                    })
+                
+            }
+            else{
+                self.printSL("Set camera mode failed. Interrupting camera too early?")
             }
         })
     }
     
+    //*************************************************************************
+    // Download last imageData from sdCard and save to app memory. Save URL to self.
     @IBAction func savePhotoButton(_ sender: Any) {
         // Download last image taken by drone. From on board sdCard to app memory to
-        cameraSetMode(DJICameraMode.mediaDownload, 3, completionHandler: {(succsess: Bool) in
-            if succsess {
-                self.getImage(completionHandler: {(success: Bool) in
-                    if succsess{
-                        self.saveImageDataToApp(filename: "tadaa.jpg")
+        cameraSetMode(DJICameraMode.mediaDownload, 3, completionHandler: {(success: Bool) in
+            if success {
+                self.getImage(completionHandler: {(new_success: Bool) in
+                    if new_success{
+                        self.printSL("Photo downloaded and saved to App memory")
+                    }
+                    else{
+                        self.printSL("Failed downloading imageData")
                     }
                 })
+            }
+            else{
+                self.printSL("Set camera mode failed. Interrupting camera too early?")
             }
         })
     }
     
+    //***************************************************************************
+    // Test button. Uses ssh to 'pwd' on the host and prints the answer to screen
     @IBAction func getDataButton(_ sender: UIButton) {
         pwdAtServer()
     }
     
     
 
-    
-//    I have sign in using RSA authentication
-//      Here is some code for generating keys.
+    //***********************************************
+    // Button to scp the last saved imageData to host
     @IBAction func putDatabutton(_ sender: UIButton) {
-        // Upload the last image that is saved to app memory to server using scp.
-        self.scpToServer()
+        if self.lastImageDataURL == nil{
+            self.printSL("No image to upload")
+        }
+        else{
+            self.scpToServer()
+        }
     }
     
     
-    // OSX acitvate sftp server by enablign file sharing in system prefs
-    // sftp session muyst be silent.. add this to bashrc on server [[ $- == *i* ]] || return, found at https://unix.stackexchange.com/questions/61580/sftp-gives-an-error-received-message-too-long-and-what-is-the-reason
-    // //printSL(urlPath?.absoluteString ?? "no url found")
 
+    //************************************************************************************************************************************************************************************************************
+    // Scp image saved to app memory to host. Connect using RSA-keys. SFTP could be faster. Also increse buffer size could have impact. Approx 45s from photo to file on server over vpn, 12s over local network..
     func scpToServer(){
+        // OSX acitvate sftp server by enablign file sharing in system prefs
+        // sftp session muyst be silent.. add this to bashrc on server [[ $- == *i* ]] || return, found at https://unix.stackexchange.com/questions/61580/sftp-gives-an-error-received-message-too-long-and-what-is-the-reason
+
         // Pick up private key from file.
         let urlPath = Bundle.main.url(forResource: "digmet_id_rsa2", withExtension: "")
 
         // Try privatekeysting
         do{
             let privatekeystring = try String(contentsOf: urlPath!, encoding: .utf8)
-            let ip = "25.22.96.189"
-            let username = "gising"
+            let ip = self.hostIp
+            let username = self.hostUsername
             let session = NMSSHSession(host: ip, andUsername: username)
             
             session.connect()
@@ -602,7 +619,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                     self.printSL("Uploading image to server...")
                     // Upload Data object
                     self.printSL("path: " + self.lastImageDataURL!.path)
-                    session.channel.uploadFile(self.lastImageDataURL!.path, to: "/Users/gising/temp/")
+                    session.channel.uploadFile(self.lastImageDataURL!.path, to: self.hostPath)
                     self.printSL("File is uploaded")
                 }
                 session.disconnect()
@@ -616,15 +633,16 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         }
     }
 
-    // Follow up hamachi, https://community.logmein.com/t5/LogMeIn-Hamachi-Discussions/Hamachi-stopped-working-OSX/m-p/224734
+    //**********************************************
+    // SSH into host, pwd and print result to screen
     func pwdAtServer(){
         let urlPath = Bundle.main.url(forResource: "digmet_id_rsa2", withExtension: "")
 
            // Try privatekeysting
            do{
                 let privatekeystring = try String(contentsOf: urlPath!, encoding: .utf8)
-                let ip = "25.22.96.189"
-                let username = "gising"
+                let ip = self.hostIp
+                let username = self.hostUsername
                 let session = NMSSHSession(host: ip, andUsername: username)
                    
                 session.connect()
@@ -635,8 +653,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                         let response: String = session.channel.execute("pwd", error: &error)
                         // remove the newline and speces
                         let lines = response.components(separatedBy: "\n")
-                        print(lines[1])
-                        printSL(lines[1])
+                        printSL(lines[0])
                     }
                     session.disconnect()
                 }
@@ -644,15 +661,15 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                     self.printSL("Could not connect to: " + String(describing: ip) + " Check ip refernce.")
                 }
             }
-           catch{
+            catch{
                 printSL("Could not read rsa keyfile")
-        }
+            }
     }
 
     
-    
+    //************************************************************************************************************
+    // Timer function that loops every x ms until timer is invalidated. Each loop control data (joystick) is sent.
     @objc func fireTimer() {
-        
         loopCnt += 1
         if loopCnt >= loopTarget {
             x = 0
@@ -666,11 +683,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         else {
             sendControlData(x: x, y: y, z: z, yaw: yaw)
         }
-        
-        
     }
     
-    // **************
+    // ************
     // viewDidLoad
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -691,7 +706,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         DuttLeftButton.layer.cornerRadius = radius
         DuttRightButton.layer.cornerRadius = radius
         
-        // Indicate to user what not to push
+        // Disable some buttons
         DeactivateSticksButton.backgroundColor = UIColor.lightGray
         disableButton(DuttLeftButton)
         disableButton(DuttRightButton)
@@ -715,10 +730,11 @@ public class SticksViewController: DUXDefaultLayoutViewController {
             // Store the camera refence
             if let cam = product.camera {
                 self.camera = cam
-                image_index = self.camera?.index
+                image_index = self.camera?.index // Not used
                 // Should try to implement callback listener to progress image index.
+                
             }
-            // Store the gimbla reference
+            // Store the gimbal reference
             if let gimb = product.gimbal{
                 self.gimbal = gimb
                 self.gimbal?.setPitchRangeExtensionEnabled(true, withCompletion: {(error: Error?) in
