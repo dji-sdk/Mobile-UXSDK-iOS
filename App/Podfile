@@ -11,4 +11,5 @@ target 'UXSDK-DigMet' do
   pod 'DJIFlySafeDatabaseResource', '~> 01.00.01.17'
   pod 'iOS-Color-Picker'
   pod 'NMSSH'
+  pod 'SwiftyZeroMQ'
 end

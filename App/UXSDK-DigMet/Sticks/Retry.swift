@@ -2,6 +2,9 @@
 //  RetryManager.swift
 //
 //  Created by Justin Miller on 4/12/18.
+
+// Never used, but can be useful..
+
 import Foundation
 
 class RetryManager: NSObject {
