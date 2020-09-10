@@ -16,7 +16,6 @@
 		9771889024FCDB1A00F9ACA6 /* SticksViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9771888F24FCDB1A00F9ACA6 /* SticksViewControllerHelper.swift */; };
 		979B35DA24F0173100236AEE /* SticksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B35D924F0173100236AEE /* SticksViewController.swift */; };
 		979B35DC24F0176B00236AEE /* Sticks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 979B35DB24F0176B00236AEE /* Sticks.storyboard */; };
-		97E8639B25027559008BE4B3 /* digmet_id_rsa2 in Resources */ = {isa = PBXBuildFile; fileRef = 97E8639A25027559008BE4B3 /* digmet_id_rsa2 */; };
 		A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC252070D8CB00EFBA30 /* AppDelegate.swift */; };
 		A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A452DC262070D8CB00EFBA30 /* Assets.xcassets */; };
 		A452DC3A2070D8CC00EFBA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC272070D8CB00EFBA30 /* LaunchScreen.storyboard */; };
@@ -63,7 +62,6 @@
 		9771888F24FCDB1A00F9ACA6 /* SticksViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SticksViewControllerHelper.swift; sourceTree = "<group>"; };
 		979B35D924F0173100236AEE /* SticksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SticksViewController.swift; sourceTree = "<group>"; };
 		979B35DB24F0176B00236AEE /* Sticks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sticks.storyboard; sourceTree = "<group>"; };
-		97E8639A25027559008BE4B3 /* digmet_id_rsa2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = digmet_id_rsa2; sourceTree = "<group>"; };
 		A452DC252070D8CB00EFBA30 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A452DC262070D8CB00EFBA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A452DC282070D8CB00EFBA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 				A452DC252070D8CB00EFBA30 /* AppDelegate.swift */,
 				A452DC262070D8CB00EFBA30 /* Assets.xcassets */,
 				A452DC272070D8CB00EFBA30 /* LaunchScreen.storyboard */,
-				97E8639A25027559008BE4B3 /* digmet_id_rsa2 */,
 				A452DC2F2070D8CB00EFBA30 /* Info.plist */,
 				53EDD5F12346F384002E28AF /* ProductCommunication */,
 				53ECE276233DB88300E278CD /* Helpers */,
@@ -312,7 +309,6 @@
 				979B35DC24F0176B00236AEE /* Sticks.storyboard in Resources */,
 				53C8811121507142003F4561 /* MapWidget.storyboard in Resources */,
 				A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */,
-				97E8639B25027559008BE4B3 /* digmet_id_rsa2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
