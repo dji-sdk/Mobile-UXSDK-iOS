@@ -12,6 +12,7 @@
 		53ECE275233DB80100E278CD /* SimulationControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECE274233DB80100E278CD /* SimulationControlsViewController.swift */; };
 		53ECE278233DB8B500E278CD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECE277233DB8B500E278CD /* Helpers.swift */; };
 		939BB577A9E6EE7C5C2406C1 /* Pods_UXSDK_DigMet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A6398AEE1992AF762BA1AA /* Pods_UXSDK_DigMet.framework */; };
+		972A94B52509F7D300E00BF3 /* digmet_id_rsa in Resources */ = {isa = PBXBuildFile; fileRef = 972A94B42509F7D300E00BF3 /* digmet_id_rsa */; };
 		9738BB3E24F9197B000275FA /* Retry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9738BB3D24F9197B000275FA /* Retry.swift */; };
 		9771889024FCDB1A00F9ACA6 /* SticksViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9771888F24FCDB1A00F9ACA6 /* SticksViewControllerHelper.swift */; };
 		979B35DA24F0173100236AEE /* SticksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B35D924F0173100236AEE /* SticksViewController.swift */; };
@@ -58,6 +59,7 @@
 		53ECE277233DB8B500E278CD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5B61093CE1A207CD8C40C095 /* Pods-UXSDK-DigMet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDK-DigMet.debug.xcconfig"; path = "Target Support Files/Pods-UXSDK-DigMet/Pods-UXSDK-DigMet.debug.xcconfig"; sourceTree = "<group>"; };
 		868A4ED01E01FA53006FEE33 /* UXSDK-DigMet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UXSDK-DigMet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		972A94B42509F7D300E00BF3 /* digmet_id_rsa */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = digmet_id_rsa; sourceTree = "<group>"; };
 		9738BB3D24F9197B000275FA /* Retry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retry.swift; sourceTree = "<group>"; };
 		9771888F24FCDB1A00F9ACA6 /* SticksViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SticksViewControllerHelper.swift; sourceTree = "<group>"; };
 		979B35D924F0173100236AEE /* SticksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SticksViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				979B35D224F0165800236AEE /* Sticks */,
 				A452DC252070D8CB00EFBA30 /* AppDelegate.swift */,
 				A452DC262070D8CB00EFBA30 /* Assets.xcassets */,
+				972A94B42509F7D300E00BF3 /* digmet_id_rsa */,
 				A452DC272070D8CB00EFBA30 /* LaunchScreen.storyboard */,
 				A452DC2F2070D8CB00EFBA30 /* Info.plist */,
 				53EDD5F12346F384002E28AF /* ProductCommunication */,
@@ -302,6 +305,7 @@
 			files = (
 				A452DC3C2070D8CC00EFBA30 /* DefaultLayout.storyboard in Resources */,
 				A452DC3A2070D8CC00EFBA30 /* LaunchScreen.storyboard in Resources */,
+				972A94B52509F7D300E00BF3 /* digmet_id_rsa in Resources */,
 				A452DC3B2070D8CC00EFBA30 /* Main.storyboard in Resources */,
 				A452DC3D2070D8CC00EFBA30 /* DefaultLayoutCustomization.storyboard in Resources */,
 				A452DC442070D8CC00EFBA30 /* PanelsCollections.storyboard in Resources */,

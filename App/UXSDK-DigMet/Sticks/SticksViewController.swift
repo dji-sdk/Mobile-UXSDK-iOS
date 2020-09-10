@@ -742,7 +742,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         // sftp session muyst be silent.. add this to bashrc on server [[ $- == *i* ]] || return, found at https://unix.stackexchange.com/questions/61580/sftp-gives-an-error-received-message-too-long-and-what-is-the-reason
 
         // Pick up private key from file.
-        let urlPath = Bundle.main.url(forResource: "digmet_id_rsa2", withExtension: "")
+        let urlPath = Bundle.main.url(forResource: "digmet_id_rsa", withExtension: "")
 
         // Try privatekeysting
         do{
@@ -775,7 +775,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     //**********************************************
     // SSH into host, pwd and print result to screen
     func pwdAtServer(){
-        let urlPath = Bundle.main.url(forResource: "digmet_id_rsa2", withExtension: "")
+        let urlPath = Bundle.main.url(forResource: "digmet_id_rsa", withExtension: "")
 
            // Try privatekeysting
            do{
