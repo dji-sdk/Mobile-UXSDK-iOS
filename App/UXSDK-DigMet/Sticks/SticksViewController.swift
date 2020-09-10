@@ -10,8 +10,8 @@ import UIKit
 import DJIUXSDK
 import DJIWidget
 import NMSSH
-import SwiftyZeroMQ // https://github.com/azawawi/SwiftyZeroMQ  good examples
-// Concider SwiftyJSON
+import SwiftyZeroMQ // https://github.com/azawawi/SwiftyZeroMQ  good examples in readme
+import SwiftyJSON // https://github.com/SwiftyJSON/SwiftyJSON good examples in readme
 
 // ZeroMQ https://stackoverflow.com/questions/49204713/zeromq-swift-code-with-swiftyzeromq-recv-still-blocks-gui-text-update-even-a
 // Build ZeroMQ https://www.ics.com/blog/lets-build-zeromq-library
@@ -486,9 +486,128 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         activateSticks()
     }
 
+
+    func cleanUpString(str: String)->String{
+        let str2 = str.dropLast()
+        let str3 = str2.dropFirst()
+        let str4 = str3.replacingOccurrences(of: "\\", with: "")
+        return str4
+    }
+
+    func uglyfyString(_ str: String)->String{
+        let str2 = str.replacingOccurrences(of: "\"", with: "\\\"")
+        let str3 = "\"" + str2 + "\""
+        return str3
+    }
+
+    func getJsonObject(uglyString: String) -> JSON {
+        let str = self.cleanUpString(str: uglyString)
+        guard let data = str.data(using: .utf8) else {return JSON()}
+        guard let json = try? JSON(data: data) else {return JSON()}
+        return json
+    }
+
+    func createJsonAck(_ fcnString: String) -> JSON {
+        var json = JSON()
+        json["fcn"] = JSON("ack")
+        json["arg"] = JSON(fcnString)
+        return json
+    }
+
+    func createJsonNack(_ str: String) -> JSON {
+        var json = JSON()
+        json["fcn"] = JSON("nack")
+        json["arg"] = JSON(str)
+        return json
+    }
+
+    func getJsonString(json: JSON) -> String{
+        let _str = json.rawString(.utf8, options: .withoutEscapingSlashes)!
+        let str = uglyfyString(_str)
+        return str
+    }
+    
+    func readSocket(_ socket: SwiftyZeroMQ.Socket){
+        do {
+            let _message: String? = try socket.recv()!
+            let json_m = getJsonObject(uglyString: _message!)
+              
+               // Parse and create an ack/nack
+            var json_r = JSON()
+            switch json_m["fcn"]{
+                case "take_picture":
+                   json_r = createJsonAck("take_picture")
+                   // Code to take a picture!
+                case "goto":
+                   json_r = createJsonAck("goto")
+                   // Code to goto
+                case "disconnect":
+                    return
+                default:
+                    json_r = createJsonNack("check API")
+                   // Code to handle faulty message
+               }
+               
+               let reply_str = getJsonString(json: json_r)
+               
+               try socket.send(string: reply_str)
+
+           }
+        catch {
+               print(error)
+        }
+        readSocket(socket)
+        }
+    
     //***************************************************************************************************************
     // Sends a command to go body right for some time at some speed per settings. Cancel any current joystick command
     @IBAction func DuttRightPressed(_ sender: UIButton) {
+        do {
+            // Define a TCP endpoint along with the text that we are going to send/recv
+            let endpoint     = "tcp://*:1234"
+            //let textToBeSent = "Hello world"
+
+            // Context
+            let context = try SwiftyZeroMQ.Context()
+
+            // Reply socket
+            let replier = try context.socket(.reply)
+            try replier.bind(endpoint)
+            self.printSL("Did bind to socket")
+           
+            
+            let _message: String? = try replier.recv()!
+
+            
+            let json_m = getJsonObject(uglyString: _message!)
+           
+            // Parse and create an ack/nack
+            var json_r = JSON()
+            switch json_m["fcn"]{
+                case "take_picture":
+                    json_r = createJsonAck("take_picture")
+                    // Code to take a picture!
+                case "goto":
+                    json_r = createJsonAck("goto")
+                    // Code to goto
+                default:
+                    json_r = createJsonNack("check API")
+                    // Code to handle faulty message
+                }
+            
+            let reply_str = getJsonString(json: json_r)
+            
+            try replier.send(string: reply_str)
+            
+            readSocket(replier)
+
+        } catch {
+            print(error)
+        }
+        
+        
+        return
+        
         // Set the control command
         //previewImageView.image = nil
         y = self.horizontalSpeed/100
@@ -498,9 +617,29 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         timer = Timer.scheduledTimer(timeInterval: sampleTime/1000, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
 
+
     //***************************************************************************************************************
     // Sends a command to go body left for some time at some speed per settings. Cancel any current joystick command
     @IBAction func DuttLeftPressed(_ sender: UIButton) {
+
+
+        var reply = JSON()
+        reply["fcn"] = JSON("ack")
+        reply["arg"] = JSON("take_picture")
+        print("some reply stuff: " + reply["arg"].stringValue)
+
+        let str = "\"{\\\"fcn\\\": \\\"ack\\\"}\""
+        print("my target str: " + str)
+        
+        let _reply_str = reply.rawString(.utf8, options: .withoutEscapingSlashes)!
+        print("my json rawstring: " + _reply_str)
+        let reply_str = uglyfyString(_reply_str)
+        print("my json string " + reply_str)
+        
+
+        
+        
+        
         // Load image from library to be able to test scp without drone conencted. Could add dummy pic to App assets instead.
         self.lastImage = loadUIImageFromPhotoLibrary()! // TODO, unsafe code
         saveImageDataToApp(imageData: self.lastImage.jpegData(compressionQuality: 1)!, filename: "From_album.jpg")

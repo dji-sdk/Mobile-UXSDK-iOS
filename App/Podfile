@@ -12,4 +12,5 @@ target 'UXSDK-DigMet' do
   pod 'iOS-Color-Picker'
   pod 'NMSSH'
   pod 'SwiftyZeroMQ'
+  pod 'SwiftyJSON'
 end
