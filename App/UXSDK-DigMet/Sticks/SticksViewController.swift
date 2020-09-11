@@ -31,6 +31,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     let hostIp = "25.22.96.189" // Use dict or something to store several ip adresses
     let hostUsername = "gising"
     let hostPath = "/Users/gising/temp/"
+    var context: SwiftyZeroMQ.Context = try! SwiftyZeroMQ.Context()
+    var replyEnable = false
+    let replyEndpoint = "tcp://*:1234"
     
     var pitchRangeExtension_set: Bool = false
     var nextGimbalPitch: Int = 0
@@ -39,7 +42,6 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var cameraModeReference: DJICameraMode = DJICameraMode.playback
     var cameraModeAcitve: DJICameraMode = DJICameraMode.shootPhoto
     
-    var testar = ""
     
     var x: Float = 0.0
     var y: Float = 0.0
@@ -62,6 +64,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var lastImageURL = ""
     var lastImageData: Data = Data.init()
     var lastImageDataURL: URL?
+    
+    //var helperView = myView(coder: NSObject)
 
     //*********************
     // IBOutlet declaration: Labels
@@ -91,10 +95,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     }
     
     
-    
-    
-    
-    
+
     
     //**********************
     // Fucntion declarations
@@ -174,7 +175,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         // Feed rotate object to Gimbal method rotate
         self.gimbal?.rotate(with: gimbal_rotation, completion: { (error: Error?) in
             if error != nil {
-                self.statusLabel.text = "Gimbal rotation" + String(describing: error)
+                self.printSL("Gimbal rotation" + String(describing: error))
             }
         })
     }
@@ -231,7 +232,6 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                             if succsess{
                                 completionHandler(true) // refers to inital completionHandler
                             }
-                            
                         })
                     })
                 }
@@ -243,7 +243,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     //****************************************************
     // Print to terminal and update status label on screen
     func printSL(_ str: String){
-        self.statusLabel.text = str
+        Dispatch.main{
+            self.statusLabel.text = str
+        }
         print(str)
     }
     
@@ -392,6 +394,97 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         })
     }
 
+    // Scp image saved to app memory to host. Connect using RSA-keys. SFTP could be faster. Also increse buffer size could have impact. Approx 45s from photo to file on server over vpn, 12s over local network..
+    func scpToServer(completion: @escaping (Bool) -> Void){
+           // OSX acitvate sftp server by enablign file sharing in system prefs
+           // sftp session muyst be silent.. add this to bashrc on server [[ $- == *i* ]] || return, found at https://unix.stackexchange.com/questions/61580/sftp-gives-an-error-received-message-too-long-and-what-is-the-reason
+
+       // Pick up private key from file.
+       let urlPath = Bundle.main.url(forResource: "digmet_id_rsa", withExtension: "")
+
+       // Try privatekeysting
+       do{
+        let privatekeystring = try String(contentsOf: urlPath!, encoding: .utf8)
+        let ip = self.hostIp
+        let username = self.hostUsername
+        let session = NMSSHSession(host: ip, andUsername: username)
+       
+        session.connect()
+        if session.isConnected == true{
+            session.authenticateBy(inMemoryPublicKey: "", privateKey: privatekeystring, andPassword: nil)
+            if session.isAuthorized == true {
+                self.printSL("Uploading image to server...")
+                // Upload Data object
+                self.printSL("path: " + self.lastImageDataURL!.path)
+                session.channel.uploadFile(self.lastImageDataURL!.path, to: self.hostPath)
+                self.printSL("File is uploaded")
+            }
+            session.disconnect()
+            completion(true)
+        }
+        else{
+            self.printSL("Could not connect to: " + String(describing: ip) + " Check ip refernce.")
+            completion(false)
+        }
+       }
+       catch {
+        print("Private keystring could not be loaded from file")
+        completion(false)
+        }
+    }
+
+       //**********************************************
+       // SSH into host, pwd and print result to screen
+       func pwdAtServer(){
+           let urlPath = Bundle.main.url(forResource: "digmet_id_rsa", withExtension: "")
+
+              // Try privatekeysting
+              do{
+                   let privatekeystring = try String(contentsOf: urlPath!, encoding: .utf8)
+                   let ip = self.hostIp
+                   let username = self.hostUsername
+                   let session = NMSSHSession(host: ip, andUsername: username)
+                      
+                   session.connect()
+                   if session.isConnected == true{
+                       session.authenticateBy(inMemoryPublicKey: "", privateKey: privatekeystring, andPassword: nil)
+                       if session.isAuthorized == true {
+                           var error: NSError?
+                           let response: String = session.channel.execute("pwd", error: &error)
+                           // remove the newline and speces
+                           let lines = response.components(separatedBy: "\n")
+                           printSL(lines[0])
+                       }
+                       session.disconnect()
+                   }
+                   else{
+                       self.printSL("Could not connect to: " + String(describing: ip) + " Check ip refernce.")
+                   }
+               }
+               catch{
+                   printSL("Could not read rsa keyfile")
+               }
+       }
+
+       
+       //************************************************************************************************************
+       // Timer function that loops every x ms until timer is invalidated. Each loop control data (joystick) is sent.
+       @objc func fireTimer() {
+           loopCnt += 1
+           if loopCnt >= loopTarget {
+               x = 0
+               y = 0
+               z = 0
+               yaw = 0
+               sendControlData(x: x, y: y, z: z, yaw: yaw)
+               timer?.invalidate()
+               loopCnt = 0
+           }
+           else {
+               sendControlData(x: x, y: y, z: z, yaw: yaw)
+           }
+       }
+    
     //*****************************************************
     // retreive the gimbal pitch. DOES CRASH THE APP! TODO
     func getGimbalAttitude(){
@@ -446,6 +539,157 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         })
     }
     
+    //*************************
+    // Save photo to app memory
+    func savePhoto(completionHandler: @escaping (Bool) -> Void){
+        // Download last image taken by drone. From on board sdCard to app memory to
+        cameraSetMode(DJICameraMode.mediaDownload, 3, completionHandler: {(success: Bool) in
+            if success {
+                self.getImage(completionHandler: {(new_success: Bool) in
+                    if new_success{
+                        self.printSL("Photo downloaded and saved to App memory")
+                        completionHandler(true)
+                    }
+                    else{
+                        completionHandler(false)
+                        self.printSL("Failed downloading imageData")
+                    }
+                })
+            }
+            else{
+                self.printSL("Set camera mode failed. Interrupting camera too early?")
+                completionHandler(false)
+            }
+        })
+    }
+    
+    
+    // ******************************
+    // Initiate the zmq reply thread.
+    // MARK: ZMQ
+    func startReplyThread()->Bool{
+        do{
+            // Reply socket
+            let replier = try context.socket(.reply)
+            try replier.bind(self.replyEndpoint)
+            self.printSL("Did bind to socket")
+            self.replyEnable = true
+            
+            Dispatch.background{
+                self.readSocket(replier)
+            }
+            return true
+        }
+        catch{
+            self.printSL("Could not bind to socket")
+            return false
+        }
+    }
+
+    // ****************************************************
+    // zmq reply thread that reads command from applictaion
+    func readSocket(_ socket: SwiftyZeroMQ.Socket){
+        while self.replyEnable{
+            do {
+                let _message: String? = try socket.recv()!
+                if self.replyEnable == false{ // Since code can halt on socket.recv(), check if input is still desired
+                    return
+                }
+                
+                // Parse and create an ack/nack
+                let json_m = getJsonObject(uglyString: _message!)
+                var json_r = JSON()
+            
+                switch json_m["fcn"]{
+                case "arm_take_off":
+                    json_r = createJsonAck("arm_take_off")
+                    self.printSL("Received cmd arm_take_off")
+                    // Arm take off code
+                case "land":
+                    json_r = createJsonAck("land")
+                    self.printSL("Received cmd land")
+                    // Land code
+                case "set_vel_body":
+                    json_r = createJsonAck("set_vel_body")
+                    self.printSL("Received cmd set_vel_body")
+                    // Set velocity code
+                case "set_yaw":
+                    json_r = createJsonAck("set_yaw")
+                    self.printSL("Received cmd set_yaw")
+                    // Set yaw code
+                case "upload_mission_xyz":
+                    json_r = createJsonAck("upload_mission_xyz")
+                    self.printSL("Received cmd upload_mission_xyz")
+                    // Upload mission xyz code
+                case "gogo_xyz":
+                    json_r = createJsonAck("gogo_xyz")
+                    self.printSL("Received cmd gogo_xyz")
+                    // Gogo xyz code
+                case "take_picture":
+                    json_r = createJsonAck("take_picture")
+                    self.printSL("Received cmd take_picture")
+                    // Take picture cmd
+                    Dispatch.main{
+                        self.captureImage()
+                        // Background process continues without delay (hopp-hej)
+                    }
+                case "download_picture":
+                    json_r = createJsonAck("download_picture")
+                    self.printSL("Received cmd download_picture")
+                    // Download picture code
+                    Dispatch.main{
+                        // First download from sdCard
+                        self.savePhoto(completionHandler: {(saveSuccess) in
+                            if saveSuccess {
+                                    // Then scp to server, put code in completion block
+                                self.scpToServer(completion: {(scpSuccess) in
+                                    if scpSuccess{
+                                        self.printSL("Scp to server completed")
+                                        self.printSL("Send image info on PUB socket")
+                                    }
+                                    else{
+                                        self.printSL("Scp to server failed. Send on PUB?")
+                                    }
+                                    })
+                            }
+                            else{
+                                self.printSL("Failed to scp file to server")
+                            }
+                        })
+                    }
+                case "gimbal_set":
+                    json_r = createJsonAck("gimbal_set")
+                    self.printSL("Received cmd gimbal_set")
+                    // Gimbal set code
+                case "info_request":
+                    json_r = createJsonAck("info_request")
+                    self.printSL("Received cmd info_request")
+                    // Infor request code
+                case "data_stream":
+                    json_r = createJsonAck("data_stream")
+                    self.printSL("Received cmd data_stream")
+                    // Data stream code
+                case "disconnect":
+                    json_r = createJsonAck("disconnect")
+                    self.printSL("Received cmd disconnect")
+                    // Disconnect code
+                    return
+                default:
+                    json_r = createJsonNack("API call not recognized")
+                    self.printSL("API call not recognized: " + json_m["fcn"].stringValue)
+                    // Code to handle faulty message
+                }
+                // Create string from json and send reply
+                let reply_str = getJsonString(json: json_r)
+                try socket.send(string: reply_str)
+               }
+            catch {
+                self.printSL(String(describing: error))
+            }
+        }
+        return
+    }
+    
     
 //***************
 // Button actions
@@ -470,6 +714,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     // Exit view, but first deactivate Sticks (which invalidates fireTimer-timer to stop any joystick command
     @IBAction func xclose(_ sender: UIButton) {
         deactivateSticks()
+        self.replyEnable = false
+//        _ = try? self.context.terminate()
+        _ = try? self.context.close()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -487,127 +734,13 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     }
 
 
-    func cleanUpString(str: String)->String{
-        let str2 = str.dropLast()
-        let str3 = str2.dropFirst()
-        let str4 = str3.replacingOccurrences(of: "\\", with: "")
-        return str4
-    }
-
-    func uglyfyString(_ str: String)->String{
-        let str2 = str.replacingOccurrences(of: "\"", with: "\\\"")
-        let str3 = "\"" + str2 + "\""
-        return str3
-    }
-
-    func getJsonObject(uglyString: String) -> JSON {
-        let str = self.cleanUpString(str: uglyString)
-        guard let data = str.data(using: .utf8) else {return JSON()}
-        guard let json = try? JSON(data: data) else {return JSON()}
-        return json
-    }
-
-    func createJsonAck(_ fcnString: String) -> JSON {
-        var json = JSON()
-        json["fcn"] = JSON("ack")
-        json["arg"] = JSON(fcnString)
-        return json
-    }
-
-    func createJsonNack(_ str: String) -> JSON {
-        var json = JSON()
-        json["fcn"] = JSON("nack")
-        json["arg"] = JSON(str)
-        return json
-    }
-
-    func getJsonString(json: JSON) -> String{
-        let _str = json.rawString(.utf8, options: .withoutEscapingSlashes)!
-        let str = uglyfyString(_str)
-        return str
-    }
+ 
     
-    func readSocket(_ socket: SwiftyZeroMQ.Socket){
-        do {
-            let _message: String? = try socket.recv()!
-            let json_m = getJsonObject(uglyString: _message!)
-              
-               // Parse and create an ack/nack
-            var json_r = JSON()
-            switch json_m["fcn"]{
-                case "take_picture":
-                   json_r = createJsonAck("take_picture")
-                   // Code to take a picture!
-                case "goto":
-                   json_r = createJsonAck("goto")
-                   // Code to goto
-                case "disconnect":
-                    return
-                default:
-                    json_r = createJsonNack("check API")
-                   // Code to handle faulty message
-               }
-               
-               let reply_str = getJsonString(json: json_r)
-               
-               try socket.send(string: reply_str)
 
-           }
-        catch {
-               print(error)
-        }
-        readSocket(socket)
-        }
     
     //***************************************************************************************************************
     // Sends a command to go body right for some time at some speed per settings. Cancel any current joystick command
     @IBAction func DuttRightPressed(_ sender: UIButton) {
-        do {
-            // Define a TCP endpoint along with the text that we are going to send/recv
-            let endpoint     = "tcp://*:1234"
-            //let textToBeSent = "Hello world"
-
-            // Context
-            let context = try SwiftyZeroMQ.Context()
-
-            // Reply socket
-            let replier = try context.socket(.reply)
-            try replier.bind(endpoint)
-            self.printSL("Did bind to socket")
-           
-            
-            let _message: String? = try replier.recv()!
-
-            
-            let json_m = getJsonObject(uglyString: _message!)
-           
-            // Parse and create an ack/nack
-            var json_r = JSON()
-            switch json_m["fcn"]{
-                case "take_picture":
-                    json_r = createJsonAck("take_picture")
-                    // Code to take a picture!
-                case "goto":
-                    json_r = createJsonAck("goto")
-                    // Code to goto
-                default:
-                    json_r = createJsonNack("check API")
-                    // Code to handle faulty message
-                }
-            
-            let reply_str = getJsonString(json: json_r)
-            
-            try replier.send(string: reply_str)
-            
-            readSocket(replier)
-
-        } catch {
-            print(error)
-        }
-        
-        
-        return
-        
         // Set the control command
         //previewImageView.image = nil
         y = self.horizontalSpeed/100
@@ -621,25 +754,6 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     //***************************************************************************************************************
     // Sends a command to go body left for some time at some speed per settings. Cancel any current joystick command
     @IBAction func DuttLeftPressed(_ sender: UIButton) {
-
-
-        var reply = JSON()
-        reply["fcn"] = JSON("ack")
-        reply["arg"] = JSON("take_picture")
-        print("some reply stuff: " + reply["arg"].stringValue)
-
-        let str = "\"{\\\"fcn\\\": \\\"ack\\\"}\""
-        print("my target str: " + str)
-        
-        let _reply_str = reply.rawString(.utf8, options: .withoutEscapingSlashes)!
-        print("my json rawstring: " + _reply_str)
-        let reply_str = uglyfyString(_reply_str)
-        print("my json string " + reply_str)
-        
-
-        
-        
-        
         // Load image from library to be able to test scp without drone conencted. Could add dummy pic to App assets instead.
         self.lastImage = loadUIImageFromPhotoLibrary()! // TODO, unsafe code
         saveImageDataToApp(imageData: self.lastImage.jpegData(compressionQuality: 1)!, filename: "From_album.jpg")
@@ -693,25 +807,15 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         })
     }
     
+
     //*************************************************************************
     // Download last imageData from sdCard and save to app memory. Save URL to self.
     @IBAction func savePhotoButton(_ sender: Any) {
-        // Download last image taken by drone. From on board sdCard to app memory to
-        cameraSetMode(DJICameraMode.mediaDownload, 3, completionHandler: {(success: Bool) in
-            if success {
-                self.getImage(completionHandler: {(new_success: Bool) in
-                    if new_success{
-                        self.printSL("Photo downloaded and saved to App memory")
-                    }
-                    else{
-                        self.printSL("Failed downloading imageData")
-                    }
-                })
+        savePhoto(){(success) in
+            if success{
+                self.printSL("Phot successfullt saved to app memory")
             }
-            else{
-                self.printSL("Set camera mode failed. Interrupting camera too early?")
-            }
-        })
+        }
     }
     
     //***************************************************************************
@@ -729,100 +833,21 @@ public class SticksViewController: DUXDefaultLayoutViewController {
             self.printSL("No image to upload")
         }
         else{
-            self.scpToServer()
+            self.scpToServer(completion: {(success) in
+                if success{
+                    self.printSL("scp to server complete")
+                }
+                else{
+                    self.printSL("scp to server failed")
+                }
+            })
         }
     }
     
     
 
     //************************************************************************************************************************************************************************************************************
-    // Scp image saved to app memory to host. Connect using RSA-keys. SFTP could be faster. Also increse buffer size could have impact. Approx 45s from photo to file on server over vpn, 12s over local network..
-    func scpToServer(){
-        // OSX acitvate sftp server by enablign file sharing in system prefs
-        // sftp session muyst be silent.. add this to bashrc on server [[ $- == *i* ]] || return, found at https://unix.stackexchange.com/questions/61580/sftp-gives-an-error-received-message-too-long-and-what-is-the-reason
-
-        // Pick up private key from file.
-        let urlPath = Bundle.main.url(forResource: "digmet_id_rsa", withExtension: "")
-
-        // Try privatekeysting
-        do{
-            let privatekeystring = try String(contentsOf: urlPath!, encoding: .utf8)
-            let ip = self.hostIp
-            let username = self.hostUsername
-            let session = NMSSHSession(host: ip, andUsername: username)
-            
-            session.connect()
-            if session.isConnected == true{
-                session.authenticateBy(inMemoryPublicKey: "", privateKey: privatekeystring, andPassword: nil)
-                if session.isAuthorized == true {
-                    self.printSL("Uploading image to server...")
-                    // Upload Data object
-                    self.printSL("path: " + self.lastImageDataURL!.path)
-                    session.channel.uploadFile(self.lastImageDataURL!.path, to: self.hostPath)
-                    self.printSL("File is uploaded")
-                }
-                session.disconnect()
-            }
-            else{
-                self.printSL("Could not connect to: " + String(describing: ip) + " Check ip refernce.")
-            }
-        }
-        catch {
-            print("Private keystring could not be loaded from file")
-        }
-    }
-
-    //**********************************************
-    // SSH into host, pwd and print result to screen
-    func pwdAtServer(){
-        let urlPath = Bundle.main.url(forResource: "digmet_id_rsa", withExtension: "")
-
-           // Try privatekeysting
-           do{
-                let privatekeystring = try String(contentsOf: urlPath!, encoding: .utf8)
-                let ip = self.hostIp
-                let username = self.hostUsername
-                let session = NMSSHSession(host: ip, andUsername: username)
-                   
-                session.connect()
-                if session.isConnected == true{
-                    session.authenticateBy(inMemoryPublicKey: "", privateKey: privatekeystring, andPassword: nil)
-                    if session.isAuthorized == true {
-                        var error: NSError?
-                        let response: String = session.channel.execute("pwd", error: &error)
-                        // remove the newline and speces
-                        let lines = response.components(separatedBy: "\n")
-                        printSL(lines[0])
-                    }
-                    session.disconnect()
-                }
-                else{
-                    self.printSL("Could not connect to: " + String(describing: ip) + " Check ip refernce.")
-                }
-            }
-            catch{
-                printSL("Could not read rsa keyfile")
-            }
-    }
-
-    
-    //************************************************************************************************************
-    // Timer function that loops every x ms until timer is invalidated. Each loop control data (joystick) is sent.
-    @objc func fireTimer() {
-        loopCnt += 1
-        if loopCnt >= loopTarget {
-            x = 0
-            y = 0
-            z = 0
-            yaw = 0
-            sendControlData(x: x, y: y, z: z, yaw: yaw)
-            timer?.invalidate()
-            loopCnt = 0
-        }
-        else {
-            sendControlData(x: x, y: y, z: z, yaw: yaw)
-        }
-    }
+   
     
     // ************
     // viewDidLoad
@@ -859,7 +884,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 self.flightController = fc
                 // Default the coordinate system to body and reference yaw to heading
                 self.flightController?.setFlightOrientationMode(DJIFlightOrientationMode.aircraftHeading, withCompletion: { (error: Error?) in
-                    print("Error when setting OrientationMode")})
+                    self.printSL("Error when setting OrientationMode")})
                 // Set properties of VirtualSticks
                 self.flightController?.rollPitchCoordinateSystem = DJIVirtualStickFlightCoordinateSystem.body
                 self.flightController?.yawControlMode = DJIVirtualStickYawControlMode.angle
@@ -872,6 +897,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 image_index = self.camera?.index // Not used
                 // Should try to implement callback listener to progress image index.
                 
+            }
+            else{
+                self.printSL("Camera not loaded")
             }
             // Store the gimbal reference
             if let gimb = product.gimbal{
@@ -891,6 +919,26 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                         self.statusLabel.text = "Range extension not set"}
                 })
             }
+            else{
+                self.printSL("Gimbal not loaded")
+            }
+            
+        }
+        else{
+            self.printSL("Aircraft not loaded")
+        }
+        
+        // Start reply socket thread
+//        if self.replyEnable  {
+//            self.replyEnable = false
+//            self.printSL("Reply thread stopped")
+//        }
+//        else{
+        if startReplyThread(){
+            self.printSL("Reply thread successfully started")
+        }
+        else{
+            self.printSL("Reply thread could not be started, check VPN connection")
         }
     }
 
