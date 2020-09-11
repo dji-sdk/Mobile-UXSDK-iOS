@@ -28,7 +28,7 @@ Podfile.lock
 
 *.xcworkspace
 
-*_ida_rsa
+*_id_rsa
 
 ## Obj-C/Swift specific
 *.hmap
