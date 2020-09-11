@@ -12,6 +12,9 @@
 		53ECE275233DB80100E278CD /* SimulationControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECE274233DB80100E278CD /* SimulationControlsViewController.swift */; };
 		53ECE278233DB8B500E278CD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECE277233DB8B500E278CD /* Helpers.swift */; };
 		939BB577A9E6EE7C5C2406C1 /* Pods_UXSDK_DigMet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A6398AEE1992AF762BA1AA /* Pods_UXSDK_DigMet.framework */; };
+		971DFA1D250B4B9900FD6185 /* zmqHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971DFA1C250B4B9800FD6185 /* zmqHelper.swift */; };
+		971DFA1F250B4BBE00FD6185 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971DFA1E250B4BBE00FD6185 /* Extensions.swift */; };
+		971DFA21250B738C00FD6185 /* AircraftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971DFA20250B738C00FD6185 /* AircraftHelper.swift */; };
 		972A94B52509F7D300E00BF3 /* digmet_id_rsa in Resources */ = {isa = PBXBuildFile; fileRef = 972A94B42509F7D300E00BF3 /* digmet_id_rsa */; };
 		9738BB3E24F9197B000275FA /* Retry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9738BB3D24F9197B000275FA /* Retry.swift */; };
 		9771889024FCDB1A00F9ACA6 /* SticksViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9771888F24FCDB1A00F9ACA6 /* SticksViewControllerHelper.swift */; };
@@ -59,6 +62,9 @@
 		53ECE277233DB8B500E278CD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5B61093CE1A207CD8C40C095 /* Pods-UXSDK-DigMet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDK-DigMet.debug.xcconfig"; path = "Target Support Files/Pods-UXSDK-DigMet/Pods-UXSDK-DigMet.debug.xcconfig"; sourceTree = "<group>"; };
 		868A4ED01E01FA53006FEE33 /* UXSDK-DigMet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UXSDK-DigMet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		971DFA1C250B4B9800FD6185 /* zmqHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zmqHelper.swift; sourceTree = "<group>"; };
+		971DFA1E250B4BBE00FD6185 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		971DFA20250B738C00FD6185 /* AircraftHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftHelper.swift; sourceTree = "<group>"; };
 		972A94B42509F7D300E00BF3 /* digmet_id_rsa */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = digmet_id_rsa; sourceTree = "<group>"; };
 		9738BB3D24F9197B000275FA /* Retry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retry.swift; sourceTree = "<group>"; };
 		9771888F24FCDB1A00F9ACA6 /* SticksViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SticksViewControllerHelper.swift; sourceTree = "<group>"; };
@@ -209,9 +215,12 @@
 			isa = PBXGroup;
 			children = (
 				979B35D924F0173100236AEE /* SticksViewController.swift */,
+				971DFA1E250B4BBE00FD6185 /* Extensions.swift */,
+				971DFA1C250B4B9800FD6185 /* zmqHelper.swift */,
 				9738BB3D24F9197B000275FA /* Retry.swift */,
 				979B35DB24F0176B00236AEE /* Sticks.storyboard */,
 				9771888F24FCDB1A00F9ACA6 /* SticksViewControllerHelper.swift */,
+				971DFA20250B738C00FD6185 /* AircraftHelper.swift */,
 			);
 			path = Sticks;
 			sourceTree = "<group>";
@@ -400,6 +409,7 @@
 			files = (
 				9771889024FCDB1A00F9ACA6 /* SticksViewControllerHelper.swift in Sources */,
 				53C8811021507142003F4561 /* CustomMapViewController.swift in Sources */,
+				971DFA1D250B4B9900FD6185 /* zmqHelper.swift in Sources */,
 				A452DC452070D8CC00EFBA30 /* PanelsCollectionsViewController.swift in Sources */,
 				A452DC412070D8CC00EFBA30 /* MainViewController.swift in Sources */,
 				A452DC462070D8CC00EFBA30 /* ProductCommunicationService.swift in Sources */,
@@ -411,6 +421,8 @@
 				53ECE275233DB80100E278CD /* SimulationControlsViewController.swift in Sources */,
 				53ECE278233DB8B500E278CD /* Helpers.swift in Sources */,
 				A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */,
+				971DFA1F250B4BBE00FD6185 /* Extensions.swift in Sources */,
+				971DFA21250B738C00FD6185 /* AircraftHelper.swift in Sources */,
 				A452DC3F2070D8CC00EFBA30 /* DefaultLayoutViewController.swift in Sources */,
 				979B35DA24F0173100236AEE /* SticksViewController.swift in Sources */,
 			);
