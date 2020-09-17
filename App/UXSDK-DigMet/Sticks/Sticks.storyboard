@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1m5-5v-g5t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1m5-5v-g5t">
     <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -211,29 +211,68 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86X-go-OY0" userLabel="posx Label">
+                                <rect key="frame" x="20" y="225" width="30" height="20"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="LaU-C5-X54"/>
+                                    <constraint firstAttribute="width" constant="30" id="o0g-rP-p1Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="z" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vc5-aK-bMl" userLabel="posz Label">
+                                <rect key="frame" x="20" y="255" width="30" height="20"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="psE-7W-AaG"/>
+                                    <constraint firstAttribute="width" constant="30" id="yKC-g8-h8l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3b-Yq-ZBD" userLabel="posy Label">
+                                <rect key="frame" x="60" y="225" width="30" height="20"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="kQn-WX-VVt"/>
+                                    <constraint firstAttribute="width" constant="30" id="uKS-sk-vfA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Vc5-aK-bMl" firstAttribute="leading" secondItem="Ca7-cF-Tls" secondAttribute="leadingMargin" id="0Z0-WH-13k"/>
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="bottom" secondItem="Bi2-jk-BBv" secondAttribute="bottom" constant="50" id="5qt-uL-73B"/>
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="trailing" secondItem="Kaq-fT-XXy" secondAttribute="trailing" constant="5" id="8Nu-kp-6HP"/>
                             <constraint firstItem="wmX-bV-6D7" firstAttribute="leading" secondItem="bOD-EF-bVN" secondAttribute="trailing" constant="60" id="9oa-FL-KRf"/>
+                            <constraint firstItem="86X-go-OY0" firstAttribute="centerX" secondItem="Vc5-aK-bMl" secondAttribute="centerX" id="Aeg-eW-fHc"/>
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="trailing" secondItem="UNw-VT-nQ1" secondAttribute="trailing" constant="60" id="DEc-ef-PUh"/>
                             <constraint firstItem="UNw-VT-nQ1" firstAttribute="top" secondItem="S6R-gz-0iS" secondAttribute="top" constant="100" id="FaN-hP-kuK"/>
                             <constraint firstItem="nCp-Wv-OcA" firstAttribute="leading" secondItem="bOD-EF-bVN" secondAttribute="leading" id="G9D-Sl-2PN"/>
                             <constraint firstItem="P6B-EK-tZs" firstAttribute="leading" secondItem="S6R-gz-0iS" secondAttribute="leading" constant="10" id="Hv2-fh-aam"/>
+                            <constraint firstItem="E3b-Yq-ZBD" firstAttribute="leading" secondItem="86X-go-OY0" secondAttribute="trailing" constant="10" id="Ltw-4T-k0h"/>
                             <constraint firstItem="wmX-bV-6D7" firstAttribute="top" secondItem="S6R-gz-0iS" secondAttribute="top" constant="30" id="M2q-Ei-Myb"/>
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="bottom" secondItem="fAl-O7-PRU" secondAttribute="bottom" constant="100" id="Mrs-0Y-fgD"/>
                             <constraint firstItem="bOD-EF-bVN" firstAttribute="top" secondItem="S6R-gz-0iS" secondAttribute="top" constant="100" id="Nkl-DV-EM3"/>
+                            <constraint firstItem="S6R-gz-0iS" firstAttribute="bottom" secondItem="Vc5-aK-bMl" secondAttribute="bottom" constant="100" id="OwO-YW-8uF"/>
                             <constraint firstItem="NUQ-U2-Rs4" firstAttribute="leading" secondItem="S6R-gz-0iS" secondAttribute="leading" constant="100" id="SFh-KW-rlZ"/>
                             <constraint firstItem="wmX-bV-6D7" firstAttribute="centerX" secondItem="Ca7-cF-Tls" secondAttribute="centerX" id="Szu-6J-g7k"/>
                             <constraint firstItem="nCp-Wv-OcA" firstAttribute="width" secondItem="bOD-EF-bVN" secondAttribute="width" id="T1g-G4-niz"/>
                             <constraint firstItem="bOD-EF-bVN" firstAttribute="leading" secondItem="S6R-gz-0iS" secondAttribute="leading" constant="60" id="UvI-UW-uz7"/>
                             <constraint firstItem="Bi2-jk-BBv" firstAttribute="centerX" secondItem="Ca7-cF-Tls" secondAttribute="centerX" id="XoR-3b-krE"/>
+                            <constraint firstItem="E3b-Yq-ZBD" firstAttribute="centerY" secondItem="86X-go-OY0" secondAttribute="centerY" id="ZBJ-Bp-tKe"/>
                             <constraint firstItem="P6B-EK-tZs" firstAttribute="top" secondItem="S6R-gz-0iS" secondAttribute="top" constant="10" id="aEd-3e-7Ov"/>
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="bottom" secondItem="NUQ-U2-Rs4" secondAttribute="bottom" constant="100" id="cRn-xN-Vg5"/>
                             <constraint firstItem="S6R-gz-0iS" firstAttribute="trailing" secondItem="fAl-O7-PRU" secondAttribute="trailing" constant="100" id="dke-HC-xqY"/>
                             <constraint firstItem="Kaq-fT-XXy" firstAttribute="top" secondItem="Ca7-cF-Tls" secondAttribute="top" constant="2" id="qmN-p5-nY9"/>
+                            <constraint firstItem="Vc5-aK-bMl" firstAttribute="top" secondItem="86X-go-OY0" secondAttribute="bottom" constant="10" id="uzP-qd-gV3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S6R-gz-0iS"/>
                     </view>
@@ -246,6 +285,9 @@
                         <outlet property="controlPeriodStepperButton" destination="Igf-k9-fHH" id="Wij-Cg-Xj7"/>
                         <outlet property="horizontalSpeedLabel" destination="ua3-Ab-nWd" id="Bc3-h0-faE"/>
                         <outlet property="horizontalSpeedStepperButton" destination="y2l-zc-F4X" id="GCk-Om-kKk"/>
+                        <outlet property="posXLabel" destination="86X-go-OY0" id="5SH-YH-1vm"/>
+                        <outlet property="posYLabel" destination="E3b-Yq-ZBD" id="tRt-a8-KWz"/>
+                        <outlet property="posZLabel" destination="Vc5-aK-bMl" id="umQ-Bo-DW3"/>
                         <outlet property="previewImageView" destination="Kaq-fT-XXy" id="CNB-Ss-eWT"/>
                         <outlet property="savePhotoButton" destination="feq-2q-bhI" id="fCA-DJ-2bv"/>
                         <outlet property="statusLabel" destination="YnT-Iq-vJj" id="d7P-su-qyu"/>

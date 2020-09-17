@@ -34,6 +34,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var context: SwiftyZeroMQ.Context = try! SwiftyZeroMQ.Context()
     var replyEnable = false
     let replyEndpoint = "tcp://*:1234"
+    var sshAllocator = Allocator(name: "ssh")
     
     var pitchRangeExtension_set: Bool = false
     var nextGimbalPitch: Int = 0
@@ -41,6 +42,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var gimbalcapability: [AnyHashable: Any]? = [:]
     var cameraModeReference: DJICameraMode = DJICameraMode.playback
     var cameraModeAcitve: DJICameraMode = DJICameraMode.shootPhoto
+    var cameraAllocator = Allocator(name: "camera")
     
     var copter = Copter()
    
@@ -48,6 +50,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var image_index: UInt?
     
     var lastImage: UIImage = UIImage.init()
+    var lastImagePreview: UIImage = UIImage.init()
     var lastImageFilename = ""
     var lastImageURL = ""
     var lastImageData: Data = Data.init()
@@ -60,6 +63,10 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     // IBOutlet declaration: Labels
     @IBOutlet weak var controlPeriodLabel: UILabel!
     @IBOutlet weak var horizontalSpeedLabel: UILabel!
+    
+    @IBOutlet weak var posXLabel: UILabel!
+    @IBOutlet weak var posYLabel: UILabel!
+    @IBOutlet weak var posZLabel: UILabel!
     
     // IBOutlet declaration: ImageView
     @IBOutlet weak var previewImageView: UIImageView!
@@ -97,6 +104,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         button.isEnabled = false
         button.backgroundColor = UIColor.lightGray
     }
+    
+    //***********************************
     // Enable button and change colormode
     func enableButton(_ button: UIButton!){
         button.isEnabled = true
@@ -158,29 +167,54 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     
     //*************************************************************
     // captureImage sets up the camera if needed and takes a photo.
-    func captureImage() {
-        // Make sure camer is in the correct mode
+    func captureImage(completion: @escaping (Bool)-> Void ) {
+        // Make sure camera is in the correct mode
         self.cameraSetMode(DJICameraMode.shootPhoto, 3, completionHandler: {(succsess: Bool) in
             if succsess{
-                // Make sure shootPhotoMode is single
+                // Make sure shootPhotoMode is single, if so, go ahead startShootPhoto
                 self.camera?.setShootPhotoMode(DJICameraShootPhotoMode.single, withCompletion: {(error: Error?) in
                     // Take photo and save to sdCard
                     self.camera?.startShootPhoto(completion: { (error) in
-                        if error != nil {
-                            NSLog("Shoot Photo Error: " + String(describing: error))
-                        }
-                        else{
-                            self.printSL("Photo taken")
-                        }
+                        // startShootPhoto returns before resource is available for next action, wait to be sure resource is available when code returns.
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
+                            if error != nil {
+                                NSLog("Shoot Photo Error: " + String(describing: error))
+                                completion(false)
+                            }
+                            else{
+                                completion(true)
+                            }
+                        })
                     })
                 })
             }
             else{
-                self.printSL("Error taking a photo..")
+                print("cameraSetMode failed")
+                completion(false)
             }
         })
     }
     
+    //*********************************************************
+    //Function executed when a take_picture command is received
+    func takePictureCMD(){
+        Dispatch.background{
+            self.captureImage(completion: {(success) in
+                Dispatch.main{
+                    if success{
+                        self.printSL("Take Photo sucessfully completed")
+                        self.cameraAllocator.deallocate()
+                    }
+                    else{
+                        self.printSL("Take Photo failed to complete")
+                        self.cameraAllocator.deallocate()
+                    }
+                }
+            })
+            
+        }
+
+    }
     // ***********************************************************************************************************************************************
     // cameraSetMode checks if the newCamera mode is the active mode, and if not it tries to set the mode 'attempts' times. TODO - is attemtps needed?
     func cameraSetMode(_ newCameraMode: DJICameraMode,_ attempts: Int, completionHandler: @escaping (Bool) -> Void) {
@@ -274,20 +308,65 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         self.printSL("Previewing image from path")
     }
     
+    //
+    // Function executed when incoming command is download_picture
+    func downloadPictureCMD(){
+    // Download picture code
+        Dispatch.background{
+            // First download from sdCard
+            self.savePhoto(completionHandler: {(saveSuccess) in
+                self.cameraAllocator.deallocate()
+                if saveSuccess {
+                    print("Image downloaded to App")
+                    
+                    // Scp to server. Use ssh allocator
+                    if self.sshAllocator.allocate("download_picture", maxTime: 50){
+                        self.scpToServer(completion: {(scpSuccess, pending, info) in
+                            Dispatch.main{
+                                if pending{
+                                    self.printSL(info)
+                                }
+                                else{
+                                    if scpSuccess{
+                                        self.printSL(info)
+                                        self.printSL("Scp to server ok. Send image info on PUB socket")
+                                    }
+                                    else{
+                                        self.printSL("Scp to server failed. Send on PUB?" + info)
+                                    }
+                                    self.sshAllocator.deallocate()
+                                }
+                            }
+                        })
+                    }
+                    else{
+                        self.printSL("Ssh allocator busy. Reject this new scp-command")
+                    }
+                }
+                else{
+                    self.printSL("Failed to download file from sdCard")
+                }
+            })
+        }
+    }
+
+    
     //*************************
      // Save photo to app memory
      func savePhoto(completionHandler: @escaping (Bool) -> Void){
          // Download last image taken by drone. From on board sdCard to app memory to
          cameraSetMode(DJICameraMode.mediaDownload, 3, completionHandler: {(success: Bool) in
              if success {
+
                  self.getImage(completionHandler: {(new_success: Bool) in
                      if new_success{
-                         self.printSL("Photo downloaded and saved to App memory")
+                         //self.printSL("Photo downloaded and saved to App memory")
                          completionHandler(true)
                      }
                      else{
-                         completionHandler(false)
-                         self.printSL("Failed downloading imageData")
+                         //self.printSL("Failed downloading imageData")
+                        completionHandler(false)
+                         
                      }
                  })
              }
@@ -328,15 +407,12 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                         completionHandler(false)
                     }
                     else if isComplete { // No more data blocks to collect
-                        self.printSL("it isComplete")
                         if let imageData = imageData{
                             self.saveImageDataToApp(imageData: imageData, filename: files[index].fileName)
-                            let image = UIImage(data: imageData)
-                            self.lastImage = image!
-                            self.lastImageFilename = files[index].fileName
-                            self.printSL("Image saved to self, showing image preview. Filename:" + self.lastImageFilename)
-                            self.previewImageView.image = files[index].preview //image TODO, does this work?
-                            // Modifying EXIF, a clue: https://stackoverflow.com/questions/43920643/modifying-image-metadata
+                            //let image = UIImage(data: imageData)
+                            //self.lastImage = image!
+                            //self.lastImageFilename = files[index].fileName
+                            //self.printSL("UIImage saved to self, showing image preview. Filename:" + self.lastImageFilename)
                             completionHandler(true)
                             }
                         else{
@@ -349,13 +425,14 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                         if let _ = imageData, let data = data {
                             imageData?.append(data)
                             i! += 1
-                            self.printSL("Appending data to image" + String(describing: i))
+                            // TODO - progress bar
+                            //self.printSL("Appending data to image" + String(describing: i))
                         }
                         // initialize the image data
                         else {
                             imageData = data
                             i = 1
-                            self.printSL("Initiating a new image")
+                            //self.printSL("Initiating a new image")
                         }
                     }
                 })
@@ -413,14 +490,15 @@ public class SticksViewController: DUXDefaultLayoutViewController {
          let username = self.hostUsername
          let session = NMSSHSession(host: ip, andUsername: username)
         
+         completion(success, pending, "Connecting to server..")
          session.connect()
          if session.isConnected == true{
              session.authenticateBy(inMemoryPublicKey: "", privateKey: privatekeystring, andPassword: nil)
              if session.isAuthorized == true {
                 // Upload Data object
-                completion(success, pending, "Uploading " + self.lastImageDataFilename)
+                completion(success, pending, "Uploading " + self.lastImageDataFilename + "...")
                 session.channel.uploadFile(self.lastImageDataURL!.path, to: self.hostPath)
-                info = "Filename: " + self.lastImageDataFilename
+                info = "File uploaded: " + self.lastImageDataFilename
                 success = true
              }
              else{
@@ -555,76 +633,101 @@ public class SticksViewController: DUXDefaultLayoutViewController {
             
                 switch json_m["fcn"]{
                 case "arm_take_off":
-                    json_r = createJsonAck("arm_take_off")
                     self.printSL("Received cmd arm_take_off")
-                    // Arm take off code
-                case "land":
-                    json_r = createJsonAck("land")
-                    self.printSL("Received cmd land")
-                    // Land code
-                case "set_vel_body":
-                    json_r = createJsonAck("set_vel_body")
-                    self.printSL("Received cmd set_vel_body")
-                    // Set velocity code
-                case "set_yaw":
-                    json_r = createJsonAck("set_yaw")
-                    self.printSL("Received cmd set_yaw")
-                    // Set yaw code
-                case "upload_mission_xyz":
-                    json_r = createJsonAck("upload_mission_xyz")
-                    self.printSL("Received cmd upload_mission_xyz")
-                    // Upload mission xyz code
+                    if copter.getIsFlying() ?? false{ // Default to flase to handle nil
+                        json_r = createJsonNack("arm_take_off")
+                    }
+                    else{
+                        json_r = createJsonAck("arm_take_off")
+                        copter.takeOff()
+                    }
                 case "gogo_xyz":
                     json_r = createJsonAck("gogo_xyz")
                     self.printSL("Received cmd gogo_xyz")
-                    // Gogo xyz code
-                case "take_picture":
-                    json_r = createJsonAck("take_picture")
-                    self.printSL("Received cmd take_picture")
-                    // Take picture cmd
+                    // Gogo xyz code TODO
+
+                case "heart_beat": // DONE
+                    json_r = createJsonAck("heart_beat")
+                    print("Received heart_beat")
+                    // Any heart beat code here
+                    
+                case "info_request":
+                    json_r = createJsonAck("info_request")
+                    self.printSL("Received cmd info_request")
+                    // Info request code
+                    switch json_m["arg"]{
+                        case "operator":
+                            json_r["arg2"].stringValue = "operator"
+                            json_r["arg3"].stringValue = copter._operator
+                    case "posD":
+                        json_r["arg2"].stringValue = "posD"
+                        json_r["arg3"] = JSON(copter.posZ)
+                        
+                        default:
+                        _ = 1
+                    }
+                case "land":
+                    self.printSL("Received cmd land")
+                    json_r = createJsonAck("land")
+                    if copter.getIsFlying() ?? false{ // Default to flase to handle nil
+                        json_r = createJsonAck("land")
+                        copter.land()
+                    }
+                    else{
+                        json_r = createJsonNack("land")
+                    }
+                case "save_home_position":
+                    self.printSL("Received cmd save_home_position")
+                    json_r = createJsonAck("save_home_position")
+                    copter.saveCurrentPosAsDSSHome()
+                case "set_vel_body":
+                    self.printSL("Received cmd set_vel_body")
+                    json_r = createJsonAck("set_vel_body")
+
+                    // Set velocity code
+                    // parse
+                    let velX = Float(json_m["arg"]["vel_X"].stringValue) ?? 0
+                    let velY = Float(json_m["arg"]["vel_Y"].stringValue) ?? 0
+                    let velZ = Float(json_m["arg"]["vel_Z"].stringValue) ?? 0
+                    let yawRate = Float(json_m["arg"]["yaw_rate"].stringValue) ?? 0
+                    print("VelX: " + String(velX) + ", velY: " + String(velY) + ", velZ: " + String(velZ) + ", yawRate: "  + String(yawRate))
+                    // Must dispatch to main for command to go through.
+                    print("Testing if copter is available from here in code TODO: " + String(describing: copter.ref_velX))
                     Dispatch.main{
-                        self.captureImage()
-                        // Background process continues without delay (hopp-hej)
+                        self.copter.dutt(x: velX, y: velY, z: velZ, yawRate: yawRate)
+                        self.printSL("Dutt command sent from readSocket")
+                    }
+                case "set_yaw":
+                    self.printSL("Received cmd set_yaw")
+                    json_r = createJsonAck("set_yaw")
+                    // Set yaw code TODO
+                case "upload_mission_xyz":
+                    self.printSL("Received cmd upload_mission_xyz")
+                    json_r = createJsonAck("upload_mission_xyz")
+                    // Upload mission xyz code TODO
+                    
+                case "take_picture":
+                    self.printSL("Received cmd take_picture")
+                    if self.cameraAllocator.allocate("take_picture", maxTime: 3) {
+                        json_r = createJsonAck("take_picture")
+                        takePictureCMD()
+                    }
+                    else{
+                        json_r = createJsonNack("take_picture")
                     }
                 case "download_picture":
-                    json_r = createJsonAck("download_picture")
                     self.printSL("Received cmd download_picture")
-                    // Download picture code
-                    Dispatch.background{
-                        // First download from sdCard
-                        self.savePhoto(completionHandler: {(saveSuccess) in
-                            if saveSuccess {
-                                // Then scp to server, put code in completion block
-                                self.scpToServer(completion: {(scpSuccess, pending, info) in
-                                    Dispatch.main{
-                                        if pending{
-                                            self.printSL(info)
-                                        }
-                                        else{
-                                            if scpSuccess{
-                                                self.printSL(info)
-                                                self.printSL("Send image info on PUB socket")
-                                            }
-                                            else{
-                                                self.printSL("Scp to server failed. Send on PUB?" + info)
-                                            }
-                                        }
-                                    }
-                                    })
-                            }
-                            else{
-                                self.printSL("Failed to scp file to server")
-                            }
-                        })
+                    if self.cameraAllocator.allocate("download_picture", maxTime: 12) {
+                        json_r = createJsonAck("download_picture")
+                        downloadPictureCMD()
+                    }
+                    else {
+                        json_r = createJsonNack("download_picture")
                     }
                 case "gimbal_set":
                     json_r = createJsonAck("gimbal_set")
                     self.printSL("Received cmd gimbal_set")
                     // Gimbal set code
-                case "info_request":
-                    json_r = createJsonAck("info_request")
-                    self.printSL("Received cmd info_request")
-                    // Infor request code
                 case "data_stream":
                     json_r = createJsonAck("data_stream")
                     self.printSL("Received cmd data_stream")
@@ -641,6 +744,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 }
                 // Create string from json and send reply
                 let reply_str = getJsonString(json: json_r)
+                print(json_r)
                 try socket.send(string: reply_str)
                }
             catch {
@@ -677,20 +781,24 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         self.replyEnable = false
 //        _ = try? self.context.terminate()
         _ = try? self.context.close()
+        copter.stopListenToPos()
         self.dismiss(animated: true, completion: nil)
     }
     
     //**************************************************************************************************
     // DeactivateSticks: Touch down action, deactivate immidiately and reset ActivateSticks button color
     @IBAction func DeactivateSticksPressed(_ sender: UIButton) {
-        deactivateSticks()
         copter.stop()
+        deactivateSticks()
+        copter._operator = "USER" // Reject application control
+        
     }
 
     //************************************************************************************
     // ActivateSticks: Touch down up inside action, ativate when ready (release of button)
     @IBAction func ActivateSticksPressed(_ sender: UIButton) {
         activateSticks()
+        copter._operator = "CLIENT" // Allow application control
     }
 
     //***************************************************************************************************************
@@ -699,7 +807,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         // Clear screen, lets fly!
         previewImageView.image = nil
         // Set the control command
-        copter.dutt(x: 0, y: 2, z: 0, yaw: 0)
+        copter.dutt(x: 0, y: 1, z: 0, yawRate: 0)
     }
 
 
@@ -707,27 +815,40 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     // Sends a command to go body left for some time at some speed per settings. Cancel any current joystick command
     @IBAction func DuttLeftPressed(_ sender: UIButton) {
         // Load image from library to be able to test scp without drone conencted. Could add dummy pic to App assets instead.
-        self.lastImage = loadUIImageFromPhotoLibrary()! // TODO, unsafe code
-        saveImageDataToApp(imageData: self.lastImage.jpegData(compressionQuality: 1)!, filename: "From_album.jpg")
+        //self.lastImage = loadUIImageFromPhotoLibrary()! // TODO, unsafe code
+        //saveImageDataToApp(imageData: self.lastImage.jpegData(compressionQuality: 1)!, filename: "From_album.jpg")
         
+        previewImageView.image = nil
         // Set the control command
-        copter.dutt(x: 0, y: -2, z: 0, yaw: 0)
+        copter.dutt(x: 0, y: -1, z: 0, yawRate: 0)
+        //copter.stopListenToPos() test functionality of stop listen
+ 
     }
     
     //********************************************************
     // Set gimbal pitch according to scheeme and take a photo.
     @IBAction func takePhotoButton(_ sender: Any) {
         // Command the drone to take a picture and save it to the onboard sdCard. Change gimbal pitch accorsding to pattern.
-        previewImageView.image = nil
-        statusLabel.text = "Capture image button pressed, preview cleared"
-
-        setGimbalPitch(pitch: self.nextGimbalPitch)
-        updateGnextGimbalPitch()
-       
-        // Dispatch to wait in the pitch movement, then capture an image. TODO - use closure instead of stupid timer.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
-            self.captureImage()
-        })
+        copter.gotoXYZ(refPosX: 1, refPosY: 1)
+        
+        
+//        previewImageView.image = nil
+//        statusLabel.text = "Capture image button pressed, preview cleared"
+//
+//        setGimbalPitch(pitch: self.nextGimbalPitch)
+//        updateGnextGimbalPitch()
+//
+//        // Dispatch to wait in the pitch movement, then capture an image. TODO - use closure instead of stupid timer.
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+//            self.captureImage(completion: {(success) in
+//                if success {
+//                    self.printSL("Photo successfully taken")
+//                }
+//                else{
+//                    self.printSL("Photo from button press failed to complete")
+//                }
+//            })
+//        })
     
     }
     
@@ -759,7 +880,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     @IBAction func savePhotoButton(_ sender: Any) {
         savePhoto(){(success) in
             if success{
-                self.printSL("Phot successfullt saved to app memory")
+                self.printSL("Photo successfullt saved to app memory")
             }
         }
     }
@@ -810,7 +931,12 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         }
     }
     
-    
+    @objc func onDidPosUpdate(_ notification: Notification){
+        self.posXLabel.text = String(copter.posX)
+        self.posYLabel.text = String(copter.posY)
+        self.posZLabel.text = String(copter.posZ)
+        
+    }
 
     //*************************************************************************
     //*************************************************************************
@@ -847,6 +973,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 // Store the flightController reference
                 copter.flightController = fc
                 copter.initFlightController()
+                
             }
             
             // Store the camera refence
@@ -854,7 +981,6 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 self.camera = cam
                 image_index = self.camera?.index // Not used
                 // Should try to implement callback listener to progress image index.
-                
             }
             else{
                 self.printSL("Camera not loaded")
@@ -862,6 +988,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
             // Store the gimbal reference
             if let gimb = product.gimbal{
                 self.gimbal = gimb
+                // TODO, make this right. Could be triggered when needed for example..
                 self.gimbal?.setPitchRangeExtensionEnabled(true, withCompletion: {(error: Error?) in
                     if error != nil {
                         self.printSL("RangeExtension is not set in viewDidLoad")
@@ -886,12 +1013,15 @@ public class SticksViewController: DUXDefaultLayoutViewController {
             self.printSL("Aircraft not loaded")
         }
         
-        // Start reply socket thread
-//        if self.replyEnable  {
-//            self.replyEnable = false
-//            self.printSL("Reply thread stopped")
-//        }
-//        else{
+
+        // Test notification center,https://learnappmaking.com/notification-center-how-to-swift/
+        //let posUpdateLabels = Notification.Name("posUpdateLabels")
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidPosUpdate(_:)), name: .didPosUpdate, object: nil)
+
+        // Start subscriptions
+        //copter.startListenToPos()
+        copter.startListenToHomePosUpdated()
+
         if startReplyThread(){
             self.printSL("Reply thread successfully started")
         }

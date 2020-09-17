@@ -49,4 +49,8 @@ func createJsonAck(_ fcnString: String) -> JSON {
      return json
  }
 
+func printJson(jsonObject: JSON){
+    print(jsonObject)
+}
+
 
