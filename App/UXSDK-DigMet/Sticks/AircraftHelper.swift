@@ -31,7 +31,7 @@ class Copter {
     var ref_yawRate: Float = 0.0
     
     var xyVelLimit: Float = 250 // cm/s horizontal speed
-    var zVelLimit: Float = 50 // cm/s vertical speed
+    var zVelLimit: Float = 100 // cm/s vertical speed
     var yawRateLimit:Float = 10 // deg/s, defensive.
 
     var pos: CLLocation?
@@ -437,37 +437,48 @@ class Copter {
     func sendControlData(velX: Float, velY: Float, velZ: Float, yawRate: Float) {
         print("Sending x: \(velX), y: \(velY), z: \(velZ), yaw: \(yawRate)")
        
-        // Construct the flight control data object. Roll axis is pointing forwards but we use velocities..
-        var controlData = DJIVirtualStickFlightControlData()
 //        controlData.verticalThrottle = velZ // in m/s
 //        controlData.roll = velX
 //        controlData.pitch = velY
 //        controlData.yaw = yawRate
       
-        // Make sure velocity limits are not exceeded
-        controlData.verticalThrottle = -limitToMax(value: self.ref_velZ, limit: zVelLimit/100)
-        controlData.roll = limitToMax(value: velX, limit: xyVelLimit/100)
-        controlData.pitch = limitToMax(value: velY, limit: xyVelLimit/100)
-        controlData.yaw = limitToMax(value: yawRate, limit: yawRateLimit)
+        // Check horizontal spped and reduce both proportionally
+        let horizontalVel = sqrt(velX*velX + velY*velY)
+        let limitedHorizontalVel = limitToMax(value: horizontalVel, limit: xyVelLimit/100)
+        var factor: Float = 1
+        if limitedHorizontalVel < horizontalVel{
+            factor = limitedHorizontalVel/horizontalVel
+        }
+        
+        // Make sure velocity limits are not exceeded.
+        let limitedVelX = factor * velX
+        let limitedVelY = factor * velY
+        let limitedVelZ = limitToMax(value: velZ, limit: zVelLimit/100)
+        let limitedYawRate = limitToMax(value: velX, limit: xyVelLimit/100)
+                
+        // Construct the flight control data object. Roll axis is pointing forwards but we use velocities..
+        print("limitedVelZ: " + String(describing: limitedVelZ) + "is sent to verticalThrottle with negative sign")
+        var controlData = DJIVirtualStickFlightControlData()
+        controlData.verticalThrottle = -limitedVelZ
+        controlData.roll = limitedVelX
+        controlData.pitch = limitedVelY
+        controlData.yaw = limitedYawRate
         
         
         // Send the control data to the FC
         self.flightController?.send(controlData, withCompletion: { (error: Error?) in
-           
            // There's an error so let's stop (What happens with last sent command..?
-           if error != nil {
-               
-               print("Error sending data")
-               
-               // Disable the timer
-            self.timer?.invalidate()
-            //self.loopCnt = 0
-            self.posCtrlTimer?.invalidate()
-            //self.posCtrlLoopCnt = 0
-           }
+            if error != nil {
+                print("Error sending control data from position controller")
+                // Disable the timer
+                self.timer?.invalidate()
+                //self.loopCnt = 0
+                self.posCtrlTimer?.invalidate()
+                //self.posCtrlLoopCnt = 0
+            }
            
-       })
-   }
+        })
+    }
     
     func takeOff(){
         self.flightController?.startTakeoff(completion: {(error: Error?) in
@@ -493,24 +504,27 @@ class Copter {
         })
     }
     
-    func gotoXYZ(refPosX: Double, refPosY: Double){
+    //**********************************************************************************
+    // Function that sets reference position and executes the position controller timer.
+    func gotoXYZ(refPosX: Double, refPosY: Double, refPosZ: Double){
         // start in Y only
-        // Check if refPosY is within geofence
+        // Check if horixzontal positions are within geofence  (should X be max 1m?)
         if refPosY > -10 && refPosY < 10{
             self.ref_posY = refPosY
         }
-        if refPosX > -10 && refPosX < 10{
-                   self.ref_posX = refPosX
-               }
+        else if refPosX > -10 && refPosX < 10{
+            self.ref_posX = refPosX
+        }
         else{
             print("XYZ position is out of allowed area!")
             return
         }
         
-        
-
-    
-        
+        self.ref_posZ = refPosZ
+        if self.ref_posZ > -10{
+            print("Too low altitude for postion control")
+            return
+        }
         
         // Schedule the timer at 20Hz while the default specified for DJI is between 5 and 25Hz. Timer will execute control commands for a period of time
         timer?.invalidate()
@@ -520,7 +534,7 @@ class Copter {
         posCtrlLoopCnt = 0
         // Make sure noone else is updating the self.refPosXYZ ! TODO
         // Set fix timeinterval
-        posCtrlTimer = Timer.scheduledTimer(timeInterval: 0.15, target: self, selector: #selector(firePosCtrlTimer), userInfo: nil, repeats: true)
+        posCtrlTimer = Timer.scheduledTimer(timeInterval: 0.11, target: self, selector: #selector(firePosCtrlTimer), userInfo: nil, repeats: true)
     }
     
 }
@@ -545,7 +559,7 @@ extension Copter{
         posCtrlLoopCnt += 1
         // If we arrived
         let trackedLimit = 0.1
-        if abs(self.ref_posX - self.posX) < trackedLimit && abs(self.ref_posY - self.posY) < trackedLimit{
+        if abs(self.ref_posX - self.posX) < trackedLimit && abs(self.ref_posY - self.posY) < trackedLimit && abs(self.ref_posZ - self.posZ) < trackedLimit{
             sendControlData(velX: 0, velY: 0, velZ: 0, yawRate: 0)
             posCtrlTimer?.invalidate()
         }
@@ -553,10 +567,10 @@ extension Copter{
             
             
         else{
-            // Rotate aka SimpleMode
-            
-            let y_diff: Float = Float(self.ref_posY - self.posY)
+            // Implement P-controller, position error to ref vel. Rotate aka SimpleMode
             let x_diff: Float = Float(self.ref_posX - self.posX)
+            let y_diff: Float = Float(self.ref_posY - self.posY)
+            let z_diff: Float = Float(self.ref_posZ - self.posZ)
             
             guard let checkedHeading = self.getHeading() else {return}
             guard let checkedStartHeading = self.startHeading else {return}
@@ -564,13 +578,13 @@ extension Copter{
             
             self.ref_velX =  x_diff * cos(alpha) + y_diff * sin(alpha)
             self.ref_velY = -x_diff * sin(alpha) + y_diff * cos(alpha)
+            self.ref_velZ = z_diff
+            // If velocity get limited the copter will not fly in straight line! Handled in sendControlData
             
-            // If velocity get limited the copter will not fly in straight line! Limit both proportional. TODO
-            
-            //self.ref_velY = y_diff
-            print("y_diff: " + String(describing: y_diff))
-            sendControlData(velX: self.ref_velX, velY: self.ref_velY, velZ: 0, yawRate: 0)
+
+            sendControlData(velX: self.ref_velX, velY: self.ref_velY, velZ: self.ref_velZ, yawRate: 0)
         }
+        
         // For safety during testing..
         if posCtrlLoopCnt >= posCtrlLoopTarget{
             sendControlData(velX: 0, velY: 0, velZ: 0, yawRate: 0)

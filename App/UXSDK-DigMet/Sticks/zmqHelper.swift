@@ -8,6 +8,60 @@
 
 import Foundation
 import SwiftyJSON
+import SwiftyZeroMQ
+
+//class ZMQClass: SticksViewController{
+//    var publisher: SwiftyZeroMQ.Socket
+//    var context: SwiftyZeroMQ.Context = try! SwiftyZeroMQ.Context()
+//    
+//    let publishEndPoint = ""
+//    
+//    
+//    //**************************
+//    // Init the publisher socket
+//    func initPublisher()->Bool{
+//        do{
+//            self.publisher = try context.socket(.publish)
+//            try self.publisher.bind(self.publishEndPoint)
+//            
+//            return true
+//            }
+//        catch{
+//            return false
+//        }
+//    }
+//    
+//    func publish(json: JSON)->Bool{
+//        let json_s = getJsonString(json: json)
+//        do{
+//            try self.publisher.send(string: json_s)
+//            return true
+//        }
+//        catch{
+//            print("Error publishing data")
+//            return false
+//        }
+//    }
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//}
+
+
+
+
+
 
 func cleanUpString(str: String)->String{
      let str2 = str.dropLast()

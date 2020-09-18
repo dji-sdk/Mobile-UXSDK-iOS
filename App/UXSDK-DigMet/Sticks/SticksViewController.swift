@@ -34,6 +34,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     var context: SwiftyZeroMQ.Context = try! SwiftyZeroMQ.Context()
     var replyEnable = false
     let replyEndpoint = "tcp://*:1234"
+    let publishEndPoint = ""
     var sshAllocator = Allocator(name: "ssh")
     
     var pitchRangeExtension_set: Bool = false
@@ -74,6 +75,10 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     // Steppers
     @IBOutlet weak var controlPeriodStepperButton: UIStepper!
     @IBOutlet weak var horizontalSpeedStepperButton: UIStepper!
+    
+    @IBOutlet weak var horizontalSpeedStackView: UIStackView!
+    @IBOutlet weak var controlPeriodStackView: UIStackView!
+    
     
     // Buttons
     @IBOutlet weak var DeactivateSticksButton: UIButton!
@@ -169,7 +174,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     // captureImage sets up the camera if needed and takes a photo.
     func captureImage(completion: @escaping (Bool)-> Void ) {
         // Make sure camera is in the correct mode
-        self.cameraSetMode(DJICameraMode.shootPhoto, 3, completionHandler: {(succsess: Bool) in
+        self.cameraSetMode(DJICameraMode.shootPhoto, 1, completionHandler: {(succsess: Bool) in
             if succsess{
                 // Make sure shootPhotoMode is single, if so, go ahead startShootPhoto
                 self.camera?.setShootPhotoMode(DJICameraShootPhotoMode.single, withCompletion: {(error: Error?) in
@@ -200,14 +205,15 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     func takePictureCMD(){
         Dispatch.background{
             self.captureImage(completion: {(success) in
+                self.cameraAllocator.deallocate()
                 Dispatch.main{
                     if success{
                         self.printSL("Take Photo sucessfully completed")
-                        self.cameraAllocator.deallocate()
+                        //self.cameraAllocator.deallocate()
                     }
                     else{
                         self.printSL("Take Photo failed to complete")
-                        self.cameraAllocator.deallocate()
+                        //lself.cameraAllocator.deallocate()
                     }
                 }
             })
@@ -315,32 +321,35 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         Dispatch.background{
             // First download from sdCard
             self.savePhoto(completionHandler: {(saveSuccess) in
+                print("Deallocating cameraAllocator")
                 self.cameraAllocator.deallocate()
                 if saveSuccess {
                     print("Image downloaded to App")
                     
-                    // Scp to server. Use ssh allocator
-                    if self.sshAllocator.allocate("download_picture", maxTime: 50){
-                        self.scpToServer(completion: {(scpSuccess, pending, info) in
-                            Dispatch.main{
-                                if pending{
-                                    self.printSL(info)
-                                }
-                                else{
-                                    if scpSuccess{
+                    Dispatch.superBackground{
+                        // Scp to server. Use ssh allocator
+                        if self.sshAllocator.allocate("download_picture", maxTime: 50){
+                            self.scpToServer(completion: {(scpSuccess, pending, info) in
+                                Dispatch.main{
+                                    if pending{
                                         self.printSL(info)
-                                        self.printSL("Scp to server ok. Send image info on PUB socket")
                                     }
                                     else{
-                                        self.printSL("Scp to server failed. Send on PUB?" + info)
+                                        if scpSuccess{
+                                            self.printSL(info)
+                                            self.printSL("Scp to server ok. Send image info on PUB socket")
+                                        }
+                                        else{
+                                            self.printSL("Scp to server failed. Send on PUB?" + info)
+                                        }
+                                        self.sshAllocator.deallocate()
                                     }
-                                    self.sshAllocator.deallocate()
                                 }
-                            }
-                        })
-                    }
-                    else{
-                        self.printSL("Ssh allocator busy. Reject this new scp-command")
+                            })
+                        }
+                        else{
+                            self.printSL("Ssh allocator busy. Reject this new scp-command")
+                        }
                     }
                 }
                 else{
@@ -355,7 +364,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
      // Save photo to app memory
      func savePhoto(completionHandler: @escaping (Bool) -> Void){
          // Download last image taken by drone. From on board sdCard to app memory to
-         cameraSetMode(DJICameraMode.mediaDownload, 3, completionHandler: {(success: Bool) in
+         cameraSetMode(DJICameraMode.mediaDownload, 1, completionHandler: {(success: Bool) in
              if success {
 
                  self.getImage(completionHandler: {(new_success: Bool) in
@@ -593,8 +602,18 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     }
     
 
-    
- 
+//    func startPUBThread()->Bool{
+//        do{
+//            let publisher = try context.socket(.publish)
+//                       try self.publisher.bind(self.publishEndPoint)
+//            
+//            return true
+//            }
+//        catch{
+//            return false
+//        }
+//    }
+// 
     // ******************************
     // Initiate the zmq reply thread.
     // MARK: ZMQ
@@ -616,6 +635,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
             return false
         }
     }
+    
+
 
     // ****************************************************
     // zmq reply thread that reads command from applictaion
@@ -648,7 +669,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
 
                 case "heart_beat": // DONE
                     json_r = createJsonAck("heart_beat")
-                    print("Received heart_beat")
+                    //print("Received heart_beat")
                     // Any heart beat code here
                     
                 case "info_request":
@@ -705,25 +726,31 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                     self.printSL("Received cmd upload_mission_xyz")
                     json_r = createJsonAck("upload_mission_xyz")
                     // Upload mission xyz code TODO
-                    
-                case "take_picture":
-                    self.printSL("Received cmd take_picture")
-                    if self.cameraAllocator.allocate("take_picture", maxTime: 3) {
-                        json_r = createJsonAck("take_picture")
-                        takePictureCMD()
-                    }
-                    else{
-                        json_r = createJsonNack("take_picture")
-                    }
-                case "download_picture":
-                    self.printSL("Received cmd download_picture")
-                    if self.cameraAllocator.allocate("download_picture", maxTime: 12) {
-                        json_r = createJsonAck("download_picture")
-                        downloadPictureCMD()
-                    }
-                    else {
-                        json_r = createJsonNack("download_picture")
-                    }
+                
+                case "photo":
+                    switch json_m["arg"]["cmd"]{
+                        case "take_picture":
+                            self.printSL("Received cmd photo with arg take_picture")
+                            if self.cameraAllocator.allocate("take_picture", maxTime: 3) {
+                                json_r = createJsonAck("photo")
+                                takePictureCMD()
+                            }
+                            else{ // camera resource busy
+                                json_r = createJsonNack("photo")
+                            }
+                        case "download_picture":
+                            self.printSL("Received cmd photo with arg download_picture")
+                            if self.cameraAllocator.allocate("download_picture", maxTime: 12) {
+                                json_r = createJsonAck("photo")
+                                downloadPictureCMD()
+                            }
+                            else { // Camera resource busy
+                                json_r = createJsonNack("photo")
+                            }
+                        default:
+                            self.printSL("Received cmd photo with unknow arg: " + json_m["arg"]["cmd"].stringValue)
+                            json_r = createJsonNack("photo")
+                        }
                 case "gimbal_set":
                     json_r = createJsonAck("gimbal_set")
                     self.printSL("Received cmd gimbal_set")
@@ -744,7 +771,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
                 }
                 // Create string from json and send reply
                 let reply_str = getJsonString(json: json_r)
-                print(json_r)
+                if json_r["fcn"].stringValue == "nack"{
+                    print(json_r)
+                }
                 try socket.send(string: reply_str)
                }
             catch {
@@ -829,7 +858,7 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     // Set gimbal pitch according to scheeme and take a photo.
     @IBAction func takePhotoButton(_ sender: Any) {
         // Command the drone to take a picture and save it to the onboard sdCard. Change gimbal pitch accorsding to pattern.
-        copter.gotoXYZ(refPosX: 1, refPosY: 1)
+        copter.gotoXYZ(refPosX: 0, refPosY: 0, refPosZ: -15)
         
         
 //        previewImageView.image = nil
@@ -932,10 +961,9 @@ public class SticksViewController: DUXDefaultLayoutViewController {
     }
     
     @objc func onDidPosUpdate(_ notification: Notification){
-        self.posXLabel.text = String(copter.posX)
-        self.posYLabel.text = String(copter.posY)
-        self.posZLabel.text = String(copter.posZ)
-        
+        self.posXLabel.text = String(format: "%.1f", copter.posX)
+        self.posYLabel.text = String(format: "%.1f", copter.posY)
+        self.posZLabel.text = String(format: "%.1f", copter.posZ)
     }
 
     //*************************************************************************
@@ -950,6 +978,8 @@ public class SticksViewController: DUXDefaultLayoutViewController {
         controlPeriodLabel.text = String(copter.controlPeriod/1000)
         horizontalSpeedStepperButton.value = Double(copter.xyVelLimit)
         horizontalSpeedLabel.text = String(copter.xyVelLimit/100)
+        horizontalSpeedStackView.isHidden = true
+        controlPeriodStackView.isHidden = true
         
         // Set up layout
         let radius: CGFloat = 5
