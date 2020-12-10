@@ -27,6 +27,7 @@
 		A452DC462070D8CC00EFBA30 /* ProductCommunicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC352070D8CB00EFBA30 /* ProductCommunicationService.swift */; };
 		A452DC472070D8CC00EFBA30 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC362070D8CB00EFBA30 /* Widgets.storyboard */; };
 		A452DC482070D8CC00EFBA30 /* WidgetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */; };
+		E12FEF5723745A70F902D5AA /* Pods_UXSDKSwiftSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E336C4FE7B3BC8120D3F63 /* Pods_UXSDKSwiftSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +68,9 @@
 		A452DC352070D8CB00EFBA30 /* ProductCommunicationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCommunicationService.swift; sourceTree = "<group>"; };
 		A452DC362070D8CB00EFBA30 /* Widgets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Widgets.storyboard; sourceTree = "<group>"; };
 		A452DC372070D8CB00EFBA30 /* WidgetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetsViewController.swift; sourceTree = "<group>"; };
+		BB108BBA17C368D8D394E6B1 /* Pods-UXSDKSwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKSwiftSample.debug.xcconfig"; path = "Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
+		C0E336C4FE7B3BC8120D3F63 /* Pods_UXSDKSwiftSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UXSDKSwiftSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE83D7012FF4A2E1484903DB /* Pods-UXSDKSwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKSwiftSample.release.xcconfig"; path = "Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12FEF5723745A70F902D5AA /* Pods_UXSDKSwiftSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,7 @@
 			children = (
 				5300B461212BDE970015AF46 /* FFmpeg.framework */,
 				38D2C47F1E0B1F20009A3831 /* libz.tbd */,
+				C0E336C4FE7B3BC8120D3F63 /* Pods_UXSDKSwiftSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,6 +98,8 @@
 		4D9BDACF6F6942DDFF44C784 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				BB108BBA17C368D8D394E6B1 /* Pods-UXSDKSwiftSample.debug.xcconfig */,
+				EE83D7012FF4A2E1484903DB /* Pods-UXSDKSwiftSample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -213,10 +221,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 868A4EE41E01FA53006FEE33 /* Build configuration list for PBXNativeTarget "UXSDKSwiftSample" */;
 			buildPhases = (
+				4E863CC0896281075F34628D /* [CP] Check Pods Manifest.lock */,
 				868A4ECC1E01FA53006FEE33 /* Sources */,
 				868A4ECD1E01FA53006FEE33 /* Frameworks */,
 				868A4ECE1E01FA53006FEE33 /* Resources */,
 				38D2C4751E0B1EF2009A3831 /* Embed Frameworks */,
+				7C3589FB9FA385D090E56B2F /* [CP] Embed Pods Frameworks */,
+				CA4D534F845A3D8573BB3C07 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,6 +292,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E863CC0896281075F34628D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UXSDKSwiftSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C3589FB9FA385D090E56B2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample-frameworks.sh",
+				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
+				"${PODS_ROOT}/DJI-UXSDK-iOS/iOS_UX_SDK/DJIUXSDK.framework",
+				"${PODS_ROOT}/DJIWidget/FFmpeg/FFmpeg.framework",
+				"${BUILT_PRODUCTS_DIR}/DJIWidget/DJIWidget.framework",
+				"${BUILT_PRODUCTS_DIR}/iOS-Color-Picker/iOS_Color_Picker.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIUXSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FFmpeg.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIWidget.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOS_Color_Picker.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA4D534F845A3D8573BB3C07 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample-resources.sh",
+				"${PODS_ROOT}/DJIFlySafeDatabaseResource/DJIFlySafeDatabaseResource.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DJIFlySafeDatabaseResource.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		868A4ECC1E01FA53006FEE33 /* Sources */ = {
@@ -419,6 +499,7 @@
 		};
 		868A4EE51E01FA53006FEE33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB108BBA17C368D8D394E6B1 /* Pods-UXSDKSwiftSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 38D4M22449;
@@ -447,6 +528,7 @@
 		};
 		868A4EE61E01FA53006FEE33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE83D7012FF4A2E1484903DB /* Pods-UXSDKSwiftSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 38D4M22449;
