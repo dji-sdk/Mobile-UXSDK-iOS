@@ -109,9 +109,9 @@
             NSLog(@"Model name nil?");
         }
     }];
-    /*ProductCommunicationService.sharedInstance.useBridge = self.bridgeModeSwitch.isOn;
+	
+    ProductCommunicationService.sharedInstance.useBridge = self.bridgeModeSwitch.isOn;
     [ProductCommunicationService.sharedInstance disconnectProduct];
-    NSLog(@"Disconnected from product");*/
 }
 
 - (void)updateBridgeAppIP {
