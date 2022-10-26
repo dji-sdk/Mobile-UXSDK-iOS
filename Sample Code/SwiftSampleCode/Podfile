@@ -2,9 +2,9 @@ platform :ios, '10.0'
 
 target 'UXSDKSwiftSample' do
   use_frameworks!
-  pod 'DJI-SDK-iOS', '~> 4.16'
-  pod 'DJI-UXSDK-iOS', '~> 4.16'
-  pod 'DJIWidget', '~> 1.6.6'
+  pod 'DJI-SDK-iOS', '~> 4.16.2'
+  pod 'DJI-UXSDK-iOS', '~> 4.16.2'
+  pod 'DJIWidget', '~> 1.6.8'
   pod 'DJIFlySafeDatabaseResource', '~> 01.00.01.18'
   pod 'iOS-Color-Picker'
 end
